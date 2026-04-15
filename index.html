@@ -36,32 +36,40 @@
   <main>
     <section class="hero" id="home">
       <div class="container">
-        <div class="hero-shell reveal">
-          <div class="eyebrow">✦ Desenvolvimento de software</div>
+        <div class="hero-content reveal">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <div class="eyebrow">✦ Desenvolvimento de software</div>
 
-          <h1>Stölben</h1>
+              <h1>Software web para transformar processos em resultado real.</h1>
 
-          <p>
-            Eu reúno aqui meus projetos já publicados, com foco em interfaces limpas,
-            boas experiências e aprendizado constante em desenvolvimento.
-          </p>
+              <p>
+                Projeto e construo aplicações para operações que precisam de fluxo claro,
+                estabilidade em produção e evolução contínua.
+              </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Ver projetos</a>
-            <a
-              class="btn btn-secondary"
-              href="https://github.com/rigst"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Abrir GitHub
-            </a>
-          </div>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">Ver projetos</a>
+                <a class="btn btn-secondary" href="#contact">Quero conversar sobre um projeto</a>
+              </div>
 
-          <div class="hero-strip">
-            <span><strong>00</strong> projetos publicados</span>
-            <span><strong>Python + Web</strong> como stack principal</span>
-            <span><strong>Atualizado</strong> a cada projeto novo</span>
+              <div class="hero-strip">
+                <span><strong>Projeto em produção:</strong> experiência, estabilidade e arquitetura web em Python.</span>
+                <span><strong>Foco:</strong> produto, performance e manutenção simples.</span>
+              </div>
+            </div>
+
+            <aside class="hero-showcase" aria-label="Prévia de projeto">
+              <img src="sistema-orcamentos.png" alt="Prévia do Sistema de Orçamentos" />
+              <div class="hero-showcase-meta">
+                <h3>Sistema de Orçamentos</h3>
+                <ul>
+                  <li>Fluxo completo de orçamento em produção</li>
+                  <li>Stack: Django, PostgreSQL, Nginx, Redis</li>
+                  <li>Interface orientada a produtividade operacional</li>
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </div>
@@ -73,9 +81,9 @@
           <div>
             <h2>Projetos publicados</h2>
           </div>
-<!--          <p>-->
-<!--            Aqui entram só projetos já publicados, com link para demo, repositório ou ambos.-->
-<!--          </p>-->
+          <p>
+            Seleção dos projetos com foco em produto, experiência e qualidade técnica.
+          </p>
         </div>
 
         <div class="projects-grid" id="projectsGrid"></div>
@@ -88,32 +96,58 @@
           <div>
             <h2>Sobre</h2>
           </div>
-<!--          <p>-->
-<!--            Estudante de análise e desenvolvimento de sistemas.-->
-<!--          </p>-->
+          <p>
+            Como eu penso produto, desenvolvo software e entrego soluções.
+          </p>
         </div>
 
-        <div class="about-grid">
+        <div class="about-pillars">
           <article class="panel reveal">
-            <h3>Quem sou eu</h3>
+            <h3>Como penso produto</h3>
             <p>
-              Sou estudante e desenvolvedor em formação, com interesse em criar projetos úteis,
-              interfaces bem cuidadas e experiências simples de usar. Este site funciona como vitrine
-              para os trabalhos que já publiquei.
+              Começo pelo problema real da operação e traduzo isso em fluxo claro,
+              com prioridade para usabilidade, contexto de negócio e ganho prático.
             </p>
           </article>
+          <article class="panel reveal">
+            <h3>Como desenvolvo</h3>
+            <p>
+              Estruturo aplicações com base em arquitetura simples de manter, boas práticas de código,
+              validação contínua e foco em estabilidade de produção.
+            </p>
+          </article>
+          <article class="panel reveal">
+            <h3>O que entrego</h3>
+            <p>
+              Sistemas web funcionais, com interface objetiva, rastreabilidade de processos
+              e base técnica pronta para evoluir junto com o negócio.
+            </p>
+          </article>
+        </div>
 
-          <aside class="panel reveal">
-            <h3>Stack atual</h3>
+        <div class="stack-groups">
+          <article class="panel reveal">
+            <h3>Back-end</h3>
             <ul class="stack-list">
               <li>Python</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Git</li>
+              <li>Django</li>
+            </ul>
+          </article>
+          <article class="panel reveal">
+            <h3>Banco e dados</h3>
+            <ul class="stack-list">
+              <li>PostgreSQL</li>
+              <li>Redis</li>
+            </ul>
+          </article>
+          <article class="panel reveal">
+            <h3>Infraestrutura e deploy</h3>
+            <ul class="stack-list">
+              <li>Nginx</li>
+              <li>Gunicorn</li>
               <li>Linux</li>
             </ul>
-          </aside>
+          </article>
         </div>
       </div>
     </section>
@@ -124,28 +158,28 @@
           <div>
             <h2>Contato</h2>
           </div>
-<!--          <p>-->
-<!--            Aqui você coloca os caminhos oficiais para te encontrar sem deixar ninguém vagando-->
-<!--            no deserto digital.-->
-<!--          </p>-->
+          <p>
+            Canais diretos para conversar sobre projetos, parcerias e oportunidades.
+          </p>
         </div>
 
-        <div class="about-grid">
-          <article class="panel reveal">
-            <h3>Vamos conversar</h3>
-            <p>
-              Encaminha uma mensagem para um dos meus contatos. Aberto a projetos.
-            </p>
-          </article>
-
-          <aside class="panel reveal">
-            <h3>Links</h3>
-            <div class="contact-links">
-              <a href="mailto:rodrigo.stolben@gmail.com">rodrigo.stolben@gmail.com</a>
-              <a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
-              <!-- <a href="https://linkedin.com/in/SEUUSUARIO" target="_blank" rel="noreferrer">LinkedIn</a> -->
-            </div>
-          </aside>
+        <div class="panel reveal">
+            <h3>Contato direto</h3>
+            <form class="contact-form" id="contactForm">
+              <label>
+                Nome
+                <input type="text" name="nome" required />
+              </label>
+              <label>
+                Contexto e objetivo
+                <textarea name="contexto" rows="3" required></textarea>
+              </label>
+              <label>
+                Prazo desejado
+                <input type="text" name="prazo" required />
+              </label>
+              <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            </form>
         </div>
       </div>
     </section>
@@ -154,7 +188,7 @@
   <footer class="site-footer">
     <div class="container">
       <p>
-        © <span id="year"></span> Rodrigo Stölben. Desenvolvendo soluções em forma de software.
+        © <span id="year"></span> Rodrigo Stölben. Todos os direitos reservados.
       </p>
     </div>
   </footer>

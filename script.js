@@ -1,40 +1,57 @@
 const projects = [
   {
-    category: "Projeto web",
-    title: "Nome do Projeto 1",
+    category: "Sistema web",
+    title: "Sistema de Orçamentos",
     status: "Publicado",
     description:
-      "Descreva em uma frase o que esse projeto faz, para quem ele serve e por que ele é interessante.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    liveUrl: "#",
-    githubUrl: "#"
+      "Plataforma web para gestão de orçamentos, com foco em produtividade, organização de processos e experiência de uso simples.",
+    problem:
+      "Processo de orçamento fragmentado, com pouca padronização e retrabalho operacional.",
+    solution:
+      "Fluxo centralizado para criação, acompanhamento e evolução de orçamentos em ambiente web.",
+    tags: ["Python", "Django", "PostgreSQL", "Nginx"],
+    coverImage: "sistema-orcamentos.png",
+    liveUrl: "https://orcamentos.stolben.com/",
+    githubUrl: "https://github.com/rigst/sistema_orcamentos"
   },
   {
     category: "Python",
-    title: "Nome do Projeto 2",
-    status: "Publicado",
+    title: "Projeto",
+    status: "Em desenvolvimento",
     description:
-      "Use esse espaço para explicar o problema resolvido e o que você aprendeu construindo a aplicação.",
+      "Projeto em desenvolvimento voltado à automação de rotinas e melhoria de fluxos operacionais em aplicações web.",
+    problem:
+      "Atividades repetitivas e processos manuais com alto custo de tempo na operação.",
+    solution:
+      "Automação de rotinas com foco em consistência, rastreabilidade e ganho de produtividade.",
     tags: ["Python", "Flask", "API"],
     liveUrl: "#",
     githubUrl: "#"
   },
   {
     category: "Dados",
-    title: "Nome do Projeto 3",
-    status: "Publicado",
+    title: "Projeto",
+    status: "Em desenvolvimento",
     description:
-      "Pode ser dashboard, automação, visualização ou qualquer projeto já publicado que mereça vitrine.",
+      "Solução em desenvolvimento com foco em análise de dados, visualização de informações e apoio à tomada de decisão.",
+    problem:
+      "Dados dispersos e dificuldade para extrair insights acionáveis no dia a dia.",
+    solution:
+      "Painéis e visões de dados voltados a decisão rápida e acompanhamento de indicadores-chave.",
     tags: ["Python", "Pandas", "Streamlit"],
     liveUrl: "#",
     githubUrl: "#"
   },
   {
     category: "Experimento",
-    title: "Nome do Projeto 4",
-    status: "Publicado",
+    title: "Projeto",
+    status: "Em desenvolvimento",
     description:
-      "Troque este card por outro projeto, ou remova tudo que não estiver publicado para manter o portfólio afiado.",
+      "Experimento técnico em desenvolvimento para validação de ideias, testes de interface e evolução contínua do produto.",
+    problem:
+      "Necessidade de validar hipóteses de interface e experiência antes de evolução em produção.",
+    solution:
+      "Protótipos e testes técnicos para reduzir risco e orientar decisões de implementação.",
     tags: ["JavaScript", "UI", "Responsivo"],
     liveUrl: "#",
     githubUrl: "#"
@@ -46,17 +63,24 @@ const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 const sections = document.querySelectorAll("main section[id]");
 const yearEl = document.getElementById("year");
 const projectsGrid = document.getElementById("projectsGrid");
+const contactForm = document.getElementById("contactForm");
 
 yearEl.textContent = new Date().getFullYear();
 
 function renderProjects() {
   projectsGrid.innerHTML = projects
     .map(
-      (project) => `
-        <article class="project-card reveal">
-          <div class="project-cover">
-            <span class="project-pill">${project.category}</span>
-          </div>
+      (project) => {
+        const coverClass = project.coverImage ? "project-cover with-image" : "project-cover";
+        const coverStyle = project.coverImage
+          ? ` style="background-image: url('${encodeURI(project.coverImage)}');"`
+          : "";
+        const isInDevelopment = project.status === "Em desenvolvimento";
+        const cardClass = isInDevelopment ? "project-card reveal is-development" : "project-card reveal";
+
+        return `
+        <article class="${cardClass}" data-live-url="${project.liveUrl}" role="link" tabindex="0">
+          <div class="${coverClass}"${coverStyle}></div>
 
           <div class="project-body">
             <div class="project-top">
@@ -65,6 +89,17 @@ function renderProjects() {
             </div>
 
             <p class="project-description">${project.description}</p>
+
+            <dl class="project-case">
+              <div>
+                <dt>Problema</dt>
+                <dd>${project.problem}</dd>
+              </div>
+              <div>
+                <dt>Solução</dt>
+                <dd>${project.solution}</dd>
+              </div>
+            </dl>
 
             <ul class="tags">
               ${project.tags.map((tag) => `<li>${tag}</li>`).join("")}
@@ -76,7 +111,8 @@ function renderProjects() {
             </div>
           </div>
         </article>
-      `
+      `;
+      }
     )
     .join("");
 }
@@ -131,8 +167,58 @@ function setupSectionObserver() {
   sections.forEach((section) => sectionObserver.observe(section));
 }
 
+function setupProjectCardNavigation() {
+  projectsGrid.addEventListener("click", (event) => {
+    const clickedInteractive = event.target.closest("a, button");
+    if (clickedInteractive) return;
+
+    const card = event.target.closest(".project-card");
+    if (!card) return;
+
+    const liveUrl = card.dataset.liveUrl;
+    if (liveUrl && liveUrl !== "#") {
+      window.open(liveUrl, "_blank", "noopener,noreferrer");
+    }
+  });
+
+  projectsGrid.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+
+    const card = event.target.closest(".project-card");
+    if (!card) return;
+
+    event.preventDefault();
+    const liveUrl = card.dataset.liveUrl;
+    if (liveUrl && liveUrl !== "#") {
+      window.open(liveUrl, "_blank", "noopener,noreferrer");
+    }
+  });
+}
+
+function setupContactForm() {
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const nome = (formData.get("nome") || "").toString().trim();
+    const contexto = (formData.get("contexto") || "").toString().trim();
+    const prazo = (formData.get("prazo") || "").toString().trim();
+
+    const subject = encodeURIComponent("Quero conversar sobre um projeto");
+    const body = encodeURIComponent(
+      `Nome: ${nome}\n\nContexto e objetivo:\n${contexto}\n\nPrazo desejado: ${prazo}`
+    );
+
+    window.location.href = `mailto:rodrigo.stolben@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
 renderProjects();
 setupRevealObserver();
 setupSectionObserver();
+setupProjectCardNavigation();
+setupContactForm();
 window.addEventListener("scroll", onScrollHeader);
 onScrollHeader();
