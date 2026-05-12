@@ -15,46 +15,32 @@ const projects = [
     githubUrl: "https://github.com/rigst/sistema_orcamentos"
   },
   {
-    category: "Python",
-    title: "Projeto",
-    status: "Em desenvolvimento",
+    category: "Sistema web",
+    title: "Sistema Finanças",
+    status: "Publicado",
     description:
-      "Projeto em desenvolvimento voltado à automação de rotinas e melhoria de fluxos operacionais em aplicações web.",
+      "Sistema voltado ao controle financeiro, organização de lançamentos e acompanhamento objetivo da operação.",
     problem:
-      "Atividades repetitivas e processos manuais com alto custo de tempo na operação.",
+      "Gestão financeira dispersa, com baixa visibilidade sobre lançamentos, organização e acompanhamento diário.",
     solution:
-      "Automação de rotinas com foco em consistência, rastreabilidade e ganho de produtividade.",
-    tags: ["Python", "Flask", "API"],
+      "Centralização das rotinas financeiras em uma interface web clara, com foco em controle, rastreabilidade e produtividade.",
+    tags: ["Python", "Django", "PostgreSQL"],
     liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "https://github.com/rigst/sistema_financas"
   },
   {
-    category: "Dados",
-    title: "Projeto",
-    status: "Em desenvolvimento",
+    category: "Aplicação web",
+    title: "Sistema Vetorial",
+    status: "Publicado",
     description:
-      "Solução em desenvolvimento com foco em análise de dados, visualização de informações e apoio à tomada de decisão.",
+      "Aplicação web estruturada para organizar fluxos específicos de operação, com interface objetiva e navegação simples.",
     problem:
-      "Dados dispersos e dificuldade para extrair insights acionáveis no dia a dia.",
+      "Processos operacionais com necessidade de maior padronização, clareza de uso e acompanhamento contínuo.",
     solution:
-      "Painéis e visões de dados voltados a decisão rápida e acompanhamento de indicadores-chave.",
-    tags: ["Python", "Pandas", "Streamlit"],
+      "Estruturação do processo em sistema web com foco em consistência de uso, fluidez operacional e base pronta para evolução.",
+    tags: ["Python", "Django", "Web"],
     liveUrl: "#",
-    githubUrl: "#"
-  },
-  {
-    category: "Experimento",
-    title: "Projeto",
-    status: "Em desenvolvimento",
-    description:
-      "Experimento técnico em desenvolvimento para validação de ideias, testes de interface e evolução contínua do produto.",
-    problem:
-      "Necessidade de validar hipóteses de interface e experiência antes de evolução em produção.",
-    solution:
-      "Protótipos e testes técnicos para reduzir risco e orientar decisões de implementação.",
-    tags: ["JavaScript", "UI", "Responsivo"],
-    liveUrl: "#",
-    githubUrl: "#"
+    githubUrl: "https://github.com/rigst/sistema_vetorial"
   }
 ];
 
@@ -77,6 +63,16 @@ function renderProjects() {
           : "";
         const isInDevelopment = project.status === "Em desenvolvimento";
         const cardClass = isInDevelopment ? "project-card reveal is-development" : "project-card reveal";
+        const links = [
+          project.liveUrl && project.liveUrl !== "#"
+            ? `<a href="${project.liveUrl}" target="_blank" rel="noreferrer">Ver projeto ↗</a>`
+            : "",
+          project.githubUrl && project.githubUrl !== "#"
+            ? `<a href="${project.githubUrl}" target="_blank" rel="noreferrer">GitHub ↗</a>`
+            : ""
+        ]
+          .filter(Boolean)
+          .join("");
 
         return `
         <article class="${cardClass}" data-live-url="${project.liveUrl}" role="link" tabindex="0">
@@ -105,10 +101,7 @@ function renderProjects() {
               ${project.tags.map((tag) => `<li>${tag}</li>`).join("")}
             </ul>
 
-            <div class="project-links">
-              <a href="${project.liveUrl}" target="_blank" rel="noreferrer">Ver projeto ↗</a>
-              <a href="${project.githubUrl}" target="_blank" rel="noreferrer">GitHub ↗</a>
-            </div>
+            <div class="project-links">${links}</div>
           </div>
         </article>
       `;

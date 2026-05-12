@@ -155,7 +155,7 @@ a {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   align-items: start;
 }
