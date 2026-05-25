@@ -406,8 +406,8 @@ section {
 }
 
 .project-cover.with-image {
-  background-size: contain;
-  background-position: center;
+  background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat;
   background-color: rgba(223, 236, 255, 0.68);
 }

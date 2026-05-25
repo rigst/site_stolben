@@ -25,13 +25,14 @@ const projects = [
     solution:
       "Centralização das rotinas financeiras em uma interface web clara, com foco em controle, rastreabilidade e produtividade.",
     tags: ["Python", "Django", "PostgreSQL"],
-    liveUrl: "#",
+    coverImage: "sistema-financas.png",
+    liveUrl: "https://financas.stolben.com/",
     githubUrl: "https://github.com/rigst/sistema_financas"
   },
   {
     category: "Aplicação web",
     title: "Sistema Vetorial",
-    status: "Publicado",
+    status: "Em desenvolvimento",
     description:
       "Aplicação web estruturada para organizar fluxos específicos de operação, com interface objetiva e navegação simples.",
     problem:
@@ -39,7 +40,7 @@ const projects = [
     solution:
       "Estruturação do processo em sistema web com foco em consistência de uso, fluidez operacional e base pronta para evolução.",
     tags: ["Python", "Django", "Web"],
-    liveUrl: "#",
+    liveUrl: "https://vetorial.stolben.com/",
     githubUrl: "https://github.com/rigst/sistema_vetorial"
   }
 ];
