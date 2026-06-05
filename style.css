@@ -215,9 +215,10 @@ main {
 
 .project-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 .project-links a {
-  display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.85rem;
+  display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.85rem; white-space: nowrap;
   padding: 0.45rem 1rem; border-radius: 999px; transition: background 160ms ease, color 160ms ease;
 }
+.project-links a svg { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
 
 /* Featured (wide, dark) */
 .project-featured { grid-column: span 2; background: var(--ink); color: #fff; min-height: 400px; display: flex; }
