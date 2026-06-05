@@ -1,0 +1,162 @@
+# Stölben UI — Design System
+
+Sistema de design extraído do site `stolben.com` para replicar a mesma
+identidade ("Infra Premium") nos aplicativos web (Divisor de PDF, Orçamentos,
+Finanças, Vetorial, etc.). CSS puro, sem dependências de build — funciona em
+qualquer stack (Django templates, HTML estático, React, etc.).
+
+## Arquivos
+
+| Arquivo | O que é |
+|---|---|
+| `stolben-ui.css` | Tokens (variáveis CSS) + componentes prontos (prefixo `.ds-`) |
+| `stolben-ui.js`  | Comportamentos opcionais: revelar ao rolar, nav fixo, link ativo |
+| `README.md`      | Esta documentação |
+
+## Como usar
+
+No `<head>`:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/design-system/stolben-ui.css">
+```
+
+No `<body>` (adicione a classe `ds-root` no elemento raiz) e, antes do `</body>`:
+
+```html
+<script src="/static/design-system/stolben-ui.js"></script>
+```
+
+---
+
+## Princípios visuais
+
+1. **Blocos arredondados alternados.** Seções em cartões `border-radius: 2.5rem`,
+   alternando **escuro** (`--ds-ink`) e **claro** (`--ds-surface`). Nunca empilhe
+   dois blocos escuros pesados seguidos.
+2. **Azul como único acento.** Tudo é cinza/preto/branco; o azul (`--ds-blue`)
+   marca ações, destaques e estados.
+3. **Tipografia com contraste de função.** Títulos em **Manrope** (peso 500,
+   `letter-spacing` negativo); texto em **Inter**. Segunda linha de título em
+   cinza (`.ds-muted`) para criar ritmo.
+4. **Atmosfera sutil.** Glow desfocado (`.ds-glow`), ruído (`.ds-noise`) e linhas
+   de grade tracejadas (`.ds-lines`) dão profundidade sem poluir.
+5. **Bento / hierarquia.** Um item "herói" largo + itens menores ao redor, em vez
+   de uma grade uniforme.
+6. **Movimento discreto.** Entradas suaves ao rolar (`.ds-reveal`), hovers leves.
+   Sempre respeitando `prefers-reduced-motion`.
+
+---
+
+## Tokens (principais variáveis)
+
+```
+Superfícies   --ds-bg --ds-panel --ds-surface --ds-ink --ds-ink-deep
+Acento        --ds-blue --ds-blue-light --ds-blue-dark --ds-blue-50 --ds-blue-100
+Estado        --ds-warn (atenção / "em desenvolvimento")
+Texto         --ds-text-900/700/500/400  + sobre escuro: --ds-on-dark*
+Linhas        --ds-line --ds-line-dash
+Tipografia    --ds-font-sans --ds-font-display --ds-fs-hero --ds-fs-h2
+Raios         --ds-radius-xl(2.5) --ds-radius-lg(1.5) --ds-radius-md(1) --ds-radius-pill
+Espaço        --ds-space-1..16 (escala de 4px)
+Sombra        --ds-shadow-card --ds-shadow-block --ds-shadow-glow-blue
+Efeitos       --ds-blur --ds-ease --ds-noise
+```
+
+Use sempre os tokens (`var(--ds-…)`) em vez de valores soltos, para manter a
+consistência entre os apps.
+
+---
+
+## Componentes — exemplos
+
+### Shell + grade tracejada
+```html
+<div class="ds-shell">
+  <div class="ds-lines"><span></span><span></span><span></span></div>
+  <main class="ds-stack"> … seções … </main>
+</div>
+```
+
+### Nav (pílula fixa)
+```html
+<header class="ds-nav">
+  <nav class="ds-nav-pill">
+    <a class="ds-nav-brand" href="#home">Minha App</a>
+    <ul class="ds-nav-links">
+      <li><a href="#features">Recursos</a></li>
+      <li><a href="#price">Planos</a></li>
+    </ul>
+    <a class="ds-nav-cta" href="#cta">Entrar</a>
+  </nav>
+</header>
+```
+O `stolben-ui.js` adiciona `is-scrolled` ao rolar (a pílula passa de translúcida
+clara → escura) e `is-active` no link da seção visível.
+
+### Painel escuro (hero / CTA)
+```html
+<section class="ds-panel-dark" style="padding:3rem; min-height:620px; position:relative">
+  <div class="ds-glow" style="top:-10rem; left:-5rem"></div>
+  <div class="ds-noise"></div>
+  <h1 class="ds-h1">Título forte <br><span class="ds-muted">com segunda linha</span></h1>
+</section>
+```
+
+### Botões
+```html
+<a class="ds-btn ds-btn--primary" href="#">Ação <span class="ds-btn-ico">→</span></a>
+<a class="ds-btn ds-btn--ghost" href="#">Secundária</a>
+<button class="ds-btn ds-btn--solid">Enviar →</button>
+```
+
+### Card claro
+```html
+<article class="ds-card ds-reveal">
+  <span class="ds-kicker">Categoria</span>
+  <h3 class="ds-display" style="font-size:var(--ds-fs-h3)">Título</h3>
+  <p>Descrição…</p>
+  <ul class="ds-tags"><li>Python</li><li>Django</li></ul>
+</article>
+```
+
+### Badges / status
+```html
+<span class="ds-badge ds-badge--info">Publicado</span>
+<span class="ds-badge ds-badge--warn"><span class="ds-dot"></span> Em desenvolvimento</span>
+<span class="ds-badge ds-badge--info-dark"><span class="ds-dot"></span> Online</span> <!-- sobre escuro -->
+```
+
+### Ícone em caixa (pilar/feature)
+```html
+<span class="ds-icon-box"><!-- svg 24x24 stroke --></span>
+```
+
+### Formulário (sobre painel escuro)
+```html
+<form class="ds-form">
+  <label class="ds-field"><span>Nome</span>
+    <input class="ds-input" name="nome" required></label>
+  <label class="ds-field"><span>Mensagem</span>
+    <textarea class="ds-textarea" name="msg"></textarea></label>
+  <button class="ds-btn ds-btn--solid">Enviar →</button>
+</form>
+```
+
+### Revelar ao rolar
+Adicione `ds-reveal` a qualquer elemento; o JS aplica `is-visible` quando ele
+entra na tela. Para escalonar, defina `transition-delay` nos filhos.
+
+---
+
+## Acessibilidade
+- Foco visível padrão (`:focus-visible`) com contorno azul.
+- Ícones decorativos: `aria-hidden="true"`. Botões-ícone: use `aria-label`.
+- Animações desativadas em `prefers-reduced-motion`.
+- Contraste: texto sobre escuro usa `--ds-on-dark*`; evite cinza muito claro
+  sobre branco para texto pequeno.
+
+## Versão
+v1.0 — derivado do site stolben.com (junho/2026). Ícones recomendados: Lucide
+(SVG inline, stroke 1.8–2). Imagens de hero: livres (Unsplash) ou próprias.

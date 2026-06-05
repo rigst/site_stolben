@@ -4,181 +4,207 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stölben | Desenvolvimento de software</title>
-  <meta
-    name="description"
-    content="Portfólio pessoal com projetos publicados em programação, foco em Python, web e dados."
-  />
+  <meta name="description" content="Portfólio de Rodrigo Stölben — sistemas web sob medida, com fluxo claro, estabilidade em produção e evolução contínua. Foco em Python, Django e dados." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Stölben | Desenvolvimento de software" />
+  <meta property="og:description" content="Sistemas web sob medida, com fluxo claro, estabilidade em produção e evolução contínua." />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
-    <div class="container nav">
-      <a class="brand" href="#home"><span>stolben</span>.com</a>
+  <div class="page">
+    <div class="layout-lines" aria-hidden="true"><span></span><span></span><span></span></div>
 
-      <nav>
+    <header class="nav-bar" id="siteHeader">
+      <nav class="nav-pill" aria-label="Navegação principal">
+        <a class="nav-brand" href="#home">Rodrigo Stölben</a>
         <ul class="nav-links">
           <li><a href="#projects">Projetos</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#contact">Contato</a></li>
-          <li><a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a></li>
         </ul>
+        <a class="nav-cta" href="#contact">Iniciar projeto</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content reveal">
-          <div class="hero-layout">
-            <div class="hero-copy">
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true">
+          <img src="assets/hero-bg.jpg" alt="" loading="eager" />
+          <div class="grad"></div>
+          <div class="glow-a"></div>
+          <div class="noise"></div>
+        </div>
 
-              <h1>Software web para transformar processos em resultado real.</h1>
-
-              <p>
-                Projeto e construo aplicações para operações que precisam de fluxo claro,
-                estabilidade em produção e evolução contínua.
-              </p>
-
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="#projects">Ver projetos</a>
-                <a class="btn btn-secondary" href="#contact">Quero conversar sobre um projeto</a>
-              </div>
-
-              <div class="hero-strip">
-                <span><strong>Entrega:</strong> sistemas web com fluxo claro, estabilidade e manutenção simples.</span>
-                <span><strong>Foco:</strong> produto, performance e evolução contínua.</span>
-              </div>
-            </div>
+        <div class="hero-content">
+          <h1>
+            Software web para <br />
+            <span class="muted">transformar processos</span> <br />
+            em resultado real.
+          </h1>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              Ver projetos
+              <span class="btn-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </span>
+            </a>
+            <a class="btn btn-ghost" href="#contact">Conversar sobre um projeto</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects">
-      <div class="container">
-        <div class="section-heading reveal">
+      <!-- ===================== ENTREGA / FOCO ===================== -->
+      <section class="strip">
+        <div class="strip-card reveal">
+          <span class="kick">Entrega</span>
+          <p>Aplicações no ar, com <strong>deploy próprio em Linux e Nginx</strong> e manutenção que continua depois do lançamento.</p>
+        </div>
+        <div class="strip-card reveal">
+          <span class="kick">Foco</span>
+          <p>Tirar o retrabalho da operação: <strong>o processo manual vira um fluxo claro</strong> no navegador.</p>
+        </div>
+      </section>
+
+      <!-- ===================== PROJETOS ===================== -->
+      <section class="section" id="projects">
+        <div class="sec-head reveal">
           <div>
-            <h2>Projetos publicados</h2>
+            <span class="eyebrow">/ Projetos publicados</span>
+            <h2>Produtos reais, <span class="muted">no ar e em uso.</span></h2>
           </div>
-          <p>
-            Seleção dos projetos com foco em produto, experiência e qualidade técnica.
-          </p>
+          <a class="sec-link" href="https://github.com/rigst" target="_blank" rel="noreferrer">
+            GitHub completo
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
         </div>
 
         <div class="projects-grid" id="projectsGrid"></div>
-      </div>
-    </section>
+      </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <h2>Sobre</h2>
+      <!-- ===================== SOBRE ===================== -->
+      <section class="about" id="about">
+        <div class="noise" aria-hidden="true"></div>
+        <div class="about-inner">
+          <div class="about-head reveal">
+            <span class="pill">Sobre</span>
+            <h2>Como penso produto, desenvolvo e entrego</h2>
           </div>
-          <p>
-            Como eu penso produto, desenvolvo software e entrego soluções.
-          </p>
-        </div>
 
-        <div class="about-pillars">
-          <article class="panel reveal">
-            <h3>Como penso produto</h3>
-            <p>
-              Começo pelo problema real da operação e traduzo isso em fluxo claro,
-              com prioridade para usabilidade, contexto de negócio e ganho prático.
-            </p>
-          </article>
-          <article class="panel reveal">
-            <h3>Como desenvolvo</h3>
-            <p>
-              Estruturo aplicações com base em arquitetura simples de manter, boas práticas de código,
-              validação contínua e foco em estabilidade de produção.
-            </p>
-          </article>
-          <article class="panel reveal">
-            <h3>O que entrego</h3>
-            <p>
-              Sistemas web funcionais, com interface objetiva, rastreabilidade de processos
-              e base técnica pronta para evoluir junto com o negócio.
-            </p>
-          </article>
-        </div>
-
-        <div class="stack-groups">
-          <article class="panel reveal">
-            <h3>Back-end</h3>
-            <ul class="stack-list">
-              <li>Python</li>
-              <li>Django</li>
-            </ul>
-          </article>
-          <article class="panel reveal">
-            <h3>Banco e dados</h3>
-            <ul class="stack-list">
-              <li>PostgreSQL</li>
-              <li>Redis</li>
-            </ul>
-          </article>
-          <article class="panel reveal">
-            <h3>Infraestrutura e deploy</h3>
-            <ul class="stack-list">
-              <li>Nginx</li>
-              <li>Gunicorn</li>
-              <li>Linux</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div>
-            <h2>Contato</h2>
+          <div class="pillars">
+            <article class="pillar reveal">
+              <span class="p-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              </span>
+              <h3>Como penso produto</h3>
+              <p>Começo pelo problema real da operação e traduzo em fluxo claro, com prioridade para usabilidade, contexto de negócio e ganho prático.</p>
+            </article>
+            <article class="pillar reveal">
+              <span class="p-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </span>
+              <h3>Como desenvolvo</h3>
+              <p>Arquitetura simples de manter, boas práticas de código, validação contínua e foco em estabilidade de produção.</p>
+            </article>
+            <article class="pillar reveal">
+              <span class="p-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+              </span>
+              <h3>O que entrego</h3>
+              <p>Sistemas web funcionais, com interface objetiva, rastreabilidade de processos e base técnica pronta para evoluir.</p>
+            </article>
           </div>
-          <p>
-            Canais diretos para conversar sobre projetos, parcerias e oportunidades.
-          </p>
-        </div>
 
-        <div class="panel reveal">
-            <h3>Contato direto</h3>
-            <form class="contact-form" id="contactForm">
-              <label>
-                Nome
-                <input type="text" name="nome" required />
-              </label>
-              <label>
-                Contexto e objetivo
-                <textarea name="contexto" rows="3" required></textarea>
-              </label>
-              <label>
-                Prazo desejado
-                <input type="text" name="prazo" required />
-              </label>
-              <button type="submit" class="btn btn-primary">Enviar mensagem</button>
-            </form>
+          <div class="stack">
+            <div class="stack-card reveal">
+              <p class="kick">Back-end</p>
+              <div class="chips"><span>Python</span><span>Django</span></div>
+            </div>
+            <div class="stack-card reveal">
+              <p class="kick">Banco de dados</p>
+              <div class="chips"><span>PostgreSQL</span><span>Redis</span></div>
+            </div>
+            <div class="stack-card reveal">
+              <p class="kick">Infra e deploy</p>
+              <div class="chips"><span>Nginx</span><span>Gunicorn</span><span>Linux</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTATO ===================== -->
+      <section class="contact" id="contact">
+        <div class="contact-bg" aria-hidden="true">
+          <img src="assets/contact-bg.jpg" alt="" loading="lazy" />
+          <div class="grad"></div>
+        </div>
+        <div class="glow" aria-hidden="true"></div>
+
+        <div class="contact-inner">
+          <div class="contact-left reveal">
+            <div>
+              <span class="pill-blue">Vamos conversar</span>
+              <h2>Tem um processo para transformar em software?</h2>
+              <p class="lead">Me conta o contexto, o objetivo e o prazo. Respondo com uma primeira leitura do problema e os próximos passos.</p>
+            </div>
+            <div class="contact-channels">
+              <a href="mailto:rodrigo.stolben@gmail.com">
+                <span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg></span>
+                rodrigo.stolben@gmail.com
+              </a>
+              <a href="https://github.com/rigst" target="_blank" rel="noreferrer">
+                <span class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"></path></svg></span>
+                github.com/rigst
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" id="contactForm">
+            <label>
+              <span>Nome</span>
+              <input type="text" name="nome" placeholder="Seu nome" required />
+            </label>
+            <label>
+              <span>Contexto e objetivo</span>
+              <textarea name="contexto" rows="4" placeholder="Qual processo você quer melhorar?" required></textarea>
+            </label>
+            <label>
+              <span>Prazo desejado</span>
+              <input type="text" name="prazo" placeholder="Ex.: 4 a 6 semanas" required />
+            </label>
+            <button type="submit" class="btn btn-blue">
+              Enviar mensagem
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand" href="#home">Rodrigo Stölben</a>
+        <p class="copy">© <span id="year"></span> Rodrigo Stölben. Todos os direitos reservados.</p>
+        <div class="footer-social">
+          <a href="https://github.com/rigst" target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"></path></svg>
+          </a>
+          <a href="mailto:rodrigo.stolben@gmail.com" aria-label="E-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg>
+          </a>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>
-        © <span id="year"></span> Rodrigo Stölben. Todos os direitos reservados.
-      </p>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

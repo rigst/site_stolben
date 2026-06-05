@@ -69,72 +69,94 @@ const contactForm = document.getElementById("contactForm");
 
 yearEl.textContent = new Date().getFullYear();
 
+const ARROW_UP_RIGHT =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>';
+
+function tagsMarkup(project) {
+  return project.tags.map((tag) => `<li>${tag}</li>`).join("");
+}
+
+function linksMarkup(project) {
+  return [
+    project.liveUrl && project.liveUrl !== "#"
+      ? `<a href="${project.liveUrl}" target="_blank" rel="noreferrer">Ver projeto ${ARROW_UP_RIGHT}</a>`
+      : "",
+    project.githubUrl && project.githubUrl !== "#"
+      ? `<a href="${project.githubUrl}" target="_blank" rel="noreferrer">GitHub ${ARROW_UP_RIGHT}</a>`
+      : ""
+  ]
+    .filter(Boolean)
+    .join("");
+}
+
+function featuredCard(project) {
+  const bg = project.coverImage
+    ? `<div class="pc-media"><img src="${encodeURI(project.coverImage)}" alt="${project.title}" loading="lazy" /></div>`
+    : "";
+  return `
+    <article class="project-card project-featured reveal" data-live-url="${project.liveUrl}" role="link" tabindex="0">
+      ${bg}
+      <div class="pc-content">
+        <div class="pc-badges">
+          <span class="badge badge-pub-dark"><span class="dot"></span> ${project.status}</span>
+          <span class="pc-kicker">Destaque</span>
+        </div>
+        <div>
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <ul class="pc-tags">${tagsMarkup(project)}</ul>
+          <div class="project-links">${linksMarkup(project)}</div>
+        </div>
+      </div>
+    </article>`;
+}
+
+function mediumCard(project) {
+  const media = project.coverImage
+    ? `<div class="pc-media"><img src="${encodeURI(project.coverImage)}" alt="${project.title}" loading="lazy" /></div>`
+    : "";
+  return `
+    <article class="project-card project-medium reveal" data-live-url="${project.liveUrl}" role="link" tabindex="0">
+      ${media}
+      <div class="pc-body">
+        <div class="pc-head">
+          <h3>${project.title}</h3>
+          <span class="badge badge-pub">${project.status}</span>
+        </div>
+        <p>${project.description}</p>
+        <ul class="pc-tags">${tagsMarkup(project)}</ul>
+        <div class="project-links">${linksMarkup(project)}</div>
+      </div>
+    </article>`;
+}
+
+function devCard(project) {
+  return `
+    <article class="project-card project-dev reveal" data-live-url="${project.liveUrl}" role="link" tabindex="0">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="pc-main">
+        <span class="badge badge-dev"><span class="dot"></span> ${project.status}</span>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+      </div>
+      <div class="pc-side">
+        <ul class="pc-tags">${tagsMarkup(project)}</ul>
+        <span class="pc-arrow" aria-hidden="true">${ARROW_UP_RIGHT}</span>
+      </div>
+    </article>`;
+}
+
 function renderProjects() {
+  let featuredUsed = false;
   projectsGrid.innerHTML = projects
-    .map(
-      (project) => {
-        const isInDevelopment = project.status === "Em desenvolvimento";
-        // Projetos em desenvolvimento não exibem print real: usam um placeholder com ícone.
-        const useImage = Boolean(project.coverImage) && !isInDevelopment;
-        const coverClass = useImage
-          ? "project-cover with-image"
-          : isInDevelopment
-            ? "project-cover is-placeholder"
-            : "project-cover";
-        const coverStyle = useImage
-          ? ` style="background-image: url('${encodeURI(project.coverImage)}');"`
-          : "";
-        const coverContent = isInDevelopment
-          ? `<div class="project-cover-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-              <span>Em desenvolvimento</span>
-            </div>`
-          : "";
-        const cardClass = isInDevelopment ? "project-card reveal is-development" : "project-card reveal";
-        const links = [
-          project.liveUrl && project.liveUrl !== "#"
-            ? `<a href="${project.liveUrl}" target="_blank" rel="noreferrer">Ver projeto ↗</a>`
-            : "",
-          project.githubUrl && project.githubUrl !== "#"
-            ? `<a href="${project.githubUrl}" target="_blank" rel="noreferrer">GitHub ↗</a>`
-            : ""
-        ]
-          .filter(Boolean)
-          .join("");
-
-        return `
-        <article class="${cardClass}" data-live-url="${project.liveUrl}" role="link" tabindex="0">
-          <div class="${coverClass}"${coverStyle}>${coverContent}</div>
-
-          <div class="project-body">
-            <div class="project-top">
-              <h3 class="project-title">${project.title}</h3>
-              <span class="project-status">${project.status}</span>
-            </div>
-
-            <p class="project-description">${project.description}</p>
-
-            <dl class="project-case">
-              <div>
-                <dt>Problema</dt>
-                <dd>${project.problem}</dd>
-              </div>
-              <div>
-                <dt>Solução</dt>
-                <dd>${project.solution}</dd>
-              </div>
-            </dl>
-
-            <ul class="tags">
-              ${project.tags.map((tag) => `<li>${tag}</li>`).join("")}
-            </ul>
-
-            <div class="project-links">${links}</div>
-          </div>
-        </article>
-      `;
+    .map((project) => {
+      if (project.status === "Em desenvolvimento") return devCard(project);
+      if (!featuredUsed) {
+        featuredUsed = true;
+        return featuredCard(project);
       }
-    )
+      return mediumCard(project);
+    })
     .join("");
 }
 
