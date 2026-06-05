@@ -104,6 +104,19 @@ clara → escura) e `is-active` no link da seção visível.
 </section>
 ```
 
+### Painel escuro com imagem de fundo (foto real)
+```html
+<section class="ds-panel-dark" style="position:relative; padding:3rem">
+  <div class="ds-media"><img src="/static/img/hero.jpg" alt=""><div class="ds-media-grad"></div></div>
+  <div class="ds-glow" style="top:-8rem; left:-6rem"></div>
+  <div style="position:relative; z-index:2">
+    <h1 class="ds-h1">Título sobre a imagem</h1>
+  </div>
+</section>
+```
+Use `.ds-media-grad--left` quando o texto ficar à esquerda. **Sempre foto real**
+(workspace, código, trabalho) — nunca render 3D/“IA” ou stock clichê.
+
 ### Botões
 ```html
 <a class="ds-btn ds-btn--primary" href="#">Ação <span class="ds-btn-ico">→</span></a>
@@ -149,6 +162,21 @@ Adicione `ds-reveal` a qualquer elemento; o JS aplica `is-visible` quando ele
 entra na tela. Para escalonar, defina `transition-delay` nos filhos.
 
 ---
+
+## Evitar "cara de IA"
+Lições da construção do site — siga para que os apps não pareçam template gerado:
+
+- **Sem ornamentos sem função.** Nada de badge flutuante "All systems operational"
+  nem marca d'água gigante de fundo. Todo elemento decorativo deve carregar
+  informação real.
+- **Ícones não-literais.** Evite ícone que repete a palavra (foco→alvo) e clichês
+  de startup (foguete). Prefira ícones neutros ou só tipografia.
+- **Acento com parcimônia.** O título em duas cores (`.ds-muted`) e os glows azuis
+  têm impacto — usados em tudo, viram padrão genérico. Uma vez por página.
+- **Imagens reais, não render.** Foto de workspace/código > render 3D abstrato ou
+  a foto de stock mais batida (Terra do espaço, mesa branca com planta).
+- **Copy concreta.** "Deploy próprio em Linux/Nginx" > "soluções escaláveis de ponta".
+- **Não empilhe dois blocos escuros pesados** seguidos (alterne claro/escuro).
 
 ## Acessibilidade
 - Foco visível padrão (`:focus-visible`) com contorno azul.

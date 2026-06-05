@@ -118,6 +118,19 @@
 .ds-glow { position: absolute; border-radius: 50%; filter: blur(120px); pointer-events: none; background: rgba(37, 99, 235, 0.18); width: 30rem; height: 30rem; }
 .ds-noise { position: absolute; inset: 0; background-image: var(--ds-noise); opacity: 0.15; mix-blend-mode: soft-light; pointer-events: none; }
 
+/* Imagem de fundo para painel escuro. Prefira FOTO REAL (não render/IA),
+   sempre escurecida por um gradiente para manter o texto legível.
+   Estrutura:
+   <div class="ds-panel-dark" style="position:relative">
+     <div class="ds-media"><img src="…"><div class="ds-media-grad"></div></div>
+     <div style="position:relative; z-index:2"> … conteúdo … </div>
+   </div> */
+.ds-media { position: absolute; inset: 0; z-index: 0; background: var(--ds-ink); }
+.ds-media img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+.ds-media-grad { position: absolute; inset: 0; background: linear-gradient(to top, var(--ds-ink) 8%, rgba(15, 17, 21, 0.55) 46%, rgba(15, 17, 21, 0.82)); }
+/* variante p/ texto à esquerda (ex.: seção de contato) */
+.ds-media-grad--left { background: linear-gradient(to right, var(--ds-ink) 22%, rgba(15, 17, 21, 0.72) 58%, rgba(15, 17, 21, 0.5)); }
+
 /* =================================================================
    NAV — pílula flutuante (use sobre fundo escuro; .is-scrolled p/ fundo claro)
    ================================================================= */
