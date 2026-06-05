@@ -1,5 +1,20 @@
 const projects = [
   {
+    category: "Ferramenta web",
+    title: "Divisor de PDF",
+    status: "Publicado",
+    description:
+      "Ferramenta web para enviar PDFs, comprimir e dividir em partes menores, com download do resultado em PDF único ou ZIP.",
+    problem:
+      "Arquivos PDF grandes demais para anexar ou enviar, exigindo divisão e compressão manual e trabalhosa.",
+    solution:
+      "Processamento assíncrono que comprime e divide os PDFs por tamanho, com acompanhamento de progresso e download direto do resultado.",
+    tags: ["Python", "Django", "Celery", "Ghostscript"],
+    coverImage: "divisor-pdf.png",
+    liveUrl: "https://divisor.stolben.com/",
+    githubUrl: "https://github.com/rigst/divisor_pdf"
+  },
+  {
     category: "Sistema web",
     title: "Sistema de Orçamentos",
     status: "Publicado",
@@ -58,11 +73,23 @@ function renderProjects() {
   projectsGrid.innerHTML = projects
     .map(
       (project) => {
-        const coverClass = project.coverImage ? "project-cover with-image" : "project-cover";
-        const coverStyle = project.coverImage
+        const isInDevelopment = project.status === "Em desenvolvimento";
+        // Projetos em desenvolvimento não exibem print real: usam um placeholder com ícone.
+        const useImage = Boolean(project.coverImage) && !isInDevelopment;
+        const coverClass = useImage
+          ? "project-cover with-image"
+          : isInDevelopment
+            ? "project-cover is-placeholder"
+            : "project-cover";
+        const coverStyle = useImage
           ? ` style="background-image: url('${encodeURI(project.coverImage)}');"`
           : "";
-        const isInDevelopment = project.status === "Em desenvolvimento";
+        const coverContent = isInDevelopment
+          ? `<div class="project-cover-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <span>Em desenvolvimento</span>
+            </div>`
+          : "";
         const cardClass = isInDevelopment ? "project-card reveal is-development" : "project-card reveal";
         const links = [
           project.liveUrl && project.liveUrl !== "#"
@@ -77,7 +104,7 @@ function renderProjects() {
 
         return `
         <article class="${cardClass}" data-live-url="${project.liveUrl}" role="link" tabindex="0">
-          <div class="${coverClass}"${coverStyle}></div>
+          <div class="${coverClass}"${coverStyle}>${coverContent}</div>
 
           <div class="project-body">
             <div class="project-top">
