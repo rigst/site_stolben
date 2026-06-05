@@ -52,7 +52,7 @@ No `<body>` (adicione a classe `ds-root` no elemento raiz) e, antes do `</body>`
 ## Tokens (principais variáveis)
 
 ```
-Superfícies   --ds-bg --ds-panel --ds-surface --ds-ink --ds-ink-deep
+Superfícies   --ds-bg --ds-panel --ds-surface --ds-ink --ds-ink-soft --ds-ink-deep
 Acento        --ds-blue --ds-blue-light --ds-blue-dark --ds-blue-50 --ds-blue-100
 Estado        --ds-warn (atenção / "em desenvolvimento")
 Texto         --ds-text-900/700/500/400  + sobre escuro: --ds-on-dark*
@@ -161,6 +161,79 @@ Use `.ds-media-grad--left` quando o texto ficar à esquerda. **Sempre foto real*
 Adicione `ds-reveal` a qualquer elemento; o JS aplica `is-visible` quando ele
 entra na tela. Para escalonar, defina `transition-delay` nos filhos.
 
+### Console escuro (formulário/opções dentro de cartão claro)
+Bloco escuro inserido num cartão claro — gera o contraste claro↔escuro do tema
+sem empilhar dois blocos escuros. Ideal para áreas de configuração/upload.
+```html
+<div class="ds-console">
+  <span class="ds-label"><!-- svg --> Nível de compressão</span>
+  <!-- choices, switch, inputs… -->
+</div>
+```
+
+### Drop zone (upload arrastar/soltar)
+```html
+<label class="ds-dropzone"><!-- .is-drag durante o arraste -->
+  <strong>Arraste os arquivos aqui</strong>
+  <p class="ds-dropzone-hint">ou clique para selecionar</p>
+  <input type="file" hidden multiple>
+</label>
+```
+
+### Choice (cartões selecionáveis) — variante escura
+Marque `.is-selected` no item ativo (via JS). Indicador de seleção embutido.
+```html
+<div class="ds-choice-grid" style="grid-template-columns:repeat(4,1fr)">
+  <label class="ds-choice is-selected">
+    <input type="radio" name="nivel" checked>
+    <span class="ds-choice-title">Nenhuma</span>
+    <span class="ds-choice-desc">Mantém a qualidade</span>
+  </label>
+  <!-- … -->
+</div>
+```
+
+### Switch (alternador)
+```html
+<label class="ds-switch">
+  <input type="checkbox" checked>
+  <span class="ds-switch-track"></span>
+  Dividir em partes menores
+</label>
+```
+
+### Progress (barra de progresso)
+Brilho deslizante automático; use `--on-light` sobre fundo claro.
+```html
+<div class="ds-progress"><div class="ds-progress-fill" style="width:42%"></div></div>
+```
+
+### Stat strip (linha de métricas)
+```html
+<ul class="ds-stat-strip ds-stat-strip--on-dark">
+  <li><strong>≤ 500 MB</strong><span>por arquivo</span></li>
+  <li><strong>ZIP único</strong><span>pronto para enviar</span></li>
+</ul>
+```
+
+### Footer (claro, enxuto)
+Fecha a página de forma leve — **não** use bloco escuro no rodapé.
+```html
+<footer class="ds-footer">
+  <div class="ds-footer-inner">
+    <div>
+      <p class="ds-footer-brand">Minha App</p>
+      <p class="ds-footer-copy">Um app <a href="#">Stölben</a> · © 2026</p>
+    </div>
+    <!-- opcional: pontos de confiança, social, links… -->
+  </div>
+</footer>
+```
+
+> **Dose de escuro.** Áreas interativas (dropzone, console) usam `--ds-ink-soft`,
+> um dark mais leve que o `--ds-ink` do hero. Reserve o preto forte para o hero e
+> um eventual bloco de destaque — um formulário inteiro em `--ds-ink` pesa.
+
 ---
 
 ## Evitar "cara de IA"
@@ -186,5 +259,14 @@ Lições da construção do site — siga para que os apps não pareçam templat
   sobre branco para texto pequeno.
 
 ## Versão
+v1.2 — junho/2026. Acrescenta o token `--ds-ink-soft` (dark suave) e o componente
+`.ds-footer` (rodapé claro/enxuto). Suaviza `.ds-console` e `.ds-dropzone` para
+`--ds-ink-soft`, evitando peso de áreas interativas muito escuras.
+
+v1.1 — junho/2026. Acrescenta componentes de aplicação derivados do Divisor de
+PDF: `.ds-console` (painel de formulário/opções dentro de cartão claro),
+`.ds-dropzone`, `.ds-choice`/`.ds-choice-grid`, `.ds-switch`, `.ds-progress` e
+`.ds-stat-strip`. Reforça o ritmo claro↔escuro do tema.
+
 v1.0 — derivado do site stolben.com (junho/2026). Ícones recomendados: Lucide
 (SVG inline, stroke 1.8–2). Imagens de hero: livres (Unsplash) ou próprias.
