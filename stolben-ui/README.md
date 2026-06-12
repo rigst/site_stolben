@@ -64,6 +64,50 @@ tudo via *data-attributes*.
 
 ---
 
+## Temas de acento (cor por aplicativo)
+
+O azul é o padrão, mas **cada app pode usar uma cor de acento diferente**. Basta
+uma classe no `<body class="ds-root">`:
+
+```html
+<body class="ds-root ds-theme-violet">   <!-- ou indigo, teal, emerald, amber, rose, slate -->
+```
+
+Todos os componentes seguem `--ds-accent*` (botões, foco, links ativos, seleção,
+badges *info*, glows…). Os estados **success / warn / danger** não mudam (continuam
+verde / âmbar / vermelho). Para uma cor própria, defina os 5 tokens:
+
+```css
+.ds-theme-minha { --ds-accent:#0ea5e9; --ds-accent-light:#38bdf8; --ds-accent-dark:#0284c7; --ds-accent-50:#f0f9ff; --ds-accent-100:#e0f2fe; }
+```
+
+> Evite escolher um acento idêntico ao verde de sucesso ou ao vermelho de erro,
+> para não confundir ação com estado.
+
+## Templates prontos (`templates/`)
+
+Pontos de partida para copiar. Cada um usa um **tema** e uma **visualização de
+lista** diferentes, sobre o mesmo shell (sidebar + topbar):
+
+| Arquivo | Tema | Visualização |
+|---|---|---|
+| `01-admin-tabela.html`   | indigo | **Tabela** (⇄ cards), stats, drawer de edição, paginação |
+| `02-catalogo-cards.html` | teal   | **Grade de cards** (⇄ lista), filtros |
+| `03-board-colunas.html`  | amber  | **Board / colunas** (kanban) |
+
+## Visualizações de lista
+
+Mesma informação, leituras diferentes — sempre com **só o essencial em destaque**
+(título forte › valor › status › meta discreta):
+
+- **Tabela** `.ds-table` — densidade alta, comparação por colunas.
+- **Grade de cards** `.ds-record` (em `.ds-grid--3/4`) — visual, com miniatura.
+- **Lista compacta** `.ds-list` / `.ds-list-item` — leitura rápida, mobile.
+- **Board** `.ds-board` / `.ds-board-col` / `.ds-board-card` — fluxo por status.
+
+Alternador: `.ds-segment` com `data-view="x"` dentro de `[data-ds-views]`; os blocos
+são `[data-view-panel="x"]` (o JS mostra/esconde).
+
 ## Tokens (principais)
 
 ```

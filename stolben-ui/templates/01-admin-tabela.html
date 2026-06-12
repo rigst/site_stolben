@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Template 1 · Admin CRUD (tabela) · Stölben UI</title>
+<meta name="theme-color" content="#0f1115" />
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<script>document.documentElement.classList.add("js")</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../stolben-ui.css" />
+</head>
+<!-- TEMA: indigo. Troque a classe ds-theme-* por violet/teal/emerald/amber/rose/slate. -->
+<body class="ds-root ds-theme-indigo">
+<div class="ds-shell">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar-brand"><span class="ds-logo">A</span> Acme Admin</div>
+    <p class="ds-sidebar-group">Geral</p>
+    <a class="ds-sidebar-link is-active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Clientes</a>
+    <a class="ds-sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Produtos</a>
+    <a class="ds-sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg> Pedidos</a>
+    <p class="ds-sidebar-group">Sistema</p>
+    <a class="ds-sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Configurações</a>
+    <a class="ds-sidebar-link" href="../index.html" style="margin-top:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Design system</a>
+  </aside>
+
+  <!-- ===== CONTEÚDO ===== -->
+  <div class="ds-main">
+    <header class="ds-topbar" data-ds-topbar>
+      <span class="ds-search" style="max-width:18rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="ds-input" type="search" placeholder="Buscar em tudo…" aria-label="Buscar" />
+      </span>
+      <span class="ds-topbar-spacer"></span>
+      <button class="ds-icon-btn" aria-label="Notificações" data-ds-tip="2 novas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="ds-count">2</span></button>
+      <span class="ds-avatar" title="Rodrigo Stölben">RS</span>
+    </header>
+
+    <main style="padding:1.75rem clamp(1rem,3vw,2.5rem)" data-ds-views>
+      <!-- cabeçalho da página -->
+      <nav class="ds-breadcrumb" aria-label="Trilha" style="margin-bottom:.6rem"><ol><li><a href="#">Início</a></li><li aria-current="page">Clientes</li></ol></nav>
+      <div class="ds-row ds-reveal" style="justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+        <div><h1 class="ds-h1" style="font-size:1.9rem">Clientes</h1><p style="color:var(--ds-t-500)">Gerencie contas, status e faturamento.</p></div>
+        <button class="ds-btn ds-btn--solid" data-ds-open="novo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Novo cliente</button>
+      </div>
+
+      <!-- métricas (só o essencial em destaque) -->
+      <div class="ds-grid ds-grid--3 ds-reveal" style="margin-bottom:1.5rem">
+        <div class="ds-stat"><strong>1.284</strong><span>Clientes ativos</span></div>
+        <div class="ds-stat"><strong>R$ 42,1k</strong><span>Faturado no mês</span></div>
+        <div class="ds-stat"><strong>23</strong><span>Pendentes</span></div>
+      </div>
+
+      <!-- barra de ferramentas + alternador de visualização -->
+      <div class="ds-toolbar ds-reveal">
+        <span class="ds-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input class="ds-input" type="search" placeholder="Buscar cliente…" aria-label="Buscar cliente" />
+        </span>
+        <select class="ds-select" aria-label="Filtrar por status" style="width:auto"><option>Todos os status</option><option>Ativo</option><option>Pendente</option></select>
+        <span class="ds-toolbar-spacer"></span>
+        <div class="ds-segment" data-ds-segment role="group" aria-label="Visualização">
+          <button class="is-active" data-view="table" aria-pressed="true" aria-label="Ver em tabela"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></button>
+          <button data-view="cards" aria-pressed="false" aria-label="Ver em cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></button>
+        </div>
+      </div>
+
+      <!-- VISUALIZAÇÃO: TABELA -->
+      <div data-view-panel="table">
+        <div class="ds-table-wrap ds-reveal">
+          <table class="ds-table">
+            <thead><tr>
+              <th style="width:1%"><input type="checkbox" data-ds-check-all aria-label="Selecionar todos" /></th>
+              <th class="ds-th-sort" aria-sort="ascending">Cliente</th>
+              <th>E-mail</th>
+              <th>Status</th>
+              <th class="ds-td-num ds-th-sort">Valor</th>
+              <th><span style="display:block;text-align:right">Ações</span></th>
+            </tr></thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" data-ds-row-check aria-label="Selecionar" /></td>
+                <td class="ds-td-strong">Maria Souza</td><td>maria@empresa.com</td>
+                <td><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativo</span></td>
+                <td class="ds-td-num">R$ 1.240,00</td>
+                <td><div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar" aria-label="Editar Maria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Excluir Maria"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" data-ds-row-check aria-label="Selecionar" /></td>
+                <td class="ds-td-strong">João Andrade</td><td>joao@loja.com</td>
+                <td><span class="ds-badge ds-badge--warn"><span class="ds-dot"></span> Pendente</span></td>
+                <td class="ds-td-num">R$ 860,50</td>
+                <td><div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar" aria-label="Editar João"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Excluir João"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" data-ds-row-check aria-label="Selecionar" /></td>
+                <td class="ds-td-strong">Helena Lima</td><td>helena@studio.co</td>
+                <td><span class="ds-badge ds-badge--neutral">Rascunho</span></td>
+                <td class="ds-td-num">R$ 0,00</td>
+                <td><div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar" aria-label="Editar Helena"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Excluir Helena"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-row" style="justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:.75rem">
+          <span style="color:var(--ds-t-500);font-size:.88rem">Mostrando 1–3 de 1.284</span>
+          <div class="ds-pagination">
+            <button aria-label="Anterior" disabled>‹</button>
+            <button aria-current="page">1</button><button>2</button><button>3</button><button>…</button><button>43</button>
+            <button aria-label="Próxima">›</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUALIZAÇÃO: CARDS -->
+      <div data-view-panel="cards" hidden>
+        <div class="ds-grid ds-grid--3">
+          <article class="ds-record">
+            <div class="ds-record-top"><span class="ds-avatar">MS</span><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativo</span></div>
+            <div><p class="ds-record-title">Maria Souza</p><p class="ds-record-meta">maria@empresa.com</p></div>
+            <p class="ds-record-value">R$ 1.240,00</p>
+            <div class="ds-record-foot"><span class="ds-record-meta">12 pedidos</span><button class="ds-btn ds-btn--subtle ds-btn--sm" data-ds-open="editar">Editar</button></div>
+          </article>
+          <article class="ds-record">
+            <div class="ds-record-top"><span class="ds-avatar">JA</span><span class="ds-badge ds-badge--warn"><span class="ds-dot"></span> Pendente</span></div>
+            <div><p class="ds-record-title">João Andrade</p><p class="ds-record-meta">joao@loja.com</p></div>
+            <p class="ds-record-value">R$ 860,50</p>
+            <div class="ds-record-foot"><span class="ds-record-meta">4 pedidos</span><button class="ds-btn ds-btn--subtle ds-btn--sm" data-ds-open="editar">Editar</button></div>
+          </article>
+          <article class="ds-record">
+            <div class="ds-record-top"><span class="ds-avatar">HL</span><span class="ds-badge ds-badge--neutral">Rascunho</span></div>
+            <div><p class="ds-record-title">Helena Lima</p><p class="ds-record-meta">helena@studio.co</p></div>
+            <p class="ds-record-value">R$ 0,00</p>
+            <div class="ds-record-foot"><span class="ds-record-meta">0 pedidos</span><button class="ds-btn ds-btn--subtle ds-btn--sm" data-ds-open="editar">Editar</button></div>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- DRAWER: editar -->
+<div class="ds-overlay ds-overlay--side" id="editar" role="dialog" aria-modal="true" aria-labelledby="editar-t">
+  <aside class="ds-drawer">
+    <div class="ds-drawer-head"><h3 class="ds-h3" id="editar-t">Editar cliente</h3><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-drawer-body">
+      <div class="ds-field"><label class="ds-label" for="e-nome">Nome</label><input class="ds-input" id="e-nome" autocomplete="name" value="Maria Souza" /></div>
+      <div class="ds-field"><label class="ds-label" for="e-mail">E-mail</label><input class="ds-input" id="e-mail" type="email" inputmode="email" spellcheck="false" value="maria@empresa.com" /></div>
+      <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="e-status">Status</label><select class="ds-select" id="e-status"><option>Ativo</option><option>Pendente</option><option>Rascunho</option></select></div>
+    </div>
+    <div class="ds-drawer-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Cliente atualizado." data-ds-toast-type="success">Salvar</button></div>
+  </aside>
+</div>
+
+<!-- MODAL: novo -->
+<div class="ds-overlay" id="novo" role="dialog" aria-modal="true" aria-labelledby="novo-t">
+  <div class="ds-modal">
+    <div class="ds-modal-head"><h3 class="ds-h3" id="novo-t">Novo cliente</h3><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-body">
+      <div class="ds-field"><label class="ds-label" for="n-nome">Nome <span class="ds-req">*</span></label><input class="ds-input" id="n-nome" autocomplete="name" placeholder="Nome do cliente…" /></div>
+      <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="n-mail">E-mail</label><input class="ds-input" id="n-mail" type="email" inputmode="email" spellcheck="false" placeholder="email@exemplo.com" /></div>
+    </div>
+    <div class="ds-modal-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Cliente criado." data-ds-toast-type="success">Criar</button></div>
+  </div>
+</div>
+
+<script src="../stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>

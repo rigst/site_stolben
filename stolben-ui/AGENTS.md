@@ -22,8 +22,10 @@ identidade da marca**, sem "cara de template de IA".
    `<label>` para campo, `<table>` para dados tabulares. Nunca `div` clicável.
 4. **Acessível por padrão.** Todo controle alcançável por teclado, com foco
    visível e nome acessível. Veja a checklist na seção 5.
-5. **Um acento só: o azul.** Cinza/preto/branco dominam; o azul marca ação, foco e
-   seleção. Cores semânticas (verde/âmbar/vermelho) **apenas** para estados.
+5. **Um acento só.** Cinza/preto/branco dominam; **o acento** (azul por padrão)
+   marca ação, foco e seleção. O acento é temável por app (ver seção 2.5): use
+   sempre `--ds-accent*`, nunca `--ds-blue` direto. Cores semânticas
+   (verde/âmbar/vermelho) **apenas** para estados, nunca como acento.
 
 ---
 
@@ -74,6 +76,35 @@ Telas de CRUD usam **app shell com sidebar**:
 Para landing/marketing use o shell do site (`.ds-app` + `.ds-lines`). Para apps,
 prefira `.ds-shell`.
 
+### 2.5 Tema de acento (cor do app)
+Defina a cor do app **uma vez**, na raiz, e nunca mais use cor de acento solta:
+
+```html
+<body class="ds-root ds-theme-violet">   <!-- indigo · violet · teal · emerald · amber · rose · slate -->
+```
+
+Cor própria? Defina os 5 tokens numa classe `.ds-theme-x` (`--ds-accent`,
+`--ds-accent-light`, `--ds-accent-dark`, `--ds-accent-50`, `--ds-accent-100`).
+Não escolha um acento igual ao verde de sucesso nem ao vermelho de erro.
+
+### 2.6 Visualizações de lista
+Escolha pela tarefa e mostre **só o essencial em destaque**, com hierarquia
+(título forte › valor › status › meta discreta — nunca encha de colunas/campos):
+
+| Visualização | Quando | Componentes |
+|---|---|---|
+| **Tabela** | Comparar muitos registros por colunas | `.ds-table` + `.ds-table-wrap` |
+| **Grade de cards** | Itens visuais (catálogo, galeria) | `.ds-record` em `.ds-grid--3/4` |
+| **Lista compacta** | Leitura rápida, mobile | `.ds-list` / `.ds-list-item` |
+| **Board / colunas** | Fluxo por status (kanban) | `.ds-board` / `.ds-board-col` / `.ds-board-card` |
+
+Para alternar visualizações na mesma tela: `.ds-segment` com `data-view="x"`
+dentro de `[data-ds-views]`, e blocos `[data-view-panel="x"]`.
+
+### 2.7 Comece por um template
+Em `templates/` há 3 exemplos prontos para copiar (tabela+indigo, cards+teal,
+board+amber). Copie o mais próximo da sua tela e ajuste conteúdo e tema.
+
 ---
 
 ## 3. Princípios de design (frontend)
@@ -111,7 +142,7 @@ prefira `.ds-shell`.
 | Ação principal | `.ds-btn--solid` (azul) |
 | Ação secundária / cancelar | `.ds-btn--ghost` ou `.ds-btn--subtle` |
 | Ação destrutiva | `.ds-btn--danger` (com confirmação!) |
-| Listagem de registros | `.ds-table` + `.ds-toolbar` + `.ds-pagination` |
+| Listagem de registros | tabela/cards/lista/board (ver §2.6) + `.ds-toolbar` + `.ds-pagination` |
 | Cadastro / edição | `.ds-field` + `.ds-input/.ds-select/.ds-textarea` |
 | Edição rápida sem sair da lista | `.ds-drawer` (slide-over) |
 | Confirmar / formulário curto | `.ds-modal` |

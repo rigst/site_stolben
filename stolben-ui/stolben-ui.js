@@ -163,7 +163,9 @@
     });
   }
 
-  /* ---- Segmented control ([data-ds-segment]) ---- */
+  /* ---- Segmented control ([data-ds-segment]) + troca de visualização ----
+     Se o botão tiver data-view="x", mostra o [data-view-panel="x"] dentro do
+     container [data-ds-views] mais próximo (alterna tabela/cards/lista/board). */
   function initSegments() {
     document.querySelectorAll("[data-ds-segment]").forEach(function (seg) {
       var btns = seg.querySelectorAll("button");
@@ -171,6 +173,14 @@
         b.addEventListener("click", function () {
           btns.forEach(function (x) { x.classList.remove("is-active"); x.setAttribute("aria-pressed", "false"); });
           b.classList.add("is-active"); b.setAttribute("aria-pressed", "true");
+          var view = b.getAttribute("data-view");
+          if (view) {
+            var scope = seg.closest("[data-ds-views]");
+            if (!scope || !scope.querySelector("[data-view-panel]")) scope = seg.closest("main") || document;
+            scope.querySelectorAll("[data-view-panel]").forEach(function (p) {
+              p.hidden = p.getAttribute("data-view-panel") !== view;
+            });
+          }
         });
       });
     });

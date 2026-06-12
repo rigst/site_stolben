@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Template 3 · Board (colunas) · Stölben UI</title>
+<meta name="theme-color" content="#0f1115" />
+<link rel="icon" type="image/png" href="../../favicon.png" />
+<script>document.documentElement.classList.add("js")</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../stolben-ui.css" />
+</head>
+<!-- TEMA: amber -->
+<body class="ds-root ds-theme-amber">
+<div class="ds-shell">
+
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar-brand"><span class="ds-logo">P</span> Projetos</div>
+    <p class="ds-sidebar-group">Trabalho</p>
+    <a class="ds-sidebar-link is-active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18"/></svg> Board</a>
+    <a class="ds-sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> Lista</a>
+    <a class="ds-sidebar-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg> Relatórios</a>
+    <a class="ds-sidebar-link" href="../index.html" style="margin-top:auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Design system</a>
+  </aside>
+
+  <div class="ds-main">
+    <header class="ds-topbar" data-ds-topbar>
+      <span class="ds-search" style="max-width:18rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input class="ds-input" type="search" placeholder="Buscar tarefa…" aria-label="Buscar" /></span>
+      <span class="ds-topbar-spacer"></span>
+      <span class="ds-avatar">RS</span>
+    </header>
+
+    <main style="padding:1.75rem clamp(1rem,3vw,2.5rem)">
+      <div class="ds-row ds-reveal" style="justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem">
+        <div><h1 class="ds-h1" style="font-size:1.9rem">Sprint atual</h1><p style="color:var(--ds-t-500)">9 tarefas · entrega em 12/06</p></div>
+        <button class="ds-btn ds-btn--solid" data-ds-open="nova"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nova tarefa</button>
+      </div>
+
+      <!-- BOARD / COLUNAS -->
+      <div class="ds-board ds-reveal">
+        <!-- coluna -->
+        <section class="ds-board-col" aria-label="A fazer">
+          <div class="ds-board-col-head">A fazer <span class="ds-count">3</span></div>
+          <div class="ds-board-body">
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--neutral" style="align-self:flex-start">Backend</span>
+              <p class="ds-board-card-title">Modelar tabela de pedidos</p>
+              <div class="ds-board-card-meta"><span>#142</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">RS</span></div>
+            </article>
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--info" style="align-self:flex-start"><span class="ds-dot"></span> Design</span>
+              <p class="ds-board-card-title">Revisar fluxo de checkout</p>
+              <div class="ds-board-card-meta"><span>#145</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">JA</span></div>
+            </article>
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--neutral" style="align-self:flex-start">Infra</span>
+              <p class="ds-board-card-title">Configurar backup diário</p>
+              <div class="ds-board-card-meta"><span>#149</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">RS</span></div>
+            </article>
+          </div>
+        </section>
+        <!-- coluna -->
+        <section class="ds-board-col" aria-label="Em andamento">
+          <div class="ds-board-col-head">Em andamento <span class="ds-count">2</span></div>
+          <div class="ds-board-body">
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--warn" style="align-self:flex-start"><span class="ds-dot"></span> Backend</span>
+              <p class="ds-board-card-title">Endpoint de relatórios</p>
+              <div class="ds-board-card-meta"><span>#138</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">RS</span></div>
+            </article>
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--info" style="align-self:flex-start"><span class="ds-dot"></span> Front</span>
+              <p class="ds-board-card-title">Tabela de clientes com filtros</p>
+              <div class="ds-board-card-meta"><span>#140</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">HL</span></div>
+            </article>
+          </div>
+        </section>
+        <!-- coluna -->
+        <section class="ds-board-col" aria-label="Concluído">
+          <div class="ds-board-col-head">Concluído <span class="ds-count">4</span></div>
+          <div class="ds-board-body">
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--success" style="align-self:flex-start"><span class="ds-dot"></span> Front</span>
+              <p class="ds-board-card-title">Layout do dashboard</p>
+              <div class="ds-board-card-meta"><span>#131</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">JA</span></div>
+            </article>
+            <article class="ds-board-card">
+              <span class="ds-badge ds-badge--success" style="align-self:flex-start"><span class="ds-dot"></span> Infra</span>
+              <p class="ds-board-card-title">Deploy em VPS + Nginx</p>
+              <div class="ds-board-card-meta"><span>#128</span><span class="ds-avatar" style="width:1.6rem;height:1.6rem;font-size:.65rem">RS</span></div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- MODAL: nova tarefa -->
+<div class="ds-overlay" id="nova" role="dialog" aria-modal="true" aria-labelledby="nova-t">
+  <div class="ds-modal">
+    <div class="ds-modal-head"><h3 class="ds-h3" id="nova-t">Nova tarefa</h3><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-body">
+      <div class="ds-field"><label class="ds-label" for="t-titulo">Título <span class="ds-req">*</span></label><input class="ds-input" id="t-titulo" placeholder="O que precisa ser feito?…" /></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="t-col">Coluna</label><select class="ds-select" id="t-col"><option>A fazer</option><option>Em andamento</option><option>Concluído</option></select></div>
+        <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="t-resp">Responsável</label><select class="ds-select" id="t-resp"><option>Rodrigo</option><option>João</option><option>Helena</option></select></div>
+      </div>
+    </div>
+    <div class="ds-modal-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Tarefa criada." data-ds-toast-type="success">Criar</button></div>
+  </div>
+</div>
+
+<script src="../stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>
