@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="ds-theme-indigo">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +11,11 @@
 <link rel="stylesheet" href="../stolben-ui.css" />
 </head>
 <!-- TEMA: indigo. Troque a classe ds-theme-* por violet/teal/emerald/amber/rose/slate. -->
-<body class="ds-root ds-theme-indigo">
+<body class="ds-root">
 <div class="ds-shell">
 
   <!-- ===== SIDEBAR ===== -->
-  <aside class="ds-sidebar">
+  <aside class="ds-sidebar" aria-label="Menu lateral">
     <div class="ds-sidebar-brand"><span class="ds-logo">A</span> Acme Admin</div>
     <p class="ds-sidebar-group">Geral</p>
     <a class="ds-sidebar-link is-active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Clientes</a>
@@ -147,7 +147,7 @@
 <!-- DRAWER: editar -->
 <div class="ds-overlay ds-overlay--side" id="editar" role="dialog" aria-modal="true" aria-labelledby="editar-t">
   <aside class="ds-drawer">
-    <div class="ds-drawer-head"><h3 class="ds-h3" id="editar-t">Editar cliente</h3><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-drawer-head"><h2 class="ds-h3" id="editar-t">Editar cliente</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="ds-drawer-body">
       <div class="ds-field"><label class="ds-label" for="e-nome">Nome</label><input class="ds-input" id="e-nome" autocomplete="name" value="Maria Souza" /></div>
       <div class="ds-field"><label class="ds-label" for="e-mail">E-mail</label><input class="ds-input" id="e-mail" type="email" inputmode="email" spellcheck="false" value="maria@empresa.com" /></div>
@@ -160,7 +160,7 @@
 <!-- MODAL: novo -->
 <div class="ds-overlay" id="novo" role="dialog" aria-modal="true" aria-labelledby="novo-t">
   <div class="ds-modal">
-    <div class="ds-modal-head"><h3 class="ds-h3" id="novo-t">Novo cliente</h3><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-head"><h2 class="ds-h3" id="novo-t">Novo cliente</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="ds-modal-body">
       <div class="ds-field"><label class="ds-label" for="n-nome">Nome <span class="ds-req">*</span></label><input class="ds-input" id="n-nome" autocomplete="name" placeholder="Nome do cliente…" /></div>
       <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="n-mail">E-mail</label><input class="ds-input" id="n-mail" type="email" inputmode="email" spellcheck="false" placeholder="email@exemplo.com" /></div>

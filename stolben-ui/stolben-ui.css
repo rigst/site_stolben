@@ -28,16 +28,17 @@
      tons claros no escuro). Componentes usam --ds-accent*, nunca --ds-blue. */
   --ds-accent: var(--ds-blue);
   --ds-accent-light: color-mix(in srgb, var(--ds-accent), white 24%);
-  --ds-accent-dark:  color-mix(in srgb, var(--ds-accent), black 16%);
+  --ds-accent-dark:  color-mix(in srgb, var(--ds-accent), black 28%);
   --ds-accent-50:    color-mix(in srgb, var(--ds-accent) 10%, white);
   --ds-accent-100:   color-mix(in srgb, var(--ds-accent) 20%, white);
   --ds-accent-fg:    var(--ds-accent);   /* acento como TEXTO/ícone (clareia no escuro) */
+  --ds-on-accent:    #ffffff;            /* texto SOBRE o acento (botão sólido); escuro p/ acentos claros */
 
   --ds-text-strong: var(--ds-ink);    /* texto mais forte (valores, números) */
   --ds-subtle: #f3f4f6;               /* fundo neutro de chips/segmentos/badges */
 
   /* Estados semânticos */
-  --ds-success: #16a34a; --ds-success-50: #ecfdf3; --ds-success-100: #d1fadf;
+  --ds-success: #15803d; --ds-success-50: #ecfdf3; --ds-success-100: #d1fadf;
   --ds-warn: #b45309;    --ds-warn-50: #fffaeb;    --ds-warn-100: #fef0c7;
   --ds-danger: #dc2626;  --ds-danger-50: #fef2f2;  --ds-danger-100: #fee2e2;
   --ds-info: var(--ds-accent); --ds-info-50: var(--ds-accent-50); --ds-info-100: var(--ds-accent-100);
@@ -45,8 +46,8 @@
   /* Texto */
   --ds-t-900: #111827;
   --ds-t-700: #374151;
-  --ds-t-500: #6b7280;
-  --ds-t-400: #9ca3af;
+  --ds-t-500: #586070;
+  --ds-t-400: #8b91a0;
   /* Sobre escuro */
   --ds-on-dark: #e5e7eb;
   --ds-on-dark-dim: #9aa3b2;
@@ -109,7 +110,7 @@
 }
 .ds-root a { color: inherit; text-decoration: none; }
 .ds-root img { display: block; max-width: 100%; }
-.ds-root ::selection { background: var(--ds-accent); color: #fff; }
+.ds-root ::selection { background: var(--ds-accent); color: var(--ds-on-accent); }
 .ds-root h1, .ds-root h2, .ds-root h3 { text-wrap: balance; }
 .ds-root :where(button, a, input, textarea, select, label) { -webkit-tap-highlight-color: transparent; }
 
@@ -161,7 +162,7 @@
 .ds-btn:active { transform: translateY(1px); }
 .ds-btn svg { width: 1.05em; height: 1.05em; }
 .ds-btn:disabled, .ds-btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; }
-.ds-btn--solid { background: var(--ds-accent); color: #fff; box-shadow: var(--ds-shadow-glow-blue); }
+.ds-btn--solid { background: var(--ds-accent); color: var(--ds-on-accent); box-shadow: var(--ds-shadow-glow-blue); }
 .ds-btn--solid:hover { background: var(--ds-accent-dark); }
 .ds-btn--primary { background: var(--ds-ink); color: #fff; }
 .ds-btn--primary:hover { background: #000; }
@@ -198,7 +199,7 @@
 .ds-topbar--dark .ds-topbar-nav a:hover, .ds-topbar--dark .ds-topbar-nav a.is-active { color: #fff; background: rgba(255, 255, 255, 0.08); }
 
 /* Avatar / user chip */
-.ds-avatar { width: 2.25rem; height: 2.25rem; border-radius: var(--ds-radius-pill); background: var(--ds-accent-100); color: var(--ds-accent-dark); display: grid; place-items: center; font-weight: 600; font-size: 0.85rem; font-family: var(--ds-font-display); flex-shrink: 0; }
+.ds-avatar { width: 2.25rem; height: 2.25rem; border-radius: var(--ds-radius-pill); background: var(--ds-accent); color: var(--ds-on-accent); display: grid; place-items: center; font-weight: 600; font-size: 0.85rem; font-family: var(--ds-font-display); flex-shrink: 0; }
 
 /* ------------------------------ CARTÕES ------------------------------ */
 .ds-card { background: var(--ds-surface); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); padding: var(--ds-space-6); transition: box-shadow var(--ds-dur-slow) var(--ds-ease), transform var(--ds-dur) var(--ds-ease); }
@@ -498,10 +499,10 @@
    =================================================================== */
 .ds-theme-indigo  { --ds-accent: #4f46e5; }
 .ds-theme-violet  { --ds-accent: #7c3aed; }
-.ds-theme-teal    { --ds-accent: #0d9488; }
-.ds-theme-emerald { --ds-accent: #059669; }
-.ds-theme-amber   { --ds-accent: #d97706; }
-.ds-theme-rose    { --ds-accent: #e11d48; }
+.ds-theme-teal    { --ds-accent: #0f766e; }
+.ds-theme-emerald { --ds-accent: #047857; }
+.ds-theme-amber   { --ds-accent: #d97706; --ds-on-accent: #1c1407; }  /* âmbar é claro: texto escuro */
+.ds-theme-rose    { --ds-accent: #be123c; }
 .ds-theme-slate   { --ds-accent: #475569; }
 
 /* ===================================================================

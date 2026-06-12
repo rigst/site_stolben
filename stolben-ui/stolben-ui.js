@@ -220,7 +220,7 @@
   function initThemeSelect() {
     document.querySelectorAll("[data-ds-theme-select]").forEach(function (sel) {
       sel.addEventListener("change", function () {
-        var root = document.querySelector(".ds-root") || document.body;
+        var root = document.documentElement; /* mesmo elemento do .ds-dark, p/ derivar tons certos */
         DS_THEMES.forEach(function (t) { root.classList.remove(t); });
         if (sel.value) root.classList.add(sel.value);
       });

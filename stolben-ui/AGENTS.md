@@ -77,10 +77,11 @@ Para landing/marketing use o shell do site (`.ds-app` + `.ds-lines`). Para apps,
 prefira `.ds-shell`.
 
 ### 2.5 Tema de acento (cor do app)
-Defina a cor do app **uma vez**, na raiz, e nunca mais use cor de acento solta:
+Defina a cor do app **uma vez**, no `<html>` (mesmo elemento do `.ds-dark`, para
+os tons derivarem certo em claro e escuro), e nunca use cor de acento solta:
 
 ```html
-<body class="ds-root ds-theme-violet">   <!-- indigo · violet · teal · emerald · amber · rose · slate -->
+<html class="ds-theme-violet">   <!-- indigo · violet · teal · emerald · amber · rose · slate -->
 ```
 
 Cor própria? Defina **só** `--ds-accent` numa classe `.ds-theme-x` — os tons são

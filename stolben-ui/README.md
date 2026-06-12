@@ -66,11 +66,12 @@ tudo via *data-attributes*.
 
 ## Temas de acento (cor por aplicativo)
 
-O azul é o padrão, mas **cada app pode usar uma cor de acento diferente**. Basta
-uma classe no `<body class="ds-root">`:
+O azul é o padrão, mas **cada app pode usar uma cor de acento diferente**. Ponha a
+classe no **`<html>`** (mesmo elemento do `.ds-dark`, para os tons derivarem certo
+no claro e no escuro):
 
 ```html
-<body class="ds-root ds-theme-violet">   <!-- ou indigo, teal, emerald, amber, rose, slate -->
+<html class="ds-theme-violet">   <!-- ou indigo, teal, emerald, amber, rose, slate -->
 ```
 
 Todos os componentes seguem `--ds-accent*` (botões, foco, links ativos, seleção,

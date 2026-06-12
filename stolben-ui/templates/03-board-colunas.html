@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="ds-theme-amber">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,10 +11,10 @@
 <link rel="stylesheet" href="../stolben-ui.css" />
 </head>
 <!-- TEMA: amber -->
-<body class="ds-root ds-theme-amber">
+<body class="ds-root">
 <div class="ds-shell">
 
-  <aside class="ds-sidebar">
+  <aside class="ds-sidebar" aria-label="Menu lateral">
     <div class="ds-sidebar-brand"><span class="ds-logo">P</span> Projetos</div>
     <p class="ds-sidebar-group">Trabalho</p>
     <a class="ds-sidebar-link is-active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18"/></svg> Board</a>
@@ -40,7 +40,7 @@
       </div>
 
       <!-- BOARD / COLUNAS -->
-      <div class="ds-board ds-reveal">
+      <div class="ds-board ds-reveal" tabindex="0" aria-label="Quadro de tarefas (role horizontalmente)">
         <!-- coluna -->
         <section class="ds-board-col" aria-label="A fazer">
           <div class="ds-board-col-head">A fazer <span class="ds-count">3</span></div>
@@ -102,7 +102,7 @@
 <!-- MODAL: nova tarefa -->
 <div class="ds-overlay" id="nova" role="dialog" aria-modal="true" aria-labelledby="nova-t">
   <div class="ds-modal">
-    <div class="ds-modal-head"><h3 class="ds-h3" id="nova-t">Nova tarefa</h3><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-head"><h2 class="ds-h3" id="nova-t">Nova tarefa</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
     <div class="ds-modal-body">
       <div class="ds-field"><label class="ds-label" for="t-titulo">Título <span class="ds-req">*</span></label><input class="ds-input" id="t-titulo" placeholder="O que precisa ser feito?…" /></div>
       <div class="ds-grid ds-grid--2" style="gap:1rem">
