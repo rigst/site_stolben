@@ -1,0 +1,172 @@
+/* =====================================================================
+   Stölben UI — comportamentos opcionais (vanilla JS, sem dependências)
+   Inicializa via data-attributes. Tudo é progressive enhancement:
+   sem JS, o conteúdo continua acessível.
+   ===================================================================== */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---- Revelar ao rolar (.ds-reveal) ---- */
+  function initReveal() {
+    var els = document.querySelectorAll(".ds-reveal");
+    if (reduce || !("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---- Cabeçalho destacado ao rolar + link da seção atual ---- */
+  function initTopbar() {
+    var bar = document.querySelector("[data-ds-topbar]");
+    if (bar) {
+      var onScroll = function () { bar.classList.toggle("is-scrolled", window.scrollY > 8); };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+    var spyLinks = document.querySelectorAll("[data-ds-spy] a[href^='#']");
+    var sections = [];
+    spyLinks.forEach(function (a) {
+      var s = document.querySelector(a.getAttribute("href"));
+      if (s) sections.push(s);
+    });
+    if (sections.length && "IntersectionObserver" in window) {
+      var so = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var id = "#" + e.target.id;
+          spyLinks.forEach(function (a) { a.classList.toggle("is-active", a.getAttribute("href") === id); });
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      sections.forEach(function (s) { so.observe(s); });
+    }
+  }
+
+  /* ---- Menu dropdown ([data-ds-menu]) ---- */
+  function initMenus() {
+    document.querySelectorAll("[data-ds-menu]").forEach(function (wrap) {
+      var btn = wrap.querySelector("[data-ds-menu-trigger]");
+      if (!btn) return;
+      btn.setAttribute("aria-haspopup", "true");
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = wrap.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", String(open));
+      });
+    });
+    document.addEventListener("click", function () {
+      document.querySelectorAll("[data-ds-menu].is-open").forEach(function (w) {
+        w.classList.remove("is-open");
+        var t = w.querySelector("[data-ds-menu-trigger]");
+        if (t) t.setAttribute("aria-expanded", "false");
+      });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") document.querySelectorAll("[data-ds-menu].is-open").forEach(function (w) { w.classList.remove("is-open"); });
+    });
+  }
+
+  /* ---- Modais ([data-ds-open="id"], [data-ds-close]) ---- */
+  function initModals() {
+    var lastFocus = null;
+    function open(id) {
+      var ov = document.getElementById(id);
+      if (!ov) return;
+      lastFocus = document.activeElement;
+      ov.classList.add("is-open");
+      var f = ov.querySelector("input, button, textarea, select, a[href]");
+      if (f) f.focus();
+    }
+    function close(ov) { ov.classList.remove("is-open"); if (lastFocus) lastFocus.focus(); }
+    document.querySelectorAll("[data-ds-open]").forEach(function (b) {
+      b.addEventListener("click", function () { open(b.getAttribute("data-ds-open")); });
+    });
+    document.querySelectorAll(".ds-overlay").forEach(function (ov) {
+      ov.addEventListener("click", function (e) { if (e.target === ov) close(ov); });
+      ov.querySelectorAll("[data-ds-close]").forEach(function (b) { b.addEventListener("click", function () { close(ov); }); });
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") document.querySelectorAll(".ds-overlay.is-open").forEach(close);
+    });
+  }
+
+  /* ---- Tabs ([data-ds-tabs]) ---- */
+  function initTabs() {
+    document.querySelectorAll("[data-ds-tabs]").forEach(function (group) {
+      var tabs = group.querySelectorAll(".ds-tab");
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          tabs.forEach(function (t) { t.classList.remove("is-active"); t.setAttribute("aria-selected", "false"); });
+          tab.classList.add("is-active");
+          tab.setAttribute("aria-selected", "true");
+          var target = tab.getAttribute("data-ds-tab");
+          group.querySelectorAll(".ds-tabpanel").forEach(function (p) { p.hidden = p.getAttribute("data-ds-panel") !== target; });
+        });
+      });
+    });
+  }
+
+  /* ---- Tabela: marcar todas ([data-ds-check-all]) ---- */
+  function initTableSelect() {
+    document.querySelectorAll("[data-ds-check-all]").forEach(function (master) {
+      var table = master.closest("table");
+      if (!table) return;
+      var boxes = table.querySelectorAll("tbody [data-ds-row-check]");
+      master.addEventListener("change", function () {
+        boxes.forEach(function (b) {
+          b.checked = master.checked;
+          b.closest("tr").classList.toggle("is-selected", b.checked);
+        });
+      });
+      boxes.forEach(function (b) {
+        b.addEventListener("change", function () {
+          b.closest("tr").classList.toggle("is-selected", b.checked);
+          master.checked = Array.prototype.every.call(boxes, function (x) { return x.checked; });
+        });
+      });
+    });
+  }
+
+  /* ---- Toasts: window.dsToast(msg, tipo) e [data-ds-toast] ---- */
+  function ensureToastHost() {
+    var host = document.querySelector(".ds-toasts");
+    if (!host) { host = document.createElement("div"); host.className = "ds-toasts"; host.setAttribute("aria-live", "polite"); document.body.appendChild(host); }
+    return host;
+  }
+  var ICONS = {
+    success: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+    danger: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+    info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+  };
+  window.dsToast = function (msg, type) {
+    type = type || "info";
+    var host = ensureToastHost();
+    var el = document.createElement("div");
+    el.className = "ds-toast ds-toast--" + type;
+    el.setAttribute("role", "status");
+    el.innerHTML = (ICONS[type] || ICONS.info) + "<span>" + msg + "</span>";
+    host.appendChild(el);
+    setTimeout(function () { el.classList.add("is-leaving"); setTimeout(function () { el.remove(); }, 240); }, 3200);
+  };
+  function initToastTriggers() {
+    document.querySelectorAll("[data-ds-toast]").forEach(function (b) {
+      b.addEventListener("click", function () { window.dsToast(b.getAttribute("data-ds-toast"), b.getAttribute("data-ds-toast-type") || "info"); });
+    });
+  }
+
+  function init() {
+    initReveal(); initTopbar(); initMenus(); initModals();
+    initTabs(); initTableSelect(); initToastTriggers();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
