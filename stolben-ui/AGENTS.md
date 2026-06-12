@@ -107,6 +107,21 @@ dentro de `[data-ds-views]`, e blocos `[data-view-panel="x"]`.
 Em `templates/` há 3 exemplos prontos para copiar (tabela+indigo, cards+teal,
 board+amber). Copie o mais próximo da sua tela e ajuste conteúdo e tema.
 
+### 2.8 Claro e escuro
+Suporta os dois modos. Inclua o botão `data-ds-dark-toggle` e o script de leitura
+no `<head>` (evita flash):
+
+```html
+<script>(function(){var e=document.documentElement;e.classList.add("js");
+try{var m=localStorage.getItem("ds-theme-mode");
+if(m==="dark"||(!m&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+```
+
+Regra para o escuro funcionar: **nunca cravar cor** — use tokens. Para texto forte
+use `--ds-text-strong` (não `--ds-ink`); para acento como texto/ícone use
+`--ds-accent-fg` (não `--ds-accent`, que pode ficar escuro demais no fundo escuro).
+Fundos neutros: `--ds-subtle`. O DS já clareia o acento e os estados no escuro.
+
 ---
 
 ## 3. Princípios de design (frontend)
@@ -199,6 +214,9 @@ Ao gerar qualquer tela, garanta:
 - [ ] Anime só `opacity`/`transform`; respeite `prefers-reduced-motion`
       (o DS já desliga). Anexe `transform-origin` correto quando rotacionar.
 - [ ] `color-scheme` e `<meta name="theme-color">` definidos.
+- [ ] Funciona em **claro e escuro**: toda cor via token (acento-texto com
+      `--ds-accent-fg`, valores com `--ds-text-strong`, fundo neutro `--ds-subtle`),
+      nunca cravada. Teste com `<html class="ds-dark">`.
 
 ---
 

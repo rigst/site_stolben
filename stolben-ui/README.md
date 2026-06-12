@@ -84,6 +84,37 @@ verde / âmbar / vermelho). Para uma cor própria, defina os 5 tokens:
 > Evite escolher um acento idêntico ao verde de sucesso ou ao vermelho de erro,
 > para não confundir ação com estado.
 
+## Tema claro e escuro
+
+Modo claro (padrão) e escuro. Aplique `ds-dark` no `<html>` (funciona com qualquer
+`.ds-theme-*`):
+
+```html
+<html class="ds-dark"> … </html>
+```
+
+Botão de alternância pronto — o JS troca a classe e guarda a preferência em
+`localStorage`:
+
+```html
+<button class="ds-icon-btn" data-ds-dark-toggle aria-label="Alternar tema claro e escuro">
+  <span class="ds-i-moon">…lua…</span><span class="ds-i-sun">…sol…</span>
+</button>
+```
+
+Para evitar "flash", leia a preferência no `<head>`, antes do CSS:
+
+```html
+<script>(function(){var e=document.documentElement;e.classList.add("js");
+try{var m=localStorage.getItem("ds-theme-mode");
+if(m==="dark"||(!m&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+```
+
+O escuro usa **cinzas suaves (sem preto puro)**, texto off-white e **acento
+clareado** (`--ds-accent-fg`) para leitura confortável; sucesso/atenção/erro
+ganham versões legíveis no escuro. Para texto forte (valores) use
+`--ds-text-strong` (não `--ds-ink`, que é superfície escura).
+
 ## Templates prontos (`templates/`)
 
 Pontos de partida para copiar. Cada um usa um **tema** e uma **visualização de

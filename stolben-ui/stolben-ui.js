@@ -227,10 +227,25 @@
     });
   }
 
+  /* ---- Alternância claro/escuro ([data-ds-dark-toggle]) ----
+     Aplica .ds-dark no <html> e guarda a preferência. A leitura inicial
+     deve ser feita por um script inline no <head> (evita flash). */
+  function initDarkToggle() {
+    document.querySelectorAll("[data-ds-dark-toggle]").forEach(function (btn) {
+      function sync() { btn.setAttribute("aria-pressed", String(document.documentElement.classList.contains("ds-dark"))); }
+      sync();
+      btn.addEventListener("click", function () {
+        var dark = document.documentElement.classList.toggle("ds-dark");
+        try { localStorage.setItem("ds-theme-mode", dark ? "dark" : "light"); } catch (e) {}
+        sync();
+      });
+    });
+  }
+
   function init() {
     initReveal(); initTopbar(); initMenus(); initModals();
     initTabs(); initTableSelect(); initToastTriggers();
-    initSegments(); initAccordions(); initDropzones(); initThemeSelect();
+    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initDarkToggle();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
