@@ -22,14 +22,16 @@
   --ds-blue-50: #eff4ff;
   --ds-blue-100: #dbe6ff;
 
-  /* Acento temável: cada app pode trocar (ver classes .ds-theme-*).
-     Padrão = azul. Os componentes usam --ds-accent*, nunca --ds-blue direto. */
+  /* Acento temável: cada app troca SÓ --ds-accent (ver classes .ds-theme-*).
+     Os tons (light/dark/50/100/fg) são DERIVADOS daqui, para que o tema escuro
+     consiga recalculá-los sozinho (senão um .ds-theme-* no body sobreporia os
+     tons claros no escuro). Componentes usam --ds-accent*, nunca --ds-blue. */
   --ds-accent: var(--ds-blue);
-  --ds-accent-light: var(--ds-blue-light);
-  --ds-accent-dark: var(--ds-blue-dark);
-  --ds-accent-50: var(--ds-blue-50);
-  --ds-accent-100: var(--ds-blue-100);
-  --ds-accent-fg: var(--ds-accent);   /* acento usado como TEXTO/ícone (clareia no escuro) */
+  --ds-accent-light: color-mix(in srgb, var(--ds-accent), white 24%);
+  --ds-accent-dark:  color-mix(in srgb, var(--ds-accent), black 16%);
+  --ds-accent-50:    color-mix(in srgb, var(--ds-accent) 10%, white);
+  --ds-accent-100:   color-mix(in srgb, var(--ds-accent) 20%, white);
+  --ds-accent-fg:    var(--ds-accent);   /* acento como TEXTO/ícone (clareia no escuro) */
 
   --ds-text-strong: var(--ds-ink);    /* texto mais forte (valores, números) */
   --ds-subtle: #f3f4f6;               /* fundo neutro de chips/segmentos/badges */
@@ -312,9 +314,11 @@
 .ds-overlay.is-open { opacity: 1; pointer-events: auto; }
 .ds-modal { width: min(34rem, 100%); background: var(--ds-surface); border-radius: var(--ds-radius-lg); box-shadow: var(--ds-shadow-block); overflow: hidden; transform: translateY(12px) scale(0.98); transition: transform var(--ds-dur) var(--ds-ease); overscroll-behavior: contain; }
 .ds-overlay.is-open .ds-modal { transform: none; }
-.ds-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--ds-line); }
+.ds-modal-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.1rem 1.1rem 1.1rem 1.5rem; border-bottom: 1px solid var(--ds-line); }
+.ds-modal-head .ds-h3 { line-height: 1.2; }
 .ds-modal-body { padding: 1.5rem; }
-.ds-modal-foot { display: flex; justify-content: flex-end; gap: 0.6rem; padding: 1rem 1.5rem; border-top: 1px solid var(--ds-line); background: var(--ds-panel); }
+.ds-modal-body .ds-field:last-child { margin-bottom: 0; }
+.ds-modal-foot { display: flex; justify-content: flex-end; gap: 0.6rem; padding: 0.9rem 1.1rem 0.9rem 1.5rem; border-top: 1px solid var(--ds-line); background: var(--ds-panel); }
 
 /* ------------------------- DROPDOWN MENU ----------------------------- */
 .ds-menu-wrap { position: relative; display: inline-block; }
@@ -450,13 +454,13 @@
    TEMAS DE ACENTO — aplique a classe em .ds-root (ou em um container).
    Padrão (sem classe) = azul. Estados success/warn/danger não mudam.
    =================================================================== */
-.ds-theme-indigo  { --ds-accent:#4f46e5; --ds-accent-light:#6366f1; --ds-accent-dark:#4338ca; --ds-accent-50:#eef2ff; --ds-accent-100:#e0e7ff; }
-.ds-theme-violet  { --ds-accent:#7c3aed; --ds-accent-light:#8b5cf6; --ds-accent-dark:#6d28d9; --ds-accent-50:#f5f3ff; --ds-accent-100:#ede9fe; }
-.ds-theme-teal    { --ds-accent:#0d9488; --ds-accent-light:#14b8a6; --ds-accent-dark:#0f766e; --ds-accent-50:#f0fdfa; --ds-accent-100:#ccfbf1; }
-.ds-theme-emerald { --ds-accent:#059669; --ds-accent-light:#10b981; --ds-accent-dark:#047857; --ds-accent-50:#ecfdf5; --ds-accent-100:#d1fae5; }
-.ds-theme-amber   { --ds-accent:#d97706; --ds-accent-light:#f59e0b; --ds-accent-dark:#b45309; --ds-accent-50:#fffbeb; --ds-accent-100:#fef3c7; }
-.ds-theme-rose    { --ds-accent:#e11d48; --ds-accent-light:#f43f5e; --ds-accent-dark:#be123c; --ds-accent-50:#fff1f2; --ds-accent-100:#ffe4e6; }
-.ds-theme-slate   { --ds-accent:#475569; --ds-accent-light:#64748b; --ds-accent-dark:#334155; --ds-accent-50:#f8fafc; --ds-accent-100:#f1f5f9; }
+.ds-theme-indigo  { --ds-accent: #4f46e5; }
+.ds-theme-violet  { --ds-accent: #7c3aed; }
+.ds-theme-teal    { --ds-accent: #0d9488; }
+.ds-theme-emerald { --ds-accent: #059669; }
+.ds-theme-amber   { --ds-accent: #d97706; }
+.ds-theme-rose    { --ds-accent: #e11d48; }
+.ds-theme-slate   { --ds-accent: #475569; }
 
 /* ===================================================================
    TEMA ESCURO — aplique .ds-dark no <html> (ou na raiz). Funciona com

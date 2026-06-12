@@ -83,9 +83,9 @@ Defina a cor do app **uma vez**, na raiz, e nunca mais use cor de acento solta:
 <body class="ds-root ds-theme-violet">   <!-- indigo · violet · teal · emerald · amber · rose · slate -->
 ```
 
-Cor própria? Defina os 5 tokens numa classe `.ds-theme-x` (`--ds-accent`,
-`--ds-accent-light`, `--ds-accent-dark`, `--ds-accent-50`, `--ds-accent-100`).
-Não escolha um acento igual ao verde de sucesso nem ao vermelho de erro.
+Cor própria? Defina **só** `--ds-accent` numa classe `.ds-theme-x` — os tons são
+derivados e funcionam em claro/escuro. Não escolha um acento igual ao verde de
+sucesso nem ao vermelho de erro.
 
 ### 2.6 Visualizações de lista
 Escolha pela tarefa e mostre **só o essencial em destaque**, com hierarquia

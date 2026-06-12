@@ -75,10 +75,11 @@ uma classe no `<body class="ds-root">`:
 
 Todos os componentes seguem `--ds-accent*` (botões, foco, links ativos, seleção,
 badges *info*, glows…). Os estados **success / warn / danger** não mudam (continuam
-verde / âmbar / vermelho). Para uma cor própria, defina os 5 tokens:
+verde / âmbar / vermelho). Para uma cor própria, defina **só** `--ds-accent` — os
+tons (light/dark/50/100/fg) são derivados e já funcionam no claro e no escuro:
 
 ```css
-.ds-theme-minha { --ds-accent:#0ea5e9; --ds-accent-light:#38bdf8; --ds-accent-dark:#0284c7; --ds-accent-50:#f0f9ff; --ds-accent-100:#e0f2fe; }
+.ds-theme-minha { --ds-accent: #0ea5e9; }
 ```
 
 > Evite escolher um acento idêntico ao verde de sucesso ou ao vermelho de erro,
