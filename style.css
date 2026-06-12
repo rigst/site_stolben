@@ -98,6 +98,8 @@ section[id]{scroll-margin-top:5.5rem}
 .c-feat:hover .go{background:rgba(255,255,255,.2);transform:translate(2px,-2px)}
 .c-med .go{background:#f3f4f6;color:var(--t900)}
 .c-med:hover .go{background:var(--blue-50);color:var(--blue);transform:translate(2px,-2px)}
+.go-corner{position:absolute;top:1.5rem;right:1.5rem;z-index:3;margin-left:0}
+.c-feat:hover .go-corner{transform:translate(2px,-2px)}
 .plinks{display:flex;gap:.6rem;flex-wrap:wrap}
 .plinks a{display:inline-flex;align-items:center;gap:.35rem;font-size:.85rem;padding:.45rem 1rem;border-radius:999px;transition:background .16s,color .16s}
 .plinks a svg{width:.9rem;height:.9rem}

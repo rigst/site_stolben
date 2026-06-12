@@ -1,42 +1,40 @@
-COMO EDITAR ESTE SITE
+SITE / PORTFÓLIO - stolben.com
 
-1. Abra o arquivo script.js
-2. Procure a constante `projects`
-3. Cada projeto é um objeto com:
-   - category
-   - title
-   - status
-   - description
-   - tags
-   - liveUrl
-   - githubUrl
+Página única (portfólio) de Rodrigo Stölben. Estática, sem build.
 
-Exemplo:
+ESTRUTURA
+- index.html       Conteúdo e marcação da página.
+- style.css        Estilos (tema "Infra Premium": claro/escuro, azul como acento).
+- script.js        Comportamento: surgimento ao rolar (reveal), destaque da
+                   seção atual no menu (scrollspy) e cabeçalho ao rolar.
+- assets/          Imagens (hero, código, servidores e capas dos projetos).
+- favicon.png      Ícone da aba.
+- design-system/   Sistema de design reaproveitável (tokens e componentes).
 
-{
-  category: "Python",
-  title: "Meu Projeto",
-  status: "Publicado",
-  description: "Uma descrição curta e clara.",
-  tags: ["Python", "Flask"],
-  liveUrl: "https://seuprojeto.com",
-  githubUrl: "https://github.com/seuusuario/seurepo"
-}
+COMO EDITAR OS PROJETOS
+Os cards ficam direto no index.html, na seção <section id="projects">.
+Cada card é um link <a class="card ..."> que aponta para o sistema em produção.
+Para adicionar ou editar um projeto, copie um card existente e ajuste:
+- o href (URL do sistema em produção)
+- o número (<span class="num">), o título (<h3>) e a descrição (<p>)
+- a imagem de capa em assets/ (sempre com width e height na tag <img>)
 
-COMO PUBLICAR NO GITHUB PAGES
+COMO EDITAR OS TEXTOS
+- Hero, Sobre, Tecnologias e Infraestrutura: edite os blocos no index.html.
+- Contato: e-mail e GitHub ficam no <footer>.
 
-1. Crie um repositório no GitHub
-2. Envie os arquivos index.html, style.css e script.js
-3. Vá em Settings > Pages
-4. Em Build and deployment, escolha:
-   - Source: Deploy from a branch
-   - Branch: main / root
-5. Salve
-6. O GitHub vai gerar o link do site
+IMAGENS
+Use fotos reais e livres (ex.: Unsplash) coerentes com o tema de cada projeto.
+Defina sempre width e height na tag <img> (evita "pulo" de layout ao carregar).
+Evite render 3D / "cara de IA" e stock clichê.
 
-ANTES DE PUBLICAR
+PUBLICAÇÃO
+O site roda em uma VPS Linux, servido pelo Nginx a partir deste diretório.
+Para publicar uma alteração:
+1. Edite os arquivos.
+2. git add, git commit e git push para a branch main.
+Como o Nginx serve este diretório, a alteração entra no ar assim que os
+arquivos são salvos no servidor.
 
-- Troque SEUUSUARIO pelo seu usuário do GitHub
-- Troque SEUEMAIL@EXEMPLO.COM pelo seu email
-- Troque o nome do domínio no topo
-- Atualize os textos da seção Sobre
+CONTATO
+rodrigo@stolben.com · github.com/rigst
