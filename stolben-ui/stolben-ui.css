@@ -424,8 +424,11 @@
 
 /* ---- Tooltip (CSS, complementar) ---- */
 [data-ds-tip] { position: relative; }
-[data-ds-tip]::after { content: attr(data-ds-tip); position: absolute; bottom: calc(100% + 0.45rem); left: 50%; transform: translateX(-50%) translateY(4px); background: var(--ds-ink); color: #fff; font-size: 0.74rem; line-height: 1.3; padding: 0.3rem 0.55rem; border-radius: var(--ds-radius-sm); white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--ds-dur-fast), transform var(--ds-dur-fast); z-index: 60; }
+/* Abre PARA BAIXO (controles de topo não cortam no topo da tela) */
+[data-ds-tip]::after { content: attr(data-ds-tip); position: absolute; top: calc(100% + 0.45rem); left: 50%; transform: translateX(-50%) translateY(-4px); background: var(--ds-ink); color: #fff; border: 1px solid var(--ds-line-strong); font-size: 0.74rem; line-height: 1.3; padding: 0.3rem 0.55rem; border-radius: var(--ds-radius-sm); white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--ds-dur-fast), transform var(--ds-dur-fast); z-index: 60; }
 [data-ds-tip]:hover::after, [data-ds-tip]:focus-visible::after { opacity: 1; transform: translateX(-50%); }
+/* Variante para abrir para cima, quando houver espaço */
+[data-ds-tip][data-ds-tip-up]::after { top: auto; bottom: calc(100% + 0.45rem); transform: translateX(-50%) translateY(4px); }
 
 /* ---- kbd ---- */
 .ds-kbd { font-family: ui-monospace, monospace; font-size: 0.78rem; padding: 0.1rem 0.4rem; border: 1px solid var(--ds-line-strong); border-bottom-width: 2px; border-radius: 0.35rem; background: var(--ds-surface); color: var(--ds-t-700); }
@@ -498,7 +501,10 @@
 .ds-dark .ds-btn--primary:hover { background: #fff; }
 .ds-dark .ds-switch-track::after { background: #e6e9f0; }
 
-/* Botão de alternância claro/escuro */
+/* Controle de modo claro / automático / escuro (segmento compacto) */
+.ds-mode button { padding: 0.42rem 0.6rem; }
+.ds-mode button svg { width: 1.05rem; height: 1.05rem; display: block; }
+/* Botão único de alternância (variante legada) */
 [data-ds-dark-toggle] .ds-i-sun { display: none; }
 .ds-dark [data-ds-dark-toggle] .ds-i-moon { display: none; }
 .ds-dark [data-ds-dark-toggle] .ds-i-sun { display: inline-flex; }

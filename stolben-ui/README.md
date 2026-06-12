@@ -93,14 +93,20 @@ Modo claro (padrão) e escuro. Aplique `ds-dark` no `<html>` (funciona com qualq
 <html class="ds-dark"> … </html>
 ```
 
-Botão de alternância pronto — o JS troca a classe e guarda a preferência em
-`localStorage`:
+Controle de 3 modos — **claro / automático / escuro** (`auto` segue o sistema e é
+o padrão). O JS aplica a classe, guarda a preferência em `localStorage` e, em
+`auto`, reage a mudanças do sistema ao vivo:
 
 ```html
-<button class="ds-icon-btn" data-ds-dark-toggle aria-label="Alternar tema claro e escuro">
-  <span class="ds-i-moon">…lua…</span><span class="ds-i-sun">…sol…</span>
-</button>
+<div class="ds-segment ds-mode" data-ds-theme-mode role="group" aria-label="Tema">
+  <button type="button" data-mode="light" aria-label="Tema claro">…sol…</button>
+  <button type="button" data-mode="auto"  aria-label="Tema automático">…◐…</button>
+  <button type="button" data-mode="dark"  aria-label="Tema escuro">…lua…</button>
+</div>
 ```
+
+> Variante simples (2 estados): um `<button data-ds-dark-toggle>` que alterna
+> claro/escuro. Os modos persistem em `localStorage` (`ds-theme-mode`).
 
 Para evitar "flash", leia a preferência no `<head>`, antes do CSS:
 

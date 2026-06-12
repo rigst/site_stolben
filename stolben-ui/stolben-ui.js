@@ -227,25 +227,48 @@
     });
   }
 
-  /* ---- Alternância claro/escuro ([data-ds-dark-toggle]) ----
-     Aplica .ds-dark no <html> e guarda a preferência. A leitura inicial
-     deve ser feita por um script inline no <head> (evita flash). */
-  function initDarkToggle() {
-    document.querySelectorAll("[data-ds-dark-toggle]").forEach(function (btn) {
-      function sync() { btn.setAttribute("aria-pressed", String(document.documentElement.classList.contains("ds-dark"))); }
-      sync();
-      btn.addEventListener("click", function () {
-        var dark = document.documentElement.classList.toggle("ds-dark");
-        try { localStorage.setItem("ds-theme-mode", dark ? "dark" : "light"); } catch (e) {}
-        sync();
-      });
+  /* ---- Modo claro / escuro / automático ----
+     Modos: "light", "dark", "auto" (segue o sistema; é o padrão).
+     Controle 3-vias: [data-ds-theme-mode] com botões [data-mode="light|dark|auto"].
+     Variante legada: [data-ds-dark-toggle] (alterna claro/escuro).
+     A leitura inicial deve ser feita por um script inline no <head> (evita flash). */
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  function getMode() { try { return localStorage.getItem("ds-theme-mode") || "auto"; } catch (e) { return "auto"; } }
+  function applyMode() {
+    var m = getMode();
+    var dark = m === "dark" || (m === "auto" && mq.matches);
+    document.documentElement.classList.toggle("ds-dark", dark);
+  }
+  function setMode(m) {
+    try { if (m === "auto") localStorage.removeItem("ds-theme-mode"); else localStorage.setItem("ds-theme-mode", m); } catch (e) {}
+    applyMode(); syncModeControls();
+  }
+  function syncModeControls() {
+    var m = getMode();
+    document.querySelectorAll("[data-ds-theme-mode] [data-mode]").forEach(function (btn) {
+      var on = btn.getAttribute("data-mode") === m;
+      btn.classList.toggle("is-active", on);
+      btn.setAttribute("aria-pressed", String(on));
     });
+    var dark = document.documentElement.classList.contains("ds-dark");
+    document.querySelectorAll("[data-ds-dark-toggle]").forEach(function (b) { b.setAttribute("aria-pressed", String(dark)); });
+  }
+  function initThemeMode() {
+    document.querySelectorAll("[data-ds-theme-mode] [data-mode]").forEach(function (btn) {
+      btn.addEventListener("click", function () { setMode(btn.getAttribute("data-mode")); });
+    });
+    document.querySelectorAll("[data-ds-dark-toggle]").forEach(function (btn) {
+      btn.addEventListener("click", function () { setMode(document.documentElement.classList.contains("ds-dark") ? "light" : "dark"); });
+    });
+    var onSys = function () { if (getMode() === "auto") applyMode(); };
+    if (mq.addEventListener) mq.addEventListener("change", onSys); else if (mq.addListener) mq.addListener(onSys);
+    applyMode(); syncModeControls();
   }
 
   function init() {
     initReveal(); initTopbar(); initMenus(); initModals();
     initTabs(); initTableSelect(); initToastTriggers();
-    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initDarkToggle();
+    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initThemeMode();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

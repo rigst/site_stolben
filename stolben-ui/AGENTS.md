@@ -108,8 +108,9 @@ Em `templates/` há 3 exemplos prontos para copiar (tabela+indigo, cards+teal,
 board+amber). Copie o mais próximo da sua tela e ajuste conteúdo e tema.
 
 ### 2.8 Claro e escuro
-Suporta os dois modos. Inclua o botão `data-ds-dark-toggle` e o script de leitura
-no `<head>` (evita flash):
+Três modos: **claro / automático / escuro** (`auto` segue o sistema, é o padrão).
+Inclua o controle de 3 vias (`data-ds-theme-mode` com botões `data-mode`) e o
+script de leitura no `<head>` (evita flash):
 
 ```html
 <script>(function(){var e=document.documentElement;e.classList.add("js");
