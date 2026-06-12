@@ -123,6 +123,36 @@ use `--ds-text-strong` (não `--ds-ink`); para acento como texto/ícone use
 `--ds-accent-fg` (não `--ds-accent`, que pode ficar escuro demais no fundo escuro).
 Fundos neutros: `--ds-subtle`. O DS já clareia o acento e os estados no escuro.
 
+### 2.9 Mobile (obrigatório)
+Toda tela precisa funcionar no celular. O app shell já entrega o essencial:
+
+```html
+<div class="ds-shell">
+  <aside class="ds-sidebar"> … nav … </aside>
+  <div class="ds-nav-backdrop" aria-hidden="true"></div>   <!-- escurece ao abrir a gaveta -->
+  <div class="ds-main">
+    <header class="ds-topbar" data-ds-topbar>
+      <button class="ds-icon-btn ds-topbar-burger" data-ds-nav-toggle aria-label="Abrir menu">☰</button>
+      …
+    </header>
+    <main> … </main>
+  </div>
+</div>
+```
+
+Padrões a seguir no mobile (≤ 820px):
+- **Navegação:** a sidebar vira **gaveta off-canvas** (hambúrguer `data-ds-nav-toggle`
+  + `.ds-nav-backdrop`). Fecha no backdrop, num link ou com `Esc`. Nunca esconda a
+  navegação sem um jeito de abri-la.
+- **Reorganização:** grades (`.ds-grid--*`) viram 1 coluna; `.ds-toolbar` quebra linha.
+- **Tabela:** rolagem horizontal (`.ds-table-wrap`) **ou** troque para cards/lista
+  (`.ds-record`/`.ds-list`) — prefira cards quando há poucas colunas relevantes.
+- **Board e abas:** rolam na horizontal; **modal e drawer** ocupam quase a tela.
+- **Toque:** alvos `≥ 44px` (o DS aumenta `.ds-icon-btn` no mobile); respeite
+  `env(safe-area-inset-*)` em telas com entalhe; `touch-action: manipulation`.
+- **Prioridade:** esconda controles secundários no mobile em vez de espremer tudo.
+- Teste sempre em **~390px** de largura, em claro e escuro.
+
 ---
 
 ## 3. Princípios de design (frontend)
@@ -277,3 +307,5 @@ Um único painel escuro de destaque, se houver, para criar contraste.
 8. Movimento discreto, só `opacity`/`transform`, com `prefers-reduced-motion`.
 9. Uma ação primária azul por bloco; ritmo claro/escuro sem empilhar escuros.
 10. Sem "cara de IA": copy concreta, ícones neutros, nada de ornamento sem função.
+11. **Mobile (~390px) testado**: navegação em gaveta acessível, grades empilhadas,
+    tabela rolável ou em cards, alvos de toque ≥ 44px — em claro e escuro.

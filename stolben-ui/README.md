@@ -85,6 +85,31 @@ tons (light/dark/50/100/fg) são derivados e já funcionam no claro e no escuro:
 > Evite escolher um acento idêntico ao verde de sucesso ou ao vermelho de erro,
 > para não confundir ação com estado.
 
+## Mobile (navegação colapsável)
+
+No desktop nada muda; no celular (≤ 820px) a sidebar do `.ds-shell` vira uma
+**gaveta off-canvas**. Inclua um hambúrguer e o backdrop:
+
+```html
+<div class="ds-shell">
+  <aside class="ds-sidebar"> … </aside>
+  <div class="ds-nav-backdrop" aria-hidden="true"></div>
+  <div class="ds-main">
+    <header class="ds-topbar" data-ds-topbar>
+      <button class="ds-icon-btn ds-topbar-burger" data-ds-nav-toggle aria-label="Abrir menu">☰</button>
+      …
+    </header>
+    …
+  </div>
+</div>
+```
+
+O JS (`data-ds-nav-toggle`) abre/fecha a gaveta; fecha no backdrop, ao tocar um
+link ou com `Esc`. Outros padrões automáticos no mobile: grades viram 1 coluna,
+`.ds-toolbar` quebra linha, tabela rola na horizontal (ou troque para cards/lista),
+board/abas rolam lateral, modal/drawer quase tela cheia, alvos de toque maiores e
+`env(safe-area-inset-*)` respeitado. Veja o guia para IA (`AGENTS.md`, §2.9).
+
 ## Tema claro e escuro
 
 Modo claro (padrão) e escuro. Aplique `ds-dark` no `<html>` (funciona com qualquer

@@ -265,10 +265,27 @@
     applyMode(); syncModeControls();
   }
 
+  /* ---- Navegação mobile / gaveta ([data-ds-nav-toggle]) ----
+     Abre/fecha a sidebar como gaveta no mobile. Fecha ao clicar no backdrop,
+     em um link da sidebar, ou com Esc. */
+  function initMobileNav() {
+    document.querySelectorAll("[data-ds-nav-toggle]").forEach(function (btn) {
+      var shell = btn.closest(".ds-shell") || document.querySelector(".ds-shell");
+      if (!shell) return;
+      function set(open) { shell.classList.toggle("is-nav-open", open); btn.setAttribute("aria-expanded", String(open)); }
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function () { set(!shell.classList.contains("is-nav-open")); });
+      var bd = shell.querySelector(".ds-nav-backdrop");
+      if (bd) bd.addEventListener("click", function () { set(false); });
+      shell.querySelectorAll(".ds-sidebar a").forEach(function (a) { a.addEventListener("click", function () { set(false); }); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+    });
+  }
+
   function init() {
     initReveal(); initTopbar(); initMenus(); initModals();
     initTabs(); initTableSelect(); initToastTriggers();
-    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initThemeMode();
+    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initThemeMode(); initMobileNav();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
