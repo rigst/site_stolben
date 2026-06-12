@@ -163,9 +163,51 @@
     });
   }
 
+  /* ---- Segmented control ([data-ds-segment]) ---- */
+  function initSegments() {
+    document.querySelectorAll("[data-ds-segment]").forEach(function (seg) {
+      var btns = seg.querySelectorAll("button");
+      btns.forEach(function (b) {
+        b.addEventListener("click", function () {
+          btns.forEach(function (x) { x.classList.remove("is-active"); x.setAttribute("aria-pressed", "false"); });
+          b.classList.add("is-active"); b.setAttribute("aria-pressed", "true");
+        });
+      });
+    });
+  }
+
+  /* ---- Accordion ([data-ds-accordion]) ---- */
+  function initAccordions() {
+    document.querySelectorAll("[data-ds-accordion]").forEach(function (acc) {
+      acc.querySelectorAll(".ds-accordion-trigger").forEach(function (trig) {
+        var item = trig.closest(".ds-accordion-item");
+        var panel = item.querySelector(".ds-accordion-panel");
+        trig.setAttribute("aria-expanded", String(item.classList.contains("is-open")));
+        trig.addEventListener("click", function () {
+          var open = item.classList.toggle("is-open");
+          trig.setAttribute("aria-expanded", String(open));
+          if (panel) panel.hidden = !open;
+        });
+      });
+    });
+  }
+
+  /* ---- Dropzone ([data-ds-dropzone]) ---- */
+  function initDropzones() {
+    document.querySelectorAll("[data-ds-dropzone]").forEach(function (dz) {
+      ["dragenter", "dragover"].forEach(function (ev) {
+        dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.add("is-drag"); });
+      });
+      ["dragleave", "drop"].forEach(function (ev) {
+        dz.addEventListener(ev, function (e) { e.preventDefault(); dz.classList.remove("is-drag"); });
+      });
+    });
+  }
+
   function init() {
     initReveal(); initTopbar(); initMenus(); initModals();
     initTabs(); initTableSelect(); initToastTriggers();
+    initSegments(); initAccordions(); initDropzones();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();

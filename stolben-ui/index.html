@@ -81,7 +81,10 @@
       <a href="#overlay">Modal, tabs e menu</a>
       <h4>Padrões</h4>
       <a href="#crud">Lista CRUD</a>
+      <a href="#mais">Mais componentes</a>
       <a href="#movimento">Movimento</a>
+      <h4>Guia</h4>
+      <a href="AGENTS.md">Instruções p/ IA ↗</a>
     </aside>
 
     <main class="sg-main" id="topo">
@@ -95,6 +98,12 @@
           <p style="color:var(--ds-on-dark-dim);max-width:34rem">Tokens, cores pontuais, tipografia e componentes prontos (botões, tabelas, formulários, modais) para construir telas de CRUD com a identidade do stolben.com.</p>
         </div>
       </section>
+
+      <!-- ============ CALLOUT GUIA IA ============ -->
+      <div class="ds-alert ds-alert--info ds-reveal" style="margin-bottom:0.5rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <div><span class="ds-alert-title">Construindo telas com IA?</span> Leia o <a href="AGENTS.md" style="text-decoration:underline;font-weight:600">guia de construção de interfaces</a> (<code class="sg-code">AGENTS.md</code>): regras de design, checklist de acessibilidade e receitas de tela (lista, formulário, detalhe, dashboard).</div>
+      </div>
 
       <!-- ============ CORES ============ -->
       <section class="sg-sec" id="cores">
@@ -393,6 +402,73 @@
         </div>
       </section>
 
+      <!-- ============ MAIS COMPONENTES ============ -->
+      <section class="sg-sec" id="mais">
+        <h2>Mais componentes</h2>
+        <p class="sg-desc">Peças adicionais para apps reais: navegação, detalhe de registro, filtros, upload e mais.</p>
+
+        <div class="sg-demo">
+          <p class="sg-label">Breadcrumb</p>
+          <nav class="ds-breadcrumb" aria-label="Trilha" style="margin-bottom:1.5rem"><ol><li><a href="#">Início</a></li><li><a href="#">Clientes</a></li><li aria-current="page">Maria Souza</li></ol></nav>
+
+          <p class="sg-label">Segmented control / filtros</p>
+          <div class="ds-segment" data-ds-segment role="group" aria-label="Período" style="margin-bottom:1.5rem">
+            <button class="is-active" aria-pressed="true">Hoje</button>
+            <button aria-pressed="false">Semana</button>
+            <button aria-pressed="false">Mês</button>
+          </div>
+
+          <p class="sg-label">Chips removíveis e kbd</p>
+          <div class="sg-wrap" style="margin-bottom:1.5rem">
+            <span class="ds-chip">Publicado <button aria-label="Remover filtro Publicado"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></span>
+            <span class="ds-chip">Python <button aria-label="Remover filtro Python"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></span>
+            <span style="color:var(--ds-t-500);font-size:.9rem">Buscar: <span class="ds-kbd">Ctrl</span> + <span class="ds-kbd">K</span></span>
+            <button class="ds-icon-btn" aria-label="Notificações" data-ds-tip="3 novas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="ds-count">3</span></button>
+          </div>
+
+          <p class="sg-label">Detalhe (description list)</p>
+          <div class="ds-card" style="margin-bottom:1.5rem">
+            <dl class="ds-dl">
+              <dt>Cliente</dt><dd>Maria Souza</dd>
+              <dt>E-mail</dt><dd>maria@empresa.com</dd>
+              <dt>Status</dt><dd><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Publicado</span></dd>
+              <dt>Valor</dt><dd class="ds-mono">R$ 1.240,00</dd>
+            </dl>
+          </div>
+
+          <div class="ds-grid ds-grid--2">
+            <div>
+              <p class="sg-label">Upload (dropzone)</p>
+              <label class="ds-dropzone" data-ds-dropzone>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <strong>Arraste arquivos aqui</strong>
+                <span>ou clique para selecionar</span>
+                <input type="file" hidden multiple />
+              </label>
+            </div>
+            <div>
+              <p class="sg-label">Accordion</p>
+              <div class="ds-accordion" data-ds-accordion>
+                <div class="ds-accordion-item is-open">
+                  <button class="ds-accordion-trigger">Dados gerais <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+                  <div class="ds-accordion-panel">Campos principais do registro.</div>
+                </div>
+                <div class="ds-accordion-item">
+                  <button class="ds-accordion-trigger">Endereço <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+                  <div class="ds-accordion-panel" hidden>Logradouro, cidade e CEP.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="sg-label" style="margin-top:1.5rem">Drawer / slide-over (edição lateral)</p>
+          <button class="ds-btn ds-btn--ghost" data-ds-open="drawer-demo">Abrir drawer</button>
+
+          <p class="sg-label" style="margin-top:1.75rem">App shell com sidebar</p>
+          <p style="color:var(--ds-t-500);font-size:.9rem">Esta própria página usa <code class="sg-code">.ds-shell</code> + <code class="sg-code">.ds-sidebar</code> (à esquerda) para o layout de admin. Veja o <code class="sg-code">README.md</code> e o <code class="sg-code">AGENTS.md</code> para o markup.</p>
+        </div>
+      </section>
+
       <!-- ============ MOVIMENTO ============ -->
       <section class="sg-sec" id="movimento">
         <h2>Movimento</h2>
@@ -431,6 +507,25 @@
       <button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Cliente criado com sucesso." data-ds-toast-type="success">Criar</button>
     </div>
   </div>
+</div>
+
+<!-- ============ DRAWER DE EXEMPLO ============ -->
+<div class="ds-overlay ds-overlay--side" id="drawer-demo" role="dialog" aria-modal="true" aria-labelledby="drawer-demo-title">
+  <aside class="ds-drawer">
+    <div class="ds-drawer-head">
+      <h3 class="ds-h3" id="drawer-demo-title">Editar cliente</h3>
+      <button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="ds-drawer-body">
+      <div class="ds-field"><label class="ds-label" for="d-nome">Nome</label><input class="ds-input" id="d-nome" autocomplete="name" value="Maria Souza" /></div>
+      <div class="ds-field"><label class="ds-label" for="d-mail">E-mail</label><input class="ds-input" id="d-mail" type="email" inputmode="email" spellcheck="false" value="maria@empresa.com" /></div>
+      <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="d-status">Status</label><select class="ds-select" id="d-status"><option>Publicado</option><option>Pendente</option><option>Rascunho</option></select></div>
+    </div>
+    <div class="ds-drawer-foot">
+      <button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button>
+      <button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Cliente atualizado." data-ds-toast-type="success">Salvar</button>
+    </div>
+  </aside>
 </div>
 
 <script src="stolben-ui.js"></script>

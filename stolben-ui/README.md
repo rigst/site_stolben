@@ -17,7 +17,11 @@ dashboards. CSS puro + um JS opcional, sem build — funciona em qualquer stack
 | `stolben-ui.css` | Tokens (variáveis CSS) + todos os componentes (prefixo `.ds-`) |
 | `stolben-ui.js`  | Comportamentos opcionais (reveal, modal, menu, tabs, toast, tabela) |
 | `index.html`     | Página de showcase / styleguide vivo |
+| `AGENTS.md`      | **Guia para IA**: como construir telas com este DS (design + acessibilidade) |
 | `img/`           | Imagens reais de licença livre usadas nos exemplos |
+
+> **Construindo com IA?** Leia o **[`AGENTS.md`](AGENTS.md)** — regras de design,
+> checklist de acessibilidade e receitas de tela (lista, formulário, detalhe).
 
 ## Como usar
 
@@ -81,28 +85,34 @@ Use sempre `var(--ds-…)` no lugar de valores soltos.
 
 ## Componentes
 
-**Fundamentos:** `.ds-app` (shell), `.ds-lines`, `.ds-noise`, `.ds-glow`,
-`.ds-panel-dark`, `.ds-surface`, `.ds-media` + `.ds-media-grad` (foto de fundo),
-helpers de tipografia (`.ds-display`, `.ds-h1..h3`, `.ds-kicker`, `.ds-muted`).
+**Layout:** `.ds-app` (shell de site), `.ds-shell` + `.ds-sidebar` (admin/CRUD),
+`.ds-main`, `.ds-lines`, `.ds-noise`, `.ds-glow`, `.ds-panel-dark`, `.ds-surface`,
+`.ds-media` + `.ds-media-grad` (foto de fundo).
+
+**Tipografia:** `.ds-display`, `.ds-h1..h3`, `.ds-lead`, `.ds-kicker`, `.ds-muted`,
+`.ds-mono`.
 
 **Ações:** `.ds-btn` (`--solid`, `--primary`, `--ghost`, `--subtle`, `--danger`,
 tamanhos `--sm`/`--lg`, `--block`, `--icon`), `.ds-icon-btn`.
 
-**Navegação:** `.ds-topbar` (+ `--dark`), `.ds-topbar-nav`, `.ds-avatar`,
-`.ds-tabs`/`.ds-tab`, `.ds-menu` (dropdown), `.ds-pagination`.
+**Navegação:** `.ds-topbar` (+ `--dark`), `.ds-topbar-nav`, `.ds-sidebar-link`,
+`.ds-breadcrumb`, `.ds-avatar`, `.ds-tabs`/`.ds-tab`, `.ds-menu` (dropdown),
+`.ds-pagination`, `.ds-segment` (filtros).
 
 **Conteúdo:** `.ds-card` (+ `--hover`), `.ds-stat`, `.ds-icon-box`, `.ds-badge`
-(`--neutral/info/success/warn/danger`), `.ds-empty`.
+(`--neutral/info/success/warn/danger`), `.ds-dl` (detalhe), `.ds-chip`,
+`.ds-accordion`, `.ds-kbd`, `.ds-count`, `.ds-empty`, `[data-ds-tip]` (tooltip).
 
 **Formulários:** `.ds-field`, `.ds-label`, `.ds-input`, `.ds-textarea`,
-`.ds-select`, `.ds-search`, `.ds-check`, `.ds-switch`, `.ds-help` (+ `--error`),
-`.ds-input--invalid`.
+`.ds-select`, `.ds-search`, `.ds-check`, `.ds-radio`, `.ds-switch`, `.ds-dropzone`,
+`.ds-help` (+ `--error`), `.ds-input--invalid`.
 
 **Dados:** `.ds-table` + `.ds-table-wrap` (hover, seleção, `aria-sort`,
 `.ds-row-actions`), `.ds-toolbar`.
 
 **Feedback:** `.ds-alert` (4 tipos), `.ds-toast` (+ `window.dsToast(msg, tipo)`),
-`.ds-modal`/`.ds-overlay`, `.ds-progress`, `.ds-spinner`, `.ds-skeleton`.
+`.ds-modal` / `.ds-drawer` (slide-over) / `.ds-overlay`, `.ds-progress`,
+`.ds-spinner`, `.ds-skeleton`.
 
 ### Comportamentos (data-attributes)
 
@@ -115,6 +125,10 @@ tamanhos `--sm`/`--lg`, `--block`, `--icon`), `.ds-icon-btn`.
 <div data-ds-tabs> .ds-tabs > .ds-tab[data-ds-tab="x"] … .ds-tabpanel[data-ds-panel="x"] </div>
 <table> <input data-ds-check-all> … <input data-ds-row-check> </table>
 <button data-ds-toast="Salvo!" data-ds-toast-type="success">…</button>
+<div data-ds-segment> .ds-segment > button.is-active … </div>      <!-- filtros -->
+<div data-ds-accordion> .ds-accordion-item > .ds-accordion-trigger + .ds-accordion-panel </div>
+<label data-ds-dropzone class="ds-dropzone"> … <input type="file" hidden> </label>
+<button data-ds-open="meu-drawer">…</button> … <div class="ds-overlay ds-overlay--side" id="meu-drawer"><aside class="ds-drawer">…</aside></div>
 ```
 
 ---
