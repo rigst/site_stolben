@@ -490,6 +490,27 @@
 .ds-board-card-title { font-weight: 500; color: var(--ds-t-900); font-size: 0.95rem; }
 .ds-board-card-meta { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; font-size: 0.8rem; color: var(--ds-t-500); }
 
+/* ---- Gráfico de barras (dashboard) ---- */
+.ds-chart { display: flex; align-items: flex-end; gap: 0.6rem; height: 11rem; padding-top: 1.25rem; }
+.ds-chart-col { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 0.45rem; height: 100%; justify-content: flex-end; }
+.ds-chart-bar { width: 100%; max-width: 2.6rem; min-height: 2px; border-radius: var(--ds-radius-sm) var(--ds-radius-sm) 0 0; background: var(--ds-accent); transition: filter var(--ds-dur-fast); }
+.ds-chart-bar:hover { filter: brightness(1.12); }
+.ds-chart-col--muted .ds-chart-bar { background: var(--ds-accent-100); }
+.ds-chart-label { font-size: 0.74rem; color: var(--ds-t-500); }
+.ds-chart-val { font-size: 0.72rem; font-weight: 600; color: var(--ds-t-700); font-variant-numeric: tabular-nums; }
+
+/* ---- Timeline / feed de atividade (cronológico) ---- */
+.ds-timeline { position: relative; list-style: none; }
+.ds-timeline::before { content: ""; position: absolute; left: 0.39rem; top: 0.4rem; bottom: 0.4rem; width: 2px; background: var(--ds-line); }
+.ds-timeline-item { position: relative; padding: 0 0 1.3rem 1.6rem; }
+.ds-timeline-item:last-child { padding-bottom: 0; }
+.ds-timeline-dot { position: absolute; left: 0; top: 0.2rem; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--ds-surface); border: 2px solid var(--ds-accent); }
+.ds-timeline-dot--done { background: var(--ds-accent); }
+.ds-timeline-dot--muted { border-color: var(--ds-line-strong); }
+.ds-timeline-time { font-size: 0.78rem; color: var(--ds-t-400); }
+.ds-timeline-title { font-weight: 500; color: var(--ds-t-900); }
+.ds-timeline-text { font-size: 0.9rem; color: var(--ds-t-500); }
+
 /* ------------------------- FOCO / ACESSIBILIDADE --------------------- */
 .ds-root :where(a, button, input, textarea, select, [tabindex]):focus-visible { outline: 2px solid var(--ds-accent-light); outline-offset: 2px; }
 

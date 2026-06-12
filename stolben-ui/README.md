@@ -104,6 +104,8 @@ Mesma informação, leituras diferentes — sempre com **só o essencial em dest
 - **Grade de cards** `.ds-record` (em `.ds-grid--3/4`) — visual, com miniatura.
 - **Lista compacta** `.ds-list` / `.ds-list-item` — leitura rápida, mobile.
 - **Board** `.ds-board` / `.ds-board-col` / `.ds-board-card` — fluxo por status.
+- **Gráfico de barras** `.ds-chart` / `.ds-chart-col` / `.ds-chart-bar` — métricas (dashboard).
+- **Timeline** `.ds-timeline` / `.ds-timeline-item` — feed de atividade cronológico.
 
 Alternador: `.ds-segment` com `data-view="x"` dentro de `[data-ds-views]`; os blocos
 são `[data-view-panel="x"]` (o JS mostra/esconde).

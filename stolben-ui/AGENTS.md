@@ -97,6 +97,8 @@ Escolha pela tarefa e mostre **só o essencial em destaque**, com hierarquia
 | **Grade de cards** | Itens visuais (catálogo, galeria) | `.ds-record` em `.ds-grid--3/4` |
 | **Lista compacta** | Leitura rápida, mobile | `.ds-list` / `.ds-list-item` |
 | **Board / colunas** | Fluxo por status (kanban) | `.ds-board` / `.ds-board-col` / `.ds-board-card` |
+| **Gráfico de barras** | Métricas/comparação (dashboard) | `.ds-chart` / `.ds-chart-col` / `.ds-chart-bar` |
+| **Timeline / feed** | Eventos cronológicos (histórico, log) | `.ds-timeline` / `.ds-timeline-item` |
 
 Para alternar visualizações na mesma tela: `.ds-segment` com `data-view="x"`
 dentro de `[data-ds-views]`, e blocos `[data-view-panel="x"]`.
@@ -183,6 +185,9 @@ Ao gerar qualquer tela, garanta:
 - [ ] Texto que pode estourar usa `.ds-truncate`; filhos de flex usam `min-width:0`.
 - [ ] Números/valores em tabelas com `font-variant-numeric: tabular-nums`
       (classe `.ds-mono` ou `.ds-td-num`).
+- [ ] Gráfico (`.ds-chart`) tem alternativa textual: `role="img"` + `aria-label`
+      resumindo os dados (barras decorativas com `aria-hidden`). Timeline usa
+      `<ol>`/`<li>` semânticos.
 
 **Estrutura e estados**
 - [ ] Hierarquia de headings (`h1` → `h2` → `h3`), sem pular níveis.

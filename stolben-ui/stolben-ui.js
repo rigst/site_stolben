@@ -214,10 +214,23 @@
     });
   }
 
+  /* ---- Seletor de tema de acento ([data-ds-theme-select]) ----
+     Troca a classe .ds-theme-* na raiz ao vivo. value="" volta ao azul. */
+  var DS_THEMES = ["ds-theme-indigo", "ds-theme-violet", "ds-theme-teal", "ds-theme-emerald", "ds-theme-amber", "ds-theme-rose", "ds-theme-slate"];
+  function initThemeSelect() {
+    document.querySelectorAll("[data-ds-theme-select]").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        var root = document.querySelector(".ds-root") || document.body;
+        DS_THEMES.forEach(function (t) { root.classList.remove(t); });
+        if (sel.value) root.classList.add(sel.value);
+      });
+    });
+  }
+
   function init() {
     initReveal(); initTopbar(); initMenus(); initModals();
     initTabs(); initTableSelect(); initToastTriggers();
-    initSegments(); initAccordions(); initDropzones();
+    initSegments(); initAccordions(); initDropzones(); initThemeSelect();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
