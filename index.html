@@ -1,210 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stölben | Desenvolvimento de software</title>
-  <meta name="description" content="Portfólio de Rodrigo Stölben — sistemas web sob medida, com fluxo claro, estabilidade em produção e evolução contínua. Foco em Python, Django e dados." />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Stölben | Desenvolvimento de software" />
-  <meta property="og:description" content="Sistemas web sob medida, com fluxo claro, estabilidade em produção e evolução contínua." />
-  <meta property="og:locale" content="pt_BR" />
-  <meta name="twitter:card" content="summary" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rodrigo Stölben · Desenvolvimento de software</title>
+<meta name="description" content="Portfólio de Rodrigo Stölben. Sistemas web em Python e Django, do código à operação em produção." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Rodrigo Stölben · Desenvolvimento de software" />
+<meta property="og:description" content="Portfólio: sistemas web em Python e Django, do código à operação." />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary" />
+<meta name="theme-color" content="#0f1115" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<script>document.documentElement.classList.add("js")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
-    <div class="layout-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="page">
+  <header class="nav">
+    <nav class="nav-pill" aria-label="Navegação principal">
+      <a class="nav-brand" href="#home">Rodrigo Stölben</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#stack">Tecnologias</a></li>
+        <li><a href="#hosting">Infra</a></li>
+      </ul>
+      <a class="nav-cta" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </header>
 
-    <header class="nav-bar" id="siteHeader">
-      <nav class="nav-pill" aria-label="Navegação principal">
-        <a class="nav-brand" href="#home">Rodrigo Stölben</a>
-        <ul class="nav-links">
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#contact">Contato</a></li>
-        </ul>
-        <a class="nav-cta" href="#contact">Iniciar projeto</a>
-      </nav>
-    </header>
-
-    <main>
-      <!-- ===================== HERO ===================== -->
-      <section class="hero" id="home">
-        <div class="hero-bg" aria-hidden="true">
-          <img src="assets/hero-bg.jpg" alt="" loading="eager" />
-          <div class="grad"></div>
-          <div class="glow-a"></div>
-          <div class="noise"></div>
-        </div>
-
-        <div class="hero-content">
-          <h1>
-            Software web para <br />
-            <span class="muted">transformar processos</span> <br />
-            em resultado real.
-          </h1>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/hero-bg.jpg" alt="" width="1920" height="1282" fetchpriority="high" />
+        <div class="grad"></div><div class="glow"></div><div class="noise"></div>
+      </div>
+      <div class="hero-grid">
+        <div class="reveal">
+          <span class="hero-eyebrow"><span class="dot"></span> Portfólio · Python &amp; Django</span>
+          <h1 class="display">Sistemas web <span class="em">em Python e Django</span>, do código à operação.</h1>
+          <p class="hero-lead">Este é o meu portfólio: alguns dos sistemas que projetei, construí e mantenho no ar. Foco em código claro, dados bem modelados e operação estável em produção.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">
-              Ver projetos
-              <span class="btn-ico" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-              </span>
-            </a>
-            <a class="btn btn-ghost" href="#contact">Conversar sobre um projeto</a>
+            <a class="btn btn-primary" href="#projects">Ver projetos <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+            <a class="btn btn-ghost" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
-      </section>
+        <aside class="live reveal" aria-label="Status dos sistemas">
+          <div class="live-head"><span>Sistemas no ar</span><span class="tag"><span class="dot"></span> operando</span></div>
+          <div class="live-row"><span class="svc">divisor.stolben.com</span><span class="st">200 · OK</span></div>
+          <div class="live-row"><span class="svc">orcamentos.stolben.com</span><span class="st">200 · OK</span></div>
+          <div class="live-row"><span class="svc">financas.stolben.com</span><span class="st">200 · OK</span></div>
+          <div class="live-row"><span class="svc">vetorial.stolben.com</span><span class="st" style="color:#fcd34d">build</span></div>
+        </aside>
+      </div>
+    </section>
 
-      <!-- ===================== ENTREGA / FOCO ===================== -->
-      <section class="strip">
-        <div class="strip-card reveal">
-          <span class="kick">Entrega</span>
-          <p>Aplicações no ar, com <strong>deploy próprio em Linux e Nginx</strong> e manutenção que continua depois do lançamento.</p>
-        </div>
-        <div class="strip-card reveal">
-          <span class="kick">Foco</span>
-          <p>Tirar o retrabalho da operação: <strong>o processo manual vira um fluxo claro</strong> no navegador.</p>
-        </div>
-      </section>
+    <!-- METRICS -->
+    <section class="metrics" aria-label="Resumo">
+      <div class="metric reveal"><strong>4</strong><span>sistemas publicados e em uso</span></div>
+      <div class="metric reveal"><strong>Python · Django</strong><span>back-end e dados</span></div>
+      <div class="metric reveal"><strong>Linux · Nginx</strong><span>deploy próprio em produção</span></div>
+    </section>
 
-      <!-- ===================== PROJETOS ===================== -->
-      <section class="section" id="projects">
-        <div class="sec-head reveal">
-          <div>
-            <span class="eyebrow">/ Projetos publicados</span>
-            <h2>Produtos reais, <span class="muted">no ar e em uso.</span></h2>
-          </div>
-          <a class="sec-link" href="https://github.com/rigst" target="_blank" rel="noreferrer">
-            GitHub completo
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-          </a>
-        </div>
-
-        <div class="projects-grid" id="projectsGrid"></div>
-      </section>
-
-      <!-- ===================== SOBRE ===================== -->
-      <section class="about" id="about">
-        <div class="noise" aria-hidden="true"></div>
-        <div class="about-inner">
-          <div class="about-head reveal">
-            <span class="pill">Sobre</span>
-            <h2>Como penso produto, desenvolvo e entrego</h2>
-          </div>
-
-          <div class="pillars">
-            <article class="pillar reveal">
-              <span class="p-ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-              </span>
-              <h3>Como penso produto</h3>
-              <p>Começo pelo problema real da operação e traduzo em fluxo claro, com prioridade para usabilidade, contexto de negócio e ganho prático.</p>
-            </article>
-            <article class="pillar reveal">
-              <span class="p-ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-              </span>
-              <h3>Como desenvolvo</h3>
-              <p>Arquitetura simples de manter, boas práticas de código, validação contínua e foco em estabilidade de produção.</p>
-            </article>
-            <article class="pillar reveal">
-              <span class="p-ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              </span>
-              <h3>O que entrego</h3>
-              <p>Sistemas web funcionais, com interface objetiva, rastreabilidade de processos e base técnica pronta para evoluir.</p>
-            </article>
-          </div>
-
-          <div class="stack">
-            <div class="stack-card reveal">
-              <p class="kick">Back-end</p>
-              <div class="chips"><span>Python</span><span>Django</span></div>
-            </div>
-            <div class="stack-card reveal">
-              <p class="kick">Banco de dados</p>
-              <div class="chips"><span>PostgreSQL</span><span>Redis</span></div>
-            </div>
-            <div class="stack-card reveal">
-              <p class="kick">Infra e deploy</p>
-              <div class="chips"><span>Nginx</span><span>Gunicorn</span><span>Linux</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================== CONTATO ===================== -->
-      <section class="contact" id="contact">
-        <div class="contact-bg" aria-hidden="true">
-          <img src="assets/contact-bg.jpg" alt="" loading="lazy" />
-          <div class="grad"></div>
-        </div>
-        <div class="glow" aria-hidden="true"></div>
-
-        <div class="contact-inner">
-          <div class="contact-left reveal">
+    <!-- PROJECTS -->
+    <section class="sec" id="projects">
+      <div class="sec-head reveal">
+        <div><span class="kick">/ Projetos publicados</span><h2 class="display" style="margin-top:.5rem">Produtos reais, <span class="muted">no ar e em uso.</span></h2></div>
+        <a class="sec-link" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+      <div class="grid">
+        <!-- featured -->
+        <a class="card c-feat reveal" href="https://divisor.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Divisor de PDF (abre em nova aba)">
+          <div class="media"><img src="assets/theme-divisor.jpg" alt="Documentos arquivados em prateleiras" width="1000" height="1400" loading="lazy" /></div>
+          <div class="body">
+            <div class="top"><span class="num">01</span><span class="badge b-pub-d"><span class="dot"></span> Publicado</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
             <div>
-              <span class="pill-blue">Vamos conversar</span>
-              <h2>Tem um processo para transformar em software?</h2>
-              <p class="lead">Me conta o contexto, o objetivo e o prazo. Respondo com uma primeira leitura do problema e os próximos passos.</p>
-            </div>
-            <div class="contact-channels">
-              <a href="mailto:rodrigo.stolben@gmail.com">
-                <span class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg></span>
-                rodrigo.stolben@gmail.com
-              </a>
-              <a href="https://github.com/rigst" target="_blank" rel="noreferrer">
-                <span class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"></path></svg></span>
-                github.com/rigst
-              </a>
+              <h3>Divisor de PDF</h3>
+              <p>Ferramenta web para enviar PDFs, comprimir e dividir em partes menores, com download em PDF único ou ZIP.</p>
             </div>
           </div>
+        </a>
+        <!-- medium -->
+        <a class="card c-med reveal" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema de Orçamentos (abre em nova aba)">
+          <div class="media"><img src="assets/theme-orcamentos.jpg" alt="Painel de análise em um notebook" width="1600" height="1067" loading="lazy" /></div>
+          <div class="body">
+            <div class="head"><span class="num">02</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
+            <h3>Sistema de Orçamentos</h3>
+            <p>Plataforma para gestão de orçamentos, com foco em produtividade e organização de processos.</p>
+          </div>
+        </a>
+        <a class="card c-med reveal" href="https://financas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Finanças (abre em nova aba)">
+          <div class="media"><img src="assets/theme-financas.jpg" alt="Calculadora sobre documentos financeiros" width="1600" height="1067" loading="lazy" /></div>
+          <div class="body">
+            <div class="head"><span class="num">03</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
+            <h3>Sistema Finanças</h3>
+            <p>Controle financeiro, organização de lançamentos e acompanhamento objetivo da operação.</p>
+          </div>
+        </a>
+        <!-- dev -->
+        <a class="card c-dev reveal" href="https://vetorial.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Vetorial (abre em nova aba)">
+          <div class="dev-media" aria-hidden="true"><img src="assets/theme-vetorial.jpg" alt="" width="1600" height="1067" loading="lazy" /></div>
+          <div class="glow" aria-hidden="true"></div>
+          <div class="main"><span class="badge b-dev"><span class="dot"></span> Em desenvolvimento</span><h3>Sistema Vetorial</h3><p>Aplicação web para organizar fluxos específicos de operação, com interface objetiva e navegação simples.</p></div>
+          <div class="side"><span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
+        </a>
+      </div>
+    </section>
 
-          <form class="contact-form reveal" id="contactForm">
-            <label>
-              <span>Nome</span>
-              <input type="text" name="nome" placeholder="Seu nome" required />
-            </label>
-            <label>
-              <span>Contexto e objetivo</span>
-              <textarea name="contexto" rows="4" placeholder="Qual processo você quer melhorar?" required></textarea>
-            </label>
-            <label>
-              <span>Prazo desejado</span>
-              <input type="text" name="prazo" placeholder="Ex.: 4 a 6 semanas" required />
-            </label>
-            <button type="submit" class="btn btn-blue">
-              Enviar mensagem
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <p class="copy">© <span id="year"></span> Rodrigo Stölben. Todos os direitos reservados.</p>
-        <div class="footer-social">
-          <a href="https://github.com/rigst" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"></path></svg>
-          </a>
-          <a href="mailto:rodrigo.stolben@gmail.com" aria-label="E-mail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 5L2 7"></path></svg>
-          </a>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="noise" aria-hidden="true"></div>
+      <div class="about-in">
+        <div class="about-head reveal"><span class="pill">Sobre</span><h2 class="display">Como penso, construo e evoluo</h2></div>
+        <div class="pillars">
+          <article class="pillar reveal"><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span><h3>Como penso</h3><p>Parto do problema real e modelo o fluxo: estrutura de dados, regras de negócio e a navegação mais simples possível.</p></article>
+          <article class="pillar reveal"><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3>Como construo</h3><p>Arquitetura direta de manter, boas práticas de código e validação contínua, com foco em estabilidade em produção.</p></article>
+          <article class="pillar reveal"><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><h3>Como evoluo</h3><p>Estudo constante de novas ferramentas, padrões e detalhes de infraestrutura que deixam cada projeto melhor que o anterior.</p></article>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- TECNOLOGIAS -->
+    <section class="sec" id="stack">
+      <div class="sec-head reveal">
+        <div>
+          <span class="kick">/ Tecnologias</span>
+          <h2 class="display" style="margin-top:.5rem">As ferramentas, <span class="muted">e por que escolho cada uma.</span></h2>
+        </div>
+      </div>
+      <p class="sec-intro reveal">Sem jargão: as tecnologias que uso para construir os sistemas e o raciocínio por trás de cada escolha.</p>
+      <div class="tech-grid">
+        <article class="tech-card wide tech-split reveal">
+          <div class="ts-body">
+            <span class="role">A fundação</span>
+            <h3>Python &amp; Django</h3>
+            <p>A linguagem e a estrutura onde o sistema é construído. O Django é uma base madura, a mesma usada por empresas como Instagram e Spotify: boa parte da segurança e da organização já vem pronta, o que significa menos código frágil e mais tempo dedicado à regra de negócio.</p>
+          </div>
+          <div class="ts-media"><img src="assets/code-screen.jpg" alt="Código em um editor de texto" width="1200" height="801" loading="lazy" /></div>
+        </article>
+        <article class="tech-card reveal">
+          <span class="role">Onde ficam os dados</span>
+          <h3>PostgreSQL</h3>
+          <p>O banco de dados é o arquivo central do sistema. Guarda cada informação de forma consistente e segura, sem perder ou misturar registros, mesmo com muito acesso ao mesmo tempo.</p>
+        </article>
+        <article class="tech-card reveal">
+          <span class="role">A velocidade</span>
+          <h3>Redis</h3>
+          <p>Mantém o que é mais usado sempre à mão, para as telas responderem na hora. É o que faz o sistema parecer leve, em vez de travado.</p>
+        </article>
+        <article class="tech-card reveal">
+          <span class="role">O trabalho pesado</span>
+          <h3>Celery</h3>
+          <p>Cuida de tarefas demoradas (como processar arquivos) em segundo plano, sem travar a tela enquanto o sistema trabalha.</p>
+        </article>
+        <article class="tech-card reveal">
+          <span class="role">No ar, 24 horas</span>
+          <h3>Linux · Nginx · Gunicorn</h3>
+          <p>A infraestrutura que mantém tudo online, estável e seguro o tempo todo. Configuro e mantenho o servidor por conta própria, sem depender de plataformas fechadas de terceiros.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- HOSPEDAGEM E MANUTENÇÃO -->
+    <section class="host" id="hosting">
+      <div class="host-grid">
+        <div class="host-text reveal">
+          <span class="kick">Infraestrutura e operação</span>
+          <h2 class="display">Do código ao servidor: onde um sistema realmente vive.</h2>
+          <p class="lead">Um sistema precisa morar em algum lugar: um servidor da empresa ou uma VPS. Domino essa etapa de ponta a ponta, do deploy à operação do dia a dia, mantendo tudo disponível, seguro e atualizado.</p>
+          <div class="host-points">
+            <div class="host-point">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>
+              <div><h3>Servidor próprio ou VPS</h3><p>Escolho o ambiente conforme custo, controle e o crescimento esperado de cada projeto.</p></div>
+            </div>
+            <div class="host-point">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <div><h3>Supervisão contínua</h3><p>Monitoramento, backups, segurança e atualizações para evitar tempo fora do ar.</p></div>
+            </div>
+            <div class="host-point">
+              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+              <div><h3>Evolução contínua</h3><p>Ajustes, correções e novas funções conforme o sistema cresce e a operação muda.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="host-media reveal">
+          <img src="assets/server-room.jpg" alt="Servidores em um data center, onde o sistema fica hospedado" width="2000" height="1122" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="foot">
+    <div class="foot-in">
+      <div>
+        <p class="foot-brand">Rodrigo Stölben</p>
+        <p class="copy">Desenvolvimento de software · Python &amp; Django · © 2026</p>
+      </div>
+      <nav class="foot-links" aria-label="Contato">
+        <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>
+        <a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
