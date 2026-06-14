@@ -18,10 +18,15 @@ dashboards. CSS puro + um JS opcional, sem build — funciona em qualquer stack
 | `stolben-ui.js`  | Comportamentos opcionais (reveal, modal, menu, tabs, toast, tabela) |
 | `index.html`     | Página de showcase / styleguide vivo |
 | `AGENTS.md`      | **Guia para IA**: como construir telas com este DS (design + acessibilidade) |
+| `DEPLOY-EM-APPS.md` | **Implantar em apps existentes**: vendoring, quebras de API, modo escuro, deploy |
 | `img/`           | Imagens reais de licença livre usadas nos exemplos |
 
 > **Construindo com IA?** Leia o **[`AGENTS.md`](AGENTS.md)** — regras de design,
 > checklist de acessibilidade e receitas de tela (lista, formulário, detalhe).
+
+> **Atualizando um app que já usa o DS?** Leia o **[`DEPLOY-EM-APPS.md`](DEPLOY-EM-APPS.md)**
+> — quebras de API (ex.: `.ds-shell`→`.ds-app`, tokens renomeados, `--ds-blue*`→`--ds-accent*`),
+> como ligar o modo escuro e o passo a passo de deploy.
 
 ## Como usar
 
@@ -207,7 +212,10 @@ tamanhos `--sm`/`--lg`, `--block`, `--icon`), `.ds-icon-btn`.
 
 **Navegação:** `.ds-topbar` (+ `--dark`), `.ds-topbar-nav`, `.ds-sidebar-link`,
 `.ds-breadcrumb`, `.ds-avatar`, `.ds-tabs`/`.ds-tab`, `.ds-menu` (dropdown),
-`.ds-pagination`, `.ds-segment` (filtros).
+`.ds-pagination`, `.ds-segment` (filtros). **Nav de site:** `.ds-nav` +
+`.ds-nav-pill` (pílula de vidro flutuante sobre hero; `data-ds-nav` escurece ao
+rolar) com `.ds-nav-brand`/`.ds-nav-accent`, `.ds-nav-links`, `.ds-nav-actions`,
+`.ds-nav-cta` e `.ds-nav-toggle` (botão de tema sol/lua). Ver `DEPLOY-EM-APPS.md` §4.
 
 **Conteúdo:** `.ds-card` (+ `--hover`), `.ds-stat`, `.ds-icon-box`, `.ds-badge`
 (`--neutral/info/success/warn/danger`), `.ds-dl` (detalhe), `.ds-chip`,

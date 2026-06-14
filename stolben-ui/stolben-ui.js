@@ -282,10 +282,19 @@
     });
   }
 
+  /* ---- Nav flutuante de site ([data-ds-nav]): escurece ao rolar ---- */
+  function initFloatingNav() {
+    document.querySelectorAll("[data-ds-nav]").forEach(function (nav) {
+      var onScroll = function () { nav.classList.toggle("is-scrolled", window.scrollY > 20); };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    });
+  }
+
   function init() {
     initReveal(); initTopbar(); initMenus(); initModals();
     initTabs(); initTableSelect(); initToastTriggers();
-    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initThemeMode(); initMobileNav();
+    initSegments(); initAccordions(); initDropzones(); initThemeSelect(); initThemeMode(); initMobileNav(); initFloatingNav();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
