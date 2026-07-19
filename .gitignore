@@ -10,3 +10,6 @@ financial-infrastruc-68.aura.build/
 
 # artefatos de trabalho (screenshots/scripts do preview)
 .preview/
+
+# gerado pelo cron (.scripts/check-status.sh)
+status.json

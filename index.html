@@ -9,13 +9,16 @@
 <meta property="og:title" content="Rodrigo Stölben · Desenvolvimento de software" />
 <meta property="og:description" content="Portfólio: sistemas web em Python e Django, do código à operação." />
 <meta property="og:locale" content="pt_BR" />
-<meta name="twitter:card" content="summary" />
-<meta name="theme-color" content="#f7f8fa" />
+<meta property="og:image" content="https://stolben.com/og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#101318" />
 <link rel="icon" type="image/png" href="favicon.png" />
 <script>document.documentElement.classList.add("js")</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" as="font" href="fonts/bricolage-grotesque-var.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="fonts/archivo-var.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="image" href="assets/hero-bg-1920.webp" type="image/webp" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -23,12 +26,14 @@
   <header class="nav">
     <nav class="nav-pill" aria-label="Navegação principal">
       <a class="nav-brand" href="#home">Rodrigo Stölben</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-menu">
         <li><a href="#projects">Projetos</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#stack">Tecnologias</a></li>
         <li><a href="#hosting">Infra</a></li>
+        <li><a href="#contact">Contato</a></li>
       </ul>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
       <a class="nav-cta" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
   </header>
@@ -36,15 +41,15 @@
   <main>
     <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="bp"></div><div class="glow"></div><div class="glow g2"></div>
-      </div>
-      <div class="hero-grid">
+      <img class="hero-photo" src="assets/hero-bg-1920.webp" alt="" width="1920" height="1282" fetchpriority="high" />
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
         <div class="reveal">
-          <h1 class="display">Sistemas web <span class="em">em Python e Django</span>, do código à operação.</h1>
-          <p class="hero-lead">Este é o meu portfólio: alguns dos sistemas que projetei, construí e mantenho no ar. Foco em código claro, dados bem modelados e operação estável em produção.</p>
+          <p class="hero-kick">stolben.com · portfólio</p>
+          <h1 class="display">Sistemas web em <span class="em">Python e Django</span>, do código à operação.</h1>
+          <p class="hero-lead">Alguns dos sistemas que projetei, construí e mantenho no ar. Foco em código claro, dados bem modelados e operação estável em produção.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Ver projetos <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+            <a class="btn btn-primary" href="#projects">Ver projetos <span class="arw" aria-hidden="true">↗</span></a>
             <a class="btn btn-ghost" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
@@ -61,153 +66,183 @@
 
     <!-- METRICS -->
     <section class="metrics" aria-label="Resumo">
-      <div class="metric reveal"><strong>4</strong><span>projetos publicados e em uso</span></div>
-      <div class="metric reveal"><strong>Python · Django</strong><span>back-end e dados</span></div>
-      <div class="metric reveal"><strong>Linux · Nginx</strong><span>deploy próprio em produção</span></div>
+      <div class="wrap metrics-in">
+        <div class="metric reveal"><strong>4</strong><span>projetos publicados e em uso</span></div>
+        <div class="metric reveal"><strong>Python · Django</strong><span>back-end e dados</span></div>
+        <div class="metric reveal"><strong>Linux · Nginx</strong><span>deploy próprio em produção</span></div>
+      </div>
     </section>
 
     <!-- PROJECTS -->
     <section class="sec" id="projects">
-      <div class="sec-head reveal">
-        <div><span class="kick">/ Projetos publicados</span><h2 class="display" style="margin-top:.5rem">Produtos reais, <span class="muted">no ar e em uso.</span></h2></div>
-        <a class="sec-link" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-      </div>
-      <div class="grid">
-        <!-- featured: Trilhas de Estudo -->
-        <a class="card c-feat reveal" href="https://trilhas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Trilhas de Estudo (abre em nova aba)">
-          <div class="body">
-            <div class="top"><span class="num">01</span><span class="badge b-pub"><span class="dot"></span> Publicado</span><span class="badge b-ia">IA generativa</span></div>
-            <div>
-              <h3>Trilhas de Estudo</h3>
-              <p>Descreva o que quer aprender e a IA monta a trilha completa: níveis, conteúdo sob demanda, exercícios e avaliações corrigidas automaticamente — com um título a cada nível vencido.</p>
-              <span class="feat-cta">trilhas.stolben.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div><span class="kick">/ projetos publicados</span><h2 class="display">Produtos reais, <span class="muted">no ar e em uso.</span></h2></div>
+          <a class="sec-link" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub completo <span class="arw" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="grid">
+          <!-- destaque: Trilhas de Estudo -->
+          <a class="card c-feat reveal" href="https://trilhas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Trilhas de Estudo (abre em nova aba)">
+            <div class="body">
+              <div class="top"><span class="num">01</span><span class="badge b-pub"><span class="dot"></span> Publicado</span><span class="badge b-ia">IA · Claude</span></div>
+              <div>
+                <h3>Trilhas de Estudo</h3>
+                <p>Descreva o que quer aprender e a IA monta a trilha completa: níveis, conteúdo sob demanda, exercícios e avaliações corrigidas automaticamente — com um título a cada nível vencido.</p>
+                <span class="feat-cta">trilhas.stolben.com <span class="arw" aria-hidden="true">↗</span></span>
+              </div>
             </div>
-          </div>
-          <div class="media">
-            <img src="assets/theme-trilhas.jpg" alt="Pessoa fazendo anotações de estudo em um caderno" width="1600" height="1067" loading="lazy" />
-            <span class="go go-corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
-          </div>
-        </a>
-        <!-- medium -->
-        <a class="card c-med reveal" href="https://divisor.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Divisor de PDF (abre em nova aba)">
-          <div class="media"><img src="assets/theme-divisor.jpg" alt="Documentos arquivados em prateleiras" width="1000" height="1400" loading="lazy" /></div>
-          <div class="body">
-            <div class="head"><span class="num">02</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
-            <h3>Divisor de PDF</h3>
-            <p>Ferramenta web para enviar PDFs, comprimir e dividir em partes menores, com download em PDF único ou ZIP.</p>
-          </div>
-        </a>
-        <a class="card c-med reveal" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema de Orçamentos (abre em nova aba)">
-          <div class="media"><img src="assets/theme-orcamentos.jpg" alt="Painel de análise em um notebook" width="1600" height="1067" loading="lazy" /></div>
-          <div class="body">
-            <div class="head"><span class="num">03</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
-            <h3>Sistema de Orçamentos</h3>
-            <p>Plataforma para gestão de orçamentos, com foco em produtividade e organização de processos.</p>
-          </div>
-        </a>
-        <a class="card c-med reveal" href="https://financas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Finanças (abre em nova aba)">
-          <div class="media"><img src="assets/theme-financas.jpg" alt="Calculadora sobre documentos financeiros" width="1600" height="1067" loading="lazy" /></div>
-          <div class="body">
-            <div class="head"><span class="num">04</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
-            <h3>Sistema Finanças</h3>
-            <p>Controle financeiro, organização de lançamentos e acompanhamento objetivo da operação.</p>
-          </div>
-        </a>
-        <!-- em desenvolvimento -->
-        <a class="card c-med reveal" href="https://vetorial.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Vetorial (abre em nova aba)">
-          <div class="media"><img src="assets/theme-vetorial.jpg" alt="Traçados vetoriais em uma tela" width="1600" height="1067" loading="lazy" /></div>
-          <div class="body">
-            <div class="head"><span class="num">05</span><span class="badge b-dev"><span class="dot"></span> Em desenvolvimento</span><span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div>
-            <h3>Sistema Vetorial</h3>
-            <p>Aplicação web para organizar fluxos específicos de operação, com interface objetiva e navegação simples.</p>
-          </div>
-        </a>
+            <div class="media">
+              <img src="assets/theme-trilhas-1300.webp" alt="Pessoa fazendo anotações de estudo em um caderno" width="1300" height="867" loading="lazy" />
+              <span class="go go-corner" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <!-- médios -->
+          <a class="card c-med reveal" href="https://divisor.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Divisor de PDF (abre em nova aba)">
+            <div class="media"><img src="assets/theme-divisor-1300.webp" alt="Documentos arquivados em prateleiras" width="900" height="1260" loading="lazy" /></div>
+            <div class="body">
+              <div class="head"><span class="num">02</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true">↗</span></div>
+              <h3>Divisor de PDF</h3>
+              <p>Ferramenta web para enviar PDFs, comprimir e dividir em partes menores, com download em PDF único ou ZIP.</p>
+            </div>
+          </a>
+          <a class="card c-med reveal" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema de Orçamentos (abre em nova aba)">
+            <div class="media"><img src="assets/theme-orcamentos-1300.webp" alt="Painel de análise em um notebook" width="1300" height="867" loading="lazy" /></div>
+            <div class="body">
+              <div class="head"><span class="num">03</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true">↗</span></div>
+              <h3>Sistema de Orçamentos</h3>
+              <p>Cadastro de clientes, catálogo de itens por categoria e montagem de orçamentos prontos para enviar — do rascunho ao documento final.</p>
+            </div>
+          </a>
+          <a class="card c-med reveal" href="https://financas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Finanças (abre em nova aba)">
+            <div class="media"><img src="assets/theme-financas-1300.webp" alt="Calculadora sobre documentos financeiros" width="1300" height="867" loading="lazy" /></div>
+            <div class="body">
+              <div class="head"><span class="num">04</span><span class="badge b-pub">Publicado</span><span class="go" aria-hidden="true">↗</span></div>
+              <h3>Sistema Finanças</h3>
+              <p>Registro de lançamentos por categoria, com saldo e histórico mês a mês para acompanhar a operação.</p>
+            </div>
+          </a>
+          <!-- em desenvolvimento -->
+          <a class="card c-med reveal" href="https://vetorial.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Vetorial (abre em nova aba)">
+            <div class="media"><img src="assets/theme-vetorial-1300.webp" alt="Traçados vetoriais em uma tela" width="1300" height="867" loading="lazy" /></div>
+            <div class="body">
+              <div class="head"><span class="num">05</span><span class="badge b-dev"><span class="dot"></span> Em desenvolvimento</span><span class="go" aria-hidden="true">↗</span></div>
+              <h3>Sistema Vetorial</h3>
+              <p>O próximo sistema da lista, em desenvolvimento ativo — em breve aberto para uso.</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="about" id="about">
-      <div class="noise" aria-hidden="true"></div>
-      <div class="about-in">
-        <div class="about-head reveal"><span class="pill">Sobre</span><h2 class="display">Como penso, construo e evoluo</h2></div>
-        <div class="pillars">
-          <article class="pillar reveal"><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span><h3>Como penso</h3><p>Parto do problema real e modelo o fluxo: estrutura de dados, regras de negócio e a navegação mais simples possível.</p></article>
-          <article class="pillar reveal"><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3>Como construo</h3><p>Arquitetura direta de manter, boas práticas de código e validação contínua, com foco em estabilidade em produção.</p></article>
-          <article class="pillar reveal"><span class="p-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span><h3>Como evoluo</h3><p>Estudo constante de novas ferramentas, padrões e detalhes de infraestrutura que deixam cada projeto melhor que o anterior.</p></article>
+      <div class="wrap about-grid">
+        <div class="about-head reveal">
+          <span class="kick">/ sobre</span>
+          <h2 class="display">Do problema real ao sistema no ar.</h2>
+          <!-- Quando tiver a foto, salve em assets/rodrigo.jpg e descomente:
+          <figure class="about-photo">
+            <img src="assets/rodrigo.jpg" alt="Rodrigo Stölben" width="560" height="700" loading="lazy" />
+          </figure>
+          -->
+        </div>
+        <div class="about-copy reveal">
+          <p>Todo projeto começa longe do editor de código: parto do problema real e modelo o fluxo — a estrutura de dados, as regras de negócio e a navegação mais simples que resolve o caso. Só então começo a construir.</p>
+          <p>Construo com arquitetura direta de manter: Django bem organizado, dados consistentes e validação contínua. Prefiro menos peças, bem escolhidas, a empilhar ferramenta sobre ferramenta.</p>
+          <p>E como sou eu quem opera os sistemas depois do deploy, cada decisão de código é tomada pensando em quem vai mantê-los estáveis em produção — eu mesmo, todos os dias. É esse ciclo completo que faz cada projeto sair melhor que o anterior.</p>
         </div>
       </div>
     </section>
 
     <!-- TECNOLOGIAS -->
     <section class="sec" id="stack">
-      <div class="sec-head reveal">
-        <div>
-          <span class="kick">/ Tecnologias</span>
-          <h2 class="display" style="margin-top:.5rem">As ferramentas, <span class="muted">e por que escolho cada uma.</span></h2>
-        </div>
-      </div>
-      <p class="sec-intro reveal">Sem jargão: as tecnologias que uso para construir os sistemas e o raciocínio por trás de cada escolha.</p>
-      <div class="tech-grid">
-        <article class="tech-card wide tech-split reveal">
-          <div class="ts-body">
-            <span class="role">A fundação</span>
-            <h3>Python &amp; Django</h3>
-            <p>A linguagem e a estrutura onde o sistema é construído. O Django é uma base madura, a mesma usada por empresas como Instagram e Spotify: boa parte da segurança e da organização já vem pronta, o que significa menos código frágil e mais tempo dedicado à regra de negócio.</p>
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <span class="kick">/ tecnologias</span>
+            <h2 class="display">As ferramentas, <span class="muted">e por que escolho cada uma.</span></h2>
           </div>
-          <div class="ts-media"><img src="assets/code-screen.jpg" alt="Código em um editor de texto" width="1200" height="801" loading="lazy" /></div>
-        </article>
-        <article class="tech-card reveal">
-          <span class="role">Onde ficam os dados</span>
-          <h3>PostgreSQL</h3>
-          <p>O banco de dados é o arquivo central do sistema. Guarda cada informação de forma consistente e segura, sem perder ou misturar registros, mesmo com muito acesso ao mesmo tempo.</p>
-        </article>
-        <article class="tech-card wide reveal">
-          <span class="role">A inteligência</span>
-          <h3>IA · Claude (Anthropic)</h3>
-          <p>O motor por trás das Trilhas de Estudo: a API do Claude gera planos de estudo, escreve o conteúdo de cada nível e corrige avaliações dissertativas, enquanto o sistema orquestra cada chamada em segundo plano.</p>
-        </article>
-        <article class="tech-card reveal">
-          <span class="role">A velocidade</span>
-          <h3>Redis</h3>
-          <p>Mantém o que é mais usado sempre à mão, para as telas responderem na hora. É o que faz o sistema parecer leve, em vez de travado.</p>
-        </article>
-        <article class="tech-card reveal">
-          <span class="role">O trabalho pesado</span>
-          <h3>Celery</h3>
-          <p>Cuida de tarefas demoradas (como processar arquivos) em segundo plano, sem travar a tela enquanto o sistema trabalha.</p>
-        </article>
-        <article class="tech-card wide reveal">
-          <span class="role">No ar, 24 horas</span>
-          <h3>Linux · Nginx · Gunicorn</h3>
-          <p>A infraestrutura que mantém tudo online, estável e seguro o tempo todo. Configuro e mantenho o servidor por conta própria, sem depender de plataformas fechadas de terceiros.</p>
-        </article>
+        </div>
+        <p class="sec-intro reveal">Sem jargão: as tecnologias que uso para construir os sistemas e o raciocínio por trás de cada escolha.</p>
+        <div class="tech-grid">
+          <article class="tech-card wide tech-split reveal">
+            <div class="ts-body">
+              <span class="role">a fundação</span>
+              <h3>Python &amp; Django</h3>
+              <p>A linguagem e a estrutura onde o sistema é construído. O Django é uma base madura, a mesma usada por empresas como Instagram e Spotify: boa parte da segurança e da organização já vem pronta, o que significa menos código frágil e mais tempo dedicado à regra de negócio.</p>
+            </div>
+            <div class="ts-media"><img src="assets/code-screen-1000.webp" alt="Código em um editor de texto" width="1000" height="668" loading="lazy" /></div>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">onde ficam os dados</span>
+            <h3>PostgreSQL</h3>
+            <p>O banco de dados é o arquivo central do sistema. Guarda cada informação de forma consistente e segura, sem perder ou misturar registros, mesmo com muito acesso ao mesmo tempo.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">a inteligência</span>
+            <h3>IA · Claude (Anthropic)</h3>
+            <p>O motor por trás das Trilhas de Estudo: a API do Claude gera planos de estudo, escreve o conteúdo de cada nível e corrige avaliações dissertativas, enquanto o sistema orquestra cada chamada em segundo plano.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">a velocidade</span>
+            <h3>Redis</h3>
+            <p>Mantém o que é mais usado sempre à mão, para as telas responderem na hora. É o que faz o sistema parecer leve, em vez de travado.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">o trabalho pesado</span>
+            <h3>Celery</h3>
+            <p>Cuida de tarefas demoradas (como processar arquivos) em segundo plano, sem travar a tela enquanto o sistema trabalha.</p>
+          </article>
+          <article class="tech-card strip reveal">
+            <div class="strip-head">
+              <span class="role">no ar, 24 horas</span>
+              <h3>Linux · Nginx · Gunicorn</h3>
+            </div>
+            <p>A infraestrutura que mantém tudo online, estável e seguro o tempo todo. Configuro e mantenho o servidor por conta própria, sem depender de plataformas fechadas de terceiros.</p>
+          </article>
+        </div>
       </div>
     </section>
 
     <!-- HOSPEDAGEM E MANUTENÇÃO -->
     <section class="host" id="hosting">
-      <div class="host-grid">
+      <div class="wrap host-grid">
         <div class="host-text reveal">
-          <span class="kick">Infraestrutura e operação</span>
+          <span class="kick">/ infraestrutura e operação</span>
           <h2 class="display">Do código ao servidor: onde um sistema realmente vive.</h2>
           <p class="lead">Hoje meus sistemas rodam em uma VPS Linux, com deploy próprio em Nginx e Gunicorn. Cuido de toda a operação, do primeiro deploy à manutenção do dia a dia, mantendo tudo disponível, seguro e atualizado.</p>
           <div class="host-points">
             <div class="host-point">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></span>
+              <span class="hp-num" aria-hidden="true">01</span>
               <div><h3>VPS Linux em produção</h3><p>Os sistemas rodam hoje em uma VPS Linux, com Nginx e Gunicorn, dimensionada conforme o uso de cada projeto.</p></div>
             </div>
             <div class="host-point">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="hp-num" aria-hidden="true">02</span>
               <div><h3>Deploy próprio</h3><p>Publico e configuro o ambiente de produção por conta própria, com domínio, HTTPS e processos sob meu controle, sem plataformas fechadas.</p></div>
             </div>
             <div class="host-point">
-              <span class="hp-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+              <span class="hp-num" aria-hidden="true">03</span>
               <div><h3>Manutenção contínua</h3><p>Monitoramento, backups, segurança e atualizações, com ajustes e correções conforme os sistemas evoluem.</p></div>
             </div>
           </div>
         </div>
-        <div class="host-media reveal">
-          <img src="assets/server-room.jpg" alt="Servidores em um data center, onde o sistema fica hospedado" width="2000" height="1122" loading="lazy" />
+        <figure class="host-media reveal">
+          <img src="assets/server-room-1400.webp" alt="Servidores em um data center, onde o sistema fica hospedado" width="1400" height="785" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-in">
+        <div class="reveal">
+          <span class="kick">/ contato</span>
+          <h2 class="display">Tem um projeto em mente?</h2>
+          <p class="contact-lead">Me escreva contando o problema que você quer resolver. Respondo pelo e-mail abaixo.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:rodrigo@stolben.com">Enviar e-mail <span class="arw" aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
         </div>
       </div>
     </section>
@@ -215,14 +250,14 @@
   </main>
 
   <footer class="foot">
-    <div class="foot-in">
+    <div class="wrap foot-in">
       <div>
         <p class="foot-brand">Rodrigo Stölben</p>
         <p class="copy">Desenvolvimento de software · Python &amp; Django · © 2026</p>
       </div>
       <nav class="foot-links" aria-label="Contato">
         <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>
-        <a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/rigst" target="_blank" rel="noreferrer">github.com/rigst</a>
       </nav>
     </div>
   </footer>
