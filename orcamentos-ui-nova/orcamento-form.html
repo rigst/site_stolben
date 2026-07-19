@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR" class="ds-theme-indigo">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Editar ORC-2026-0046 · Orçamento</title>
+<meta name="theme-color" content="#0f1115" />
+<script>(function(){var e=document.documentElement;e.classList.add("js");try{var m=localStorage.getItem("ds-theme-mode");if(m==="dark"||((m==="auto"||!m)&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/stolben-ui.css" />
+<link rel="stylesheet" href="assets/orca-theme.css" />
+</head>
+<body class="ds-root">
+<div class="ds-shell">
+
+  <aside class="ds-sidebar" aria-label="Menu lateral">
+    <div class="ds-sidebar-brand">Orçamentos</div>
+    <div class="orca-user">
+      <span class="ds-avatar">RS</span>
+      <div class="orca-user-info">
+        <p class="orca-user-name">Rodrigo Stölben</p>
+        <p class="orca-user-role">Administrador · Stölben Eventos</p>
+      </div>
+      <button class="ds-icon-btn" type="button" aria-label="Sair" title="Sair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></button>
+    </div>
+    <p class="ds-sidebar-group">Geral</p>
+    <a class="ds-sidebar-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+    <p class="ds-sidebar-group">Comercial</p>
+    <a class="ds-sidebar-link is-active" href="orcamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg> Orçamentos</a>
+    <a class="ds-sidebar-link" href="clientes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Clientes</a>
+    <p class="ds-sidebar-group">Catálogo</p>
+    <a class="ds-sidebar-link" href="itens.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Itens</a>
+    <a class="ds-sidebar-link" href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3.83V3H3v8h.83l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83z"/><circle cx="7" cy="7" r="1.2" fill="currentColor"/></svg> Categorias</a>
+    <p class="ds-sidebar-group">Sistema</p>
+    <a class="ds-sidebar-link" href="empresa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg> Empresa</a>
+    <a class="ds-sidebar-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Protótipo</a>
+    <div class="orca-side-foot">
+      <div class="ds-segment ds-mode" data-ds-theme-mode role="group" aria-label="Tema: claro, automático ou escuro">
+        <button type="button" data-mode="light" aria-label="Tema claro" title="Claro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+        <button type="button" data-mode="auto" aria-label="Tema automático" title="Automático"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></button>
+        <button type="button" data-mode="dark" aria-label="Tema escuro" title="Escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="ds-nav-backdrop" aria-hidden="true"></div>
+  <div class="ds-main">
+      <button class="ds-icon-btn orca-burger" data-ds-nav-toggle aria-label="Abrir menu" title="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+    <main style="padding:1.75rem clamp(1rem,3vw,2.5rem) 6rem">
+      <header class="orca-hero ds-reveal">
+        <div class="orca-hero-media"><img src="img/hero-form.jpg" alt="" width="1600" height="1201" /></div>
+        <div class="orca-hero-inner">
+          <nav class="ds-breadcrumb" aria-label="Trilha" style="margin-bottom:.6rem"><ol><li><a href="dashboard.html">Início</a></li><li><a href="orcamentos.html">Orçamentos</a></li><li aria-current="page">Editar</li></ol></nav>
+          <div class="orca-hero-bar">
+            <div><h1 class="ds-h1" style="font-size:1.7rem">Editar orçamento</h1><p><span class="ds-mono">ORC-2026-0046</span> · Rascunho · salvo automaticamente</p></div>
+            <span class="ds-badge ds-badge--warn"><span class="ds-dot"></span> Em elaboração</span>
+          </div>
+        </div>
+      </header>
+
+      <form>
+      <div class="ds-grid orca-split" style="grid-template-columns:1fr 20rem;gap:1.25rem;align-items:start">
+        <!-- COLUNA PRINCIPAL -->
+        <div style="display:grid;gap:1.25rem">
+
+          <!-- DADOS GERAIS -->
+          <section class="ds-card ds-reveal">
+            <div class="ds-card-head"><h2 class="ds-h3" style="font-size:1.05rem">Dados gerais</h2></div>
+            <div class="ds-grid ds-grid--2" style="gap:1rem">
+              <div class="ds-field"><label class="ds-label" for="f-cliente">Cliente <span class="ds-req">*</span></label>
+                <select class="ds-select" id="f-cliente"><option>Helena Lima Arquitetura</option><option>Marabella Eventos</option><option>Construtora Vale Verde</option></select></div>
+              <div class="ds-field"><label class="ds-label" for="f-titulo">Título <span class="ds-req">*</span></label><input class="ds-input" id="f-titulo" value="Cenografia lançamento" /></div>
+            </div>
+            <div class="ds-grid ds-grid--2" style="gap:1rem">
+              <div class="ds-field"><label class="ds-label" for="f-emissao">Data de emissão <span class="ds-req">*</span></label><input class="ds-input" id="f-emissao" type="date" value="2026-06-05" /></div>
+              <div class="ds-field"><label class="ds-label" for="f-validade">Validade</label><input class="ds-input" id="f-validade" type="date" value="2026-07-05" /><span class="ds-help">Deixe em branco se não houver prazo.</span></div>
+            </div>
+            <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="f-desc">Descrição inicial</label><textarea class="ds-textarea" id="f-desc" rows="2" placeholder="Resumo apresentado no topo do orçamento…">Projeto cenográfico para o lançamento da nova linha, com palco, painéis e iluminação.</textarea></div>
+          </section>
+
+          <!-- EVENTO -->
+          <div class="ds-accordion ds-reveal" data-ds-accordion>
+            <div class="ds-accordion-item">
+              <button type="button" class="ds-accordion-trigger"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:.4rem"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Dados do evento</span></button>
+              <div class="ds-accordion-panel">
+                <div class="ds-grid ds-grid--2" style="gap:1rem">
+                  <div class="ds-field"><label class="ds-label" for="e-nome">Nome do evento</label><input class="ds-input" id="e-nome" value="Lançamento Linha Aurora" /></div>
+                  <div class="ds-field"><label class="ds-label" for="e-periodo">Período</label><input class="ds-input" id="e-periodo" placeholder="Ex.: 14 a 18 de julho…" /></div>
+                  <div class="ds-field"><label class="ds-label" for="e-local">Local</label><input class="ds-input" id="e-local" placeholder="Local do evento…" /></div>
+                  <div class="ds-field"><label class="ds-label" for="e-estande">Estande / Área</label><input class="ds-input" id="e-estande" placeholder="Ex.: Pavilhão B · 60m²" /></div>
+                  <div class="ds-field"><label class="ds-label" for="e-contato">Contato</label><input class="ds-input" id="e-contato" autocomplete="name" placeholder="Nome do responsável…" /></div>
+                  <div class="ds-field"><label class="ds-label" for="e-tel">Telefone</label><input class="ds-input" id="e-tel" type="tel" inputmode="tel" placeholder="(00) 00000-0000" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITENS -->
+          <section class="ds-card ds-reveal">
+            <div class="ds-card-head"><h2 class="ds-h3" style="font-size:1.05rem">Itens</h2><button type="button" class="ds-btn ds-btn--solid ds-btn--sm" data-ds-open="add-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Adicionar item</button></div>
+                        <div class="ds-row" style="gap:.55rem;align-items:center;margin:.25rem 0 .5rem">
+              <span class="orca-cat-ico" style="width:1.7rem;height:1.7rem;background:#7C3AED1a;color:#7C3AED"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v6M15 9v6M9 15v6"/></svg></span>
+              <h3 class="ds-h3" style="font-size:.95rem;margin:0">Estrutura &amp; Montagem</h3>
+              <span class="ds-toolbar-spacer"></span>
+              <span class="ds-mono" style="color:var(--ds-t-500)">R$ 6.920,00</span>
+            </div>
+            <div class="ds-table-wrap" style="margin-bottom:1rem">
+              <table class="ds-table">
+                <thead><tr><th>Item</th><th class="ds-td-num">Qtd.</th><th>Un.</th><th class="ds-td-num">V. unit.</th><th class="ds-td-num">Subtotal</th><th><span style="display:block;text-align:right">Ações</span></th></tr></thead>
+                <tbody>
+                  <tr><td class="ds-td-strong">Palco modular 6×4m</td><td class="ds-td-num">1,00</td><td>un</td><td class="ds-td-num">R$ 4.200,00</td><td class="ds-td-num">R$ 4.200,00</td><td><div class="ds-row-actions"><button type="button" class="ds-icon-btn" data-ds-open="edit-item" aria-label="Editar item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button type="button" class="ds-icon-btn" aria-label="Remover item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td></tr>
+                  <tr><td class="ds-td-strong">Painel cenográfico 3×2m</td><td class="ds-td-num">4,00</td><td>un</td><td class="ds-td-num">R$ 680,00</td><td class="ds-td-num">R$ 2.720,00</td><td><div class="ds-row-actions"><button type="button" class="ds-icon-btn" data-ds-open="edit-item" aria-label="Editar item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button type="button" class="ds-icon-btn" aria-label="Remover item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="ds-row" style="gap:.55rem;align-items:center;margin:.25rem 0 .5rem">
+              <span class="orca-cat-ico" style="width:1.7rem;height:1.7rem;background:#EAB3081a;color:#A16207"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.5.5 1 1.3 1 2.5h6c0-1.2.5-2 1-2.5A6 6 0 0 0 12 3z"/></svg></span>
+              <h3 class="ds-h3" style="font-size:.95rem;margin:0">Iluminação</h3>
+              <span class="ds-toolbar-spacer"></span>
+              <span class="ds-mono" style="color:var(--ds-t-500)">R$ 2.560,00</span>
+            </div>
+            <div class="ds-table-wrap" style="margin-bottom:0">
+              <table class="ds-table">
+                <thead><tr><th>Item</th><th class="ds-td-num">Qtd.</th><th>Un.</th><th class="ds-td-num">V. unit.</th><th class="ds-td-num">Subtotal</th><th><span style="display:block;text-align:right">Ações</span></th></tr></thead>
+                <tbody>
+                  <tr><td class="ds-td-strong">Iluminação cênica (pacote)</td><td class="ds-td-num">1,00</td><td>sv</td><td class="ds-td-num">R$ 2.560,00</td><td class="ds-td-num">R$ 2.560,00</td><td><div class="ds-row-actions"><button type="button" class="ds-icon-btn" data-ds-open="edit-item" aria-label="Editar item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button type="button" class="ds-icon-btn" aria-label="Remover item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- AJUSTES GLOBAIS -->
+          <section class="ds-card ds-reveal">
+            <div class="ds-card-head"><h2 class="ds-h3" style="font-size:1.05rem">Ajustes globais</h2></div>
+            <div class="ds-grid ds-grid--2" style="gap:1rem">
+              <div class="ds-field"><label class="ds-label" for="a-desc-v">Desconto (R$)</label><input class="ds-input" id="a-desc-v" inputmode="decimal" placeholder="0,00" value="0,00" /></div>
+              <div class="ds-field"><label class="ds-label" for="a-desc-p">Desconto (%)</label><input class="ds-input" id="a-desc-p" inputmode="decimal" placeholder="0,00" value="0,00" /></div>
+              <div class="ds-field"><label class="ds-label" for="a-acr-v">Acréscimo (R$)</label><input class="ds-input" id="a-acr-v" inputmode="decimal" placeholder="0,00" value="0,00" /></div>
+              <div class="ds-field"><label class="ds-label" for="a-acr-p">Acréscimo (%)</label><input class="ds-input" id="a-acr-p" inputmode="decimal" placeholder="0,00" value="0,00" /></div>
+            </div>
+            <p class="ds-help" style="margin-top:.25rem">As opções do relatório (o que aparece no PDF e exportações) ficam no botão <strong>Relatório</strong>, na barra de ações.</p>
+          </section>
+        </div>
+
+        <!-- ASIDE: TOTAIS AO VIVO -->
+        <aside class="ds-reveal" style="display:grid;gap:1.25rem;position:sticky;top:1rem">
+          <div class="ds-panel-dark" style="border-radius:var(--ds-radius-lg);padding:1.25rem">
+            <p class="ds-kicker" style="margin-bottom:.75rem">Totais</p>
+            <div class="ds-row" style="justify-content:space-between;color:var(--ds-on-dark-dim);margin-bottom:.4rem"><span>Subtotal (3 itens)</span><span class="ds-mono">R$ 9.480,00</span></div>
+            <div class="ds-row" style="justify-content:space-between;color:var(--ds-on-dark-dim);margin-bottom:.4rem"><span>Desconto</span><span class="ds-mono">− R$ 0,00</span></div>
+            <div class="ds-row" style="justify-content:space-between;color:var(--ds-on-dark-dim);margin-bottom:.75rem"><span>Acréscimo</span><span class="ds-mono">+ R$ 0,00</span></div>
+            <div class="ds-row" style="justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,.16);padding-top:.75rem"><span style="color:var(--ds-on-dark)">Total final</span><strong class="ds-mono" style="font-size:1.5rem;color:#fff">R$ 9.480,00</strong></div>
+          </div>
+          <div class="ds-alert ds-alert--info" role="status"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><div><p class="ds-alert-title">Rascunho automático</p><p>As alterações são salvas neste navegador até você confirmar.</p></div></div>
+        </aside>
+      </div>
+      </form>
+    </main>
+
+    <!-- BARRA DE AÇÕES FIXA -->
+    <div style="position:sticky;bottom:0;background:var(--ds-surface);border-top:1px solid var(--ds-line);padding:.85rem clamp(1rem,3vw,2.5rem);display:flex;align-items:center;gap:.6rem;box-shadow:var(--ds-shadow-block)">
+      <button type="button" class="ds-btn ds-btn--ghost" data-ds-open="relatorio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg> Relatório</button>
+      <span style="flex:1"></span>
+      <a class="ds-btn ds-btn--ghost" href="orcamentos.html">Cancelar</a>
+      <button type="button" class="ds-btn ds-btn--subtle" data-ds-toast="Rascunho salvo." data-ds-toast-type="success">Salvar rascunho</button>
+      <button type="submit" class="ds-btn ds-btn--solid" data-ds-toast="Orçamento salvo." data-ds-toast-type="success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Salvar orçamento</button>
+    </div>
+  </div>
+</div>
+
+<!-- DRAWER: adicionar item -->
+<div class="ds-overlay ds-overlay--side" id="add-item" role="dialog" aria-modal="true" aria-labelledby="add-item-t">
+  <aside class="ds-drawer">
+    <div class="ds-drawer-head"><h2 class="ds-h3" id="add-item-t">Adicionar item</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-drawer-body">
+      <div class="ds-field"><label class="ds-label" for="i-catalogo">Do catálogo</label>
+        <select class="ds-select" id="i-catalogo"><option value="">Item avulso (sem catálogo)</option><option>CAT-ITEM-0012 · Palco modular 6×4m</option><option>CAT-ITEM-0031 · Painel cenográfico 3×2m</option><option>CAT-ITEM-0044 · Iluminação cênica (pacote)</option></select>
+        <span class="ds-help">Selecionar preenche nome, unidade e valor padrão.</span></div>
+      <div class="ds-field"><label class="ds-label" for="i-nome">Nome <span class="ds-req">*</span></label><input class="ds-input" id="i-nome" placeholder="Nome do item…" /></div>
+      <div class="ds-field"><label class="ds-label" for="i-descr">Descrição</label><textarea class="ds-textarea" id="i-descr" rows="2" placeholder="Detalhes do item…"></textarea></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field"><label class="ds-label" for="i-qtd">Quantidade <span class="ds-req">*</span></label><input class="ds-input" id="i-qtd" inputmode="decimal" value="1,00" /></div>
+        <div class="ds-field"><label class="ds-label" for="i-un">Unidade</label><select class="ds-select" id="i-un"><option>un</option><option>hr</option><option>dia</option><option>m</option><option>m²</option><option>m³</option><option>kg</option><option>cx</option><option>pct</option><option>sv</option></select></div>
+      </div>
+      <div class="ds-field"><label class="ds-label" for="i-valor">Valor unitário <span class="ds-req">*</span></label><input class="ds-input" id="i-valor" inputmode="decimal" placeholder="0,00" /></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="i-desc-v">Desconto (R$)</label><input class="ds-input" id="i-desc-v" inputmode="decimal" value="0,00" /></div>
+        <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="i-desc-p">Desconto (%)</label><input class="ds-input" id="i-desc-p" inputmode="decimal" value="0,00" /></div>
+      </div>
+    </div>
+    <div class="ds-drawer-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Item adicionado." data-ds-toast-type="success">Adicionar item</button></div>
+  </aside>
+</div>
+
+<!-- DRAWER: editar item -->
+<div class="ds-overlay ds-overlay--side" id="edit-item" role="dialog" aria-modal="true" aria-labelledby="edit-item-t">
+  <aside class="ds-drawer">
+    <div class="ds-drawer-head"><h2 class="ds-h3" id="edit-item-t">Editar item</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-drawer-body">
+      <div class="ds-alert ds-alert--warn" role="status" style="margin-bottom:1rem"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div><p class="ds-alert-title">Diverge do catálogo</p><p>O valor unitário está diferente do padrão (R$ 4.000,00).</p></div></div>
+      <div class="ds-field"><label class="ds-label" for="ei-nome">Nome <span class="ds-req">*</span></label><input class="ds-input" id="ei-nome" value="Palco modular 6×4m" /></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field"><label class="ds-label" for="ei-qtd">Quantidade</label><input class="ds-input" id="ei-qtd" inputmode="decimal" value="1,00" /></div>
+        <div class="ds-field"><label class="ds-label" for="ei-valor">Valor unitário</label><input class="ds-input ds-input--invalid" id="ei-valor" inputmode="decimal" value="4.200,00" aria-describedby="ei-valor-h" /><span class="ds-help ds-help--error" id="ei-valor-h">Acima do valor de catálogo.</span></div>
+      </div>
+    </div>
+    <div class="ds-drawer-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Item atualizado." data-ds-toast-type="success">Salvar item</button></div>
+  </aside>
+</div>
+
+<!-- MODAL: relatório -->
+<div class="ds-overlay" id="relatorio" role="dialog" aria-modal="true" aria-labelledby="relatorio-t">
+  <div class="ds-modal">
+    <div class="ds-modal-head"><h2 class="ds-h3" id="relatorio-t">Relatório do orçamento</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-body">
+      <p class="ds-label" style="margin-bottom:.55rem">O que aparece no relatório</p>
+      <div style="display:grid;gap:.55rem;margin-bottom:1.4rem">
+        <label class="ds-switch"><input type="checkbox" checked /><span class="ds-switch-track"></span> Descrição inicial no PDF</label>
+        <label class="ds-switch"><input type="checkbox" checked /><span class="ds-switch-track"></span> Observações gerais no PDF e memorial</label>
+        <label class="ds-switch"><input type="checkbox" checked /><span class="ds-switch-track"></span> Rodapé institucional da empresa</label>
+        <label class="ds-switch"><input type="checkbox" /><span class="ds-switch-track"></span> Descontos e acréscimos detalhados no relatório do cliente</label>
+        <label class="ds-switch"><input type="checkbox" /><span class="ds-switch-track"></span> Condições financeiras e dados bancários no memorial</label>
+        <label class="ds-switch"><input type="checkbox" checked /><span class="ds-switch-track"></span> Contatos do evento no memorial</label>
+      </div>
+      <p class="ds-label" style="margin-bottom:.55rem">Exportar</p>
+      <div class="ds-grid ds-grid--3" style="gap:.6rem">
+        <button type="button" class="ds-btn ds-btn--subtle ds-btn--block" data-ds-toast="Gerando PDF do orçamento…" data-ds-toast-type="success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg> PDF do orçamento</button>
+        <button type="button" class="ds-btn ds-btn--subtle ds-btn--block" data-ds-toast="Gerando Excel…" data-ds-toast-type="success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg> Excel</button>
+        <button type="button" class="ds-btn ds-btn--subtle ds-btn--block" data-ds-toast="Gerando memorial…" data-ds-toast-type="success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Memorial (PDF)</button>
+      </div>
+    </div>
+    <div class="ds-modal-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Fechar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Preferências do relatório salvas." data-ds-toast-type="success">Salvar preferências</button></div>
+    <footer class="orca-footer">
+      <div class="orca-footer-inner">
+        <div>
+          <p class="orca-footer-brand">Orçamentos</p>
+          <p class="orca-footer-copy">Um app <a href="https://stolben.com/" target="_blank" rel="noopener">Stölben</a> · &copy; 2026</p>
+        </div>
+        <ul class="orca-footer-points">
+          <li><span class="orca-footer-dot"></span> Orçamentos profissionais</li>
+          <li><span class="orca-footer-dot"></span> PDF, Excel e memorial</li>
+          <li><span class="orca-footer-dot"></span> Catálogo e clientes</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="assets/stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>

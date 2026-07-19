@@ -1,0 +1,214 @@
+/* =========================================================================
+   Stölben UI — camada de POLIMENTO do Sistema de Orçamentos.
+   Mantém a identidade do DS (Inter/Manrope, acento indigo, neutros do tema).
+   NÃO troca fontes, cores nem cantos — só refina hierarquia, profundidade,
+   microinterações e wayfinding. Tudo via tokens var(--ds-…).
+   ========================================================================= */
+
+/* Seleção de texto na cor do acento */
+::selection { background: color-mix(in srgb, var(--ds-accent) 20%, transparent); }
+
+/* ---- Sidebar: melhor wayfinding ---- */
+.ds-sidebar-link.is-active { box-shadow: inset 2px 0 0 0 var(--ds-accent); }
+.ds-sidebar-group:not(:first-of-type) {
+  border-top: 1px solid var(--ds-line);
+  margin-top: 0.35rem;
+  padding-top: 0.8rem;
+}
+
+/* ---- Indicadores (stat): hierarquia mais clara ---- */
+.ds-stat { position: relative; overflow: hidden; }
+.ds-stat::before {
+  content: "";
+  position: absolute;
+  top: 1.4rem;
+  left: 0;
+  width: 3px;
+  height: 1.5rem;
+  background: var(--ds-accent);
+  border-radius: 0 2px 2px 0;
+}
+.ds-stat strong { font-size: 2rem; }
+.ds-stat span { text-transform: uppercase; letter-spacing: 0.09em; font-size: 0.72rem; font-weight: 500; }
+
+/* ---- Kicker: régua editorial curta ---- */
+.ds-kicker { display: inline-flex; align-items: center; gap: 0.55rem; }
+.ds-kicker::before { content: ""; width: 1.5rem; height: 1px; background: currentColor; opacity: 0.65; }
+
+/* ---- Profundidade discreta (cartões/tabela ganham leve relevo) ---- */
+.ds-card, .ds-stat, .ds-table-wrap { box-shadow: var(--ds-shadow-sm); }
+
+/* ---- Microinterações: elevação leve no hover (respeita reduced-motion) ---- */
+.ds-btn { transition: background var(--ds-dur-fast), box-shadow var(--ds-dur), transform var(--ds-dur-fast), border-color var(--ds-dur-fast); }
+@media (prefers-reduced-motion: no-preference) {
+  .ds-btn--solid:hover,
+  .ds-btn--subtle:hover,
+  .ds-btn--ghost:hover { transform: translateY(-1px); }
+}
+
+/* =========================================================================
+   Ajustes — barra superior removida, navegação/usuário/tema na sidebar
+   ========================================================================= */
+
+/* Botão-link sólido: forçar texto claro (a regra .ds-root a vence .ds-btn--solid) */
+.ds-root a.ds-btn--solid { color: var(--ds-on-accent); }
+.ds-root a.ds-btn--primary, .ds-root a.ds-btn--danger { color: #fff; }
+
+/* Favicon no lugar da letra da marca */
+.ds-sidebar-brand .ds-logo { width: 1.9rem; height: 1.9rem; background: transparent; padding: 0; overflow: hidden; }
+.ds-sidebar-brand .ds-logo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* Cartão do usuário (topo da sidebar) */
+.orca-user {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding: 0.55rem 0.6rem; margin: 0.15rem 0 0.35rem;
+  border: 1px solid var(--ds-line); border-radius: var(--ds-radius-md);
+  background: var(--ds-surface);
+}
+.orca-user-info { min-width: 0; flex: 1; }
+.orca-user-name { font-weight: 600; font-size: 0.88rem; color: var(--ds-t-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.orca-user-role { font-size: 0.74rem; color: var(--ds-t-500); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Seletor de tema no rodapé da sidebar — compacto */
+.orca-side-foot { margin-top: auto; padding-top: 0.8rem; border-top: 1px solid var(--ds-line); display: flex; justify-content: center; }
+.orca-side-foot .ds-mode { width: fit-content; }
+.orca-side-foot .ds-mode button { flex: 0 0 auto; }
+
+/* Cartão do usuário: deixar o texto quebrar (não cortar com …) */
+.orca-user-name, .orca-user-role { white-space: normal; overflow: visible; text-overflow: clip; }
+.orca-user-role { line-height: 1.25; }
+
+/* Hambúrguer flutuante (só mobile — substitui o do topbar removido) */
+.orca-burger { display: none; }
+@media (max-width: 820px) {
+  .orca-burger {
+    display: inline-flex; position: fixed; top: 0.7rem; left: 0.7rem; z-index: 60;
+    background: var(--ds-surface); border: 1px solid var(--ds-line-strong); box-shadow: var(--ds-shadow-sm);
+  }
+  .ds-main { padding-top: 3.2rem; }
+}
+
+/* =========================================================================
+   Gráfico — linhas-guia horizontais discretas
+   ========================================================================= */
+.ds-chart { position: relative; }
+.ds-chart::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0.25rem; bottom: 1.6rem;
+  z-index: 0;
+  background-image: repeating-linear-gradient(to top, transparent 0, transparent calc(20% - 1px), var(--ds-line-dash) calc(20% - 1px), var(--ds-line-dash) 20%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.ds-chart-col { position: relative; z-index: 1; }
+
+/* =========================================================================
+   Mais ajustes
+   ========================================================================= */
+
+/* Imagens dos painéis escuros: estavam escuras demais (opacidades empilhadas).
+   Cancela a opacidade baixa do wrapper e clareia a foto. */
+.ds-panel-dark .ds-media { opacity: 1 !important; }
+.ds-panel-dark .ds-media img { opacity: 0.6; }
+.login-brand .ds-media img { opacity: 0.85; }
+
+/* Botões-link ghost/subtle legíveis em fundo claro (a regra .ds-root a vence) */
+.ds-root a.ds-btn--ghost, .ds-root a.ds-btn--subtle { color: var(--ds-t-900); }
+
+/* Rodapé (estilo divisor_pdf) */
+.orca-footer { border-top: 1px solid var(--ds-line); margin-top: 2rem; padding: 1.4rem clamp(1rem,3vw,2.5rem); }
+.orca-footer-inner { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; align-items: center; justify-content: space-between; }
+.orca-footer-brand { font-family: var(--ds-font-display); font-weight: 600; color: var(--ds-t-900); }
+.orca-footer-copy { font-size: 0.82rem; color: var(--ds-t-500); margin-top: 0.1rem; }
+.orca-footer-copy a { color: var(--ds-accent-fg); }
+.orca-footer-points { display: flex; flex-wrap: wrap; gap: 0.3rem 1.25rem; list-style: none; padding: 0; margin: 0; font-size: 0.82rem; color: var(--ds-t-500); }
+.orca-footer-points li { display: inline-flex; align-items: center; gap: 0.45rem; }
+.orca-footer-dot { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--ds-accent); }
+
+/* Caixa de ícone colorida da categoria (cards de item / lista de categorias / picker) */
+.orca-cat-ico { display: inline-grid; place-items: center; width: 2.4rem; height: 2.4rem; border-radius: var(--ds-radius-md); }
+.orca-cat-ico svg { width: 1.3rem; height: 1.3rem; }
+
+/* Seletor de ícone no modal de categoria */
+.orca-ico-pick { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.orca-ico-opt { position: relative; cursor: pointer; }
+.orca-ico-opt input { position: absolute; opacity: 0; inset: 0; }
+.orca-ico-opt span { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: var(--ds-radius-md); border: 1px solid var(--ds-line-strong); color: var(--ds-t-700); background: var(--ds-surface); transition: border-color var(--ds-dur-fast), color var(--ds-dur-fast); }
+.orca-ico-opt span svg { width: 1.35rem; height: 1.35rem; }
+.orca-ico-opt input:checked + span { border-color: var(--ds-accent); color: var(--ds-accent-fg); box-shadow: inset 0 0 0 1px var(--ds-accent); }
+.orca-ico-opt input:focus-visible + span { outline: 2px solid var(--ds-accent); outline-offset: 2px; }
+
+/* Login: seletor de tema fixo no canto superior direito da tela */
+.orca-login-theme { position: fixed; top: 1rem; right: 1rem; z-index: 30; background: var(--ds-surface); box-shadow: var(--ds-shadow-sm); }
+
+/* =========================================================================
+   Mobile — corrigir cortes: colapsar layouts de 2 colunas e limpar tabelas
+   ========================================================================= */
+@media (max-width: 900px) {
+  .orca-split { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 820px) {
+  .ds-table-wrap { -webkit-overflow-scrolling: touch; }
+  .ds-table { font-size: 0.86rem; }
+  .ds-table th, .ds-table td { white-space: nowrap; }
+  /* quando o layout empilha, o aside (totais/cliente) deixa de ser sticky */
+  .orca-split > aside { position: static !important; }
+}
+
+/* =========================================================================
+   BANNER DE TOPO reutilizável (.orca-hero) — imagem de fundo + overlay
+   escuro + texto branco + transição suave para o fundo da página.
+   Cards/tabelas/formulários permanecem no fundo neutro (fora do hero).
+   ========================================================================= */
+.orca-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: -1.75rem;                                  /* sangra sobre o padding do .ds-main */
+  margin-left: calc(-1 * clamp(1rem, 3vw, 2.5rem));
+  margin-right: calc(-1 * clamp(1rem, 3vw, 2.5rem));
+  margin-bottom: -1.25rem;                               /* conteúdo abaixo sobrepõe a base dissolvida */
+  padding: 2.25rem clamp(1rem, 3vw, 2.5rem) 4rem;        /* mais respiro embaixo p/ a dissolução */
+}
+/* a IMAGEM dissolve suavemente na base (vira transparente -> aparece o fundo da
+   página por baixo). Funde em claro e escuro sem precisar casar cor. */
+.orca-hero-media { position: absolute; inset: 0; z-index: -2; }
+.orca-hero-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.45) 78%, transparent 100%);
+          mask-image: linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.45) 78%, transparent 100%);
+}
+/* overlay escuro SÓ no topo (para o texto), some antes da base — sem faixa escura */
+.orca-hero::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(to bottom, rgba(10,12,16,.68) 0%, rgba(10,12,16,.42) 38%, rgba(10,12,16,.12) 62%, rgba(10,12,16,0) 80%),
+    linear-gradient(100deg, rgba(10,12,16,.45) 0%, rgba(10,12,16,.1) 42%, rgba(10,12,16,0) 65%);
+}
+.orca-hero-inner { position: relative; }
+/* leve sombra no texto garante leitura mesmo sobre imagens claras */
+.orca-hero .ds-h1, .orca-hero .ds-h2, .orca-hero .ds-display, .orca-hero h1,
+.orca-hero p, .orca-hero .ds-kicker, .orca-hero .ds-breadcrumb { text-shadow: 0 1px 14px rgba(0,0,0,.4); }
+.orca-hero-bar { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; flex-wrap: wrap; }
+.orca-hero-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* texto branco (vence cores inline com !important) */
+.orca-hero, .orca-hero .ds-h1, .orca-hero .ds-h2, .orca-hero h1 { color: #fff; }
+.orca-hero p, .orca-hero .ds-muted { color: rgba(255,255,255,.86) !important; }
+.orca-hero .ds-kicker { color: rgba(255,255,255,.9); }
+.orca-hero .ds-mono { color: #fff; }
+.orca-hero .ds-breadcrumb, .orca-hero .ds-breadcrumb a, .orca-hero .ds-breadcrumb li { color: rgba(255,255,255,.8) !important; }
+.orca-hero .ds-breadcrumb a:hover { color: #fff !important; }
+
+/* botões sobre a imagem escura */
+.orca-hero .ds-btn--ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.34); }
+.orca-hero .ds-btn--ghost:hover { background: rgba(255,255,255,.22); }
+.orca-hero .ds-btn--subtle { background: rgba(255,255,255,.16); color: #fff; }
+.orca-hero .ds-btn--subtle:hover { background: rgba(255,255,255,.26); color: #fff; }
+
+@media (max-width: 820px) {
+  .orca-hero { margin-top: -3.2rem; padding-top: 3.4rem; }   /* bleed sob o hambúrguer fixo */
+  .orca-hero-bar { align-items: flex-start; }
+}

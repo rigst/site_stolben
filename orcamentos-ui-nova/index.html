@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR" class="ds-theme-indigo">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Protótipo · Nova UI Orçamentos</title>
+<meta name="theme-color" content="#0f1115" />
+<script>(function(){var e=document.documentElement;e.classList.add("js");try{var m=localStorage.getItem("ds-theme-mode");if(m==="dark"||((m==="auto"||!m)&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/stolben-ui.css" />
+<link rel="stylesheet" href="assets/orca-theme.css" />
+</head>
+<body class="ds-root" style="background:var(--ds-bg)">
+<main style="max-width:64rem;margin:0 auto;padding:clamp(1.5rem,4vw,3.5rem) 1.25rem">
+
+  <header class="ds-reveal" style="margin-bottom:2rem">
+    <div class="ds-row" style="justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem">
+      <div>
+        <span class="ds-kicker">Protótipo · Stölben UI</span>
+        <h1 class="ds-display" style="font-size:clamp(1.7rem,4vw,2.4rem);margin:.35rem 0 .4rem">Nova UI do <span class="ds-muted">Sistema de Orçamentos.</span></h1>
+        <p style="color:var(--ds-t-500);max-width:60ch">Telas reconstruídas do zero sobre o design system <strong>Stölben UI</strong> (tema <em>indigo</em>), com refinos de hierarquia e profundidade. Estático, para revisão, antes de levar à produção.</p>
+      </div>
+      <div class="ds-segment ds-mode" data-ds-theme-mode role="group" aria-label="Tema: claro, automático ou escuro"><button type="button" data-mode="light" aria-label="Tema claro" data-ds-tip="Claro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button><button type="button" data-mode="auto" aria-label="Tema automático" data-ds-tip="Automático"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></button><button type="button" data-mode="dark" aria-label="Tema escuro" data-ds-tip="Escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button></div>
+    </div>
+  </header>
+
+  <div class="ds-grid ds-grid--3 ds-reveal">
+    <a class="ds-card ds-card--hover" href="login.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Login</p><p class="ds-record-meta">Split com painel de marca + tema</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="dashboard.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Dashboard</p><p class="ds-record-meta">Hero, indicadores e gráfico</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="orcamentos.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Lista de orçamentos</p><p class="ds-record-meta">Tabela: filtros, status, ações, paginação</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="orcamento-detalhe.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Detalhe do orçamento</p><p class="ds-record-meta">Abas, itens por categoria, totais</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="orcamento-form.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Formulário do orçamento</p><p class="ds-record-meta">Seções, itens em drawer, ajustes</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="clientes.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Clientes</p><p class="ds-record-meta">Tabela: drawer de edição e modal</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="itens.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Itens do catálogo</p><p class="ds-record-meta">Grade de cards, importar Excel</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="categorias.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3.83V3H3v8h.83l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83z"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Categorias do catálogo</p><p class="ds-record-meta">Lista compacta com cores, modais</p>
+    </a>
+    <a class="ds-card ds-card--hover" href="empresa.html" style="text-decoration:none;color:inherit">
+      <span class="ds-icon-box"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg></span>
+      <p class="ds-record-title" style="margin-top:.75rem">Empresa</p><p class="ds-record-meta">Abas: dados, banco, textos do PDF</p>
+    </a>
+  </div>
+
+  <div class="ds-alert ds-alert--info ds-reveal" role="note" style="margin-top:2rem"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg><div><p class="ds-alert-title">Como navegar</p><p>Use a barra lateral dentro de cada tela. Tudo é HTML estático com dados de exemplo; os botões abrem modais/drawers reais, mas não persistem. Teste claro/escuro e ~390px (mobile).</p></div></div>
+
+</main>
+
+<script src="assets/stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>

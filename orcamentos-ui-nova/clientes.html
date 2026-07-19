@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR" class="ds-theme-indigo">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Clientes · Orçamentos</title>
+<meta name="theme-color" content="#0f1115" />
+<script>(function(){var e=document.documentElement;e.classList.add("js");try{var m=localStorage.getItem("ds-theme-mode");if(m==="dark"||((m==="auto"||!m)&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/stolben-ui.css" />
+<link rel="stylesheet" href="assets/orca-theme.css" />
+</head>
+<body class="ds-root">
+<div class="ds-shell">
+
+  <aside class="ds-sidebar" aria-label="Menu lateral">
+    <div class="ds-sidebar-brand">Orçamentos</div>
+    <div class="orca-user">
+      <span class="ds-avatar">RS</span>
+      <div class="orca-user-info">
+        <p class="orca-user-name">Rodrigo Stölben</p>
+        <p class="orca-user-role">Administrador · Stölben Eventos</p>
+      </div>
+      <button class="ds-icon-btn" type="button" aria-label="Sair" title="Sair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></button>
+    </div>
+    <p class="ds-sidebar-group">Geral</p>
+    <a class="ds-sidebar-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+    <p class="ds-sidebar-group">Comercial</p>
+    <a class="ds-sidebar-link" href="orcamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg> Orçamentos</a>
+    <a class="ds-sidebar-link is-active" href="clientes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Clientes</a>
+    <p class="ds-sidebar-group">Catálogo</p>
+    <a class="ds-sidebar-link" href="itens.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Itens</a>
+    <a class="ds-sidebar-link" href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3.83V3H3v8h.83l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83z"/><circle cx="7" cy="7" r="1.2" fill="currentColor"/></svg> Categorias</a>
+    <p class="ds-sidebar-group">Sistema</p>
+    <a class="ds-sidebar-link" href="empresa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg> Empresa</a>
+    <a class="ds-sidebar-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Protótipo</a>
+    <div class="orca-side-foot">
+      <div class="ds-segment ds-mode" data-ds-theme-mode role="group" aria-label="Tema: claro, automático ou escuro">
+        <button type="button" data-mode="light" aria-label="Tema claro" title="Claro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+        <button type="button" data-mode="auto" aria-label="Tema automático" title="Automático"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></button>
+        <button type="button" data-mode="dark" aria-label="Tema escuro" title="Escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="ds-nav-backdrop" aria-hidden="true"></div>
+  <div class="ds-main">
+      <button class="ds-icon-btn orca-burger" data-ds-nav-toggle aria-label="Abrir menu" title="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+    <main style="padding:1.75rem clamp(1rem,3vw,2.5rem)">
+      <header class="orca-hero ds-reveal">
+        <div class="orca-hero-media"><img src="img/hero-clientes.jpg" alt="" width="1600" height="900" /></div>
+        <div class="orca-hero-inner">
+          <nav class="ds-breadcrumb" aria-label="Trilha" style="margin-bottom:.6rem"><ol><li><a href="dashboard.html">Início</a></li><li aria-current="page">Clientes</li></ol></nav>
+          <div class="orca-hero-bar">
+            <div><h1 class="ds-h1" style="font-size:1.9rem">Clientes</h1><p>Pessoas físicas e jurídicas que recebem orçamentos.</p></div>
+            <button class="ds-btn ds-btn--solid" data-ds-open="novo-cli"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Novo cliente</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="ds-toolbar ds-reveal">
+        <span class="ds-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><input class="ds-input" type="search" placeholder="Buscar nome, CNPJ…" aria-label="Buscar cliente" /></span>
+        <div class="ds-segment" data-ds-segment role="group" aria-label="Tipo">
+          <button class="is-active" aria-pressed="true">Todos</button>
+          <button aria-pressed="false">Pessoa física</button>
+          <button aria-pressed="false">Pessoa jurídica</button>
+        </div>
+      </div>
+
+      <!-- TABELA -->
+      <div>
+        <div class="ds-table-wrap ds-reveal">
+          <table class="ds-table">
+            <thead><tr><th class="ds-th-sort" aria-sort="ascending">Cliente</th><th>Documento</th><th>Contato</th><th>Cidade</th><th>Status</th><th><span style="display:block;text-align:right">Ações</span></th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="ds-td-strong">Marabella Eventos<br><span class="ds-record-meta">Pessoa jurídica</span></td>
+                <td class="ds-mono">12.345.678/0001-90</td><td>contato@marabella.com.br</td><td>Porto Alegre/RS</td>
+                <td><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativo</span></td>
+                <td><div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cli" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Inativar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td class="ds-td-strong">Construtora Vale Verde<br><span class="ds-record-meta">Pessoa jurídica</span></td>
+                <td class="ds-mono">98.765.432/0001-21</td><td>compras@valeverde.com</td><td>Lajeado/RS</td>
+                <td><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativo</span></td>
+                <td><div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cli" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Inativar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div></td>
+              </tr>
+              <tr>
+                <td class="ds-td-strong">Helena Lima<br><span class="ds-record-meta">Pessoa física</span></td>
+                <td class="ds-mono">123.456.789-00</td><td>helena@studio.co</td><td>Caxias do Sul/RS</td>
+                <td><span class="ds-badge ds-badge--neutral">Inativo</span></td>
+                <td><div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cli" aria-label="Editar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Reativar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></button></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ds-row" style="justify-content:space-between;margin-top:1rem;flex-wrap:wrap;gap:.75rem">
+          <span style="color:var(--ds-t-500);font-size:.88rem">Mostrando 1–3 de 36</span>
+          <div class="ds-pagination"><button aria-label="Anterior" disabled>‹</button><button aria-current="page">1</button><button>2</button><button>3</button><button aria-label="Próxima">›</button></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- DRAWER: editar cliente -->
+<div class="ds-overlay ds-overlay--side" id="editar-cli" role="dialog" aria-modal="true" aria-labelledby="editar-cli-t">
+  <aside class="ds-drawer">
+    <div class="ds-drawer-head"><h2 class="ds-h3" id="editar-cli-t">Editar cliente</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-drawer-body">
+      <div class="ds-field"><span class="ds-label">Tipo de pessoa</span>
+        <div class="ds-segment" data-ds-segment role="group" aria-label="Tipo de pessoa"><button type="button" aria-pressed="false">Física</button><button type="button" class="is-active" aria-pressed="true">Jurídica</button></div></div>
+      <div class="ds-field"><label class="ds-label" for="c-nome">Razão social <span class="ds-req">*</span></label><input class="ds-input" id="c-nome" value="Marabella Eventos" /></div>
+      <div class="ds-field"><label class="ds-label" for="c-fant">Nome fantasia</label><input class="ds-input" id="c-fant" value="Marabella" /></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field"><label class="ds-label" for="c-doc">CNPJ</label><input class="ds-input" id="c-doc" inputmode="numeric" value="12.345.678/0001-90" /></div>
+        <div class="ds-field"><label class="ds-label" for="c-tel">Telefone</label><input class="ds-input" id="c-tel" type="tel" inputmode="tel" value="(51) 3221-0099" /></div>
+      </div>
+      <div class="ds-field"><label class="ds-label" for="c-mail">E-mail</label><input class="ds-input" id="c-mail" type="email" inputmode="email" spellcheck="false" value="contato@marabella.com.br" /></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field"><label class="ds-label" for="c-cidade">Cidade</label><input class="ds-input" id="c-cidade" value="Porto Alegre" /></div>
+        <div class="ds-field"><label class="ds-label" for="c-uf">UF</label><input class="ds-input" id="c-uf" maxlength="2" value="RS" /></div>
+      </div>
+      <label class="ds-switch" style="margin-bottom:0"><input type="checkbox" checked /><span class="ds-switch-track"></span> Cliente ativo</label>
+    </div>
+    <div class="ds-drawer-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Cliente atualizado." data-ds-toast-type="success">Salvar</button></div>
+  </aside>
+</div>
+
+<!-- MODAL: novo cliente -->
+<div class="ds-overlay" id="novo-cli" role="dialog" aria-modal="true" aria-labelledby="novo-cli-t">
+  <div class="ds-modal">
+    <div class="ds-modal-head"><h2 class="ds-h3" id="novo-cli-t">Novo cliente</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-body">
+      <div class="ds-field"><span class="ds-label">Tipo de pessoa</span>
+        <div class="ds-segment" data-ds-segment role="group" aria-label="Tipo de pessoa"><button type="button" class="is-active" aria-pressed="true">Física</button><button type="button" aria-pressed="false">Jurídica</button></div></div>
+      <div class="ds-field"><label class="ds-label" for="nc-nome">Nome / Razão social <span class="ds-req">*</span></label><input class="ds-input" id="nc-nome" placeholder="Nome do cliente…" /></div>
+      <div class="ds-grid ds-grid--2" style="gap:1rem">
+        <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="nc-doc">CPF / CNPJ</label><input class="ds-input" id="nc-doc" inputmode="numeric" placeholder="Apenas números…" /></div>
+        <div class="ds-field" style="margin-bottom:0"><label class="ds-label" for="nc-mail">E-mail</label><input class="ds-input" id="nc-mail" type="email" inputmode="email" spellcheck="false" placeholder="email@exemplo.com" /></div>
+      </div>
+    </div>
+    <div class="ds-modal-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Cliente criado." data-ds-toast-type="success">Criar cliente</button></div>
+    <footer class="orca-footer">
+      <div class="orca-footer-inner">
+        <div>
+          <p class="orca-footer-brand">Orçamentos</p>
+          <p class="orca-footer-copy">Um app <a href="https://stolben.com/" target="_blank" rel="noopener">Stölben</a> · &copy; 2026</p>
+        </div>
+        <ul class="orca-footer-points">
+          <li><span class="orca-footer-dot"></span> Orçamentos profissionais</li>
+          <li><span class="orca-footer-dot"></span> PDF, Excel e memorial</li>
+          <li><span class="orca-footer-dot"></span> Catálogo e clientes</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="assets/stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>

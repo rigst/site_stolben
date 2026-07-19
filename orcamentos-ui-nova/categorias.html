@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR" class="ds-theme-indigo">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Categorias · Orçamentos</title>
+<meta name="theme-color" content="#0f1115" />
+<script>(function(){var e=document.documentElement;e.classList.add("js");try{var m=localStorage.getItem("ds-theme-mode");if(m==="dark"||((m==="auto"||!m)&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/stolben-ui.css" />
+<link rel="stylesheet" href="assets/orca-theme.css" />
+</head>
+<body class="ds-root">
+<div class="ds-shell">
+
+  <aside class="ds-sidebar" aria-label="Menu lateral">
+    <div class="ds-sidebar-brand">Orçamentos</div>
+    <div class="orca-user">
+      <span class="ds-avatar">RS</span>
+      <div class="orca-user-info">
+        <p class="orca-user-name">Rodrigo Stölben</p>
+        <p class="orca-user-role">Administrador · Stölben Eventos</p>
+      </div>
+      <button class="ds-icon-btn" type="button" aria-label="Sair" title="Sair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></button>
+    </div>
+    <p class="ds-sidebar-group">Geral</p>
+    <a class="ds-sidebar-link" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+    <p class="ds-sidebar-group">Comercial</p>
+    <a class="ds-sidebar-link" href="orcamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg> Orçamentos</a>
+    <a class="ds-sidebar-link" href="clientes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Clientes</a>
+    <p class="ds-sidebar-group">Catálogo</p>
+    <a class="ds-sidebar-link" href="itens.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Itens</a>
+    <a class="ds-sidebar-link is-active" href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3.83V3H3v8h.83l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83z"/><circle cx="7" cy="7" r="1.2" fill="currentColor"/></svg> Categorias</a>
+    <p class="ds-sidebar-group">Sistema</p>
+    <a class="ds-sidebar-link" href="empresa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg> Empresa</a>
+    <a class="ds-sidebar-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Protótipo</a>
+    <div class="orca-side-foot">
+      <div class="ds-segment ds-mode" data-ds-theme-mode role="group" aria-label="Tema: claro, automático ou escuro">
+        <button type="button" data-mode="light" aria-label="Tema claro" title="Claro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+        <button type="button" data-mode="auto" aria-label="Tema automático" title="Automático"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></button>
+        <button type="button" data-mode="dark" aria-label="Tema escuro" title="Escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="ds-nav-backdrop" aria-hidden="true"></div>
+  <div class="ds-main">
+      <button class="ds-icon-btn orca-burger" data-ds-nav-toggle aria-label="Abrir menu" title="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+    <main style="padding:1.75rem clamp(1rem,3vw,2.5rem)">
+      <header class="orca-hero ds-reveal">
+        <div class="orca-hero-media"><img src="img/hero-categorias.jpg" alt="" width="1600" height="1067" /></div>
+        <div class="orca-hero-inner">
+          <nav class="ds-breadcrumb" aria-label="Trilha" style="margin-bottom:.6rem"><ol><li><a href="dashboard.html">Início</a></li><li>Catálogo</li><li aria-current="page">Categorias</li></ol></nav>
+          <div class="orca-hero-bar">
+            <div><h1 class="ds-h1" style="font-size:1.9rem">Categorias</h1><p>Agrupam os itens e definem as cores no orçamento.</p></div>
+            <button class="ds-btn ds-btn--solid" data-ds-open="nova-cat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Nova categoria</button>
+          </div>
+        </div>
+      </header>
+
+      <div class="ds-list ds-reveal">
+        <div class="ds-list-item">
+          <span class="ds-icon-box" style="width:2.5rem;height:2.5rem;background:#7C3AED1a;color:#7C3AED" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v6M15 9v6M9 15v6"/></svg></span>
+          <div class="ds-list-main"><p class="ds-list-title">Estrutura &amp; Montagem</p><p class="ds-list-meta">Pisos, paredes, palcos e tablados · 34 itens</p></div>
+          <div class="ds-list-trail">
+            <span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativa</span>
+            <div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cat" aria-label="Editar Estrutura &amp; Montagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Inativar Estrutura &amp; Montagem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div>
+          </div>
+        </div>
+        <div class="ds-list-item">
+          <span class="ds-icon-box" style="width:2.5rem;height:2.5rem;background:#EA580C1a;color:#EA580C" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M4 11a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M6 19v2M18 19v2"/></svg></span>
+          <div class="ds-list-main"><p class="ds-list-title">Mobiliário</p><p class="ds-list-meta">Sofás, mesas, balcões e expositores · 41 itens</p></div>
+          <div class="ds-list-trail">
+            <span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativa</span>
+            <div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cat" aria-label="Editar Mobiliário"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Inativar Mobiliário"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div>
+          </div>
+        </div>
+        <div class="ds-list-item">
+          <span class="ds-icon-box" style="width:2.5rem;height:2.5rem;background:#EAB3081a;color:#A16207" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.5.5 1 1.3 1 2.5h6c0-1.2.5-2 1-2.5A6 6 0 0 0 12 3z"/></svg></span>
+          <div class="ds-list-main"><p class="ds-list-title">Iluminação</p><p class="ds-list-meta">Spots, painéis e efeitos de luz · 28 itens</p></div>
+          <div class="ds-list-trail">
+            <span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Ativa</span>
+            <div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cat" aria-label="Editar Iluminação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Inativar Iluminação"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg></button></div>
+          </div>
+        </div>
+        <div class="ds-list-item">
+          <span class="ds-icon-box" style="width:2.5rem;height:2.5rem;background:#16A34A1a;color:#16A34A" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5l-2.6 2.6-2-2 2.6-2.6z"/></svg></span>
+          <div class="ds-list-main"><p class="ds-list-title">Serviços</p><p class="ds-list-meta">Mão de obra, projeto e operação · 19 itens</p></div>
+          <div class="ds-list-trail">
+            <span class="ds-badge ds-badge--neutral">Inativa</span>
+            <div class="ds-row-actions"><button class="ds-icon-btn" data-ds-open="editar-cat" aria-label="Editar Serviços"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button><button class="ds-icon-btn" aria-label="Reativar Serviços"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg></button></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- MODAL: nova categoria -->
+<div class="ds-overlay" id="nova-cat" role="dialog" aria-modal="true" aria-labelledby="nova-cat-t">
+  <div class="ds-modal">
+    <div class="ds-modal-head"><h2 class="ds-h3" id="nova-cat-t">Nova categoria</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-body">
+      <div class="ds-field"><label class="ds-label" for="cat-nome">Nome <span class="ds-req">*</span></label><input class="ds-input" id="cat-nome" placeholder="Nome da categoria…" /></div>
+      <div class="ds-field"><label class="ds-label" for="cat-desc">Descrição</label><input class="ds-input" id="cat-desc" placeholder="Para que serve esta categoria…" /></div>
+      <div class="ds-field"><span class="ds-label">Ícone</span>
+        <div class="orca-ico-pick" role="radiogroup" aria-label="Ícone da categoria">
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="chair" /><span title="Cadeira"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M4 11a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M6 19v2M18 19v2"/></svg><span class="visually-hidden">Cadeira</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="table" /><span title="Mesa"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18"/><path d="M4 8l1-3h14l1 3"/><path d="M6 8v10M18 8v10"/></svg><span class="visually-hidden">Mesa</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="sofa" /><span title="Sofá"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v3h12v-3a2 2 0 0 1 4 0v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/><path d="M6 20v1M18 20v1"/></svg><span class="visually-hidden">Sofá</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="bulb" /><span title="Luz"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.5.5 1 1.3 1 2.5h6c0-1.2.5-2 1-2.5A6 6 0 0 0 12 3z"/></svg><span class="visually-hidden">Luz</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="wall" /><span title="Parede"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v6M15 9v6M9 15v6"/></svg><span class="visually-hidden">Parede</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="ceiling" /><span title="Forro"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg><span class="visually-hidden">Forro</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="cube" checked /><span title="Estrutura"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><span class="visually-hidden">Estrutura</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="hardhat" /><span title="Mão de obra"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4"/><path d="M5 16a7 7 0 0 1 14 0"/></svg><span class="visually-hidden">Mão de obra</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="wrench" /><span title="Serviço"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5l-2.6 2.6-2-2 2.6-2.6z"/></svg><span class="visually-hidden">Serviço</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="plug" /><span title="Elétrica"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M7 8h10v3a5 5 0 0 1-10 0z"/><path d="M12 16v6"/></svg><span class="visually-hidden">Elétrica</span></span></label>
+        </div>
+      </div>
+      <div class="ds-field" style="margin-bottom:0"><span class="ds-label">Cor</span>
+        <div class="ds-row" role="radiogroup" aria-label="Cor da categoria" style="gap:.5rem;flex-wrap:wrap">
+          <label class="cor-swatch" style="--c:#2563EB"><input type="radio" name="cor" class="visually-hidden" checked /><span aria-hidden="true"></span><span class="visually-hidden">Azul</span></label>
+          <label class="cor-swatch" style="--c:#DC2626"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Vermelho</span></label>
+          <label class="cor-swatch" style="--c:#EAB308"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Amarelo</span></label>
+          <label class="cor-swatch" style="--c:#16A34A"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Verde</span></label>
+          <label class="cor-swatch" style="--c:#EA580C"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Laranja</span></label>
+          <label class="cor-swatch" style="--c:#7C3AED"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Roxo</span></label>
+          <label class="cor-swatch" style="--c:#DB2777"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Rosa</span></label>
+          <label class="cor-swatch" style="--c:#475569"><input type="radio" name="cor" class="visually-hidden" /><span aria-hidden="true"></span><span class="visually-hidden">Grafite</span></label>
+        </div>
+      </div>
+    </div>
+    <div class="ds-modal-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Categoria criada." data-ds-toast-type="success">Criar categoria</button></div>
+  </div>
+</div>
+
+<!-- MODAL: editar categoria (reusa o layout) -->
+<div class="ds-overlay" id="editar-cat" role="dialog" aria-modal="true" aria-labelledby="editar-cat-t">
+  <div class="ds-modal">
+    <div class="ds-modal-head"><h2 class="ds-h3" id="editar-cat-t">Editar categoria</h2><button class="ds-icon-btn" data-ds-close aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="ds-modal-body">
+      <div class="ds-field"><label class="ds-label" for="ec-nome">Nome <span class="ds-req">*</span></label><input class="ds-input" id="ec-nome" value="Estrutura &amp; Montagem" /></div>
+      <div class="ds-field"><label class="ds-label" for="ec-desc">Descrição</label><input class="ds-input" id="ec-desc" value="Pisos, paredes, palcos e tablados" /></div>
+      <div class="ds-field"><span class="ds-label">Ícone</span>
+        <div class="orca-ico-pick" role="radiogroup" aria-label="Ícone da categoria">
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="chair" /><span title="Cadeira"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M4 11a2 2 0 0 1 4 0v3h8v-3a2 2 0 0 1 4 0v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M6 19v2M18 19v2"/></svg><span class="visually-hidden">Cadeira</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="table" /><span title="Mesa"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18"/><path d="M4 8l1-3h14l1 3"/><path d="M6 8v10M18 8v10"/></svg><span class="visually-hidden">Mesa</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="sofa" /><span title="Sofá"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12V9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 13a2 2 0 0 1 4 0v3h12v-3a2 2 0 0 1 4 0v4a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/><path d="M6 20v1M18 20v1"/></svg><span class="visually-hidden">Sofá</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="bulb" /><span title="Luz"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.5.5 1 1.3 1 2.5h6c0-1.2.5-2 1-2.5A6 6 0 0 0 12 3z"/></svg><span class="visually-hidden">Luz</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="wall" checked /><span title="Parede"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v6M15 9v6M9 15v6"/></svg><span class="visually-hidden">Parede</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="ceiling" /><span title="Forro"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg><span class="visually-hidden">Forro</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="cube" /><span title="Estrutura"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg><span class="visually-hidden">Estrutura</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="hardhat" /><span title="Mão de obra"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4"/><path d="M5 16a7 7 0 0 1 14 0"/></svg><span class="visually-hidden">Mão de obra</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="wrench" /><span title="Serviço"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5 5L4 17v3h3l5.7-5.7a4 4 0 0 0 5-5l-2.6 2.6-2-2 2.6-2.6z"/></svg><span class="visually-hidden">Serviço</span></span></label>
+          <label class="orca-ico-opt"><input type="radio" name="icone" value="plug" /><span title="Elétrica"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6M7 8h10v3a5 5 0 0 1-10 0z"/><path d="M12 16v6"/></svg><span class="visually-hidden">Elétrica</span></span></label>
+        </div>
+      </div>
+      <label class="ds-switch" style="margin-bottom:0"><input type="checkbox" checked /><span class="ds-switch-track"></span> Categoria ativa</label>
+    </div>
+    <div class="ds-modal-foot"><button class="ds-btn ds-btn--ghost" data-ds-close>Cancelar</button><button class="ds-btn ds-btn--solid" data-ds-close data-ds-toast="Categoria atualizada." data-ds-toast-type="success">Salvar</button></div>
+    <footer class="orca-footer">
+      <div class="orca-footer-inner">
+        <div>
+          <p class="orca-footer-brand">Orçamentos</p>
+          <p class="orca-footer-copy">Um app <a href="https://stolben.com/" target="_blank" rel="noopener">Stölben</a> · &copy; 2026</p>
+        </div>
+        <ul class="orca-footer-points">
+          <li><span class="orca-footer-dot"></span> Orçamentos profissionais</li>
+          <li><span class="orca-footer-dot"></span> PDF, Excel e memorial</li>
+          <li><span class="orca-footer-dot"></span> Catálogo e clientes</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<style>
+  .cor-swatch{position:relative;cursor:pointer;display:inline-grid;place-items:center}
+  .cor-swatch span[aria-hidden]{width:1.9rem;height:1.9rem;border-radius:var(--ds-radius-pill);background:var(--c);box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);transition:transform var(--ds-dur-fast) var(--ds-ease)}
+  .cor-swatch input:checked + span[aria-hidden]{outline:2px solid var(--ds-accent);outline-offset:2px;transform:scale(1.05)}
+  .cor-swatch input:focus-visible + span[aria-hidden]{outline:2px solid var(--ds-accent);outline-offset:2px}
+</style>
+
+<script src="assets/stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>

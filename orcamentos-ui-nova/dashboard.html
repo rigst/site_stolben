@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR" class="ds-theme-indigo">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard · Orçamentos</title>
+<meta name="theme-color" content="#0f1115" />
+<script>(function(){var e=document.documentElement;e.classList.add("js");try{var m=localStorage.getItem("ds-theme-mode");if(m==="dark"||((m==="auto"||!m)&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/stolben-ui.css" />
+<link rel="stylesheet" href="assets/orca-theme.css" />
+</head>
+<body class="ds-root">
+<div class="ds-shell">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="ds-sidebar" aria-label="Menu lateral">
+    <div class="ds-sidebar-brand">Orçamentos</div>
+    <div class="orca-user">
+      <span class="ds-avatar">RS</span>
+      <div class="orca-user-info">
+        <p class="orca-user-name">Rodrigo Stölben</p>
+        <p class="orca-user-role">Administrador · Stölben Eventos</p>
+      </div>
+      <button class="ds-icon-btn" type="button" aria-label="Sair" title="Sair"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg></button>
+    </div>
+    <p class="ds-sidebar-group">Geral</p>
+    <a class="ds-sidebar-link is-active" href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Dashboard</a>
+    <p class="ds-sidebar-group">Comercial</p>
+    <a class="ds-sidebar-link" href="orcamentos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg> Orçamentos</a>
+    <a class="ds-sidebar-link" href="clientes.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg> Clientes</a>
+    <p class="ds-sidebar-group">Catálogo</p>
+    <a class="ds-sidebar-link" href="itens.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg> Itens</a>
+    <a class="ds-sidebar-link" href="categorias.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41 11 3.83V3H3v8h.83l9.58 9.59a2 2 0 0 0 2.83 0l4.35-4.35a2 2 0 0 0 0-2.83z"/><circle cx="7" cy="7" r="1.2" fill="currentColor"/></svg> Categorias</a>
+    <p class="ds-sidebar-group">Sistema</p>
+    <a class="ds-sidebar-link" href="empresa.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01"/></svg> Empresa</a>
+    <a class="ds-sidebar-link" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Protótipo</a>
+    <div class="orca-side-foot">
+      <div class="ds-segment ds-mode" data-ds-theme-mode role="group" aria-label="Tema: claro, automático ou escuro">
+        <button type="button" data-mode="light" aria-label="Tema claro" title="Claro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
+        <button type="button" data-mode="auto" aria-label="Tema automático" title="Automático"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg></button>
+        <button type="button" data-mode="dark" aria-label="Tema escuro" title="Escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== CONTEÚDO ===== -->
+  <div class="ds-nav-backdrop" aria-hidden="true"></div>
+  <div class="ds-main">
+      <button class="ds-icon-btn orca-burger" data-ds-nav-toggle aria-label="Abrir menu" title="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+
+    <main style="padding:1.75rem clamp(1rem,3vw,2.5rem)">
+      <!-- HERO -->
+      <header class="orca-hero ds-reveal">
+        <div class="orca-hero-media"><img src="img/hero-dashboard.jpg" alt="" width="1600" height="900" /></div>
+        <div class="orca-hero-inner">
+          <span class="ds-kicker">Painel</span>
+          <h1 class="ds-display" style="font-size:clamp(1.6rem,4vw,2.3rem);margin:.35rem 0 .4rem">Visão geral <span class="ds-muted">do seu negócio.</span></h1>
+          <p style="max-width:46ch">Bom dia, Rodrigo. Você está no perfil administrador. Aqui está o resumo dos últimos 30 dias.</p>
+          <div class="orca-hero-actions" style="margin-top:1.1rem">
+            <a class="ds-btn ds-btn--solid" href="orcamento-form.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Novo orçamento</a>
+            <a class="ds-btn ds-btn--ghost" href="orcamentos.html">Ver todos</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- INDICADORES -->
+      <div class="ds-row" style="justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1rem">
+        <div><h2 class="ds-h2" style="font-size:1.4rem">Indicadores</h2><p style="color:var(--ds-t-500)">Resumo do período selecionado.</p></div>
+        <select class="ds-select" aria-label="Período dos indicadores" style="width:auto"><option>Últimos 7 dias</option><option selected>Últimos 30 dias</option><option>Últimos 90 dias</option><option>Todo o período</option></select>
+      </div>
+
+      <div class="ds-grid ds-grid--4 ds-reveal" style="margin-bottom:1rem">
+        <div class="ds-stat"><strong>48</strong><span>Orçamentos no período</span></div>
+        <div class="ds-stat"><strong>R$ 312,4k</strong><span>Valor total</span></div>
+        <div class="ds-stat"><strong>R$ 184,9k</strong><span>Valor aprovado</span></div>
+        <div class="ds-stat"><strong>11</strong><span>Pendentes</span></div>
+      </div>
+
+      <div class="ds-grid orca-split ds-reveal" style="grid-template-columns:1.6fr 1fr;gap:1.25rem;margin-bottom:1.75rem">
+        <!-- gráfico -->
+        <div class="ds-card">
+          <div class="ds-card-head"><h3 class="ds-h3" style="font-size:1.05rem">Valor por mês</h3><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> +18%</span></div>
+          <div class="ds-chart" role="img" aria-label="Valor mensal de orçamentos: jan R$ 38k, fev R$ 42k, mar R$ 51k, abr R$ 47k, mai R$ 62k, jun R$ 71k">
+            <div class="ds-chart-col"><span class="ds-chart-val">38k</span><span class="ds-chart-bar" style="height:46%" aria-hidden="true"></span><span class="ds-chart-label">Jan</span></div>
+            <div class="ds-chart-col"><span class="ds-chart-val">42k</span><span class="ds-chart-bar" style="height:52%" aria-hidden="true"></span><span class="ds-chart-label">Fev</span></div>
+            <div class="ds-chart-col"><span class="ds-chart-val">51k</span><span class="ds-chart-bar" style="height:64%" aria-hidden="true"></span><span class="ds-chart-label">Mar</span></div>
+            <div class="ds-chart-col"><span class="ds-chart-val">47k</span><span class="ds-chart-bar" style="height:58%" aria-hidden="true"></span><span class="ds-chart-label">Abr</span></div>
+            <div class="ds-chart-col"><span class="ds-chart-val">62k</span><span class="ds-chart-bar" style="height:80%" aria-hidden="true"></span><span class="ds-chart-label">Mai</span></div>
+            <div class="ds-chart-col"><span class="ds-chart-val">71k</span><span class="ds-chart-bar" style="height:100%" aria-hidden="true"></span><span class="ds-chart-label">Jun</span></div>
+          </div>
+        </div>
+        <!-- status -->
+        <div class="ds-card">
+          <div class="ds-card-head"><h3 class="ds-h3" style="font-size:1.05rem">Por status</h3></div>
+          <div class="ds-list">
+            <div class="ds-list-item"><span class="ds-badge ds-badge--neutral">Rascunho</span><div class="ds-list-main"></div><span class="ds-mono" style="font-weight:600;color:var(--ds-text-strong)">9</span></div>
+            <div class="ds-list-item"><span class="ds-badge ds-badge--warn"><span class="ds-dot"></span> Em elaboração</span><div class="ds-list-main"></div><span class="ds-mono" style="font-weight:600;color:var(--ds-text-strong)">6</span></div>
+            <div class="ds-list-item"><span class="ds-badge ds-badge--info"><span class="ds-dot"></span> Enviado</span><div class="ds-list-main"></div><span class="ds-mono" style="font-weight:600;color:var(--ds-text-strong)">11</span></div>
+            <div class="ds-list-item"><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Aprovado</span><div class="ds-list-main"></div><span class="ds-mono" style="font-weight:600;color:var(--ds-text-strong)">18</span></div>
+            <div class="ds-list-item"><span class="ds-badge ds-badge--danger"><span class="ds-dot"></span> Rejeitado</span><div class="ds-list-main"></div><span class="ds-mono" style="font-weight:600;color:var(--ds-text-strong)">4</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÚLTIMOS ORÇAMENTOS -->
+      <div class="ds-row" style="justify-content:space-between;align-items:flex-end;margin-bottom:1rem">
+        <div><h3 class="ds-h3" style="font-size:1.1rem">Últimos orçamentos</h3><p style="color:var(--ds-t-500)">Os mais recentes criados no sistema.</p></div>
+        <a class="ds-btn ds-btn--ghost ds-btn--sm" href="orcamentos.html">Ver todos</a>
+      </div>
+      <div class="ds-table-wrap ds-reveal">
+        <table class="ds-table">
+          <thead><tr><th>Número</th><th>Cliente</th><th>Título</th><th>Status</th><th class="ds-td-num">Total</th><th><span style="display:block;text-align:right">Ações</span></th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="ds-td-strong">ORC-2026-0048</td><td>Marabella Eventos</td><td>Estande Feira Agro 2026</td>
+              <td><span class="ds-badge ds-badge--info"><span class="ds-dot"></span> Enviado</span></td>
+              <td class="ds-td-num">R$ 48.900,00</td>
+              <td><div class="ds-row-actions"><a class="ds-icon-btn" href="orcamento-detalhe.html" aria-label="Ver ORC-2026-0048"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></a></div></td>
+            </tr>
+            <tr>
+              <td class="ds-td-strong">ORC-2026-0047</td><td>Construtora Vale Verde</td><td>Locação mobiliário stand</td>
+              <td><span class="ds-badge ds-badge--success"><span class="ds-dot"></span> Aprovado</span></td>
+              <td class="ds-td-num">R$ 22.150,00</td>
+              <td><div class="ds-row-actions"><a class="ds-icon-btn" href="orcamento-detalhe.html" aria-label="Ver ORC-2026-0047"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></a></div></td>
+            </tr>
+            <tr>
+              <td class="ds-td-strong">ORC-2026-0046</td><td>Helena Lima Arquitetura</td><td>Cenografia lançamento</td>
+              <td><span class="ds-badge ds-badge--warn"><span class="ds-dot"></span> Em elaboração</span></td>
+              <td class="ds-td-num">R$ 9.480,00</td>
+              <td><div class="ds-row-actions"><a class="ds-icon-btn" href="orcamento-form.html" aria-label="Editar ORC-2026-0046"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a></div></td>
+            </tr>
+            <tr>
+              <td class="ds-td-strong">ORC-2026-0045</td><td>Prefeitura de Lajeado</td><td>Palco evento cívico</td>
+              <td><span class="ds-badge ds-badge--neutral">Rascunho</span></td>
+              <td class="ds-td-num">R$ 0,00</td>
+              <td><div class="ds-row-actions"><a class="ds-icon-btn" href="orcamento-form.html" aria-label="Editar ORC-2026-0045"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="orca-footer">
+      <div class="orca-footer-inner">
+        <div>
+          <p class="orca-footer-brand">Orçamentos</p>
+          <p class="orca-footer-copy">Um app <a href="https://stolben.com/" target="_blank" rel="noopener">Stölben</a> · &copy; 2026</p>
+        </div>
+        <ul class="orca-footer-points">
+          <li><span class="orca-footer-dot"></span> Orçamentos profissionais</li>
+          <li><span class="orca-footer-dot"></span> PDF, Excel e memorial</li>
+          <li><span class="orca-footer-dot"></span> Catálogo e clientes</li>
+        </ul>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<script src="assets/stolben-ui.js"></script>
+<script>document.querySelectorAll("a svg, button svg").forEach(function(s){s.setAttribute("aria-hidden","true");s.setAttribute("focusable","false");});</script>
+</body>
+</html>
