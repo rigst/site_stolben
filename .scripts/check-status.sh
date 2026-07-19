@@ -4,7 +4,7 @@
 set -u
 OUT=/var/www/site_stolben/status.json
 TMP=$(mktemp "${OUT}.XXXXXX")
-HOSTS=(divisor.stolben.com orcamentos.stolben.com financas.stolben.com trilhas.stolben.com vetorial.stolben.com)
+HOSTS=(divisor.stolben.com orcamentos.stolben.com financas.stolben.com trilhas.stolben.com questoes.stolben.com vetorial.stolben.com)
 
 {
   printf '{"checked":"%s","services":[' "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
