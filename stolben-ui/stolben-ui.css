@@ -1,5 +1,5 @@
 /* =====================================================================
-   Stölben UI — Design System (tema "Infra Premium")
+   Stölben UI: Design System (tema "Infra Premium")
    Derivado do site stolben.com. Voltado a aplicativos web reais (CRUD).
    CSS puro, sem build. Prefixo de classe: .ds-
    Carregue junto das fontes Manrope + Inter.
@@ -236,7 +236,7 @@
 .ds-nav-pill .ds-nav-cta:hover { background: var(--ds-accent-50); }
 /* Controle de tema na nav. Duas opções:
    (a) 3-vias (recomendado): .ds-segment.ds-mode + [data-ds-theme-mode] com
-       botões claro/auto/escuro — já fica em vidro dentro da pílula.
+       botões claro/auto/escuro; já fica em vidro dentro da pílula.
    (b) Simples (2 estados): .ds-nav-toggle + [data-ds-dark-toggle] com dois
        ícones <svg class="ds-icon-moon"> e <svg class="ds-icon-sun">. */
 .ds-nav-pill .ds-segment { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.18); }
@@ -411,7 +411,7 @@
 .ds-truncate { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* ===================================================================
-   EXTENSÕES v1.1 — layout de app e mais componentes de CRUD
+   EXTENSÕES v1.1: layout de app e mais componentes de CRUD
    =================================================================== */
 
 /* ---- App shell com sidebar (layout de admin/CRUD) ---- */
@@ -494,7 +494,7 @@
 .ds-icon-btn .ds-count { position: absolute; top: -0.35rem; right: -0.35rem; border: 2px solid var(--ds-panel); }
 
 /* ===================================================================
-   MOBILE — navegação colapsável (gaveta), reorganização e toque.
+   MOBILE: navegação colapsável (gaveta), reorganização e toque.
    No desktop nada muda; no mobile a sidebar vira gaveta off-canvas
    acionada por um botão hambúrguer (data-ds-nav-toggle).
    =================================================================== */
@@ -547,7 +547,7 @@
 }
 
 /* ===================================================================
-   TEMAS DE ACENTO — aplique a classe em .ds-root (ou em um container).
+   TEMAS DE ACENTO: aplique a classe em .ds-root (ou em um container).
    Padrão (sem classe) = azul. Estados success/warn/danger não mudam.
    =================================================================== */
 .ds-theme-indigo  { --ds-accent: #4f46e5; }
@@ -559,7 +559,7 @@
 .ds-theme-slate   { --ds-accent: #475569; }
 
 /* ===================================================================
-   TEMA ESCURO — aplique .ds-dark no <html> (ou na raiz). Funciona com
+   TEMA ESCURO: aplique .ds-dark no <html> (ou na raiz). Funciona com
    qualquer .ds-theme-*. Cinzas suaves (sem preto puro), texto off-white
    e acento clareado para leitura confortável. Vem DEPOIS dos temas para
    recalcular os tons de acento (50/100/dark/fg) em versão escura.
@@ -610,7 +610,7 @@
 .ds-dark [data-ds-dark-toggle] .ds-i-sun { display: inline-flex; }
 
 /* ===================================================================
-   VISUALIZAÇÕES DE LISTA — tabela (.ds-table), cards, lista, board.
+   VISUALIZAÇÕES DE LISTA: tabela (.ds-table), cards, lista, board.
    Princípio: só o essencial em destaque, com hierarquia clara
    (título forte > valor > status > meta discreta).
    =================================================================== */

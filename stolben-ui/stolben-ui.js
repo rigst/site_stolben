@@ -1,5 +1,5 @@
 /* =====================================================================
-   Stölben UI — comportamentos opcionais (vanilla JS, sem dependências)
+   Stölben UI: comportamentos opcionais (vanilla JS, sem dependências)
    Inicializa via data-attributes. Tudo é progressive enhancement:
    sem JS, o conteúdo continua acessível.
    ===================================================================== */

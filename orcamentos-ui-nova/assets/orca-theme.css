@@ -1,7 +1,7 @@
 /* =========================================================================
-   Stölben UI — camada de POLIMENTO do Sistema de Orçamentos.
+   Stölben UI: camada de POLIMENTO do Sistema de Orçamentos.
    Mantém a identidade do DS (Inter/Manrope, acento indigo, neutros do tema).
-   NÃO troca fontes, cores nem cantos — só refina hierarquia, profundidade,
+   NÃO troca fontes, cores nem cantos; só refina hierarquia, profundidade,
    microinterações e wayfinding. Tudo via tokens var(--ds-…).
    ========================================================================= */
 
@@ -47,7 +47,7 @@
 }
 
 /* =========================================================================
-   Ajustes — barra superior removida, navegação/usuário/tema na sidebar
+   Ajustes: barra superior removida, navegação/usuário/tema na sidebar
    ========================================================================= */
 
 /* Botão-link sólido: forçar texto claro (a regra .ds-root a vence .ds-btn--solid) */
@@ -69,7 +69,7 @@
 .orca-user-name { font-weight: 600; font-size: 0.88rem; color: var(--ds-t-900); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .orca-user-role { font-size: 0.74rem; color: var(--ds-t-500); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-/* Seletor de tema no rodapé da sidebar — compacto */
+/* Seletor de tema no rodapé da sidebar, compacto */
 .orca-side-foot { margin-top: auto; padding-top: 0.8rem; border-top: 1px solid var(--ds-line); display: flex; justify-content: center; }
 .orca-side-foot .ds-mode { width: fit-content; }
 .orca-side-foot .ds-mode button { flex: 0 0 auto; }
@@ -78,7 +78,7 @@
 .orca-user-name, .orca-user-role { white-space: normal; overflow: visible; text-overflow: clip; }
 .orca-user-role { line-height: 1.25; }
 
-/* Hambúrguer flutuante (só mobile — substitui o do topbar removido) */
+/* Hambúrguer flutuante (só mobile; substitui o do topbar removido) */
 .orca-burger { display: none; }
 @media (max-width: 820px) {
   .orca-burger {
@@ -89,7 +89,7 @@
 }
 
 /* =========================================================================
-   Gráfico — linhas-guia horizontais discretas
+   Gráfico: linhas-guia horizontais discretas
    ========================================================================= */
 .ds-chart { position: relative; }
 .ds-chart::before {
@@ -143,7 +143,7 @@
 .orca-login-theme { position: fixed; top: 1rem; right: 1rem; z-index: 30; background: var(--ds-surface); box-shadow: var(--ds-shadow-sm); }
 
 /* =========================================================================
-   Mobile — corrigir cortes: colapsar layouts de 2 colunas e limpar tabelas
+   Mobile: corrigir cortes: colapsar layouts de 2 colunas e limpar tabelas
    ========================================================================= */
 @media (max-width: 900px) {
   .orca-split { grid-template-columns: 1fr !important; }
@@ -157,7 +157,7 @@
 }
 
 /* =========================================================================
-   BANNER DE TOPO reutilizável (.orca-hero) — imagem de fundo + overlay
+   BANNER DE TOPO reutilizável (.orca-hero): imagem de fundo + overlay
    escuro + texto branco + transição suave para o fundo da página.
    Cards/tabelas/formulários permanecem no fundo neutro (fora do hero).
    ========================================================================= */
@@ -179,7 +179,7 @@
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.45) 78%, transparent 100%);
           mask-image: linear-gradient(to bottom, #000 0%, #000 52%, rgba(0,0,0,.45) 78%, transparent 100%);
 }
-/* overlay escuro SÓ no topo (para o texto), some antes da base — sem faixa escura */
+/* overlay escuro SÓ no topo (para o texto), some antes da base, sem faixa escura */
 .orca-hero::after {
   content: "";
   position: absolute; inset: 0; z-index: -1;

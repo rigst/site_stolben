@@ -1,4 +1,4 @@
-/* Stölben v2 — identidade técnica: Bricolage Grotesque no display, Archivo no corpo, IBM Plex Mono nos detalhes; ultramarino próprio, faixas full-bleed */
+/* Stölben v2. Identidade técnica: Bricolage Grotesque no display, Archivo no corpo, IBM Plex Mono nos detalhes; ultramarino próprio, faixas full-bleed */
 /* Fontes self-hosted (subset latin, baixadas do Google Fonts) */
 @font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-display:swap;src:url("fonts/archivo-var.woff2") format("woff2")}
 @font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:200 800;font-display:swap;src:url("fonts/bricolage-grotesque-var.woff2") format("woff2")}
@@ -53,7 +53,7 @@ section[id]{scroll-margin-top:5.5rem}
 .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.32);padding:.8rem 1.4rem}
 .btn-ghost:hover{border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.06)}
 
-/* hero — foto de fundo, faixa escura full-bleed */
+/* hero: foto de fundo, faixa escura full-bleed */
 .hero{position:relative;min-height:min(86vh,55rem);display:flex;align-items:flex-end;background:var(--dark);overflow:hidden}
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .hero-shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,13,18,.94) 0%,rgba(11,13,18,.8) 42%,rgba(11,13,18,.5) 100%),linear-gradient(0deg,rgba(11,13,18,.55) 0%,rgba(11,13,18,0) 40%)}
@@ -132,7 +132,7 @@ section[id]{scroll-margin-top:5.5rem}
 .c-med .go{background:var(--panel);color:var(--ink)}
 .c-med:hover .go{background:var(--accent-tint);color:var(--accent);transform:translate(2px,-2px)}
 
-/* sobre — faixa editorial em duas colunas */
+/* sobre: faixa editorial em duas colunas */
 .about{background:var(--surface);border-block:1px solid var(--line);margin-top:clamp(3.5rem,7vw,5.5rem);padding-block:clamp(3.5rem,7vw,6rem)}
 .about-grid{display:grid;grid-template-columns:minmax(0,40rem) 1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
 .about-head h2{font-size:clamp(1.9rem,3.4vw,2.9rem);margin-top:.6rem;max-width:14em}
@@ -158,7 +158,7 @@ section[id]{scroll-margin-top:5.5rem}
 .tech-card.tech-split .ts-media{flex:1 1 50%;min-width:0;position:relative;min-height:240px;background:var(--panel);border-left:1px solid var(--line)}
 .tech-card.tech-split .ts-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* infra — faixa escura full-bleed fechando a página */
+/* infra: faixa escura full-bleed fechando a página */
 .host{background:var(--dark);color:#b9c0c9;margin-top:clamp(3.5rem,7vw,5.5rem)}
 .host-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center;padding-block:clamp(3.5rem,7vw,6rem)}
 .host .kick{color:var(--accent-air)}
@@ -172,7 +172,7 @@ section[id]{scroll-margin-top:5.5rem}
 .host-media{position:relative;min-height:24rem;align-self:stretch;border:1px solid var(--dark-line);border-radius:var(--r);overflow:hidden}
 .host-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-/* contato — continua a faixa escura */
+/* contato: continua a faixa escura */
 .contact{background:var(--dark);border-top:1px solid var(--dark-line);color:#b9c0c9}
 .contact-in{padding-block:clamp(3.5rem,7vw,6rem)}
 .contact .kick{color:var(--accent-air)}
@@ -181,7 +181,7 @@ section[id]{scroll-margin-top:5.5rem}
 .contact-actions{display:flex;flex-wrap:wrap;gap:.9rem}
 .contact a:focus-visible{outline-color:var(--accent-air)}
 
-/* questões legais — bloco discreto na faixa escura */
+/* questões legais: bloco discreto na faixa escura */
 .legal{background:var(--dark);border-top:1px solid var(--dark-line);color:#8b939e}
 .legal-in{padding-block:clamp(3rem,6vw,4.5rem)}
 .legal .kick{color:var(--accent-air)}
@@ -209,7 +209,7 @@ section[id]{scroll-margin-top:5.5rem}
 .host-media.reveal{transition-delay:.1s}
 .about-copy.reveal{transition-delay:.08s}
 
-/* rodapé — continua a faixa escura */
+/* rodapé: continua a faixa escura */
 .foot{background:var(--dark);border-top:1px solid var(--dark-line);padding:2.5rem 0}
 .foot-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
 .foot-brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:.95rem;color:#f5f7fa;margin-bottom:.15rem}

@@ -1,4 +1,4 @@
-# Guia para IA — construção de interfaces com Stölben UI
+# Guia para IA: construção de interfaces com Stölben UI
 
 Instruções para um agente de IA (Claude, etc.) construir telas de aplicativos
 usando o design system **Stölben UI**. Siga este guia à risca: ele combina os
@@ -84,13 +84,13 @@ os tons derivarem certo em claro e escuro), e nunca use cor de acento solta:
 <html class="ds-theme-violet">   <!-- indigo · violet · teal · emerald · amber · rose · slate -->
 ```
 
-Cor própria? Defina **só** `--ds-accent` numa classe `.ds-theme-x` — os tons são
+Cor própria? Defina **só** `--ds-accent` numa classe `.ds-theme-x`: os tons são
 derivados e funcionam em claro/escuro. Não escolha um acento igual ao verde de
 sucesso nem ao vermelho de erro.
 
 ### 2.6 Visualizações de lista
 Escolha pela tarefa e mostre **só o essencial em destaque**, com hierarquia
-(título forte › valor › status › meta discreta — nunca encha de colunas/campos):
+(título forte › valor › status › meta discreta; nunca encha de colunas/campos):
 
 | Visualização | Quando | Componentes |
 |---|---|---|
@@ -119,7 +119,7 @@ try{var m=localStorage.getItem("ds-theme-mode");
 if(m==="dark"||(!m&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
 ```
 
-Regra para o escuro funcionar: **nunca cravar cor** — use tokens. Para texto forte
+Regra para o escuro funcionar: **nunca cravar cor**: use tokens. Para texto forte
 use `--ds-text-strong` (não `--ds-ink`); para acento como texto/ícone use
 `--ds-accent-fg` (não `--ds-accent`, que pode ficar escuro demais no fundo escuro).
 Fundos neutros: `--ds-subtle`. O DS já clareia o acento e os estados no escuro.
@@ -147,7 +147,7 @@ Padrões a seguir no mobile (≤ 820px):
   navegação sem um jeito de abri-la.
 - **Reorganização:** grades (`.ds-grid--*`) viram 1 coluna; `.ds-toolbar` quebra linha.
 - **Tabela:** rolagem horizontal (`.ds-table-wrap`) **ou** troque para cards/lista
-  (`.ds-record`/`.ds-list`) — prefira cards quando há poucas colunas relevantes.
+  (`.ds-record`/`.ds-list`); prefira cards quando há poucas colunas relevantes.
 - **Board e abas:** rolam na horizontal; **modal e drawer** ocupam quase a tela.
 - **Toque:** alvos `≥ 44px` (o DS aumenta `.ds-icon-btn` no mobile); respeite
   `env(safe-area-inset-*)` em telas com entalhe; `touch-action: manipulation`.
@@ -309,4 +309,4 @@ Um único painel escuro de destaque, se houver, para criar contraste.
 9. Uma ação primária azul por bloco; ritmo claro/escuro sem empilhar escuros.
 10. Sem "cara de IA": copy concreta, ícones neutros, nada de ornamento sem função.
 11. **Mobile (~390px) testado**: navegação em gaveta acessível, grades empilhadas,
-    tabela rolável ou em cards, alvos de toque ≥ 44px — em claro e escuro.
+    tabela rolável ou em cards, alvos de toque ≥ 44px, em claro e escuro.

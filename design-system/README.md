@@ -1,8 +1,8 @@
-# Stölben UI — Design System
+# Stölben UI: Design System
 
 Sistema de design extraído do site `stolben.com` para replicar a mesma
 identidade ("Infra Premium") nos aplicativos web (Divisor de PDF, Orçamentos,
-Finanças, Vetorial, etc.). CSS puro, sem dependências de build — funciona em
+Finanças, Vetorial, etc.). CSS puro, sem dependências de build; funciona em
 qualquer stack (Django templates, HTML estático, React, etc.).
 
 ## Arquivos
@@ -69,7 +69,7 @@ consistência entre os apps.
 
 ---
 
-## Componentes — exemplos
+## Componentes: exemplos
 
 ### Shell + grade tracejada
 ```html
@@ -115,7 +115,7 @@ clara → escura) e `is-active` no link da seção visível.
 </section>
 ```
 Use `.ds-media-grad--left` quando o texto ficar à esquerda. **Sempre foto real**
-(workspace, código, trabalho) — nunca render 3D/“IA” ou stock clichê.
+(workspace, código, trabalho); nunca render 3D/“IA” ou stock clichê.
 
 ### Botões
 ```html
@@ -162,7 +162,7 @@ Adicione `ds-reveal` a qualquer elemento; o JS aplica `is-visible` quando ele
 entra na tela. Para escalonar, defina `transition-delay` nos filhos.
 
 ### Console escuro (formulário/opções dentro de cartão claro)
-Bloco escuro inserido num cartão claro — gera o contraste claro↔escuro do tema
+Bloco escuro inserido num cartão claro, que gera o contraste claro↔escuro do tema
 sem empilhar dois blocos escuros. Ideal para áreas de configuração/upload.
 ```html
 <div class="ds-console">
@@ -180,7 +180,7 @@ sem empilhar dois blocos escuros. Ideal para áreas de configuração/upload.
 </label>
 ```
 
-### Choice (cartões selecionáveis) — variante escura
+### Choice (cartões selecionáveis): variante escura
 Marque `.is-selected` no item ativo (via JS). Indicador de seleção embutido.
 ```html
 <div class="ds-choice-grid" style="grid-template-columns:repeat(4,1fr)">
@@ -217,7 +217,7 @@ Brilho deslizante automático; use `--on-light` sobre fundo claro.
 ```
 
 ### Footer (claro, enxuto)
-Fecha a página de forma leve — **não** use bloco escuro no rodapé.
+Fecha a página de forma leve; **não** use bloco escuro no rodapé.
 ```html
 <footer class="ds-footer">
   <div class="ds-footer-inner">
@@ -232,12 +232,12 @@ Fecha a página de forma leve — **não** use bloco escuro no rodapé.
 
 > **Dose de escuro.** Áreas interativas (dropzone, console) usam `--ds-ink-soft`,
 > um dark mais leve que o `--ds-ink` do hero. Reserve o preto forte para o hero e
-> um eventual bloco de destaque — um formulário inteiro em `--ds-ink` pesa.
+> um eventual bloco de destaque; um formulário inteiro em `--ds-ink` pesa.
 
 ---
 
 ## Evitar "cara de IA"
-Lições da construção do site — siga para que os apps não pareçam template gerado:
+Lições da construção do site. Siga para que os apps não pareçam template gerado:
 
 - **Sem ornamentos sem função.** Nada de badge flutuante "All systems operational"
   nem marca d'água gigante de fundo. Todo elemento decorativo deve carregar
@@ -245,7 +245,7 @@ Lições da construção do site — siga para que os apps não pareçam templat
 - **Ícones não-literais.** Evite ícone que repete a palavra (foco→alvo) e clichês
   de startup (foguete). Prefira ícones neutros ou só tipografia.
 - **Acento com parcimônia.** O título em duas cores (`.ds-muted`) e os glows azuis
-  têm impacto — usados em tudo, viram padrão genérico. Uma vez por página.
+  têm impacto; usados em tudo, viram padrão genérico. Uma vez por página.
 - **Imagens reais, não render.** Foto de workspace/código > render 3D abstrato ou
   a foto de stock mais batida (Terra do espaço, mesa branca com planta).
 - **Copy concreta.** "Deploy próprio em Linux/Nginx" > "soluções escaláveis de ponta".
@@ -259,14 +259,14 @@ Lições da construção do site — siga para que os apps não pareçam templat
   sobre branco para texto pequeno.
 
 ## Versão
-v1.2 — junho/2026. Acrescenta o token `--ds-ink-soft` (dark suave) e o componente
+v1.2 (junho/2026). Acrescenta o token `--ds-ink-soft` (dark suave) e o componente
 `.ds-footer` (rodapé claro/enxuto). Suaviza `.ds-console` e `.ds-dropzone` para
 `--ds-ink-soft`, evitando peso de áreas interativas muito escuras.
 
-v1.1 — junho/2026. Acrescenta componentes de aplicação derivados do Divisor de
+v1.1 (junho/2026). Acrescenta componentes de aplicação derivados do Divisor de
 PDF: `.ds-console` (painel de formulário/opções dentro de cartão claro),
 `.ds-dropzone`, `.ds-choice`/`.ds-choice-grid`, `.ds-switch`, `.ds-progress` e
 `.ds-stat-strip`. Reforça o ritmo claro↔escuro do tema.
 
-v1.0 — derivado do site stolben.com (junho/2026). Ícones recomendados: Lucide
+v1.0: derivado do site stolben.com (junho/2026). Ícones recomendados: Lucide
 (SVG inline, stroke 1.8–2). Imagens de hero: livres (Unsplash) ou próprias.

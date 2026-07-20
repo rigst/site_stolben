@@ -1,5 +1,5 @@
 /* =================================================================
-   Stölben UI — comportamentos opcionais
+   Stölben UI: comportamentos opcionais
    Inclua no fim do <body>:  <script src="stolben-ui.js"></script>
    ================================================================= */
 (function () {

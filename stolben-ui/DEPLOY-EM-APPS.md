@@ -49,7 +49,7 @@ Atualize toda referência (inclusive em camadas-ponte `:root` do app):
 | `--ds-on-dark-mute` | `--ds-on-dark-faint` |
 | `--ds-border-dark` | `--ds-line-dark` |
 | `--ds-warn-soft` | `--ds-warn-50` |
-| `--ds-tracking-tight` | (removido — use `-0.02em`) |
+| `--ds-tracking-tight` | (removido; use `-0.02em`) |
 
 ### 2.3 Acento temável: use `--ds-accent*`, não `--ds-blue*`
 O tema (`.ds-theme-*` no `<html>`) controla **`--ds-accent`**; os tons
@@ -75,11 +75,11 @@ adaptam sozinhos no escuro (evita pastéis claros fixos quebrando no dark).
 ### 2.5 Nav de site voltou como componente
 Versões antigas tinham `.ds-nav/.ds-nav-pill` embutidos; depois sumiram; agora
 existem de novo como **componente** (pílula de vidro flutuante). Se o app
-tinha nav própria dependendo dessas classes, ela volta a funcionar — veja §4.
+tinha nav própria dependendo dessas classes, ela volta a funcionar (veja §4).
 
 ### 2.6 Cuidado: `.ds-root a { color: inherit }`
 Tem especificidade `(0,1,1)`. Uma regra de cor sua em `.ds-minha-classe`
-`(0,1,0)` **não vence** — o link herda a cor do pai. Eleve a especificidade
+`(0,1,0)` **não vence**: o link herda a cor do pai. Eleve a especificidade
 (ex.: `#site-nav .ds-nav-brand` ou `.ds-nav-pill .ds-nav-brand`).
 
 ### 2.7 Dropzone: conflito de auto-bind
@@ -88,7 +88,7 @@ próprios de drag&drop, **não** ponha esse atributo (use só o visual
 `.ds-dropzone`), senão os dois competem.
 
 ### 2.8 Toasts
-Use `window.dsToast(msg, tipo)` — tipos `success | warn | danger | info`.
+Use `window.dsToast(msg, tipo)`, com tipos `success | warn | danger | info`.
 Mapeie tipos próprios (ex.: `error` → `danger`).
 
 ---
@@ -97,14 +97,14 @@ Mapeie tipos próprios (ex.: `error` → `danger`).
 
 O DS já traz o dark mode; o app só precisa **ligar**:
 
-1. **Anti-flash no `<head>`** (antes do CSS) — aplica a preferência salva /
+1. **Anti-flash no `<head>`** (antes do CSS): aplica a preferência salva /
    do sistema antes de pintar:
    ```html
    <script>(function(){var e=document.documentElement;e.classList.add("js");
    try{var m=localStorage.getItem("ds-theme-mode");
    if(m==="dark"||(!m&&matchMedia("(prefers-color-scheme:dark)").matches))e.classList.add("ds-dark");}catch(x){}})();</script>
    ```
-2. **Controle** — duas opções (o JS cuida de `localStorage` + classe `ds-dark`):
+2. **Controle**: duas opções (o JS cuida de `localStorage` + classe `ds-dark`):
    - Simples (2 estados): `<button data-ds-dark-toggle>` com dois ícones
      `.ds-icon-moon` e `.ds-icon-sun` (na nav-pílula, vira o `.ds-nav-toggle`).
    - 3 vias (claro/auto/escuro): `.ds-segment.ds-mode` com `data-ds-theme-mode`.
@@ -148,7 +148,7 @@ simples (2 estados): `.ds-nav-toggle` + `[data-ds-dark-toggle]` com dois ícones
 `.ds-icon-moon`/`.ds-icon-sun`.
 Opcional: `<ul class="ds-nav-links">…</ul>` (colapsa no mobile ≤820px).
 
-**Receita — nav que adapta ao rolar (hero escuro → conteúdo claro):** o vidro
+**Receita: nav que adapta ao rolar (hero escuro → conteúdo claro):** o vidro
 escuro fica "cinza opaco" feio quando a pílula passa sobre conteúdo claro. No
 tema claro, ao rolar, troque para um vidro CLARO com texto escuro (no escuro o
 conteúdo já é escuro, então mantenha o vidro escuro). Cole na camada do app:

@@ -1,8 +1,8 @@
-# Stölben UI — Design System
+# Stölben UI: Design System
 
 Sistema de design extraído do site **stolben.com** (tema *Infra Premium*), voltado
 à construção de **aplicativos web reais (CRUD)**: listagens, formulários, modais,
-dashboards. CSS puro + um JS opcional, sem build — funciona em qualquer stack
+dashboards. CSS puro + um JS opcional, sem build; funciona em qualquer stack
 (Django templates, HTML estático, React, etc.).
 
 > Showcase visual: abra **`index.html`** (fontes, cores, componentes e um exemplo
@@ -21,11 +21,11 @@ dashboards. CSS puro + um JS opcional, sem build — funciona em qualquer stack
 | `DEPLOY-EM-APPS.md` | **Implantar em apps existentes**: vendoring, quebras de API, modo escuro, deploy |
 | `img/`           | Imagens reais de licença livre usadas nos exemplos |
 
-> **Construindo com IA?** Leia o **[`AGENTS.md`](AGENTS.md)** — regras de design,
+> **Construindo com IA?** Leia o **[`AGENTS.md`](AGENTS.md)**: regras de design,
 > checklist de acessibilidade e receitas de tela (lista, formulário, detalhe).
 
-> **Atualizando um app que já usa o DS?** Leia o **[`DEPLOY-EM-APPS.md`](DEPLOY-EM-APPS.md)**
-> — quebras de API (ex.: `.ds-shell`→`.ds-app`, tokens renomeados, `--ds-blue*`→`--ds-accent*`),
+> **Atualizando um app que já usa o DS?** Leia o **[`DEPLOY-EM-APPS.md`](DEPLOY-EM-APPS.md)**:
+> quebras de API (ex.: `.ds-shell`→`.ds-app`, tokens renomeados, `--ds-blue*`→`--ds-accent*`),
 > como ligar o modo escuro e o passo a passo de deploy.
 
 ## Como usar
@@ -81,7 +81,7 @@ no claro e no escuro):
 
 Todos os componentes seguem `--ds-accent*` (botões, foco, links ativos, seleção,
 badges *info*, glows…). Os estados **success / warn / danger** não mudam (continuam
-verde / âmbar / vermelho). Para uma cor própria, defina **só** `--ds-accent` — os
+verde / âmbar / vermelho). Para uma cor própria, defina **só** `--ds-accent`: os
 tons (light/dark/50/100/fg) são derivados e já funcionam no claro e no escuro:
 
 ```css
@@ -125,7 +125,7 @@ Modo claro (padrão) e escuro. Aplique `ds-dark` no `<html>` (funciona com qualq
 <html class="ds-dark"> … </html>
 ```
 
-Controle de 3 modos — **claro / automático / escuro** (`auto` segue o sistema e é
+Controle de 3 modos: **claro / automático / escuro** (`auto` segue o sistema e é
 o padrão). O JS aplica a classe, guarda a preferência em `localStorage` e, em
 `auto`, reage a mudanças do sistema ao vivo:
 
@@ -166,15 +166,15 @@ lista** diferentes, sobre o mesmo shell (sidebar + topbar):
 
 ## Visualizações de lista
 
-Mesma informação, leituras diferentes — sempre com **só o essencial em destaque**
+Mesma informação, leituras diferentes, sempre com **só o essencial em destaque**
 (título forte › valor › status › meta discreta):
 
-- **Tabela** `.ds-table` — densidade alta, comparação por colunas.
-- **Grade de cards** `.ds-record` (em `.ds-grid--3/4`) — visual, com miniatura.
-- **Lista compacta** `.ds-list` / `.ds-list-item` — leitura rápida, mobile.
-- **Board** `.ds-board` / `.ds-board-col` / `.ds-board-card` — fluxo por status.
-- **Gráfico de barras** `.ds-chart` / `.ds-chart-col` / `.ds-chart-bar` — métricas (dashboard).
-- **Timeline** `.ds-timeline` / `.ds-timeline-item` — feed de atividade cronológico.
+- **Tabela** `.ds-table`: densidade alta, comparação por colunas.
+- **Grade de cards** `.ds-record` (em `.ds-grid--3/4`): visual, com miniatura.
+- **Lista compacta** `.ds-list` / `.ds-list-item`: leitura rápida, mobile.
+- **Board** `.ds-board` / `.ds-board-col` / `.ds-board-card`: fluxo por status.
+- **Gráfico de barras** `.ds-chart` / `.ds-chart-col` / `.ds-chart-bar`: métricas (dashboard).
+- **Timeline** `.ds-timeline` / `.ds-timeline-item`: feed de atividade cronológico.
 
 Alternador: `.ds-segment` com `data-view="x"` dentro de `[data-ds-views]`; os blocos
 são `[data-view-panel="x"]` (o JS mostra/esconde).
@@ -262,6 +262,6 @@ rolar) com `.ds-nav-brand`/`.ds-nav-accent`, `.ds-nav-links`, `.ds-nav-actions`,
 
 ## Versão
 
-v1.0 — junho/2026. Sistema voltado a apps/CRUD, derivado do redesign do
+v1.0 (junho/2026). Sistema voltado a apps/CRUD, derivado do redesign do
 stolben.com. Imagens: Unsplash (livres). Ícones: estilo Lucide (SVG inline,
 stroke 1.8–2).
