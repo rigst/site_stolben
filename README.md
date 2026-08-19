@@ -27,8 +27,7 @@ caminhos absolutos só resolvem servindo pela raiz.
 | `script.js` | Surgimento ao rolar, scrollspy do menu e cabeçalho fixo |
 | `assets/` | Imagens (hero, capas dos projetos) |
 | `fonts/` | Fontes servidas localmente |
-| `design-system/` | Tokens e componentes reaproveitáveis |
-| `stolben-ui/` | Biblioteca de UI compartilhada entre os projetos |
+| `design-systems/` | Os sistemas de design compartilhados entre os projetos (v0, v1 e v2) |
 | `orcamentos-ui-nova/` | Protótipo estático de UI, para revisão antes de virar template |
 
 ## Editar os projetos do portfólio

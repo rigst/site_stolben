@@ -8,8 +8,8 @@ O que é bem-vindo:
 - correção de bug de layout, acessibilidade ou responsividade;
 - melhoria de performance (imagem, fonte, carregamento);
 - correção de erro de digitação;
-- melhoria no `design-system/` e no `stolben-ui/`, que são reaproveitados pelos
-  outros projetos.
+- melhoria em `design-systems/`, que é reaproveitado pelos outros projetos
+  (ver o `AGENTS.md` de cada sistema antes de mexer).
 
 ## Rodar
 
@@ -33,7 +33,7 @@ atualizar o `index.html` reprova o PR.
 
 - Imagens sempre com `width` e `height` explícitos na tag `<img>`, para não
   causar deslocamento de layout durante o carregamento.
-- CSS usa os tokens do `design-system/`; evite valor cru onde existe token.
+- CSS usa os tokens do design system; evite valor cru onde existe token.
 - Mensagens de commit em português.
 
 ## Licença das contribuições

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="ds-root ds-tema-verde">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar · Stölben UI v2</title>
+<link rel="stylesheet" href="../stolben-ui.css">
+</head>
+<!-- ENTRADA — a foto ocupa a tela; o texto fica solto sobre ela e o
+     formulário é vidro. Sem card branco: aqui a imagem é o argumento. -->
+<body>
+<main class="ds-auth" style="--ds-foto-login: url('../img/login-arquitetura.jpg')">
+    <div class="ds-auth-quadro">
+
+        <div class="ds-auth-hero">
+            <a class="ds-brand" href="#">
+                <svg class="ds-brand-mark" viewBox="0 0 32 32" aria-hidden="true" style="width:2.4rem;height:2.4rem">
+                    <rect width="32" height="32" rx="7.5" fill="rgba(255,255,255,.12)"/>
+                    <path d="M8.4 24.3 16 7.4l7.6 16.9" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11.7 18.7h8.6" fill="none" stroke="var(--ds-accent-on-dark)" stroke-width="2.7" stroke-linecap="round"/>
+                </svg>
+                <span class="ds-brand-word" style="font-size:1.3rem">Nome do app</span>
+            </a>
+            <span class="ds-kicker">Uma linha que diz para quem isto é</span>
+            <h1 class="ds-h1">A promessa,<br><span class="ds-muted">em duas linhas.</span></h1>
+        </div>
+
+        <form class="ds-auth-card" method="post" action="#">
+            <div>
+                <h2 class="ds-h3">Entrar</h2>
+                <p>Acesse com seu usuário e senha.</p>
+            </div>
+
+            <!-- Erro de autenticação entra aqui, acima dos campos. -->
+
+            <div class="ds-form">
+                <p class="ds-campo">
+                    <label for="a-user">Usuário</label>
+                    <input id="a-user" name="username" type="text" autocomplete="username" required>
+                </p>
+                <p class="ds-campo">
+                    <label for="a-senha">Senha</label>
+                    <input id="a-senha" name="password" type="password" autocomplete="current-password" required>
+                </p>
+                <button class="ds-btn ds-btn--solid ds-btn--bloco" type="submit">Entrar</button>
+            </div>
+
+            <div class="ds-auth-divisor">
+                <p>Quer só conhecer a interface? O acesso visitante cria um espaço temporário que se autoexclui em 24 horas.</p>
+                <button class="ds-btn ds-btn--bloco" type="submit" name="entrar_visitante" value="1">Entrar como visitante</button>
+            </div>
+
+            <p style="font-size:.78rem;line-height:1.5">Ao entrar, você aceita os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.</p>
+        </form>
+
+    </div>
+</main>
+<script src="../stolben-ui.js"></script>
+</body>
+</html>

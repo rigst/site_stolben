@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="ds-root ds-tema-verde">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stölben UI v2 — A folha</title>
+<meta name="description" content="Sistema de design para aplicações de trabalho, extraído do A.R.Q. Papel, tinta, cota, carimbo e camadas.">
+<link rel="stylesheet" href="stolben-ui.css">
+<style>
+    /* Só desta página: a galeria não faz parte do sistema. */
+    .g-amostra { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+    .g-nota { font-size: 0.84rem; color: var(--ds-t-500); max-width: 46rem; margin: 0 0 1rem; line-height: 1.55; }
+    .g-cor { display: flex; flex-direction: column; gap: 0.4rem; }
+    .g-cor i { display: block; height: 3rem; border-radius: 0.5rem; border: 1px solid var(--ds-line); }
+    .g-cor code { font-family: var(--ds-font-mono); font-size: 0.68rem; color: var(--ds-t-500); }
+    .g-cores { display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: 0.9rem; }
+    .g-tipo > * + * { margin-top: 0.9rem; }
+</style>
+</head>
+<body class="ds-shell" style="--ds-fundo: url('img/fundo-vidro.jpg')">
+
+<a class="ds-pular" href="#conteudo">Pular para o conteúdo</a>
+<input type="checkbox" id="nav" class="ds-nav-toggle" aria-hidden="true" tabindex="-1">
+
+<aside class="ds-side">
+    <div class="ds-side-head">
+        <a class="ds-brand" href="#topo">
+            <svg class="ds-brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <rect width="32" height="32" rx="7.5" fill="rgba(255,255,255,.14)"/>
+                <path d="M8.4 24.3 16 7.4l7.6 16.9" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.7 18.7h8.6" fill="none" stroke="var(--ds-accent-on-dark)" stroke-width="2.7" stroke-linecap="round"/>
+            </svg>
+            <span class="ds-brand-word">Stölben UI</span>
+        </a>
+        <label for="nav" class="ds-burger" aria-label="Abrir menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </label>
+    </div>
+
+    <a class="ds-btn--novo" href="#componentes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span>Ver componentes</span>
+    </a>
+
+    <nav class="ds-nav" aria-label="Seções do sistema">
+        <div class="ds-nav-grupo">
+            <span class="ds-nav-label">Fundamentos</span>
+            <a class="ds-nav-link is-active" href="#topo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Visão geral</span>
+            </a>
+            <a class="ds-nav-link" href="#cor">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg>
+                <span>Papel e tinta</span>
+            </a>
+            <a class="ds-nav-link" href="#tipo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg>
+                <span>Tipografia</span>
+            </a>
+            <a class="ds-nav-link" href="#assinaturas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18M6 9v6M18 9v6"/></svg>
+                <span>Assinaturas</span>
+                <span class="ds-nav-badge num">3</span>
+            </a>
+        </div>
+        <div class="ds-nav-grupo">
+            <span class="ds-nav-label">Componentes</span>
+            <a class="ds-nav-link" href="#componentes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                <span>Ações e estado</span>
+            </a>
+            <a class="ds-nav-link" href="#dados">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg>
+                <span>Dados</span>
+            </a>
+            <a class="ds-nav-link" href="#formularios">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8h10M7 12h10M7 16h6"/></svg>
+                <span>Formulários</span>
+            </a>
+            <a class="ds-nav-link" href="#avulsos">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+                <span>Tempo e recado</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="ds-side-foot">
+        <div class="ds-conta">
+            <span class="ds-conta-ico" aria-hidden="true">S</span>
+            <div class="ds-conta-info">
+                <strong>Stölben</strong>
+                <span>v2 · a folha</span>
+            </div>
+        </div>
+        <div class="ds-side-rodape">
+            <a class="ds-side-link" href="README.md">Documentação</a>
+            <a class="ds-side-link" href="../stolben-ui-v1/index.html">v1</a>
+        </div>
+    </div>
+</aside>
+
+<div class="ds-frame">
+<main class="ds-main" id="conteudo">
+<div class="ds-page" id="topo">
+
+    <!-- ============ FAIXA ============ -->
+    <header class="ds-faixa" style="--ds-foto: url('img/hero-painel.jpg')">
+        <div>
+            <span class="ds-kicker">Sistema de design · versão 2</span>
+            <h1 class="ds-h1">A folha.</h1>
+            <p>Extraído do A.R.Q. para qualquer aplicação em que alguém trabalha o dia inteiro. O conteúdo é impresso na folha — não empilhado em caixas dentro de caixas.</p>
+        </div>
+        <div class="ds-acoes">
+            <a class="ds-btn" href="DEPLOY-EM-APPS.md">Instalar num app</a>
+            <button class="ds-btn ds-btn--solid" type="button" onclick="dsToast('Stölben UI v2 carregado.','success')">Testar aviso</button>
+        </div>
+    </header>
+
+    <!-- ============ CARIMBO ============ -->
+    <dl class="ds-carimbo">
+        <div><dt>Origem</dt><dd>A.R.Q. · gestão para escritórios</dd></div>
+        <div><dt>Prefixo</dt><dd class="num">.ds- / --ds-</dd></div>
+        <div><dt>Peso</dt><dd class="num">1 CSS + 1 JS, sem build</dd></div>
+        <div><dt>Tema</dt><dd>6 acentos, luz só</dd></div>
+    </dl>
+
+    <!-- ============ KPI ============ -->
+    <div class="ds-kpi-row">
+        <div class="ds-kpi ds-camada--verde">
+            <span class="ds-kpi-label">Componentes</span>
+            <strong class="ds-kpi-value">117</strong>
+            <span class="ds-kpi-foot">classes, com estado e foco</span>
+        </div>
+        <div class="ds-kpi ds-camada--azul">
+            <span class="ds-kpi-label">Tokens</span>
+            <strong class="ds-kpi-value">53</strong>
+            <span class="ds-kpi-foot">cor, tipo, ritmo, movimento</span>
+        </div>
+        <div class="ds-kpi ds-camada--ambar">
+            <span class="ds-kpi-label">Camadas de cascata</span>
+            <strong class="ds-kpi-value">7</strong>
+            <span class="ds-kpi-foot">ordem declarada, não posicional</span>
+        </div>
+        <div class="ds-kpi ds-camada--violeta">
+            <span class="ds-kpi-label">Dependências</span>
+            <strong class="ds-kpi-value">0</strong>
+            <span class="ds-kpi-foot">nenhuma requisição externa</span>
+        </div>
+    </div>
+
+    <!-- ============ COR ============ -->
+    <section class="ds-bloco ds-camada--verde" id="cor">
+        <h2 class="ds-secao-titulo">Papel e tinta</h2>
+        <p class="g-nota">O fundo não é branco nem cinza: é papel levemente esverdeado. A folha branca só aparece onde há objeto sobre ela. As cinco <strong>camadas</strong> são as áreas do trabalho — entram como filete, tique e rótulo, nunca como fundo chapado.</p>
+        <div class="g-cores">
+            <div class="g-cor"><i style="background:var(--ds-bg)"></i><code>--ds-bg</code></div>
+            <div class="g-cor"><i style="background:var(--ds-panel)"></i><code>--ds-panel</code></div>
+            <div class="g-cor"><i style="background:var(--ds-surface)"></i><code>--ds-surface</code></div>
+            <div class="g-cor"><i style="background:var(--ds-line-dash)"></i><code>--ds-line-dash</code></div>
+            <div class="g-cor"><i style="background:var(--ds-ink)"></i><code>--ds-ink</code></div>
+        </div>
+        <div class="g-cores" style="margin-top:1rem">
+            <div class="g-cor"><i style="background:var(--ds-camada-azul)"></i><code>camada-azul</code></div>
+            <div class="g-cor"><i style="background:var(--ds-camada-verde)"></i><code>camada-verde</code></div>
+            <div class="g-cor"><i style="background:var(--ds-camada-ambar)"></i><code>camada-ambar</code></div>
+            <div class="g-cor"><i style="background:var(--ds-camada-violeta)"></i><code>camada-violeta</code></div>
+            <div class="g-cor"><i style="background:var(--ds-camada-terra)"></i><code>camada-terra</code></div>
+        </div>
+    </section>
+
+    <!-- ============ TIPOGRAFIA ============ -->
+    <section class="ds-bloco ds-camada--azul" id="tipo">
+        <h2 class="ds-secao-titulo">Tipografia</h2>
+        <p class="g-nota">Três funções, três fontes. <strong>Archivo</strong> nos títulos, usando o eixo de largura de verdade (wdth 106–118). <strong>IBM Plex Sans</strong> no corpo. <strong>IBM Plex Mono</strong> em tudo que é rótulo ou número — é o que faz o dado parecer dado.</p>
+        <div class="g-tipo">
+            <p class="ds-h1">Do briefing à obra</p>
+            <p class="ds-h2">Painel do escritório</p>
+            <p class="ds-h3">Fases do projeto</p>
+            <p style="margin:0;max-width:46rem">Corpo de texto em IBM Plex Sans, 15,5 px, entrelinha 1,6. A largura de leitura para em 46 rem porque linha longa demais cansa antes de informar.</p>
+            <p class="ds-kicker" style="margin:0">Rótulo técnico · IBM Plex Mono versal</p>
+            <p class="num" style="margin:0;font-size:1.6rem">R$ 1.234.567,89 · 0/10 fases · 560 h</p>
+        </div>
+    </section>
+
+    <!-- ============ ASSINATURAS ============ -->
+    <section class="ds-bloco" id="assinaturas">
+        <h2 class="ds-secao-titulo ds-camada--terra">As três assinaturas</h2>
+        <p class="g-nota">O que faz este sistema ser este sistema, e não outro claro com acento verde. Todas as três vêm da prancha técnica, e cada uma carrega informação — nenhuma é enfeite.</p>
+
+        <div class="ds-duas">
+            <div>
+                <h3 class="ds-h3" style="margin-bottom:.6rem">1 · Cota</h3>
+                <p class="g-nota">A régua com tique nas pontas que abre toda seção. Mede o vão entre o título e a margem, e por isso ocupa exatamente o que sobra. Herda a cor da camada.</p>
+                <h4 class="ds-secao-titulo ds-camada--azul">Comercial</h4>
+                <h4 class="ds-secao-titulo ds-camada--ambar">Escritório</h4>
+                <h4 class="ds-secao-titulo ds-camada--violeta">Regulatório</h4>
+            </div>
+            <div>
+                <h3 class="ds-h3" style="margin-bottom:.6rem">2 · Poché</h3>
+                <p class="g-nota">A hachura a 45° com que o arquiteto preenche o que foi cortado. Aqui marca o que não foi preenchido: vazio, bloqueado, indisponível. Estado vazio deixa de ser buraco e vira convite.</p>
+                <div class="ds-vazio">
+                    <strong>Nenhum projeto ainda.</strong>
+                    <p>Cliente e nome bastam — o roteiro cuida do resto.</p>
+                    <button class="ds-btn ds-btn--solid ds-btn--pequeno" type="button">Abrir o primeiro</button>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="ds-h3" style="margin:2rem 0 .6rem">3 · Carimbo</h3>
+        <p class="g-nota">O bloco de identificação da prancha: campos lado a lado, divididos por filete, entre duas réguas. É o cabeçalho de dados que não precisa de caixa — está no alto desta página.</p>
+    </section>
+
+    <!-- ============ AÇÕES E ESTADO ============ -->
+    <section class="ds-bloco ds-camada--verde" id="componentes">
+        <h2 class="ds-secao-titulo">Ações e estado</h2>
+        <p class="g-nota">Movimento contido: 130 ms, um pixel de deslocamento no clique, nenhum brilho. Isto é ferramenta de trabalho — o botão confirma que foi clicado e sai da frente.</p>
+
+        <div class="g-amostra" style="margin-bottom:1.25rem">
+            <button class="ds-btn ds-btn--solid" type="button">Salvar alterações</button>
+            <button class="ds-btn" type="button">Cancelar</button>
+            <button class="ds-btn ds-btn--ghost" type="button">Ver histórico</button>
+            <button class="ds-btn ds-btn--danger" type="button">Excluir</button>
+            <button class="ds-btn ds-btn--pequeno" type="button">Ação miúda</button>
+            <button class="ds-btn ds-btn--solid is-busy" type="button">Enviando</button>
+            <button class="ds-btn" type="button" disabled>Indisponível</button>
+            <button class="ds-btn-ico" type="button" aria-label="Editar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </button>
+            <button class="ds-btn-ico ds-btn-ico--perigo" type="button" aria-label="Remover">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>
+            </button>
+        </div>
+
+        <div class="ds-chips" style="margin-bottom:1.25rem">
+            <a class="ds-chip is-active" href="#componentes">Todos</a>
+            <a class="ds-chip" href="#componentes">Ativo</a>
+            <a class="ds-chip" href="#componentes">Pausado</a>
+            <a class="ds-chip" href="#componentes">Concluído</a>
+        </div>
+
+        <div class="g-amostra" style="margin-bottom:1.25rem">
+            <span class="ds-badge ds-badge--info"><span class="ds-dot"></span>Em elaboração</span>
+            <span class="ds-badge ds-badge--ok"><span class="ds-dot"></span>Aprovado</span>
+            <span class="ds-badge ds-badge--atencao"><span class="ds-dot"></span>Aguardando cliente</span>
+            <span class="ds-badge ds-badge--perigo"><span class="ds-dot"></span>Prazo vencido</span>
+            <span class="ds-badge ds-badge--mudo">Bloqueada</span>
+        </div>
+
+        <p class="ds-alerta">O prazo previsto passou há 12 dias e nenhuma fase avançou.</p>
+        <p class="ds-alerta ds-alerta--atencao">Três lançamentos deste mês ainda estão como previstos.</p>
+        <p class="ds-alerta ds-alerta--ok">Cronograma dentro do previsto.</p>
+
+        <div style="margin-top:1.5rem;max-width:32rem">
+            <div class="ds-entre" style="margin-bottom:.5rem">
+                <span class="ds-kicker">Anteprojeto</span>
+                <span class="num" style="font-size:.85rem">62%</span>
+            </div>
+            <div class="ds-progress"><div class="ds-progress-fill" data-ds-progresso="62"></div></div>
+        </div>
+    </section>
+
+    <!-- ============ DADOS ============ -->
+    <section class="ds-bloco ds-camada--ambar" id="dados">
+        <h2 class="ds-secao-titulo">Dados</h2>
+        <p class="g-nota">Tabela sem moldura, impressa na folha. Coluna de valor alinha à direita com <code class="num">.num</code>, que liga números tabulares e zero cortado — a coluna alinha sozinha, sem largura fixa.</p>
+
+        <div class="ds-table-scroll">
+        <table class="ds-table">
+            <thead>
+                <tr><th>Data</th><th>Descrição</th><th>Projeto</th><th>Situação</th><th class="num">Valor</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><time class="num">18/10/26</time></td><td><a href="#dados">Contrato 2026-001 — parcela 4</a></td><td>Residência Alameda</td><td><span class="ds-badge ds-badge--atencao">Previsto</span></td><td class="num ds-valor--entrada">+ R$ 10.500,00</td></tr>
+                <tr><td><time class="num">19/08/26</time></td><td><a href="#dados">Contrato 2026-001 — parcela 2</a></td><td>Residência Alameda</td><td><span class="ds-badge ds-badge--ok">Realizado</span></td><td class="num ds-valor--entrada">+ R$ 10.500,00</td></tr>
+                <tr><td><time class="num">17/08/26</time></td><td>Impressões e plotagens</td><td>—</td><td><span class="ds-badge ds-badge--ok">Realizado</span></td><td class="num ds-valor--saida">− R$ 486,50</td></tr>
+                <tr class="is-feita"><td><time class="num">11/08/26</time></td><td>Consultoria avulsa de layout</td><td>—</td><td><span class="ds-badge ds-badge--mudo">Conciliado</span></td><td class="num">+ R$ 1.800,00</td></tr>
+            </tbody>
+            <tfoot>
+                <tr><th scope="row" colspan="4">Resultado do mês</th><td class="num">R$ 22.313,50</td></tr>
+            </tfoot>
+        </table>
+        </div>
+
+        <h3 class="ds-secao-titulo" style="margin-top:2rem">Quadro de valores</h3>
+        <dl class="ds-quadro">
+            <div class="ds-camada--verde"><dt>Valor do contrato</dt><dd>R$ 95.000,00</dd><small>4 parcelas</small></div>
+            <div class="ds-camada--azul"><dt>Horas do projeto</dt><dd>560 h</dd><small>128 h trabalhadas</small></div>
+            <div class="ds-camada--violeta"><dt>Início</dt><dd>29/07/2026</dd><small>há 21 dias</small></div>
+            <div class="ds-camada--ambar"><dt>Entrega prevista</dt><dd>25/02/2027</dd><small>190 dias</small></div>
+        </dl>
+
+        <h3 class="ds-secao-titulo" style="margin-top:2rem">Objetos numa grade</h3>
+        <p class="g-nota">A superfície com moldura existe para um caso só: objeto repetido numa grade, onde a caixa é o que separa um do outro. Em qualquer outro lugar ela é ruído.</p>
+        <div class="ds-grid">
+            <a class="ds-obj" href="#dados">
+                <div class="ds-obj-top">
+                    <span class="ds-obj-nome">Residência Alameda</span>
+                    <span class="ds-badge ds-badge--ok"><span class="ds-dot"></span>Ativo</span>
+                </div>
+                <p class="ds-obj-sub">Marina e Lucas Almeida · Residencial</p>
+                <dl class="ds-metricas">
+                    <div><dt>Fase atual</dt><dd>Anteprojeto</dd></div>
+                    <div><dt>Lembretes</dt><dd class="num">2</dd></div>
+                    <div><dt>Parado há</dt><dd class="num">0 d</dd></div>
+                    <div><dt>Prazo</dt><dd class="num">27/11/26</dd></div>
+                </dl>
+            </a>
+            <a class="ds-obj" href="#dados">
+                <div class="ds-obj-top">
+                    <span class="ds-obj-nome">Centro Educacional Caminhos</span>
+                    <span class="ds-badge ds-badge--ok"><span class="ds-dot"></span>Ativo</span>
+                </div>
+                <p class="ds-obj-sub">Instituto Caminhos · Institucional</p>
+                <dl class="ds-metricas">
+                    <div><dt>Fase atual</dt><dd>Briefing</dd></div>
+                    <div><dt>Lembretes</dt><dd class="num">0</dd></div>
+                    <div><dt>Parado há</dt><dd class="num">6 d</dd></div>
+                    <div><dt>Prazo</dt><dd class="num">26/01/27</dd></div>
+                </dl>
+            </a>
+            <a class="ds-obj" href="#dados">
+                <div class="ds-obj-top">
+                    <span class="ds-obj-nome">Loteamento Parque Sul</span>
+                    <span class="ds-badge ds-badge--mudo"><span class="ds-dot"></span>Pausado</span>
+                </div>
+                <p class="ds-obj-sub">Incorporadora Parque Sul · Urbanismo</p>
+                <dl class="ds-metricas">
+                    <div><dt>Fase atual</dt><dd>Briefing</dd></div>
+                    <div><dt>Lembretes</dt><dd class="num">1</dd></div>
+                    <div><dt>Parado há</dt><dd class="num">34 d</dd></div>
+                    <div><dt>Prazo</dt><dd class="num">25/02/27</dd></div>
+                </dl>
+            </a>
+        </div>
+
+        <h3 class="ds-secao-titulo" style="margin-top:2rem">Etapas</h3>
+        <p class="g-nota">Marcador quadrado, não bolinha: é marcador de planta. A linha em andamento ganha o halo; a bloqueada é apagada, não ilegível.</p>
+        <ul class="ds-etapas">
+            <li class="ds-etapa ds-etapa--feita"><div><strong>Briefing</strong><small>Aprovado em 04/08/2026</small></div><span class="ds-badge ds-badge--ok">Aprovada</span></li>
+            <li class="ds-etapa ds-etapa--andamento"><div><strong>Anteprojeto</strong><small>Plantas, cortes e fachadas</small></div><span class="ds-badge ds-badge--info">Em elaboração</span></li>
+            <li class="ds-etapa ds-etapa--bloqueada"><div><strong>Projeto executivo</strong><small>Depende de "Anteprojeto", que ainda não foi aprovada.</small></div><span class="ds-badge ds-badge--mudo">Bloqueada</span></li>
+        </ul>
+    </section>
+
+    <!-- ============ FORMULÁRIOS ============ -->
+    <section class="ds-bloco ds-camada--violeta" id="formularios">
+        <h2 class="ds-secao-titulo">Formulários</h2>
+        <p class="g-nota">Rótulo mono versal, campo com filete fino, foco em traço e não em sombra difusa. Formulário longo se divide em passos, e o fio desce do número até o passo seguinte.</p>
+
+        <div class="ds-duas">
+            <form class="ds-form" onsubmit="event.preventDefault();dsToast('Nada foi salvo — isto é a galeria.','info')">
+                <fieldset class="ds-passo">
+                    <legend class="ds-passo-titulo"><span class="ds-passo-num">1</span>Quem e o quê</legend>
+                    <p class="ds-campo">
+                        <label for="f-nome">Nome do projeto</label>
+                        <input id="f-nome" type="text" value="Residência Alameda">
+                    </p>
+                    <p class="ds-campo">
+                        <label for="f-cliente">Cliente</label>
+                        <select id="f-cliente">
+                            <option>Marina e Lucas Almeida</option>
+                            <option>Instituto Caminhos</option>
+                        </select>
+                    </p>
+                </fieldset>
+                <fieldset class="ds-passo">
+                    <legend class="ds-passo-titulo"><span class="ds-passo-num">2</span>Números</legend>
+                    <p class="ds-campo">
+                        <label for="f-valor">Valor contratado</label>
+                        <input id="f-valor" type="text" inputmode="decimal" data-ds-moeda value="95000.00">
+                        <small class="ds-ajuda">Escreva como se lê: 95.000,00. O valor canônico vai no envio.</small>
+                    </p>
+                    <label class="ds-marcar">
+                        <input type="checkbox" checked>
+                        <span><strong>Acompanha a execução</strong><small>Marque se o escritório também acompanha a obra.</small></span>
+                    </label>
+                </fieldset>
+                <div class="ds-form-actions">
+                    <button class="ds-btn" type="reset">Cancelar</button>
+                    <button class="ds-btn ds-btn--solid" type="submit">Salvar projeto</button>
+                </div>
+            </form>
+
+            <div>
+                <h3 class="ds-h3" style="margin-bottom:.6rem">Linha de adicionar</h3>
+                <p class="g-nota">Uma faixa, não uma fileira de caixinhas: o custo de acrescentar mais um item precisa ser um campo e um clique.</p>
+                <form class="ds-inline-add" onsubmit="event.preventDefault();dsToast('Item acrescentado.','success')">
+                    <input type="text" placeholder="Ex.: Aluguel" aria-label="Descrição">
+                    <input type="text" inputmode="decimal" data-ds-moeda placeholder="0,00" aria-label="Valor mensal" style="flex:0 1 8rem">
+                    <button class="ds-btn-ico" type="submit" aria-label="Acrescentar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                    </button>
+                </form>
+
+                <h3 class="ds-h3" style="margin:1.75rem 0 .6rem">Diálogo</h3>
+                <p class="g-nota">Cadastro rápido sem sair da tela. Esc fecha, clique no fundo fecha, e o foco volta para o botão que abriu.</p>
+                <button class="ds-btn ds-btn--solid" type="button" id="abre-modal" data-ds-abre="modal-exemplo">Novo cliente</button>
+
+                <h3 class="ds-h3" style="margin:1.75rem 0 .6rem">Contexto</h3>
+                <p class="g-nota">De onde esta tela foi aberta — a faixa que impede a pessoa de se perder três cliques adentro.</p>
+                <p class="ds-contexto"><span class="ds-kicker">Projeto</span> <strong>Residência Alameda</strong> · Marina e Lucas Almeida · Anteprojeto</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TEMPO E RECADO ============ -->
+    <section class="ds-bloco ds-camada--terra" id="avulsos">
+        <h2 class="ds-secao-titulo">Tempo e recado</h2>
+
+        <div class="ds-duas">
+            <div>
+                <h3 class="ds-h3" style="margin-bottom:.75rem">Calendário</h3>
+                <table class="ds-cal">
+                    <caption class="ds-sr">Agosto de 2026</caption>
+                    <thead><tr><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th><th>Dom</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="is-fora"><span class="ds-cal-num num">10</span></td>
+                            <td><span class="ds-cal-num num">11</span></td>
+                            <td><span class="ds-cal-num num">12</span></td>
+                            <td><span class="ds-cal-num num">13</span></td>
+                            <td><span class="ds-cal-num num">14</span></td>
+                            <td class="is-fds"><span class="ds-cal-num num">15</span></td>
+                            <td class="is-fds"><span class="ds-cal-num num">16</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ds-cal-num num">17</span></td>
+                            <td><span class="ds-cal-num num">18</span></td>
+                            <td class="is-hoje"><span class="ds-cal-num num">19</span></td>
+                            <td><span class="ds-cal-num num">20</span></td>
+                            <td><span class="ds-cal-num num">21</span><a class="ds-cal-item ds-camada--azul" href="#avulsos">Apresentação — Caminhos</a></td>
+                            <td class="is-fds"><span class="ds-cal-num num">22</span><a class="ds-cal-item ds-camada--verde" href="#avulsos">Revisar cozinha</a></td>
+                            <td class="is-fds"><span class="ds-cal-num num">23</span><a class="ds-cal-item ds-camada--ambar" href="#avulsos">Visita técnica</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div>
+                <h3 class="ds-h3" style="margin-bottom:.75rem">Lembretes</h3>
+                <p class="g-nota">O que foi combinado e não pode ser esquecido. Papel amarelo para nota interna, azul para recado que veio do cliente — a inclinação alternada evita a fileira perfeita, que denuncia que aquilo não é papel.</p>
+                <ul class="ds-lembretes">
+                    <li class="ds-lembrete">Cliente quer a churrasqueira fechada.<time>14/08 · Marina</time></li>
+                    <li class="ds-lembrete ds-lembrete--cliente">Confirmar recuo com a prefeitura antes de fechar as fachadas.<time>16/08 · e-mail do cliente</time></li>
+                    <li class="ds-lembrete">Pedir orçamento de esquadria para o executivo.<time>18/08</time></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="ds-bloco" style="padding-top:1.5rem;border-top:1px solid var(--ds-line);color:var(--ds-t-500);font-size:.85rem">
+        <p style="margin:0">Stölben UI v2 · derivado do sistema visual do A.R.Q. · fontes IBM Plex e Archivo sob SIL OFL 1.1 · <a href="README.md">documentação</a> · <a href="../">outros sistemas</a></p>
+    </footer>
+
+</div>
+</main>
+</div>
+
+<dialog class="ds-modal" id="modal-exemplo">
+    <button class="ds-btn-ico ds-modal-fechar" type="button" data-ds-fecha aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 class="ds-h3 ds-modal-titulo">Novo cliente</h2>
+    <p class="ds-modal-sub">Nome e contato bastam — o resto pode vir depois.</p>
+    <div class="ds-modal-corpo">
+        <form class="ds-form ds-form--duas" onsubmit="event.preventDefault();this.closest('dialog').close();dsToast('Cliente cadastrado.','success')">
+            <p class="ds-campo ds-campo--larga"><label for="m-nome">Nome</label><input id="m-nome" type="text" autocomplete="off"></p>
+            <p class="ds-campo"><label for="m-mail">E-mail</label><input id="m-mail" type="email"></p>
+            <p class="ds-campo"><label for="m-tel">Telefone</label><input id="m-tel" type="tel"></p>
+            <div class="ds-form-actions">
+                <button class="ds-btn" type="button" data-ds-fecha>Cancelar</button>
+                <button class="ds-btn ds-btn--solid" type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</dialog>
+
+<script src="stolben-ui.js"></script>
+</body>
+</html>

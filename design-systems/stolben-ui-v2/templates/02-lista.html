@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="ds-root ds-tema-verde">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projetos · Stölben UI v2</title>
+<link rel="stylesheet" href="../stolben-ui.css">
+</head>
+<!-- LISTAGEM — faixa com foto, filtros, grade de objetos e estado vazio. -->
+<body class="ds-shell" style="--ds-fundo: url('../img/fundo-vidro.jpg')">
+<a class="ds-pular" href="#conteudo">Pular para o conteúdo</a>
+<input type="checkbox" id="nav" class="ds-nav-toggle" aria-hidden="true" tabindex="-1">
+
+<aside class="ds-side">
+    <div class="ds-side-head">
+        <a class="ds-brand" href="#">
+            <svg class="ds-brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+                <rect width="32" height="32" rx="7.5" fill="rgba(255,255,255,.14)"/>
+                <path d="M8.4 24.3 16 7.4l7.6 16.9" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.7 18.7h8.6" fill="none" stroke="var(--ds-accent-on-dark)" stroke-width="2.7" stroke-linecap="round"/>
+            </svg>
+            <span class="ds-brand-word">Nome do app</span>
+        </a>
+        <label for="nav" class="ds-burger" aria-label="Abrir menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </label>
+    </div>
+
+    <a class="ds-btn--novo" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        <span>Novo projeto</span>
+    </a>
+
+    <nav class="ds-nav" aria-label="Navegação principal">
+        <div class="ds-nav-grupo">
+            <span class="ds-nav-label">Hoje</span>
+            <a class="ds-nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Painel</span></a>
+            <a class="ds-nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><span>Agenda</span></a>
+            <a class="ds-nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 8-3 8h18s-3-1-3-8"/></svg><span>Notificações</span><span class="ds-nav-badge num">3</span></a>
+        </div>
+        <div class="ds-nav-grupo">
+            <span class="ds-nav-label">Trabalho</span>
+            <a class="ds-nav-link is-active" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 9 5-9 5-9-5 9-5M3 13l9 5 9-5M3 18l9 5 9-5"/></svg><span>Projetos</span></a>
+            <a class="ds-nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>Clientes</span></a>
+        </div>
+        <div class="ds-nav-grupo">
+            <span class="ds-nav-label">Escritório</span>
+            <a class="ds-nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span>Financeiro</span></a>
+            <a class="ds-nav-link" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span>Identidade</span></a>
+        </div>
+    </nav>
+
+    <div class="ds-side-foot">
+        <div class="ds-conta">
+            <span class="ds-conta-ico" aria-hidden="true">E</span>
+            <div class="ds-conta-info">
+                <strong>Nome do escritório</strong>
+                <span>Rodrigo Stölben</span>
+            </div>
+        </div>
+        <div class="ds-side-rodape">
+            <a class="ds-side-link" href="#">Termos</a>
+            <a class="ds-side-link" href="#">Sair</a>
+        </div>
+    </div>
+</aside>
+
+<div class="ds-frame">
+<main class="ds-main" id="conteudo">
+<div class="ds-page">
+
+    <header class="ds-faixa ds-faixa--baixa ds-page-head--linha" style="--ds-foto: url('../img/hero-producao.jpg')">
+        <div>
+            <span class="ds-kicker">Projetos</span>
+            <h1 class="ds-h2 ds-display">Painel de projetos</h1>
+            <p>Fase atual, lembretes, tempo parado e prazo — lado a lado.</p>
+        </div>
+        <div class="ds-acoes">
+            <button class="ds-btn ds-btn--solid" type="button" id="abrir-novo" data-ds-abre="modal-novo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                Novo projeto
+            </button>
+        </div>
+    </header>
+
+    <div class="ds-chips">
+        <a class="ds-chip is-active" href="#">Todos</a>
+        <a class="ds-chip" href="#">Ativo</a>
+        <a class="ds-chip" href="#">Pausado</a>
+        <a class="ds-chip" href="#">Concluído</a>
+    </div>
+
+    <section class="ds-bloco ds-camada--verde">
+        <div class="ds-grid">
+            <a class="ds-obj" href="#">
+                <div class="ds-obj-top">
+                    <span class="ds-obj-nome">Residência Alameda</span>
+                    <span class="ds-badge ds-badge--ok"><span class="ds-dot"></span>Ativo</span>
+                </div>
+                <p class="ds-obj-sub">Marina e Lucas Almeida · Residencial</p>
+                <dl class="ds-metricas">
+                    <div><dt>Fase atual</dt><dd>Anteprojeto</dd></div>
+                    <div><dt>Lembretes</dt><dd class="num">2</dd></div>
+                    <div><dt>Parado há</dt><dd class="num">0 d</dd></div>
+                    <div><dt>Prazo</dt><dd class="num">27/11/26</dd></div>
+                </dl>
+            </a>
+            <a class="ds-obj" href="#">
+                <div class="ds-obj-top">
+                    <span class="ds-obj-nome">Loteamento Parque Sul</span>
+                    <span class="ds-badge ds-badge--mudo"><span class="ds-dot"></span>Pausado</span>
+                </div>
+                <p class="ds-obj-sub">Incorporadora Parque Sul · Urbanismo</p>
+                <dl class="ds-metricas">
+                    <div><dt>Fase atual</dt><dd>Briefing</dd></div>
+                    <div><dt>Lembretes</dt><dd class="num">1</dd></div>
+                    <div><dt>Parado há</dt><dd class="num">34 d</dd></div>
+                    <div><dt>Prazo</dt><dd class="num">25/02/27</dd></div>
+                </dl>
+            </a>
+        </div>
+    </section>
+
+    <!-- Trocar a grade por isto quando não houver nenhum registro. -->
+    <section class="ds-bloco ds-camada--ambar">
+        <h2 class="ds-secao-titulo">Arquivados</h2>
+        <div class="ds-vazio">
+            <strong>Nenhum projeto arquivado.</strong>
+            <p>Projeto concluído continua na lista até você arquivar — assim ninguém perde o histórico por engano.</p>
+        </div>
+    </section>
+
+</div>
+</main>
+</div>
+
+<dialog class="ds-modal" id="modal-novo">
+    <button class="ds-btn-ico ds-modal-fechar" type="button" data-ds-fecha aria-label="Fechar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <h2 class="ds-h3 ds-modal-titulo">Novo projeto</h2>
+    <p class="ds-modal-sub">Cliente e nome bastam — o roteiro cuida do resto.</p>
+    <div class="ds-modal-corpo">
+        <form class="ds-form" method="post" action="#">
+            <p class="ds-campo"><label for="n-nome">Nome do projeto</label><input id="n-nome" name="nome" type="text" required></p>
+            <p class="ds-campo"><label for="n-cliente">Cliente</label>
+                <select id="n-cliente" name="cliente"><option>Marina e Lucas Almeida</option><option>Instituto Caminhos</option></select>
+            </p>
+            <div class="ds-form-actions">
+                <button class="ds-btn" type="button" data-ds-fecha>Cancelar</button>
+                <button class="ds-btn ds-btn--solid" type="submit">Abrir projeto</button>
+            </div>
+        </form>
+    </div>
+</dialog>
+
+<script src="../stolben-ui.js"></script>
+</body>
+</html>
