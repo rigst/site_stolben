@@ -14,9 +14,11 @@ jobs:
   ci:
     uses: rigst/ci/.github/workflows/static-site.yml@v1
     with:
-      # Acessibilidade em modo de medição: `none` relata e não reprova. Sem
-      # a11y-paths o job audita todo *.html do repositório, o que aqui inclui
-      # o protótipo de UI do orçamentos e as telas do design system, além da
-      # página do site. Depois de zerar o passivo, apertar para `serious`.
+      # Sem a11y-paths o job audita todo *.html do repositório: a página do
+      # site, o protótipo de UI do orçamentos e as telas do design system.
+      #
+      # O passivo foi medido com `none`, zerado nos tokens do DS e confirmado
+      # em oito auditorias seguidas sem oscilação. Por isso o portão já entra
+      # apertado: qualquer achado `serious` reprova.
       run-a11y: true
-      a11y-fail-on: none
+      a11y-fail-on: serious
