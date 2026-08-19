@@ -31,16 +31,20 @@
   --ds-accent-dark:  color-mix(in srgb, var(--ds-accent), black 28%);
   --ds-accent-50:    color-mix(in srgb, var(--ds-accent) 10%, white);
   --ds-accent-100:   color-mix(in srgb, var(--ds-accent) 20%, white);
-  --ds-accent-fg:    var(--ds-accent);   /* acento como TEXTO/ícone (clareia no escuro) */
+  /* Acento como TEXTO/ícone. É o tom escurecido, não o acento puro: o uso
+     real é sobre branco ou sobre a tinta --ds-accent-50, e ali o acento puro
+     fica na linha dos 4.5:1 (azul dá 4.49) ou abaixo dela (âmbar dá 2.86).
+     Dentro de .ds-panel-dark o token é reescrito para a variante clara. */
+  --ds-accent-fg:    var(--ds-accent-dark);
   --ds-on-accent:    #ffffff;            /* texto SOBRE o acento (botão sólido); escuro p/ acentos claros */
 
   --ds-text-strong: var(--ds-ink);    /* texto mais forte (valores, números) */
   --ds-subtle: #f3f4f6;               /* fundo neutro de chips/segmentos/badges */
 
   /* Estados semânticos */
-  --ds-success: #15803d; --ds-success-50: #ecfdf3; --ds-success-100: #d1fadf;
-  --ds-warn: #b45309;    --ds-warn-50: #fffaeb;    --ds-warn-100: #fef0c7;
-  --ds-danger: #dc2626;  --ds-danger-50: #fef2f2;  --ds-danger-100: #fee2e2;
+  --ds-success: #146c34; --ds-success-50: #ecfdf3; --ds-success-100: #d1fadf;
+  --ds-warn: #9a4708;    --ds-warn-50: #fffaeb;    --ds-warn-100: #fef0c7;
+  --ds-danger: #c81e1e;  --ds-danger-50: #fef2f2;  --ds-danger-100: #fee2e2;
   --ds-info: var(--ds-accent); --ds-info-50: var(--ds-accent-50); --ds-info-100: var(--ds-accent-100);
 
   /* Texto */
@@ -130,7 +134,7 @@
 .ds-noise { position: absolute; inset: 0; background-image: var(--ds-noise); opacity: 0.06; mix-blend-mode: soft-light; pointer-events: none; }
 .ds-glow { position: absolute; width: 34rem; height: 34rem; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--ds-accent) 20%, transparent), transparent 70%); filter: blur(50px); pointer-events: none; }
 
-.ds-panel-dark { position: relative; border-radius: var(--ds-radius-xl); overflow: hidden; background: var(--ds-ink); color: #fff; box-shadow: var(--ds-shadow-block); }
+.ds-panel-dark { --ds-accent-fg: color-mix(in srgb, var(--ds-accent), white 34%); position: relative; border-radius: var(--ds-radius-xl); overflow: hidden; background: var(--ds-ink); color: #fff; box-shadow: var(--ds-shadow-block); }
 .ds-surface { background: var(--ds-surface); border: 1px solid var(--ds-line); border-radius: var(--ds-radius-lg); }
 
 /* Imagem de fundo (foto real) com gradiente de leitura */
@@ -145,7 +149,7 @@
 .ds-h2 { font-family: var(--ds-font-display); font-weight: 600; font-size: var(--ds-fs-h2); letter-spacing: -0.03em; line-height: 1.08; }
 .ds-h3 { font-family: var(--ds-font-display); font-weight: 600; font-size: var(--ds-fs-h3); letter-spacing: -0.01em; }
 .ds-lead { font-size: 1.1rem; color: var(--ds-t-700); }
-.ds-muted { color: var(--ds-t-400); }
+.ds-muted { color: var(--ds-t-500); }
 .ds-kicker { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ds-accent-fg); font-weight: 600; }
 .ds-eyebrow { font-size: 0.85rem; color: var(--ds-t-500); }
 .ds-mono { font-variant-numeric: tabular-nums; }

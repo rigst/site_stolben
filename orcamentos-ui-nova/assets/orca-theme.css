@@ -121,7 +121,7 @@
 .orca-footer-inner { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; align-items: center; justify-content: space-between; }
 .orca-footer-brand { font-family: var(--ds-font-display); font-weight: 600; color: var(--ds-t-900); }
 .orca-footer-copy { font-size: 0.82rem; color: var(--ds-t-500); margin-top: 0.1rem; }
-.orca-footer-copy a { color: var(--ds-accent-fg); }
+.orca-footer-copy a { color: var(--ds-accent-fg); text-decoration: underline; text-underline-offset: 0.15em; }
 .orca-footer-points { display: flex; flex-wrap: wrap; gap: 0.3rem 1.25rem; list-style: none; padding: 0; margin: 0; font-size: 0.82rem; color: var(--ds-t-500); }
 .orca-footer-points li { display: inline-flex; align-items: center; gap: 0.45rem; }
 .orca-footer-dot { width: 0.4rem; height: 0.4rem; border-radius: 50%; background: var(--ds-accent); }
