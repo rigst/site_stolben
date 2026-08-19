@@ -30,6 +30,7 @@
         <li><a href="#projects">Projetos</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#stack">Tecnologias</a></li>
+        <li><a href="#ci">CI</a></li>
         <li><a href="#hosting">Infra</a></li>
         <li><a href="#contact">Contato</a></li>
       </ul>
@@ -86,7 +87,7 @@
           <!-- destaque: Trilhas de Estudo -->
           <a class="card c-feat reveal" href="https://trilhas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Trilhas de Estudo (abre em nova aba)">
             <div class="body">
-              <div class="top"><span class="num">01</span><span class="badge b-pub"><span class="dot"></span> Publicado</span><span class="badge b-ia">IA · Claude</span><span class="badge b-lic">Proprietário</span></div>
+              <div class="top"><span class="num">01</span><span class="badge b-pub"><span class="dot"></span> Publicado</span><span class="badge b-ia">IA · Claude</span><span class="badge b-lic">AGPL-3.0</span></div>
               <div>
                 <h3>Trilhas de Estudo</h3>
                 <p>Descreva o que quer aprender e a IA monta a trilha completa: níveis, conteúdo sob demanda, exercícios e avaliações corrigidas automaticamente, com um título a cada nível vencido.</p>
@@ -102,7 +103,7 @@
           <a class="card c-med reveal" href="https://arq.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir A.R.Q. (abre em nova aba)">
             <div class="media"><img src="assets/theme-arq.jpg" alt="Interior de uma obra de arquitetura em concreto aparente" width="1920" height="1554" loading="lazy" /></div>
             <div class="body">
-              <div class="head"><span class="num">02</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">Proprietário</span><span class="go" aria-hidden="true">↗</span></div>
+              <div class="head"><span class="num">02</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
               <h3>A.R.Q.</h3>
               <p>Gestão para escritórios de arquitetura: conecta clientes, briefing, propostas, contratos, fases do projeto, agenda e financeiro em um único fluxo.</p>
             </div>
@@ -219,6 +220,54 @@
             <p>A infraestrutura que mantém tudo online, estável e seguro o tempo todo. Configuro e mantenho o servidor por conta própria, sem depender de plataformas fechadas de terceiros.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <!-- INTEGRAÇÃO CONTÍNUA (CI) -->
+    <section class="sec" id="ci">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <span class="kick">/ integração contínua</span>
+            <h2 class="display">Nada vai para o ar <span class="muted">sem passar por doze conferências.</span></h2>
+          </div>
+          <a class="sec-link" href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">Ver o pipeline <span class="arw" aria-hidden="true">↗</span></a>
+        </div>
+        <p class="sec-intro reveal">Toda vez que eu mudo uma linha de código, um robô assume antes de mim. Ele baixa o projeto, monta o ambiente do zero e submete a mudança a uma sequência de conferências automáticas. Se qualquer uma delas reprovar, a mudança não entra no sistema. É isso que se chama de integração contínua, ou CI.</p>
+        <div class="ci-grid">
+          <div class="ci-copy reveal">
+            <p>São doze conferências, e todas rodam ao mesmo tempo. <strong>Quatro cuidam do código em si:</strong> uma padroniza o estilo do primeiro ao último arquivo, outra confere se cada informação é usada como aquilo que ela é, uma data como data e um número como número, a terceira roda a bateria de testes automáticos que repete o uso real do sistema, e a quarta reúne os resultados e acompanha se a qualidade sobe ou desce a cada mudança.</p>
+            <p><strong>Duas cuidam da segurança:</strong> uma procura falhas já conhecidas tanto no código que escrevi quanto nas bibliotecas de terceiros que o sistema usa, e a outra varre o histórico inteiro do projeto atrás de senha ou chave de acesso esquecida no meio do código.</p>
+            <p><strong>Três olham para o que o sistema carrega junto:</strong> se cada biblioteca tem licença compatível com a do projeto, se a versão instalada é exatamente a que eu revisei e não uma trocada no caminho, e uma espécie de lista de ingredientes, com tudo o que foi instalado naquela versão, guardada para responder na hora quando aparecer uma falha nova no mundo.</p>
+            <p><strong>As três últimas olham para o resultado</strong>, do jeito que a pessoa vai encontrar: as configurações de produção são revisadas junto com a estrutura do banco de dados, um navegador de verdade percorre as telas clicando como um usuário faria, e um auditor confere se elas funcionam para quem navega pelo teclado ou usa leitor de tela.</p>
+            <ul class="ci-tools" aria-label="Ferramentas usadas nas conferências">
+              <li>ruff</li>
+              <li>mypy</li>
+              <li>pytest</li>
+              <li>SonarQube</li>
+              <li>bandit</li>
+              <li>pip-audit</li>
+              <li>gitleaks</li>
+              <li>liccheck</li>
+              <li>CycloneDX</li>
+              <li>Playwright</li>
+              <li>axe-core</li>
+            </ul>
+            <p>No fim, um portão único resume o resultado. Verde, a mudança pode entrar no projeto. Vermelho, o próprio GitHub bloqueia a entrada, e não existe deixar para arrumar depois.</p>
+          </div>
+          <aside class="ci-panel reveal" aria-labelledby="ci-garante">
+            <p class="ci-panel-head" id="ci-garante">O que isso garante</p>
+            <ul class="ci-gains">
+              <li>Código no mesmo padrão do primeiro ao último arquivo, revisado por máquina antes de chegar em mim.</li>
+              <li>Nenhuma senha ou chave de acesso dentro do repositório, conferido em todo o histórico e não só na última mudança.</li>
+              <li>Bibliotecas sem falha conhecida, com licença compatível e versão travada.</li>
+              <li>Configuração de produção conferida e banco de dados sempre em dia com o código.</li>
+              <li>Telas testadas em navegador real e auditadas para quem usa teclado ou leitor de tela.</li>
+              <li>Rastro guardado: a lista de tudo o que estava instalado em cada versão fica arquivada por 90 dias.</li>
+            </ul>
+          </aside>
+        </div>
+        <p class="ci-fine reveal">O pipeline não é copiado dentro de cada projeto: ele vive em um <a href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">repositório central</a> e o arquivo de cada sistema tem dez linhas, então um ajuste feito uma vez vale para todos. Cada projeto liga as etapas que fazem sentido para ele, e o Trilhas de Estudo, o mais recente, roda as doze sem nenhuma tolerância. Este site, escrito à mão em HTML e CSS, passa por uma versão reduzida do mesmo pipeline: busca por segredos e checagem de links quebrados.</p>
       </div>
     </section>
 
