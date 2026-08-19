@@ -418,7 +418,7 @@
 .ds-shell { display: grid; grid-template-columns: 15rem 1fr; min-height: 100vh; }
 .ds-sidebar { background: var(--ds-panel); border-right: 1px solid var(--ds-line); padding: 1rem 0.75rem; display: flex; flex-direction: column; }
 .ds-sidebar-brand { display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0.6rem 1rem; font-family: var(--ds-font-display); font-weight: 600; color: var(--ds-t-900); }
-.ds-sidebar-group { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-t-400); padding: 1rem 0.6rem 0.35rem; }
+.ds-sidebar-group { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ds-t-500); padding: 1rem 0.6rem 0.35rem; }
 .ds-sidebar-link { display: flex; align-items: center; gap: 0.65rem; padding: 0.55rem 0.6rem; border-radius: var(--ds-radius-sm); font-size: 0.9rem; color: var(--ds-t-700); transition: color var(--ds-dur-fast), background var(--ds-dur-fast); }
 .ds-sidebar-link svg { width: 1.1rem; height: 1.1rem; color: var(--ds-t-400); }
 .ds-sidebar-link:hover { background: var(--ds-accent-50); color: var(--ds-t-900); }
