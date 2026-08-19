@@ -13,3 +13,10 @@ permissions:
 jobs:
   ci:
     uses: rigst/ci/.github/workflows/static-site.yml@v1
+    with:
+      # Acessibilidade em modo de medição: `none` relata e não reprova. Sem
+      # a11y-paths o job audita todo *.html do repositório, o que aqui inclui
+      # o protótipo de UI do orçamentos e as telas do design system, além da
+      # página do site. Depois de zerar o passivo, apertar para `serious`.
+      run-a11y: true
+      a11y-fail-on: none
