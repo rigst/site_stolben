@@ -664,7 +664,10 @@
     .ds-btn-ico--perigo:hover { color: var(--ds-danger); }
 
     /* Envio em curso: um filete percorre a base do botão. */
-    .ds-btn.is-busy { pointer-events: none; opacity: 0.8; }
+    /* Sem opacity aqui: em .ds-btn--solid ela cai sobre um texto branco e,
+       nos temas mais claros (ambar), derruba o contraste abaixo de 4.5:1.
+       A barrinha animada abaixo já comunica o estado ocupado sozinha. */
+    .ds-btn.is-busy { pointer-events: none; }
     .ds-btn.is-busy::before {
         content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
         background: currentColor; opacity: 0.5;
@@ -825,7 +828,11 @@
         font-variant-numeric: tabular-nums slashed-zero; overflow-wrap: anywhere;
         color: color-mix(in srgb, var(--metrica) 72%, var(--ds-ink));
     }
-    .ds-quadro small { color: var(--ds-t-500); font-size: 0.7rem; }
+    .ds-quadro dd small {
+        display: block; margin-top: 0.3rem;
+        font-family: var(--ds-font-sans); font-weight: 400; font-variant-numeric: normal;
+        color: var(--ds-t-500); font-size: 0.7rem;
+    }
 
     /* ---- FORMULÁRIOS — campo preenchido, sem moldura de caixa ------ */
     .ds-form { display: flex; flex-direction: column; }
@@ -1090,7 +1097,7 @@
     }
     /* Recado de fora ganha outro papel. */
     .ds-lembrete--cliente { background: #eef3f7; border-color: #cfdce6; color: #23323d; }
-    .ds-lembrete--cliente time { color: #5b7183; }
+    .ds-lembrete--cliente time { color: #46596a; }
 
     /* ---- CALENDÁRIO ------------------------------------------------ */
     .ds-cal { width: 100%; border-collapse: collapse; table-layout: fixed; }
