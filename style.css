@@ -214,8 +214,8 @@ section[id]{scroll-margin-top:5.5rem}
 /* reveal (surgimento ao rolar) */
 .js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);will-change:opacity,transform}
 .js .reveal.visible{opacity:1;transform:none}
-.metrics-in .reveal:nth-child(2),.tech-grid .reveal:nth-child(2){transition-delay:.07s}
-.metrics-in .reveal:nth-child(3),.tech-grid .reveal:nth-child(3){transition-delay:.14s}
+.tech-grid .reveal:nth-child(2){transition-delay:.07s}
+.tech-grid .reveal:nth-child(3){transition-delay:.14s}
 .tech-grid .reveal:nth-child(4){transition-delay:.21s}
 .tech-grid .reveal:nth-child(5){transition-delay:.28s}
 .tech-grid .reveal:nth-child(6){transition-delay:.35s}
@@ -224,7 +224,6 @@ section[id]{scroll-margin-top:5.5rem}
 .grid .reveal:nth-child(3){transition-delay:.12s}
 .grid .reveal:nth-child(4){transition-delay:.18s}
 .grid .reveal:nth-child(5){transition-delay:.24s}
-.hero .live.reveal{transition-delay:.12s}
 .host-media.reveal{transition-delay:.1s}
 .about-copy.reveal{transition-delay:.08s}
 

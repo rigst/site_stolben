@@ -670,7 +670,9 @@
 .ds-timeline-dot { position: absolute; left: 0; top: 0.2rem; width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--ds-surface); border: 2px solid var(--ds-accent); }
 .ds-timeline-dot--done { background: var(--ds-accent); }
 .ds-timeline-dot--muted { border-color: var(--ds-line-strong); }
-.ds-timeline-time { font-size: 0.78rem; color: var(--ds-t-400); }
+/* --ds-t-400 fica abaixo do AA de propósito (só marcador/ícone/filete);
+   texto usa --ds-t-500. */
+.ds-timeline-time { font-size: 0.78rem; color: var(--ds-t-500); }
 .ds-timeline-title { font-weight: 500; color: var(--ds-t-900); }
 .ds-timeline-text { font-size: 0.9rem; color: var(--ds-t-500); }
 
