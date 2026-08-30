@@ -1,0 +1,12 @@
+version: 2
+
+updates:
+  # ci.yml e deploy.yml chamam rigst/ci fixados em SHA. Sem esta entrada, o
+  # pin congela os pipelines nesta versão para sempre — o Dependabot é o que
+  # devolve o fluxo de atualização, agora como PR que alguém revisa.
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
