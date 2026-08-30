@@ -47,6 +47,14 @@ O pipeline é o compartilhado de [rigst/ci](https://github.com/rigst/ci): varred
 de segredos com `gitleaks` sobre todo o histórico e verificação de que todo
 `href`/`src` local aponta para um arquivo que existe.
 
+## Deploy contínuo
+
+Push em `main` que passar no CI é publicado sozinho — `deploy/cd-deploy.sh`
+(disparado por SSH pelo `deploy-static.yml` do `rigst/ci`) faz só um `git
+fetch` + `merge --ff-only` no checkout que o nginx serve direto como `root`;
+não há build nem restart. Procedimento completo: RUNBOOK.md do `rigst/ci`,
+seção 7.
+
 ## Licença
 
 [AGPL-3.0](LICENSE) — Copyright (C) 2026 Rodrigo Caballero Stölben.
