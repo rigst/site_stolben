@@ -49,10 +49,12 @@ de segredos com `gitleaks` sobre todo o histórico e verificação de que todo
 
 ## Deploy contínuo
 
-Push em `main` que passar no CI é publicado sozinho — `deploy/cd-deploy.sh`
+O merge de um PR em `main` que passar no CI é publicado sozinho — `deploy/cd-deploy.sh`
 (disparado por SSH pelo `deploy-static.yml` do `rigst/ci`) faz só um `git
 fetch` + `merge --ff-only` no checkout que o nginx serve direto como `root`;
-não há build nem restart. Procedimento completo: RUNBOOK.md do `rigst/ci`,
+não há build nem restart. A branch `main` tem proteção ativa (checks
+obrigatórios, sem push direto nem pra admin); mudanças sempre entram por PR,
+sem exigir aprovação de terceiros. Procedimento completo: RUNBOOK.md do `rigst/ci`,
 seção 7.
 
 ## Licença
