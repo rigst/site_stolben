@@ -175,6 +175,9 @@ section[id]{scroll-margin-top:5.5rem}
 .ci-fine{margin-top:clamp(2rem,4vw,3rem);padding-top:1.3rem;border-top:1px solid var(--line);font-size:.92rem;color:var(--ink-3);max-width:64rem}
 .ci-fine a{color:var(--ink);border-bottom:1px solid var(--line-strong);transition:color .16s,border-color .16s}
 .ci-fine a:hover{color:var(--accent);border-color:var(--accent)}
+.cd-head{margin-top:clamp(2.5rem,5vw,3.75rem);margin-bottom:1.6rem;max-width:44rem}
+.cd-head h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:clamp(1.35rem,2.3vw,1.85rem);letter-spacing:-.015em;margin-top:.6rem;color:var(--ink)}
+.cd-head p{color:var(--ink-3);margin-top:.75rem;font-size:1rem}
 
 /* infra: faixa escura full-bleed fechando a página */
 .host{background:var(--dark);color:#b9c0c9;margin-top:clamp(3.5rem,7vw,5.5rem)}
@@ -204,9 +207,10 @@ section[id]{scroll-margin-top:5.5rem}
 .legal-in{padding-block:clamp(3rem,6vw,4.5rem)}
 .legal .kick{color:var(--accent-air)}
 .legal h2{color:#f5f7fa;font-size:clamp(1.4rem,2.4vw,1.8rem);margin-top:.9rem}
-.legal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2.25rem}
+.legal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:2.25rem;align-items:start}
 .legal h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1rem;color:#f5f7fa;margin-bottom:.55rem;letter-spacing:-.01em}
 .legal p{font-size:.88rem;line-height:1.7}
+.legal p+p{margin-top:.9rem}
 .legal a{color:#ccd3db;border-bottom:1px solid var(--dark-line);transition:color .16s,border-color .16s}
 .legal a:hover{color:#fff;border-color:#fff}
 .legal a:focus-visible{outline-color:var(--accent-air)}
@@ -239,6 +243,10 @@ section[id]{scroll-margin-top:5.5rem}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .hero a:focus-visible,.host a:focus-visible,.foot a:focus-visible{outline-color:var(--accent-air)}
 
+@media(max-width:1200px){
+  .nav-pill{gap:1rem;font-size:.85rem;padding-left:1rem}
+  .nav-links{gap:.85rem}
+}
 @media(max-width:1100px){
   .tech-grid{grid-template-columns:repeat(2,1fr)}
   .hero-grid{grid-template-columns:1.1fr .9fr;gap:2.5rem}

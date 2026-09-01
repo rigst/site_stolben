@@ -30,7 +30,8 @@
         <li><a href="#projects">Projetos</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#stack">Tecnologias</a></li>
-        <li><a href="#ci">CI</a></li>
+        <li><a href="#ci">CI/CD</a></li>
+        <li><a href="#observabilidade">Monitoramento</a></li>
         <li><a href="#hosting">Infra</a></li>
         <li><a href="#contact">Contato</a></li>
       </ul>
@@ -117,11 +118,11 @@
               <p>Ferramenta web para enviar PDFs, comprimir e dividir em partes menores, com download em PDF único ou ZIP.</p>
             </div>
           </a>
-          <a class="card c-med reveal" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema de Orçamentos (abre em nova aba)">
+          <a class="card c-med reveal" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Orçamentos (abre em nova aba)">
             <div class="media"><img src="assets/theme-orcamentos-1300.webp" alt="Painel de análise em um notebook" width="1300" height="867" loading="lazy" /></div>
             <div class="body">
               <div class="head"><span class="num">04</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Sistema de Orçamentos</h3>
+              <h3>Sistema Orçamentos</h3>
               <p>Cadastro de clientes, catálogo de itens por categoria e montagem de orçamentos prontos para enviar, do rascunho ao documento final.</p>
             </div>
           </a>
@@ -231,22 +232,22 @@
       </div>
     </section>
 
-    <!-- INTEGRAÇÃO CONTÍNUA (CI) -->
+    <!-- INTEGRAÇÃO E ENTREGA CONTÍNUAS (CI/CD) -->
     <section class="sec" id="ci">
       <div class="wrap">
         <div class="sec-head reveal">
           <div>
-            <span class="kick">/ integração contínua</span>
-            <h2 class="display">Nada vai para o ar <span class="muted">sem passar por doze conferências.</span></h2>
+            <span class="kick">/ integração e entrega contínuas</span>
+            <h2 class="display">Doze conferências antes de entrar, <span class="muted">e o deploy sozinho depois.</span></h2>
           </div>
           <a class="sec-link" href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">Ver o pipeline <span class="arw" aria-hidden="true">↗</span></a>
         </div>
-        <p class="sec-intro reveal">Toda vez que eu mudo uma linha de código, um robô assume antes de mim. Ele baixa o projeto, monta o ambiente do zero e submete a mudança a uma sequência de conferências automáticas. Se qualquer uma delas reprovar, a mudança não entra no sistema. É isso que se chama de integração contínua, ou CI.</p>
+        <p class="sec-intro reveal">Toda vez que eu mudo uma linha de código, um robô assume antes de mim: monta o ambiente do zero e roda doze conferências ao mesmo tempo. Se qualquer uma reprovar, a mudança não entra. É a integração contínua, ou CI. Quando tudo fica verde, a entrega contínua, o CD, publica no servidor sem eu tocar em nada.</p>
         <div class="ci-grid">
           <div class="ci-copy reveal">
-            <p>São doze conferências, e todas rodam ao mesmo tempo. <strong>Quatro cuidam do código em si:</strong> uma padroniza o estilo do primeiro ao último arquivo, outra confere se cada informação é usada como aquilo que ela é, uma data como data e um número como número, a terceira roda a bateria de testes automáticos que repete o uso real do sistema, e a quarta reúne os resultados e acompanha se a qualidade sobe ou desce a cada mudança.</p>
-            <p><strong>Duas cuidam da segurança:</strong> uma procura falhas já conhecidas tanto no código que escrevi quanto nas bibliotecas de terceiros que o sistema usa, e a outra varre o histórico inteiro do projeto atrás de senha ou chave de acesso esquecida no meio do código.</p>
-            <p><strong>Três olham para o que o sistema carrega junto:</strong> se cada biblioteca tem licença compatível com a do projeto, se a versão instalada é exatamente a que eu revisei e não uma trocada no caminho, e uma espécie de lista de ingredientes, com tudo o que foi instalado naquela versão, guardada para responder na hora quando aparecer uma falha nova no mundo.</p>
+            <p><strong>Quatro conferências cuidam do código:</strong> o estilo é padronizado do primeiro ao último arquivo, cada informação é conferida como aquilo que ela é (uma data como data, um número como número), a bateria de testes automáticos repete o uso real do sistema e um agregador acompanha se a qualidade sobe ou desce a cada mudança.</p>
+            <p><strong>Duas cuidam da segurança:</strong> uma procura falhas já conhecidas no meu código e nas bibliotecas de terceiros; a outra varre o histórico inteiro do projeto atrás de senha ou chave de acesso esquecida no meio do caminho.</p>
+            <p><strong>Três olham para o que o sistema carrega junto:</strong> se cada biblioteca tem licença compatível com a do projeto, se a versão instalada é exatamente a que eu revisei, e uma lista de ingredientes de tudo o que foi instalado naquela versão, guardada para responder na hora quando aparecer uma falha nova no mundo.</p>
             <p><strong>As três últimas olham para o resultado</strong>, do jeito que a pessoa vai encontrar: as configurações de produção são revisadas junto com a estrutura do banco de dados, um navegador de verdade percorre as telas clicando como um usuário faria, e um auditor confere se elas funcionam para quem navega pelo teclado ou usa leitor de tela.</p>
             <ul class="ci-tools" aria-label="Ferramentas usadas nas conferências">
               <li>ruff</li>
@@ -261,7 +262,7 @@
               <li>Playwright</li>
               <li>axe-core</li>
             </ul>
-            <p>No fim, um portão único resume o resultado. Verde, a mudança pode entrar no projeto. Vermelho, o próprio GitHub bloqueia a entrada, e não existe deixar para arrumar depois.</p>
+            <p>No fim, um portão único resume o resultado. Verde, a mudança pode entrar. Vermelho, o próprio GitHub bloqueia a entrada, e não existe deixar para arrumar depois.</p>
           </div>
           <aside class="ci-panel reveal" aria-labelledby="ci-garante">
             <p class="ci-panel-head" id="ci-garante">O que isso garante</p>
@@ -271,11 +272,81 @@
               <li>Bibliotecas sem falha conhecida, com licença compatível e versão travada.</li>
               <li>Configuração de produção conferida e banco de dados sempre em dia com o código.</li>
               <li>Telas testadas em navegador real e auditadas para quem usa teclado ou leitor de tela.</li>
-              <li>Rastro guardado: a lista de tudo o que estava instalado em cada versão fica arquivada por 90 dias.</li>
+              <li>Publicação sempre pelo mesmo caminho, com o mesmo roteiro, sem passo manual que alguém possa esquecer.</li>
             </ul>
           </aside>
         </div>
-        <p class="ci-fine reveal">O pipeline não é copiado dentro de cada projeto: ele vive em um <a href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">repositório central</a> e o arquivo de cada sistema tem dez linhas, então um ajuste feito uma vez vale para todos. Cada projeto liga as etapas que fazem sentido para ele, e o Trilhas de Estudo, o mais recente, roda as doze sem nenhuma tolerância. Este site, escrito à mão em HTML e CSS, passa por uma versão reduzida do mesmo pipeline: busca por segredos e checagem de links quebrados.</p>
+
+        <div class="cd-head reveal">
+          <span class="kick">/ entrega contínua</span>
+          <h3>Do portão verde até o ar, sem intervenção manual.</h3>
+          <p>Com o portão verde no ramo principal, o GitHub abre uma sessão no servidor por um usuário criado só para isso, que não consegue fazer nada além de disparar um roteiro de publicação versionado no próprio repositório do sistema, à vista de qualquer um.</p>
+        </div>
+        <div class="tech-grid">
+          <article class="tech-card reveal">
+            <span class="role">01 · o que sobe</span>
+            <h3>Só o commit revisado</h3>
+            <p>O servidor busca o código direto do GitHub e confirma que o commit pedido pertence mesmo ao histórico oficial do projeto antes de avançar. Não existe subir um arquivo solto pela mão.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">02 · como sobe</span>
+            <h3>Banco antes, serviço depois</h3>
+            <p>Se a mudança mexe no banco de dados, um backup é feito antes de tudo. Só então as dependências são instaladas, a estrutura do banco é atualizada e o serviço recarrega, sem derrubar quem está usando naquele instante.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">03 · e se der errado</span>
+            <h3>Conferido no fim</h3>
+            <p>Uma última checagem abre o endereço público, como um visitante faria. Se não responder, a publicação é marcada como falha e a própria mensagem traz o comando exato para voltar à versão anterior. Dois deploys nunca rodam ao mesmo tempo.</p>
+          </article>
+        </div>
+
+        <p class="ci-fine reveal">O pipeline não é copiado dentro de cada projeto: ele vive em um <a href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">repositório central</a> e o arquivo de cada sistema tem dez linhas, então um ajuste feito uma vez vale para todos. Cada projeto liga as etapas que fazem sentido para ele, e o Trilhas de Estudo, o mais recente, roda as doze sem nenhuma tolerância. Este site, escrito à mão em HTML e CSS, passa por uma versão reduzida do mesmo pipeline e sobe para o ar pelo mesmo caminho.</p>
+      </div>
+    </section>
+
+    <!-- OBSERVABILIDADE -->
+    <section class="sec" id="observabilidade">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <div>
+            <span class="kick">/ observabilidade</span>
+            <h2 class="display">Se um sistema cair de madrugada, <span class="muted">eu sou avisado antes do usuário.</span></h2>
+          </div>
+        </div>
+        <p class="sec-intro reveal">Publicar é metade do trabalho; a outra metade é enxergar o que acontece depois. São três camadas: os erros dentro da aplicação, os sinais do servidor onde ela roda e uma checagem feita de fora, pela internet.</p>
+        <ul class="ci-tools reveal" aria-label="Ferramentas de observabilidade">
+          <li>Sentry</li>
+          <li>Grafana Cloud</li>
+          <li>Prometheus</li>
+          <li>Loki</li>
+          <li>Grafana Alloy</li>
+          <li>node_exporter</li>
+          <li>postgres_exporter</li>
+          <li>redis_exporter</li>
+        </ul>
+        <div class="tech-grid">
+          <article class="tech-card wide reveal">
+            <span class="role">erros de aplicação</span>
+            <h3>Sentry</h3>
+            <p>Quando alguma coisa quebra dentro de um sistema, o Sentry registra a falha com a linha exata de código, agrupa as repetições em um só caso e me avisa por e-mail. Sem isso, eu só descobriria o problema quando alguém reclamasse — e a maioria das pessoas não reclama, apenas desiste da tela. Está ligado nos oito sistemas em produção, configurado para não enviar dados pessoais junto com o erro.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">o que já é vigiado</span>
+            <h3>Cinco alertas ativos</h3>
+            <p>Servidor sem reportar, disco chegando ao limite, banco de dados fora do ar, cache fora do ar e qualquer um dos sistemas parado por mais de cinco minutos. Cada um dispara um e-mail, e o caminho foi testado derrubando um serviço de propósito.</p>
+          </article>
+          <article class="tech-card wide reveal">
+            <span class="role">sinais do servidor</span>
+            <h3>Grafana · Prometheus · Loki</h3>
+            <p>Um agente instalado no servidor envia continuamente os números da máquina (processador, memória, disco, rede), do banco de dados e do cache, junto com os registros que cada sistema escreve enquanto roda. Tudo chega a um painel único e a regras de alerta que me procuram por e-mail quando algo sai do lugar, em vez de esperar que eu vá olhar.</p>
+          </article>
+          <article class="tech-card reveal">
+            <span class="role">visto de fora</span>
+            <h3>Checagem externa</h3>
+            <p>De tempos em tempos, uma verificação independente abre cada endereço pela internet e guarda a resposta. É esse resultado que alimenta o painel “Sistemas no ar”, no topo desta página.</p>
+          </article>
+        </div>
+        <p class="ci-fine reveal">Nada disso fica preso ao código dos sistemas. O Sentry entra como uma biblioteca opcional, que a aplicação simplesmente ignora quando não está configurada, e o agente que alimenta o Grafana roda ao lado das aplicações, sem tocar nelas. Se um dia eu trocar de ferramenta, troco só essa camada.</p>
       </div>
     </section>
 
@@ -297,7 +368,7 @@
             </div>
             <div class="host-point">
               <span class="hp-num" aria-hidden="true">03</span>
-              <div><h3>Manutenção contínua</h3><p>Monitoramento, backups, segurança e atualizações, com ajustes e correções conforme os sistemas evoluem.</p></div>
+              <div><h3>Manutenção contínua</h3><p>Monitoramento com alertas automáticos, backups, segurança e atualizações, com ajustes e correções conforme os sistemas evoluem.</p></div>
             </div>
           </div>
         </div>
@@ -332,17 +403,25 @@
         <div class="legal-grid">
           <div class="reveal">
             <h3>Privacidade e LGPD</h3>
-            <p>Este site não usa cookies, não tem rastreadores e não pede nenhum dado a quem visita. Como todo servidor web, ele registra os acessos (endereço IP, data, hora e navegador), usados apenas para segurança. Nos sistemas com cadastro, os dados pessoais são tratados conforme a LGPD (Lei nº 13.709/2018): coleta mínima, uso restrito ao funcionamento do próprio sistema e exclusão da conta mediante solicitação. O prazo de guarda dos registros de acesso, exigido pelo art. 15 do Marco Civil da Internet, está descrito na política de privacidade de cada sistema.</p>
+            <p>Este site não usa cookies, não tem rastreadores e não pede nenhum dado a quem visita. Como todo servidor web, ele registra os acessos (endereço IP, data, hora e navegador), usados apenas para segurança e para o diagnóstico de operação descrito adiante. Nos sistemas com cadastro, os dados pessoais são tratados conforme a LGPD (Lei nº 13.709/2018): coleta mínima, uso restrito ao funcionamento do próprio sistema e exclusão da conta mediante solicitação. O prazo de guarda dos registros de acesso, exigido pelo art. 15 do Marco Civil da Internet, está descrito na política de privacidade de cada sistema.</p>
+          </div>
+          <div class="reveal">
+            <h3>Inteligência artificial</h3>
             <p>Nos sistemas que oferecem recursos de inteligência artificial, o conteúdo enviado pelo usuário é transmitido à API do Claude, da Anthropic Inc. (EUA), para processamento e geração do resultado. Essa transmissão configura transferência internacional de dados pessoais nos termos do art. 33 da LGPD. A base legal é a necessidade de execução do serviço contratado pelo próprio usuário (art. 33, VI). A Anthropic atua como operadora de dados e o processamento é regido pelo Data Processing Addendum, automaticamente incorporado aos <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noreferrer">Commercial Terms of Service</a> aceitos ao cadastrar a conta de API. Os dados enviados à Anthropic são retidos por até 30 dias para fins de segurança e monitoramento de uso indevido e não são utilizados para treinar modelos. O controlador dos dados perante os usuários finais é Rodrigo Stölben (rodrigo@stolben.com).</p>
           </div>
           <div class="reveal">
+            <h3>Monitoramento e operação</h3>
+            <p>A operação dos sistemas se apoia em dois serviços de terceiros, ambos atuando como operadores de dados. O <strong>Sentry</strong> (Functional Software, Inc.) recebe os relatórios de erro das aplicações, com a linha de código e o contexto técnico da falha; está configurado para não enviar dados pessoais junto ao evento, sem identificação de usuário, sem cookies e sem o endereço IP de quem navegava, e a conta usada fica na região europeia do serviço, com armazenamento na Alemanha. O <strong>Grafana Cloud</strong> (Grafana Labs, Inc.) recebe as métricas do servidor e os registros de acesso do Nginx, que incluem endereço IP, data, hora, página pedida e navegador: os mesmos registros que o servidor já mantém localmente, agora também consultáveis em painel; a instância utilizada está hospedada em território brasileiro, na região de São Paulo. O envio ao Sentry configura transferência internacional de dados pessoais nos termos do art. 33 da LGPD, com a mesma base legal de execução do serviço solicitado pelo usuário (art. 33, VI). Nenhum dos dois é usado para publicidade, perfilamento ou treinamento de modelos, e a retenção segue o prazo do plano contratado em cada serviço.</p>
+          </div>
+          <div class="reveal">
             <h3>Termos de uso dos sistemas</h3>
-            <p>Cada sistema tem conta própria e pessoal, e alguns oferecem um acesso de visitante, temporário e apagado depois. Nos sistemas em que o aceite dos termos é solicitado, ele fica registrado com data, hora, endereço IP e a versão exata do texto aceito; quando um texto muda de forma relevante, pedimos um novo aceite, e as versões anteriores continuam disponíveis para consulta na própria página. Os serviços são fornecidos como estão: a operação é monitorada continuamente, mas sem garantia formal de disponibilidade. Para dúvidas, exportação ou exclusão de dados, escreva para <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>. Respondemos em até 15 dias, na forma do art. 19 da LGPD.</p>
+            <p>Cada sistema tem conta própria e pessoal, e alguns oferecem um acesso de visitante, temporário e apagado depois. Nos sistemas em que o aceite dos termos é solicitado, ele fica registrado com data, hora, endereço IP e a versão exata do texto aceito; quando um texto muda de forma relevante, pedimos um novo aceite, e as versões anteriores continuam disponíveis para consulta na própria página. Os serviços são fornecidos como estão: a operação é monitorada continuamente, com alertas automáticos, mas sem garantia formal de disponibilidade. Para dúvidas, exportação ou exclusão de dados, escreva para <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>. Respondemos em até 15 dias, na forma do art. 19 da LGPD.</p>
           </div>
           <div class="reveal">
             <h3>Licenças de software</h3>
             <p>A licença de cada sistema está indicada no próprio card. <strong>AGPL-3.0</strong> é código aberto: qualquer pessoa pode usar, estudar, modificar e redistribuir o código, inclusive comercialmente, desde que o resultado, mesmo oferecido apenas como serviço na web, permaneça aberto sob a mesma licença; o fonte está em <a href="https://github.com/rigst" target="_blank" rel="noreferrer">github.com/rigst</a>. <strong>Proprietário</strong> é o oposto: o sistema pode ser usado normalmente como serviço, mas o código não é público e não pode ser copiado, modificado ou redistribuído.</p>
-            <p>Por baixo, todos rodam sobre software livre: Python, Django, PostgreSQL, Redis, Celery, Nginx e Linux, cada um sob sua licença aberta. As fontes do site (Archivo, Bricolage Grotesque e IBM Plex Mono) usam a SIL Open Font License; as fotos vêm de bancos de imagens com licença de uso livre. O conteúdo deste site é © 2026 Rodrigo Stölben.</p>
+            <p>As ferramentas de monitoramento não alteram nada disso. A biblioteca do Sentry usada nos projetos é distribuída sob licença MIT, compatível com a AGPL, e o Grafana recebe os dados por um agente que roda ao lado das aplicações, como serviço separado, sem virar parte delas. O que a AGPL alcança é o código dos sistemas, que continua aberto sob a mesma licença.</p>
+            <p>Por baixo, todos rodam sobre software livre: Python, Django, PostgreSQL, Redis, Celery, Nginx e Linux, além da instrumentação de observabilidade (SDK do Sentry, Grafana Alloy e Prometheus), cada um sob sua licença aberta. As fontes do site (Archivo, Bricolage Grotesque e IBM Plex Mono) usam a SIL Open Font License; as fotos vêm de bancos de imagens com licença de uso livre. O conteúdo deste site é © 2026 Rodrigo Stölben.</p>
           </div>
         </div>
       </div>
