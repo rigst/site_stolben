@@ -11,7 +11,7 @@ jobs:
       github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.head_branch == 'main' &&
       github.event.workflow_run.event == 'push'
-    uses: rigst/ci/.github/workflows/deploy-static.yml@8b542610a2db80a4f0972c5ec14ed5cbc52118e9  # v1
+    uses: rigst/ci/.github/workflows/deploy-static.yml@182e57ed18875bee574ea562c8315476fc8b9bf9  # v1
     secrets:
       CD_SSH_KEY: ${{ secrets.CD_SSH_KEY }}
     with:
