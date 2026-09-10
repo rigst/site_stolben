@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   ci:
-    uses: rigst/ci/.github/workflows/static-site.yml@727e3fb3b36446c9800087d6cb770e046e650062 # v1
+    uses: rigst/ci/.github/workflows/static-site.yml@566c2d8c37ca30f390bcd4dc5f1c6e03014cbd4f # v1
     with:
       # Sem a11y-paths o job audita todo *.html do repositório: a página do
       # site, o protótipo de UI do orçamentos e as telas do design system.
