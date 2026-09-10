@@ -454,7 +454,11 @@
 
 /* ---- Chips removíveis ---- */
 .ds-chip { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; padding: 0.28rem 0.35rem 0.28rem 0.7rem; border-radius: var(--ds-radius-pill); background: var(--ds-accent-50); color: var(--ds-accent-dark); border: 1px solid var(--ds-accent-100); }
-.ds-chip button { appearance: none; border: 0; background: none; cursor: pointer; color: inherit; display: inline-flex; align-items: center; justify-content: center; width: 1.15rem; height: 1.15rem; border-radius: 50%; }
+/* 1.5rem = 24px, o mínimo do WCAG 2.5.8 para alvo de toque. Era 1.15rem
+   (18px), e este botão é o que remove um filtro — errar o toque nele no
+   celular significa perder o que a pessoa acabou de escolher. O ícone
+   continua com 0.8rem; só a área clicável cresce. */
+.ds-chip button { appearance: none; border: 0; background: none; cursor: pointer; color: inherit; display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; }
 .ds-chip button:hover { background: var(--ds-accent-100); }
 .ds-chip button svg { width: 0.8rem; height: 0.8rem; }
 

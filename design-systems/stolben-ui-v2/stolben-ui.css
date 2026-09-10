@@ -596,7 +596,13 @@
         color: var(--ds-on-dark-faint);
         font-family: var(--ds-font-mono); font-size: 0.7rem;
     }
+    /* O alvo tinha 19px de altura e, nos links curtos como "v1", 13px de
+       largura — o WCAG 2.5.8 pede 24 nos dois eixos. O respiro vertical resolve
+       a altura; o horizontal resolve a largura sem depender do texto, e a
+       margem negativa devolve o alinhamento à esquerda, para o rótulo continuar
+       na mesma coluna dos demais. */
     .ds-side-link {
+        display: inline-block; padding: 0.22rem 0.4rem; margin-inline-start: -0.4rem;
         font-size: 0.78rem; color: var(--ds-on-dark-faint); text-decoration: none;
         transition: color var(--ds-fast) ease;
     }
