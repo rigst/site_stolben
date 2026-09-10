@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   ci:
-    uses: rigst/ci/.github/workflows/static-site.yml@v1
+    uses: rigst/ci/.github/workflows/static-site.yml@ee6ee2999cc132c890023f5af6d9667e400fc926 # v1
     with:
       # Sem a11y-paths o job audita todo *.html do repositório: a página do
       # site, o protótipo de UI do orçamentos e as telas do design system.
@@ -22,6 +22,27 @@ jobs:
       # apertado: qualquer achado `serious` reprova.
       run-a11y: true
       a11y-fail-on: serious
+
+      # --- qualidade (primeira rodada: medir, não bloquear) ---
+      #
+      # Num site sem build, o CSS e o JS são o produto: não há etapa de
+      # compilação para pegar erro antes, e esta é a única verificação
+      # possível. `frontend-paths` fica no padrão `.` porque aqui não há
+      # venv/ para varrer — diferente dos projetos Django.
+      #
+      # Passivo medido em 2026-09-10: 3 achados de Stylelint e 6 avisos de
+      # ESLint, nenhum erro. Ainda assim entra em soft-fail, pela regra de
+      # medir antes de apertar.
+      run-frontend: true
+      frontend-fail-on: nenhum
+
+      # layout-paths vazio mede todo *.html do repositório, como o a11y faz.
+      # A única medição local acusou o link da marca com 22px de altura,
+      # abaixo dos 24 que o WCAG 2.5.8 pede — aviso, não erro.
+      run-layout: true
+      layout-fail-on: nenhum
+
+      soft-fail: "frontend,layout"
 
   sonar:
     name: SonarQube Cloud
