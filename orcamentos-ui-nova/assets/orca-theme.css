@@ -212,3 +212,13 @@
   .orca-hero { margin-top: -3.2rem; padding-top: 3.4rem; }   /* bleed sob o hambúrguer fixo */
   .orca-hero-bar { align-items: flex-start; }
 }
+
+/* Item de grid e de flex não encolhe abaixo do próprio conteúdo: o padrão é
+   `min-width: auto`. É isso que faz uma tabela larga empurrar a página inteira
+   em vez de rolar dentro do `.ds-table-wrap`, que já tem `overflow-x: auto`.
+   Sem esta linha, orcamento-form e orcamento-detalhe rolavam de lado 366px e
+   233px a 390px de viewport. */
+.ds-grid > *,
+.ds-row > *,
+.ds-tabpanel,
+.ds-table-wrap { min-width: 0; }
