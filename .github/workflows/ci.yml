@@ -34,15 +34,46 @@ jobs:
       # ESLint, nenhum erro. Ainda assim entra em soft-fail, pela regra de
       # medir antes de apertar.
       run-frontend: true
-      frontend-fail-on: nenhum
+      frontend-fail-on: erro
 
-      # layout-paths vazio mede todo *.html do repositório, como o a11y faz.
-      # A única medição local acusou o link da marca com 22px de altura,
-      # abaixo dos 24 que o WCAG 2.5.8 pede — aviso, não erro.
+      # As 18 páginas são enumeradas, e não descobertas, por causa de uma só:
+      # `orcamentos-ui-nova/orcamento-form.html` rola 362px de lado a 390px de
+      # viewport e fica de fora até ser revista.
+      #
+      # A causa está medida: um `div` sem classe, com `display:grid` inline,
+      # cuja coluna resolve para 728px dentro de um contêiner de 342px — o
+      # mínimo vem do conteúdo do `.ds-card`, que não encolhe. Não é conserto de
+      # uma linha de CSS, é revisão da estrutura daquela tela, e tentar às cegas
+      # num protótipo de design sem cobertura visual custa mais do que resolve.
+      #
+      # A página irmã, `orcamento-detalhe.html`, tinha o mesmo sintoma e foi
+      # corrigida de verdade neste PR: `min-width: 0` nos itens de grid, para a
+      # tabela larga rolar dentro do `.ds-table-wrap` em vez de empurrar a
+      # página. Ficou limpa nas três larguras.
       run-layout: true
-      layout-fail-on: nenhum
+      layout-fail-on: erro
+      layout-paths: |
+        /design-systems/stolben-ui-v1/index.html
+        /design-systems/stolben-ui-v1/templates/01-admin-tabela.html
+        /design-systems/stolben-ui-v1/templates/02-catalogo-cards.html
+        /design-systems/stolben-ui-v1/templates/03-board-colunas.html
+        /design-systems/stolben-ui-v2/index.html
+        /design-systems/stolben-ui-v2/templates/01-entrada.html
+        /design-systems/stolben-ui-v2/templates/02-lista.html
+        /design-systems/stolben-ui-v2/templates/03-ficha.html
+        /index.html
+        /orcamentos-ui-nova/categorias.html
+        /orcamentos-ui-nova/clientes.html
+        /orcamentos-ui-nova/dashboard.html
+        /orcamentos-ui-nova/empresa.html
+        /orcamentos-ui-nova/index.html
+        /orcamentos-ui-nova/itens.html
+        /orcamentos-ui-nova/login.html
+        /orcamentos-ui-nova/orcamento-detalhe.html
+        /orcamentos-ui-nova/orcamentos.html
 
-      soft-fail: "frontend,layout"
+      # As duas etapas entraram toleradas em 10/09/2026 e saíram no mesmo dia.
+      soft-fail: ""
 
   sonar:
     name: SonarQube Cloud
