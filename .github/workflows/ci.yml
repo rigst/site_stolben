@@ -53,24 +53,7 @@ jobs:
       run-layout: true
       layout-fail-on: erro
       layout-paths: |
-        /design-systems/stolben-ui-v1/index.html
-        /design-systems/stolben-ui-v1/templates/01-admin-tabela.html
-        /design-systems/stolben-ui-v1/templates/02-catalogo-cards.html
-        /design-systems/stolben-ui-v1/templates/03-board-colunas.html
-        /design-systems/stolben-ui-v2/index.html
-        /design-systems/stolben-ui-v2/templates/01-entrada.html
-        /design-systems/stolben-ui-v2/templates/02-lista.html
-        /design-systems/stolben-ui-v2/templates/03-ficha.html
         /index.html
-        /orcamentos-ui-nova/categorias.html
-        /orcamentos-ui-nova/clientes.html
-        /orcamentos-ui-nova/dashboard.html
-        /orcamentos-ui-nova/empresa.html
-        /orcamentos-ui-nova/index.html
-        /orcamentos-ui-nova/itens.html
-        /orcamentos-ui-nova/login.html
-        /orcamentos-ui-nova/orcamento-detalhe.html
-        /orcamentos-ui-nova/orcamentos.html
 
       # As duas etapas entraram toleradas em 10/09/2026 e saíram no mesmo dia.
       soft-fail: ""

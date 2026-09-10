@@ -5,9 +5,6 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# build de terceiro (referência de design, não versionar)
-financial-infrastruc-68.aura.build/
-
 # artefatos de trabalho (screenshots/scripts do preview)
 .preview/
 
