@@ -61,7 +61,10 @@ jobs:
   sonar:
     name: SonarQube Cloud
     needs: [ci]
-    if: always() && needs.ci.result == 'success'
+    # PR do Dependabot não recebe os secrets do repositório (restrição do
+    # próprio Actions), e sem SONAR_TOKEN o job falha com "Not authorized" —
+    # justamente nos PRs que agora vão subir o SHA deste action.
+    if: always() && needs.ci.result == 'success' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
       # O Sonar usa o blame do git para atribuir "código novo" — precisa do
@@ -70,8 +73,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Fixado por SHA, e não por tag: tag e branch são móveis, e quem publica
+      # o action pode reapontá-los para outro commit sem mudança aqui. O
+      # comentário diz a versão; o SHA é o que roda. Ver rigst/ci RUNBOOK 2.4.
       - name: Scan
-        uses: SonarSource/sonarqube-scan-action@v8
+        uses: SonarSource/sonarqube-scan-action@22918119ff8e1ca75a623e15c8296b6ea4fbe28f # v8.2.1
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
