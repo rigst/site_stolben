@@ -282,3 +282,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .nav-links a.active::after{display:none}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.js .reveal{opacity:1!important;transform:none!important}}
+
+/* Enquadramento da foto do dojo (era style="" inline; a CSP do site não aceita estilo inline). */
+.media img.foco-dojo{object-position:60% 30%}

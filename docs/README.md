@@ -63,3 +63,16 @@ A licença cobre o código (HTML, CSS, JavaScript). Ela **não** concede direito
 uso da identidade visual, do nome, das fotografias ou dos textos biográficos:
 esses são conteúdo pessoal, e reaproveitá-los criaria um site que se passa por
 outra pessoa. Use o código, troque o conteúdo.
+
+## Cabeçalhos de segurança
+
+O site é servido direto pelo nginx, então os cabeçalhos (HSTS, CSP, nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy, COOP) ficam em `deploy/nginx-seguranca.conf`. Instalação, uma vez:
+
+```bash
+sudo cp /var/www/site_stolben/deploy/nginx-seguranca.conf /etc/nginx/snippets/stolben-seguranca.conf
+# em /etc/nginx/sites-available/site_stolben, dentro do server{} da porta 443:
+#   include /etc/nginx/snippets/stolben-seguranca.conf;
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+A CSP não aceita estilo nem script inline: o único script inline entra por hash (comando no próprio snippet). Conferência diária no rigst/ci (`headers.yml`).
