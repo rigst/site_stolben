@@ -282,4 +282,4 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   .nav-links a.active{color:var(--accent)}
   .nav-links a.active::after{display:none}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.js .reveal{opacity:1!important;transform:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.js .reveal{opacity:1!important;transform:none!important}} /* NOSONAR: preferência de acessibilidade do sistema tem de vencer qualquer animação, de qualquer especificidade */
