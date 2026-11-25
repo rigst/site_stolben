@@ -54,6 +54,9 @@ jobs:
       layout-fail-on: erro
       layout-paths: |
         /index.html
+        /bastidores/index.html
+        /privacidade/index.html
+        /404.html
 
       # As duas etapas entraram toleradas em 10/09/2026 e saíram no mesmo dia.
       soft-fail: ""
