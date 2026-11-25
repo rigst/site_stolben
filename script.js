@@ -1,97 +1,67 @@
 (function () {
-  // Decorative icons inside labelled links/buttons: hide from AT, remove from tab order.
-  document.querySelectorAll('a svg, button svg').forEach((s) => {
-    s.setAttribute('aria-hidden', 'true');
-    s.setAttribute('focusable', 'false');
-  });
+  // Lista "no ar agora" da home: lê o status.json gerado pelo cron na VPS
+  // (.scripts/check-status.sh, a cada 5 minutos). O HTML traz só os domínios;
+  // o estado de cada um vem daqui. Sem o arquivo, a lista diz que não há
+  // dado em vez de afirmar que está tudo online.
+  var live = document.querySelector('[data-status]');
+  if (!live) return;
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var list = live.querySelector('.live-list');
+  var when = live.querySelector('[data-status-checked]');
 
-  // Surgimento ao rolar
-  var reveals = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)) {
-    reveals.forEach(function (el) { el.classList.add('visible'); });
-  } else {
-    var ro = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+  function semDados() {
+    when.textContent = 'status indisponível';
+    list.querySelectorAll('.st').forEach(function (st) { st.textContent = 'sem dados'; });
+  }
+
+  function rowFor(host) {
+    var rows = list.querySelectorAll('li');
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i].getAttribute('data-host') === host) return rows[i];
+    }
+    // Sistema novo no status.json que ainda não está no HTML: entra no fim.
+    var li = document.createElement('li');
+    var name = document.createElement('span');
+    var st = document.createElement('span');
+    li.setAttribute('data-host', host);
+    name.textContent = host;
+    st.className = 'st';
+    li.appendChild(name);
+    li.appendChild(st);
+    list.appendChild(li);
+    return li;
+  }
+
+  function idade(checked) {
+    var d = new Date(checked);
+    if (isNaN(d)) return null;
+    var min = Math.floor((Date.now() - d.getTime()) / 60000);
+    if (min < 1) return 'verificado agora';
+    if (min < 60) return 'verificado há ' + min + ' min';
+    var h = Math.floor(min / 60);
+    if (h < 48) return 'verificado há ' + h + ' h';
+    return 'verificado em ' + d.toLocaleDateString('pt-BR');
+  }
+
+  if (!window.fetch) { semDados(); return; }
+
+  fetch('/status.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !Array.isArray(data.services)) { semDados(); return; }
+      data.services.forEach(function (s) {
+        if (!s || typeof s.host !== 'string') return;
+        var st = rowFor(s.host).querySelector('.st');
+        var code = Number(s.code) || 0;
+        var ok = code >= 200 && code < 400;
+        st.textContent = ok ? 'online' : (code ? 'fora do ar · ' + code : 'sem resposta');
+        st.classList.toggle('on', ok);
+        st.classList.toggle('off', !ok);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    reveals.forEach(function (el) { ro.observe(el); });
-  }
-
-  // Scrollspy: destaca a seção atual no cabeçalho
-  var links = document.querySelectorAll('.nav-links a[href^="#"]');
-  var sections = document.querySelectorAll('main section[id]');
-  if ('IntersectionObserver' in window) {
-    var so = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        var id = e.target.getAttribute('id');
-        links.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + id); });
+      list.querySelectorAll('.st').forEach(function (st) {
+        if (!st.classList.contains('on') && !st.classList.contains('off')) st.textContent = 'sem dados';
       });
-    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-    sections.forEach(function (s) { so.observe(s); });
-  }
-
-  // Menu mobile colapsável
-  var nav = document.querySelector('.nav');
-  var toggle = document.querySelector('.nav-toggle');
-  function closeMenu() {
-    nav.classList.remove('open');
-    if (toggle) toggle.setAttribute('aria-expanded', 'false');
-  }
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    document.querySelectorAll('.nav-links a').forEach(function (l) {
-      l.addEventListener('click', closeMenu);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('open')) { closeMenu(); toggle.focus(); }
-    });
-    document.addEventListener('click', function (e) {
-      if (nav.classList.contains('open') && !e.target.closest('.nav-pill')) closeMenu();
-    });
-  }
-
-  // Status real dos sistemas: lê o status.json gerado pelo cron na VPS.
-  // Se o arquivo não existir ou o fetch falhar, o HTML estático fica como está.
-  var live = document.querySelector('.live');
-  if (live && window.fetch) {
-    fetch('/status.json', { cache: 'no-store' })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) {
-        if (!data || !data.services) return;
-        var rows = live.querySelectorAll('.live-row');
-        data.services.forEach(function (s) {
-          rows.forEach(function (row) {
-            var svc = row.querySelector('.svc');
-            var st = row.querySelector('.st');
-            if (!svc || !st || svc.textContent.trim() !== s.host) return;
-            var ok = s.code >= 200 && s.code < 400;
-            st.textContent = ok ? s.code + ' · OK' : (s.code ? String(s.code) : 'off');
-            st.classList.toggle('st-build', !ok);
-          });
-        });
-        if (data.checked) {
-          var d = new Date(data.checked);
-          if (!isNaN(d)) {
-            var foot = document.createElement('div');
-            foot.className = 'live-foot';
-            foot.textContent = 'verificado às ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-            live.appendChild(foot);
-          }
-        }
-      })
-      .catch(function () {});
-  }
-
-  // Cabeçalho destacado ao rolar
-  var header = document.querySelector('.nav');
-  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 12); }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+      when.textContent = idade(data.checked) || 'verificado';
+    })
+    .catch(semDados);
 })();
