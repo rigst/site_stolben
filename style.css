@@ -201,7 +201,7 @@ button:focus-visible {
 .hero { padding: 88px 0; }
 .hero h1 {
   grid-column: 1 / 9;
-  margin: 0 0 48px;
+  margin: 0 0 24px;
   font: 380 104px/0.94 var(--sans);
   font-stretch: 75%;
   letter-spacing: -0.035em;
@@ -517,7 +517,7 @@ h2.mono { max-width: none; letter-spacing: normal; }
   .nf .sug { grid-column: 1; grid-row: auto; }
 
   .hero { padding: 56px 0; }
-  .hero h1 { margin-bottom: 32px; font-size: 60px; }
+  .hero h1 { margin-bottom: 20px; font-size: 60px; }
   .cta { flex-wrap: wrap; gap: 16px; }
   .live { margin-top: 48px; }
 
