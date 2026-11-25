@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bastidores técnicos · Rodrigo Stölben</title>
+<meta name="description" content="Testes automáticos, publicação sem passo manual e monitoramento dos sistemas de Rodrigo Stölben." />
+<link rel="canonical" href="https://stolben.com/bastidores/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stolben.com/bastidores/" />
+<meta property="og:title" content="Bastidores técnicos · Rodrigo Stölben" />
+<meta property="og:description" content="O que acontece depois do código, pra cada sistema ficar de pé." />
+<meta property="og:locale" content="pt_BR" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#111110" />
+<meta property="og:image" content="https://stolben.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preload" as="font" href="/fonts/mona-sans-var-latin.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/geist-mono-400-latin.woff2" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="frame">
+  <i class="c tl" aria-hidden="true"></i><i class="c br" aria-hidden="true"></i>
+
+  <header class="top">
+    <p class="who"><span>Rodrigo Stölben</span><span class="mono">graduando em ADS · PUCRS</span></p>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="crumb mono" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Bastidores técnicos</span></nav>
+
+  <main id="conteudo">
+    <div class="ph-hero">
+      <div class="grid">
+        <h1>O que acontece depois do código, <span>pra cada sistema ficar de pé.</span></h1>
+        <p>Testes automáticos antes de qualquer mudança entrar, publicação sem passo manual e monitoramento que me avisa antes de quem usa. É a parte que ninguém vê, e a que mais ensinou.</p>
+        <nav class="toc" aria-label="Nesta página">
+          <ul>
+            <li><a href="#ci">Conferências automáticas <span aria-hidden="true">↓</span></a></li>
+            <li><a href="#cd">Publicação <span aria-hidden="true">↓</span></a></li>
+            <li><a href="#obs">Monitoramento <span aria-hidden="true">↓</span></a></li>
+            <li><a href="#infra">Servidor <span aria-hidden="true">↓</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <section class="sec" id="ci" aria-labelledby="ci-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Integração contínua</span>
+          <h2 id="ci-titulo">Doze conferências antes de qualquer mudança entrar.</h2>
+        </div>
+        <div class="body">
+          <div class="prose">
+            <p>Toda vez que eu mudo uma linha de código, um robô assume antes de mim: monta o ambiente do zero e roda doze conferências ao mesmo tempo. Se qualquer uma reprovar, a mudança não entra.</p>
+          </div>
+          <div class="defs">
+            <div><div><small>4 conferências</small><h3>Código</h3></div><p>O estilo é padronizado em todos os arquivos, cada informação é conferida como aquilo que ela é, a bateria de testes repete o uso real do sistema e um agregador acompanha se a qualidade sobe ou desce.</p></div>
+            <div><div><small>2 conferências</small><h3>Segurança</h3></div><p>Uma procura falhas já conhecidas no meu código e nas bibliotecas de terceiros. A outra varre o histórico inteiro atrás de senha ou chave esquecida.</p></div>
+            <div><div><small>3 conferências</small><h3>Dependências</h3></div><p>Licença compatível com a do projeto, versão instalada igual à revisada e uma lista de ingredientes guardada pra responder rápido quando surgir uma falha nova.</p></div>
+            <div><div><small>3 conferências</small><h3>Resultado</h3></div><p>Configuração de produção revisada junto com o banco, um navegador de verdade percorrendo as telas e um auditor de acessibilidade pra teclado e leitor de tela.</p></div>
+          </div>
+          <ul class="tools" aria-label="Ferramentas usadas nas conferências">
+            <li>ruff</li><li>mypy</li><li>pytest</li><li>SonarQube</li><li>bandit</li><li>pip-audit</li><li>gitleaks</li><li>liccheck</li><li>CycloneDX</li><li>Playwright</li><li>axe-core</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="cd" aria-labelledby="cd-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Entrega contínua</span>
+          <h2 id="cd-titulo">Do portão verde até o ar, sem intervenção manual.</h2>
+        </div>
+        <div class="body">
+          <div class="prose">
+            <p>Com tudo aprovado no ramo principal, o GitHub abre uma sessão no servidor por um usuário criado só pra isso, que não consegue fazer nada além de disparar um roteiro de publicação versionado no próprio repositório.</p>
+          </div>
+          <div class="defs">
+            <div><div><small>o que sobe</small><h3>Só o commit revisado</h3></div><p>O servidor busca o código direto do GitHub e confirma que o commit pertence ao histórico oficial antes de avançar. Não existe subir arquivo solto pela mão.</p></div>
+            <div><div><small>como sobe</small><h3>Banco antes, serviço depois</h3></div><p>Se a mudança mexe no banco, um backup é feito antes de tudo. Depois vêm as dependências, a estrutura do banco e o serviço recarrega sem derrubar quem está usando.</p></div>
+            <div><div><small>e se der errado</small><h3>Conferido no fim</h3></div><p>Uma última checagem abre o endereço público como um visitante faria. Se não responder, a publicação é marcada como falha, já com o comando exato pra voltar à versão anterior.</p></div>
+          </div>
+          <p class="note">O pipeline vive num <a href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">repositório central<span class="sr"> (abre em nova aba)</span></a> e o arquivo de cada sistema tem dez linhas, então um ajuste feito uma vez vale pra todos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="obs" aria-labelledby="obs-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Monitoramento</span>
+          <h2 id="obs-titulo">Se um sistema cair de madrugada, eu sou avisado antes de quem usa.</h2>
+        </div>
+        <div class="body">
+          <div class="prose">
+            <p>Publicar é metade do trabalho. A outra metade é enxergar o que acontece depois, em três camadas: os erros dentro da aplicação, os sinais do servidor e uma checagem feita de fora, pela internet.</p>
+          </div>
+          <div class="defs">
+            <div><div><small>erros de aplicação</small><h3>Sentry</h3></div><p>Registra cada falha com a linha exata do código, agrupa as repetições num só caso e me avisa por e-mail. Configurado pra não enviar dados pessoais junto com o erro.</p></div>
+            <div><div><small>o que já é vigiado</small><h3>Alertas ativos</h3></div><p>Servidor sem reportar, disco no limite, banco ou cache fora do ar e qualquer sistema parado por mais de cinco minutos. O caminho foi testado derrubando um serviço de propósito.</p></div>
+            <div><div><small>sinais do servidor</small><h3>Grafana, Prometheus e Loki</h3></div><p>Processador, memória, disco, rede, banco e cache num painel único, com regras que me procuram quando algo sai do lugar. O endereço de quem visita é mascarado antes de sair do servidor.</p></div>
+            <div><div><small>visto de fora</small><h3>Checagem externa</h3></div><p>Uma verificação independente abre cada endereço pela internet e guarda a resposta. É ela que alimenta a lista de sistemas online da página inicial.</p></div>
+          </div>
+          <ul class="tools" aria-label="Ferramentas de monitoramento">
+            <li>Sentry</li><li>Grafana Cloud</li><li>Prometheus</li><li>Loki</li><li>Grafana Alloy</li><li>node_exporter</li><li>postgres_exporter</li><li>redis_exporter</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="infra" aria-labelledby="infra-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Servidor</span>
+          <h2 id="infra-titulo">Onde os sistemas realmente vivem.</h2>
+        </div>
+        <div class="body">
+          <div class="prose">
+            <p>Todos rodam numa VPS Linux com Nginx e Gunicorn, configurada e mantida por mim: domínio, HTTPS, processos, backups e atualizações, sem depender de plataforma fechada.</p>
+          </div>
+          <div class="defs">
+            <div><div><small>a fundação</small><h3>Python e Django</h3></div><p>Base madura, onde boa parte da segurança e da organização já vem pronta. Sobra mais tempo pra regra de negócio.</p></div>
+            <div><div><small>os dados</small><h3>PostgreSQL</h3></div><p>Guarda cada informação de forma consistente, mesmo com muito acesso ao mesmo tempo.</p></div>
+            <div><div><small>velocidade e trabalho pesado</small><h3>Redis e Celery</h3></div><p>O que é mais usado fica sempre à mão, e as tarefas demoradas rodam em segundo plano sem travar a tela.</p></div>
+            <div><div><small>a inteligência</small><h3>API do Claude, da Anthropic</h3></div><p>Gera conteúdo, corrige avaliações e produz análises sob demanda nos sistemas com IA.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <div class="sig">
+      <a href="/" aria-label="stolben.com, voltar pro início"><img src="/assets/logo/stolben-marca-compacta.svg" alt="" width="24" height="24" /></a>
+      <p>© 2026 Rodrigo Stölben · escrito à mão em HTML e CSS</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub<span class="sr"> (abre em nova aba)</span></a></li>
+        <li><a href="/privacidade/">Privacidade e termos</a></li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

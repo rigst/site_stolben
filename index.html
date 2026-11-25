@@ -3,454 +3,161 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rodrigo Stölben · Desenvolvimento de software</title>
-<meta name="description" content="Portfólio de Rodrigo Stölben. Sistemas web em Python e Django, do código à operação em produção." />
+<title>Rodrigo Stölben · Sistemas web do esboço ao servidor</title>
+<meta name="description" content="Portfólio de Rodrigo Stölben, graduando em ADS na PUCRS. Sistemas web em Python e Django, do código à operação em produção." />
+<link rel="canonical" href="https://stolben.com/" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Rodrigo Stölben · Desenvolvimento de software" />
+<meta property="og:url" content="https://stolben.com/" />
+<meta property="og:title" content="Rodrigo Stölben · Sistemas web do esboço ao servidor" />
 <meta property="og:description" content="Portfólio: sistemas web em Python e Django, do código à operação." />
 <meta property="og:locale" content="pt_BR" />
-<meta property="og:image" content="https://stolben.com/og.jpg" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#111110" />
+<meta property="og:image" content="https://stolben.com/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="theme-color" content="#101318" />
-<link rel="icon" type="image/png" href="favicon.png" />
-<script>document.documentElement.classList.add("js")</script>
-<link rel="preload" as="font" href="fonts/bricolage-grotesque-var.woff2" type="font/woff2" crossorigin />
-<link rel="preload" as="font" href="fonts/archivo-var.woff2" type="font/woff2" crossorigin />
-<link rel="preload" as="image" href="assets/hero-bg-1920.webp" type="image/webp" />
-<link rel="stylesheet" href="style.css" />
+<link rel="preload" as="font" href="/fonts/mona-sans-var-latin.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/geist-mono-400-latin.woff2" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-<div class="page">
-  <header class="nav">
-    <nav class="nav-pill" aria-label="Navegação principal">
-      <a class="nav-brand" href="#home">Rodrigo Stölben</a>
-      <ul class="nav-links" id="nav-menu">
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#stack">Tecnologias</a></li>
-        <li><a href="#ci">CI/CD</a></li>
-        <li><a href="#observabilidade">Monitoramento</a></li>
-        <li><a href="#hosting">Infra</a></li>
-        <li><a href="#contact">Contato</a></li>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="frame">
+  <i class="c tl" aria-hidden="true"></i><i class="c br" aria-hidden="true"></i>
+
+  <header class="top">
+    <p class="who"><span>Rodrigo Stölben</span><span class="mono">graduando em ADS · PUCRS</span></p>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
-      <a class="nav-cta" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
     </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <img class="hero-photo" src="assets/hero-bg-1920.webp" alt="" width="1920" height="1282" fetchpriority="high" />
-      <div class="hero-shade" aria-hidden="true"></div>
-      <div class="wrap hero-grid">
-        <div>
-          <p class="hero-kick">stolben.com · portfólio</p>
-          <h1 class="display">Sistemas web em <span class="em">Python e Django</span>, do código à operação.</h1>
-          <p class="hero-lead">Alguns dos sistemas que projetei, construí e mantenho no ar. Foco em código claro, dados bem modelados e operação estável em produção.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#projects">Ver projetos <span class="arw" aria-hidden="true">↗</span></a>
-            <a class="btn btn-ghost" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
+  <main id="conteudo">
+    <div class="hero">
+      <div class="grid">
+        <h1>Sistemas web feitos por inteiro, <span>do esboço ao servidor.</span></h1>
+        <div class="cta">
+          <a class="btn" href="#projetos">Ver os sistemas</a>
+          <a class="link2" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span><span class="sr"> (abre em nova aba)</span></a>
         </div>
-        <aside class="live" aria-label="Status dos sistemas">
-          <div class="live-head"><span>Sistemas no ar</span><span class="tag"><span class="dot"></span> operando</span></div>
-          <div class="live-row"><span class="svc">arq.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">divisor.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">orcamentos.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">financas.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">trilhas.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">questoes.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">vetorial.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">dojo.stolben.com</span><span class="st">200 · OK</span></div>
-          <div class="live-row"><span class="svc">dracma.stolben.com</span><span class="st">200 · OK</span></div>
-        </aside>
+        <section class="live" data-status aria-labelledby="live-titulo">
+          <p class="live-head mono"><span id="live-titulo">no ar agora</span><span data-status-checked>verificando</span></p>
+          <ul class="live-list">
+            <li data-host="arq.stolben.com"><span>arq.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="orcamentos.stolben.com"><span>orcamentos.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="financas.stolben.com"><span>financas.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="vetorial.stolben.com"><span>vetorial.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="divisor.stolben.com"><span>divisor.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="dracma.stolben.com"><span>dracma.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="trilhas.stolben.com"><span>trilhas.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="dojo.stolben.com"><span>dojo.stolben.com</span><span class="st">verificando</span></li>
+            <li data-host="questoes.stolben.com"><span>questoes.stolben.com</span><span class="st">verificando</span></li>
+          </ul>
+        </section>
       </div>
-    </section>
+    </div>
 
-    <!-- METRICS -->
-    <section class="metrics" aria-label="Resumo">
-      <div class="wrap metrics-in">
-        <div class="metric"><strong>9</strong><span>projetos publicados e em uso</span></div>
-        <div class="metric"><strong>Python · Django</strong><span>back-end e dados</span></div>
-        <div class="metric"><strong>Linux · Nginx</strong><span>deploy próprio em produção</span></div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="sec" id="projects">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <div><span class="kick">/ projetos publicados</span><h2 class="display">Produtos reais, <span class="muted">no ar e em uso.</span></h2></div>
-          <a class="sec-link" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub completo <span class="arw" aria-hidden="true">↗</span></a>
+    <section class="sec" id="projetos" aria-labelledby="projetos-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Projetos</span>
+          <h2 id="projetos-titulo">Projetos reais, em produção e em uso.</h2>
+          <p>Cada um nasceu de um problema concreto. Todos rodam num servidor Linux que eu mesmo configuro e mantenho.</p>
         </div>
-        <div class="grid">
-          <!-- destaque: Trilhas de Estudo -->
-          <a class="card c-feat reveal" href="https://trilhas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Trilhas de Estudo (abre em nova aba)">
-            <div class="body">
-              <div class="top"><span class="num">01</span><span class="badge b-pub"><span class="dot"></span> Publicado</span><span class="badge b-ia">IA · Claude</span><span class="badge b-lic">AGPL-3.0</span></div>
-              <div>
-                <h3>Trilhas de Estudo</h3>
-                <p>Descreva o que quer aprender e a IA monta a trilha completa: níveis, conteúdo sob demanda, exercícios e avaliações corrigidas automaticamente, com um título a cada nível vencido.</p>
-                <span class="feat-cta">trilhas.stolben.com <span class="arw" aria-hidden="true">↗</span></span>
-              </div>
-            </div>
-            <div class="media">
-              <img src="assets/theme-trilhas-1300.webp" alt="Pessoa fazendo anotações de estudo em um caderno" width="1300" height="867" loading="lazy" />
-              <span class="go go-corner" aria-hidden="true">↗</span>
-            </div>
-          </a>
-          <!-- médios -->
-          <a class="card c-med reveal" href="https://arq.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir A.R.Q. (abre em nova aba)">
-            <div class="media"><img src="assets/theme-arq.jpg" alt="Interior de uma obra de arquitetura em concreto aparente" width="1920" height="1554" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">02</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>A.R.Q.</h3>
-              <p>Gestão para escritórios de arquitetura: conecta clientes, briefing, propostas, contratos, fases do projeto, agenda e financeiro em um único fluxo.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://divisor.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Divisor de PDF (abre em nova aba)">
-            <div class="media"><img src="assets/theme-divisor-1300.webp" alt="Documentos arquivados em prateleiras" width="900" height="1260" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">03</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Divisor de PDF</h3>
-              <p>Ferramenta web para enviar PDFs, comprimir e dividir em partes menores, com download em PDF único ou ZIP.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Orçamentos (abre em nova aba)">
-            <div class="media"><img src="assets/theme-orcamentos-1300.webp" alt="Painel de análise em um notebook" width="1300" height="867" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">04</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Sistema Orçamentos</h3>
-              <p>Cadastro de clientes, catálogo de itens por categoria e montagem de orçamentos prontos para enviar, do rascunho ao documento final.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://financas.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Finanças (abre em nova aba)">
-            <div class="media"><img src="assets/theme-financas-1300.webp" alt="Calculadora sobre documentos financeiros" width="1300" height="867" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">05</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Sistema Finanças</h3>
-              <p>Registro de lançamentos por categoria, com saldo e histórico mês a mês para acompanhar a operação.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://questoes.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Estudo por Questões (abre em nova aba)">
-            <div class="media"><img src="assets/theme-questoes-1300.webp" alt="Folha de respostas de prova sendo preenchida a lápis" width="1300" height="867" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">06</span><span class="badge b-pub">Publicado</span><span class="badge b-ia">IA · Claude</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Estudo por Questões</h3>
-              <p>Importe PDFs de provas de concurso, aplique prompts de IA sobre as questões e gere relatórios de estudo em PDF.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://vetorial.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Sistema Vetorial (abre em nova aba)">
-            <div class="media"><img src="assets/theme-vetorial-1300.webp" alt="Traçados vetoriais em uma tela" width="1300" height="867" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">07</span><span class="badge b-pub">Publicado</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Sistema Vetorial</h3>
-              <p>Editor visual de modelos em PDF e geração em lote de certificados e documentos a partir de planilhas.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://dojo.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Dojo (abre em nova aba)">
-            <div class="media"><img src="assets/theme-dojo.jpg" alt="Bambu em nanquim, pintura de Hokusai" width="900" height="1293" class="foco-dojo" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">08</span><span class="badge b-pub">Publicado</span><span class="badge b-ia">IA · Claude</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Dojo</h3>
-              <p>Mentoria de programação passo a passo: você escolhe o projeto e a stack, e o mentor guia o que fazer, como fazer e por quê, revisando o código que você escreve — sem escrever por você.</p>
-            </div>
-          </a>
-          <a class="card c-med reveal" href="https://dracma.stolben.com/" target="_blank" rel="noreferrer" aria-label="Abrir Dracma (abre em nova aba)">
-            <div class="media"><img src="assets/theme-dracma-1300.webp" alt="Tetradracma ateniense de prata com a coruja de Atena" width="1300" height="867" loading="lazy" /></div>
-            <div class="body">
-              <div class="head"><span class="num">09</span><span class="badge b-pub">Publicado</span><span class="badge b-ia">IA · Claude</span><span class="badge b-lic">AGPL-3.0</span><span class="go" aria-hidden="true">↗</span></div>
-              <h3>Dracma</h3>
-              <p>Assistente financeira que vive no Telegram: você conta o gasto por texto, áudio, foto do comprovante ou PDF, e ela categoriza, registra, divide a conta da casa e avisa antes de o limite estourar.</p>
-            </div>
-          </a>
+        <div class="body">
+          <h3 class="group mono">Gestão e documentos</h3>
+          <ul class="list">
+            <li><a class="row" href="https://arq.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">A.R.Q.</span><span class="d">Gestão para escritórios de arquitetura: clientes, briefing, propostas, contratos, fases, agenda e financeiro num único fluxo.</span><span class="u">arq.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://orcamentos.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Sistema Orçamentos</span><span class="d">Cadastro de clientes, catálogo de itens e orçamentos prontos para enviar, do rascunho ao documento final.</span><span class="u">orcamentos.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://financas.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Sistema Finanças</span><span class="d">Lançamentos por categoria, com saldo e histórico mês a mês para acompanhar a operação.</span><span class="u">financas.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://vetorial.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Sistema Vetorial</span><span class="d">Editor visual de modelos em PDF e geração em lote de certificados a partir de planilhas.</span><span class="u">vetorial.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://divisor.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Divisor de PDF</span><span class="d">Envie, comprima e divida PDFs em partes menores, com download em arquivo único ou ZIP.</span><span class="u">divisor.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+          </ul>
+          <h3 class="group mono">Com inteligência artificial</h3>
+          <ul class="list">
+            <li><a class="row" href="https://dracma.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Dracma</span><span class="d">Assistente financeira no Telegram: registra gastos por texto, áudio, foto ou PDF e avisa antes do limite estourar.</span><span class="u">dracma.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://trilhas.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Trilhas de Estudo</span><span class="d">Você diz o que quer aprender e a IA monta a trilha completa, com níveis, exercícios e avaliações corrigidas.</span><span class="u">trilhas.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://dojo.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Dojo</span><span class="d">Mentoria de programação passo a passo: o mentor guia e revisa o seu código, sem escrever por você.</span><span class="u">dojo.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+            <li><a class="row" href="https://questoes.stolben.com/" target="_blank" rel="noreferrer"><span class="nm">Estudo por Questões</span><span class="d">Importa provas de concurso em PDF, aplica IA sobre as questões e gera relatórios de estudo.</span><span class="u">questoes.stolben.com <i aria-hidden="true">↗</i></span><span class="sr"> (abre em nova aba)</span></a></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-      <div class="wrap about-grid">
-        <div class="reveal">
-          <div class="about-head">
-            <span class="kick">/ sobre</span>
-            <h2 class="display">Do problema real ao sistema no ar.</h2>
-          </div>
-          <div class="about-copy">
-            <p>Todo projeto começa longe do editor de código: parto do problema real e modelo o fluxo: a estrutura de dados, as regras de negócio e a navegação mais simples que resolve o caso. Só então começo a construir.</p>
-            <p>Construo com arquitetura direta de manter: Django bem organizado, dados consistentes e validação contínua. Prefiro menos peças, bem escolhidas, a empilhar ferramenta sobre ferramenta.</p>
-            <p>E como sou eu quem opera os sistemas depois do deploy, cada decisão de código é tomada pensando em quem vai mantê-los estáveis em produção: eu mesmo, todos os dias. É esse ciclo completo que faz cada projeto sair melhor que o anterior.</p>
-          </div>
+    <section class="sec" aria-labelledby="construo-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Como eu construo</span>
+          <h2 id="construo-titulo">Do problema real ao sistema no ar, e cuidando dele depois.</h2>
         </div>
-        <figure class="about-photo reveal">
-          <img src="assets/rodrigo.jpg" alt="Rodrigo Stölben" width="1086" height="1448" loading="lazy" />
-        </figure>
-      </div>
-    </section>
-
-    <!-- TECNOLOGIAS -->
-    <section class="sec" id="stack">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <div>
-            <span class="kick">/ tecnologias</span>
-            <h2 class="display">As ferramentas, <span class="muted">e por que escolho cada uma.</span></h2>
+        <div class="body">
+          <div class="cols">
+            <div><h3>Entendo antes de codar</h3><p>Começo pelo problema: o fluxo, os dados e as regras. Só depois escrevo a primeira linha de código.</p></div>
+            <div><h3>Construo pra durar</h3><p>Menos peças, bem escolhidas. Código organizado, testado automaticamente e fácil de evoluir.</p></div>
+            <div><h3>Opero o que construo</h3><p>Hospedo tudo no meu próprio servidor, com deploy automático e monitoramento. Se algo cai de madrugada, eu sou avisado antes de quem usa.</p></div>
           </div>
-        </div>
-        <p class="sec-intro reveal">Sem jargão: as tecnologias que uso para construir os sistemas e o raciocínio por trás de cada escolha.</p>
-        <div class="tech-grid">
-          <article class="tech-card wide tech-split reveal">
-            <div class="ts-body">
-              <span class="role">a fundação</span>
-              <h3>Python &amp; Django</h3>
-              <p>A linguagem e a estrutura onde o sistema é construído. O Django é uma base madura, a mesma usada por empresas como Instagram e Spotify: boa parte da segurança e da organização já vem pronta, o que significa menos código frágil e mais tempo dedicado à regra de negócio.</p>
-            </div>
-            <div class="ts-media"><img src="assets/code-screen-1000.webp" alt="Código em um editor de texto" width="1000" height="668" loading="lazy" /></div>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">onde ficam os dados</span>
-            <h3>PostgreSQL</h3>
-            <p>O banco de dados é o arquivo central do sistema. Guarda cada informação de forma consistente e segura, sem perder ou misturar registros, mesmo com muito acesso ao mesmo tempo.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">a inteligência</span>
-            <h3>IA · Claude (Anthropic)</h3>
-            <p>O motor de inteligência dos sistemas: a API do Claude gera conteúdo, corrige avaliações e produz análises sob demanda, enquanto cada aplicativo orquestra as chamadas em segundo plano. É a mesma base pronta para os sistemas atuais e os que vierem.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">a velocidade</span>
-            <h3>Redis</h3>
-            <p>Mantém o que é mais usado sempre à mão, para as telas responderem na hora. É o que faz o sistema parecer leve, em vez de travado.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">o trabalho pesado</span>
-            <h3>Celery</h3>
-            <p>Cuida de tarefas demoradas (como processar arquivos) em segundo plano, sem travar a tela enquanto o sistema trabalha.</p>
-          </article>
-          <article class="tech-card strip reveal">
-            <div class="strip-head">
-              <span class="role">no ar, 24 horas</span>
-              <h3>Linux · Nginx · Gunicorn</h3>
-            </div>
-            <p>A infraestrutura que mantém tudo online, estável e seguro o tempo todo. Configuro e mantenho o servidor por conta própria, sem depender de plataformas fechadas de terceiros.</p>
-          </article>
+          <a class="more" href="/bastidores/">Bastidores técnicos: testes, deploy e monitoramento <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
-    <!-- INTEGRAÇÃO E ENTREGA CONTÍNUAS (CI/CD) -->
-    <section class="sec" id="ci">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <div>
-            <span class="kick">/ integração e entrega contínuas</span>
-            <h2 class="display">Doze conferências antes de entrar, <span class="muted">e o deploy sozinho depois.</span></h2>
-          </div>
-          <a class="sec-link" href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">Ver o pipeline <span class="arw" aria-hidden="true">↗</span></a>
+    <section class="sec" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <h2 class="mono" id="sobre-titulo">Sobre</h2>
+          <figure class="ph"><img src="/assets/rodrigo.jpg" alt="Rodrigo Stölben" width="640" height="640" loading="lazy" /></figure>
         </div>
-        <p class="sec-intro reveal">Toda vez que eu mudo uma linha de código, um robô assume antes de mim: monta o ambiente do zero e roda doze conferências ao mesmo tempo. Se qualquer uma reprovar, a mudança não entra. É a integração contínua, ou CI. Quando tudo fica verde, a entrega contínua, o CD, publica no servidor sem eu tocar em nada.</p>
-        <div class="ci-grid">
-          <div class="ci-copy reveal">
-            <p><strong>Quatro conferências cuidam do código:</strong> o estilo é padronizado do primeiro ao último arquivo, cada informação é conferida como aquilo que ela é (uma data como data, um número como número), a bateria de testes automáticos repete o uso real do sistema e um agregador acompanha se a qualidade sobe ou desce a cada mudança.</p>
-            <p><strong>Duas cuidam da segurança:</strong> uma procura falhas já conhecidas no meu código e nas bibliotecas de terceiros; a outra varre o histórico inteiro do projeto atrás de senha ou chave de acesso esquecida no meio do caminho.</p>
-            <p><strong>Três olham para o que o sistema carrega junto:</strong> se cada biblioteca tem licença compatível com a do projeto, se a versão instalada é exatamente a que eu revisei, e uma lista de ingredientes de tudo o que foi instalado naquela versão, guardada para responder na hora quando aparecer uma falha nova no mundo.</p>
-            <p><strong>As três últimas olham para o resultado</strong>, do jeito que a pessoa vai encontrar: as configurações de produção são revisadas junto com a estrutura do banco de dados, um navegador de verdade percorre as telas clicando como um usuário faria, e um auditor confere se elas funcionam para quem navega pelo teclado ou usa leitor de tela.</p>
-            <ul class="ci-tools" aria-label="Ferramentas usadas nas conferências">
-              <li>ruff</li>
-              <li>mypy</li>
-              <li>pytest</li>
-              <li>SonarQube</li>
-              <li>bandit</li>
-              <li>pip-audit</li>
-              <li>gitleaks</li>
-              <li>liccheck</li>
-              <li>CycloneDX</li>
-              <li>Playwright</li>
-              <li>axe-core</li>
-            </ul>
-            <p>No fim, um portão único resume o resultado. Verde, a mudança pode entrar. Vermelho, o próprio GitHub bloqueia a entrada, e não existe deixar para arrumar depois.</p>
-          </div>
-          <aside class="ci-panel reveal" aria-labelledby="ci-garante">
-            <p class="ci-panel-head" id="ci-garante">O que isso garante</p>
-            <ul class="ci-gains">
-              <li>Código no mesmo padrão do primeiro ao último arquivo, revisado por máquina antes de chegar em mim.</li>
-              <li>Nenhuma senha ou chave de acesso dentro do repositório, conferido em todo o histórico e não só na última mudança.</li>
-              <li>Bibliotecas sem falha conhecida, com licença compatível e versão travada.</li>
-              <li>Configuração de produção conferida e banco de dados sempre em dia com o código.</li>
-              <li>Telas testadas em navegador real e auditadas para quem usa teclado ou leitor de tela.</li>
-              <li>Publicação sempre pelo mesmo caminho, com o mesmo roteiro, sem passo manual que alguém possa esquecer.</li>
-            </ul>
-          </aside>
+        <div class="body about">
+          <p class="lead">Estou me graduando em Análise e Desenvolvimento de Sistemas na PUCRS e aprendo do jeito que mais gosto: construindo sistemas de verdade, do começo ao fim.</p>
+          <p>Prefiro arquitetura direta de manter a empilhar ferramenta sobre ferramenta. E como sou eu quem opera cada sistema depois do deploy, toda decisão de código já pensa em quem vai mantê-lo estável.</p>
+          <dl class="facts">
+            <div><dt>Formação</dt><dd>Análise e Desenvolvimento de Sistemas na PUCRS, em curso</dd></div>
+            <div><dt>Base</dt><dd>Python, Django e PostgreSQL</dd></div>
+            <div><dt>Inteligência artificial</dt><dd>API do Claude, da Anthropic</dd></div>
+            <div><dt>Infraestrutura</dt><dd>Servidor Linux próprio</dd></div>
+          </dl>
         </div>
-
-        <div class="cd-head reveal">
-          <span class="kick">/ entrega contínua</span>
-          <h3>Do portão verde até o ar, sem intervenção manual.</h3>
-          <p>Com o portão verde no ramo principal, o GitHub abre uma sessão no servidor por um usuário criado só para isso, que não consegue fazer nada além de disparar um roteiro de publicação versionado no próprio repositório do sistema, à vista de qualquer um.</p>
-        </div>
-        <div class="tech-grid">
-          <article class="tech-card reveal">
-            <span class="role">01 · o que sobe</span>
-            <h3>Só o commit revisado</h3>
-            <p>O servidor busca o código direto do GitHub e confirma que o commit pedido pertence mesmo ao histórico oficial do projeto antes de avançar. Não existe subir um arquivo solto pela mão.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">02 · como sobe</span>
-            <h3>Banco antes, serviço depois</h3>
-            <p>Se a mudança mexe no banco de dados, um backup é feito antes de tudo. Só então as dependências são instaladas, a estrutura do banco é atualizada e o serviço recarrega, sem derrubar quem está usando naquele instante.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">03 · e se der errado</span>
-            <h3>Conferido no fim</h3>
-            <p>Uma última checagem abre o endereço público, como um visitante faria. Se não responder, a publicação é marcada como falha e a própria mensagem traz o comando exato para voltar à versão anterior. Dois deploys nunca rodam ao mesmo tempo.</p>
-          </article>
-        </div>
-
-        <p class="ci-fine reveal">O pipeline não é copiado dentro de cada projeto: ele vive em um <a href="https://github.com/rigst/ci" target="_blank" rel="noreferrer">repositório central</a> e o arquivo de cada sistema tem dez linhas, então um ajuste feito uma vez vale para todos. Cada projeto liga as etapas que fazem sentido para ele, e o Trilhas de Estudo, o mais recente, roda as doze sem nenhuma tolerância. Este site, escrito à mão em HTML e CSS, passa por uma versão reduzida do mesmo pipeline e sobe para o ar pelo mesmo caminho.</p>
       </div>
     </section>
 
-    <!-- OBSERVABILIDADE -->
-    <section class="sec" id="observabilidade">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <div>
-            <span class="kick">/ observabilidade</span>
-            <h2 class="display">Se um sistema cair de madrugada, <span class="muted">eu sou avisado antes do usuário.</span></h2>
-          </div>
-        </div>
-        <p class="sec-intro reveal">Publicar é metade do trabalho; a outra metade é enxergar o que acontece depois. São três camadas: os erros dentro da aplicação, os sinais do servidor onde ela roda e uma checagem feita de fora, pela internet.</p>
-        <ul class="ci-tools reveal" aria-label="Ferramentas de observabilidade">
-          <li>Sentry</li>
-          <li>Grafana Cloud</li>
-          <li>Prometheus</li>
-          <li>Loki</li>
-          <li>Grafana Alloy</li>
-          <li>node_exporter</li>
-          <li>postgres_exporter</li>
-          <li>redis_exporter</li>
-        </ul>
-        <div class="tech-grid">
-          <article class="tech-card wide reveal">
-            <span class="role">erros de aplicação</span>
-            <h3>Sentry</h3>
-            <p>Quando alguma coisa quebra dentro de um sistema, o Sentry registra a falha com a linha exata de código, agrupa as repetições em um só caso e me avisa por e-mail. Sem isso, eu só descobriria o problema quando alguém reclamasse — e a maioria das pessoas não reclama, apenas desiste da tela. Está ligado nos nove sistemas em produção, configurado para não enviar dados pessoais junto com o erro.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">o que já é vigiado</span>
-            <h3>Cinco alertas ativos</h3>
-            <p>Servidor sem reportar, disco chegando ao limite, banco de dados fora do ar, cache fora do ar e qualquer um dos sistemas parado por mais de cinco minutos. Cada um dispara um e-mail, e o caminho foi testado derrubando um serviço de propósito.</p>
-          </article>
-          <article class="tech-card wide reveal">
-            <span class="role">sinais do servidor</span>
-            <h3>Grafana · Prometheus · Loki</h3>
-            <p>Um agente instalado no servidor envia continuamente os números da máquina (processador, memória, disco, rede), do banco de dados e do cache, junto com os registros que cada sistema escreve enquanto roda. Tudo chega a um painel único e a regras de alerta que me procuram por e-mail quando algo sai do lugar, em vez de esperar que eu vá olhar. O endereço de quem visita é mascarado antes de sair do servidor: o painel enxerga a rota, o tempo e o código de resposta, nunca a pessoa.</p>
-          </article>
-          <article class="tech-card reveal">
-            <span class="role">visto de fora</span>
-            <h3>Checagem externa</h3>
-            <p>De tempos em tempos, uma verificação independente abre cada endereço pela internet e guarda a resposta. É esse resultado que alimenta o painel “Sistemas no ar”, no topo desta página.</p>
-          </article>
-        </div>
-        <p class="ci-fine reveal">Nada disso fica preso ao código dos sistemas. O Sentry entra como uma biblioteca opcional, que a aplicação simplesmente ignora quando não está configurada, e o agente que alimenta o Grafana roda ao lado das aplicações, sem tocar nelas. Se um dia eu trocar de ferramenta, troco só essa camada.</p>
-      </div>
-    </section>
-
-    <!-- HOSPEDAGEM E MANUTENÇÃO -->
-    <section class="host" id="hosting">
-      <div class="wrap host-grid">
-        <div class="host-text reveal">
-          <span class="kick">/ infraestrutura e operação</span>
-          <h2 class="display">Do código ao servidor: onde um sistema realmente vive.</h2>
-          <p class="lead">Hoje meus sistemas rodam em uma VPS Linux, com deploy próprio em Nginx e Gunicorn. Cuido de toda a operação, do primeiro deploy à manutenção do dia a dia, mantendo tudo disponível, seguro e atualizado.</p>
-          <div class="host-points">
-            <div class="host-point">
-              <span class="hp-num" aria-hidden="true">01</span>
-              <div><h3>VPS Linux em produção</h3><p>Os sistemas rodam hoje em uma VPS Linux, com Nginx e Gunicorn, dimensionada conforme o uso de cada projeto.</p></div>
-            </div>
-            <div class="host-point">
-              <span class="hp-num" aria-hidden="true">02</span>
-              <div><h3>Deploy próprio</h3><p>Publico e configuro o ambiente de produção por conta própria, com domínio, HTTPS e processos sob meu controle, sem plataformas fechadas.</p></div>
-            </div>
-            <div class="host-point">
-              <span class="hp-num" aria-hidden="true">03</span>
-              <div><h3>Manutenção contínua</h3><p>Monitoramento com alertas automáticos, backups, segurança e atualizações, com ajustes e correções conforme os sistemas evoluem.</p></div>
+    <section class="sec contact" id="contato" aria-labelledby="contato-titulo">
+      <div class="grid">
+        <div class="full">
+          <span class="mono">Contato</span>
+          <h2 id="contato-titulo">Bora trocar uma ideia?</h2>
+          <div class="sub">
+            <p>Quer conversar sobre algum desses sistemas, sobre código ou sobre estudos? Me escreva, eu respondo pessoalmente.</p>
+            <div class="cta">
+              <a class="mail" href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>
+              <a class="btn" href="mailto:rodrigo@stolben.com">Enviar e-mail</a>
             </div>
           </div>
         </div>
-        <figure class="host-media reveal">
-          <img src="assets/server-room-1400.webp" alt="Servidores em um data center, onde o sistema fica hospedado" width="1400" height="785" loading="lazy" />
-        </figure>
       </div>
     </section>
-
-    <!-- CONTATO -->
-    <section class="contact" id="contact">
-      <div class="wrap contact-in">
-        <div class="reveal">
-          <span class="kick">/ contato</span>
-          <h2 class="display">Tem um projeto em mente?</h2>
-          <p class="contact-lead">Me escreva contando o problema que você quer resolver. Respondo pelo e-mail abaixo.</p>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:rodrigo@stolben.com">Enviar e-mail <span class="arw" aria-hidden="true">↗</span></a>
-            <a class="btn btn-ghost" href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUESTÕES LEGAIS -->
-    <section class="legal" id="legal">
-      <div class="wrap legal-in">
-        <div class="reveal">
-          <span class="kick">/ questões legais</span>
-          <h2 class="display">Transparência no uso e nos dados.</h2>
-        </div>
-        <div class="legal-grid">
-          <div class="reveal">
-            <h3>Privacidade e LGPD</h3>
-            <p>Este site não usa cookies, não tem rastreadores e não pede nenhum dado a quem visita. Como todo servidor web, ele registra os acessos (endereço IP, data, hora e navegador), usados apenas para segurança e para o diagnóstico de operação descrito adiante. Nos sistemas com cadastro, os dados pessoais são tratados conforme a LGPD (Lei nº 13.709/2018): coleta mínima, uso restrito ao funcionamento do próprio sistema e exclusão da conta mediante solicitação. O prazo de guarda dos registros de acesso, exigido pelo art. 15 do Marco Civil da Internet, está descrito na política de privacidade de cada sistema.</p>
-          </div>
-          <div class="reveal">
-            <h3>Inteligência artificial</h3>
-            <p>Nos sistemas que oferecem recursos de inteligência artificial, o conteúdo enviado pelo usuário é transmitido à API do Claude, da Anthropic Inc. (EUA), para processamento e geração do resultado. Essa transmissão configura transferência internacional de dados pessoais nos termos do art. 33 da LGPD. A base legal é a necessidade de execução do serviço contratado pelo próprio usuário (art. 33, VI). A Anthropic atua como operadora de dados e o processamento é regido pelo Data Processing Addendum, automaticamente incorporado aos <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noreferrer">Commercial Terms of Service</a> aceitos ao cadastrar a conta de API. Os dados enviados à Anthropic são retidos por até 30 dias para fins de segurança e monitoramento de uso indevido e não são utilizados para treinar modelos. O controlador dos dados perante os usuários finais é Rodrigo Stölben (rodrigo@stolben.com).</p>
-          </div>
-          <div class="reveal">
-            <h3>Monitoramento e operação</h3>
-            <p>A operação dos sistemas se apoia em dois serviços de terceiros, ambos atuando como operadores de dados. O <strong>Sentry</strong> (Functional Software, Inc.) recebe os relatórios de erro das aplicações, com a linha de código e o contexto técnico da falha; está configurado para não enviar dados pessoais junto ao evento, sem identificação de usuário, sem cookies e sem o endereço IP de quem navegava, e a conta usada fica na região europeia do serviço, com armazenamento na Alemanha. O <strong>Grafana Cloud</strong> (Grafana Labs, Inc.) recebe as métricas do servidor e uma cópia dos registros de acesso do Nginx, com o <strong>endereço IP mascarado antes do envio</strong>: o último octeto é zerado no próprio servidor, de modo que o endereço completo do visitante não sai daqui. O registro íntegro, exigido pelo art. 15 do Marco Civil, continua só em disco, sob a rotação local. A instância utilizada está hospedada em território brasileiro, na região de São Paulo. O envio ao Sentry configura transferência internacional de dados pessoais nos termos do art. 33 da LGPD, com a mesma base legal de execução do serviço solicitado pelo usuário (art. 33, VI). Nenhum dos dois é usado para publicidade, perfilamento ou treinamento de modelos, e a retenção segue o prazo do plano contratado em cada serviço.</p>
-          </div>
-          <div class="reveal">
-            <h3>Termos de uso dos sistemas</h3>
-            <p>Cada sistema tem conta própria e pessoal, e alguns oferecem um acesso de visitante, temporário e apagado depois. Nos sistemas em que o aceite dos termos é solicitado, ele fica registrado com data, hora, endereço IP e a versão exata do texto aceito; quando um texto muda de forma relevante, pedimos um novo aceite, e as versões anteriores continuam disponíveis para consulta na própria página. Os serviços são fornecidos como estão: a operação é monitorada continuamente, com alertas automáticos, mas sem garantia formal de disponibilidade. Para dúvidas, exportação ou exclusão de dados, escreva para <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>. Respondemos em até 15 dias, na forma do art. 19 da LGPD.</p>
-          </div>
-          <div class="reveal">
-            <h3>Licenças de software</h3>
-            <p>A licença de cada sistema está indicada no próprio card. <strong>AGPL-3.0</strong> é código aberto: qualquer pessoa pode usar, estudar, modificar e redistribuir o código, inclusive comercialmente, desde que o resultado, mesmo oferecido apenas como serviço na web, permaneça aberto sob a mesma licença; o fonte está em <a href="https://github.com/rigst" target="_blank" rel="noreferrer">github.com/rigst</a>. <strong>Proprietário</strong> é o oposto: o sistema pode ser usado normalmente como serviço, mas o código não é público e não pode ser copiado, modificado ou redistribuído.</p>
-            <p>As ferramentas de monitoramento não alteram nada disso. A biblioteca do Sentry usada nos projetos é distribuída sob licença MIT, compatível com a AGPL, e o Grafana recebe os dados por um agente que roda ao lado das aplicações, como serviço separado, sem virar parte delas. O que a AGPL alcança é o código dos sistemas, que continua aberto sob a mesma licença.</p>
-            <p>Por baixo, todos rodam sobre software livre: Python, Django, PostgreSQL, Redis, Celery, Nginx e Linux, além da instrumentação de observabilidade (SDK do Sentry, Grafana Alloy e Prometheus), cada um sob sua licença aberta. As fontes do site (Archivo, Bricolage Grotesque e IBM Plex Mono) usam a SIL Open Font License; as fotos vêm de bancos de imagens com licença de uso livre. O conteúdo deste site é © 2026 Rodrigo Stölben.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer class="foot">
-    <div class="wrap foot-in">
-      <div>
-        <p class="foot-brand">Rodrigo Stölben</p>
-        <p class="copy">Desenvolvimento de software · Python &amp; Django · © 2026</p>
-      </div>
-      <nav class="foot-links" aria-label="Contato e legal">
-        <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>
-        <a href="https://github.com/rigst" target="_blank" rel="noreferrer">github.com/rigst</a>
-      </nav>
+  <footer class="foot mono">
+    <div class="sig">
+      <a href="/" aria-label="stolben.com, voltar pro início"><img src="/assets/logo/stolben-marca-compacta.svg" alt="" width="24" height="24" /></a>
+      <p>© 2026 Rodrigo Stölben · escrito à mão em HTML e CSS</p>
     </div>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub<span class="sr"> (abre em nova aba)</span></a></li>
+        <li><a href="/privacidade/">Privacidade e termos</a></li>
+      </ul>
+    </nav>
   </footer>
 </div>
-<script src="script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>
