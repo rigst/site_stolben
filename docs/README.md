@@ -3,7 +3,7 @@
 [![CI](https://github.com/rigst/site_stolben/actions/workflows/ci.yml/badge.svg)](https://github.com/rigst/site_stolben/actions/workflows/ci.yml)
 [![Licença: AGPL v3](https://img.shields.io/badge/licen%C3%A7a-AGPL--3.0-blue.svg)](LICENSE)
 
-Site/portfólio de página única de Rodrigo Stölben ([stolben.com](https://stolben.com)).
+Site/portfólio de Rodrigo Stölben ([stolben.com](https://stolben.com)).
 Estático: HTML, CSS e JavaScript escritos à mão, sem build e sem dependências.
 
 ## Rodar localmente
@@ -22,22 +22,30 @@ caminhos absolutos só resolvem servindo pela raiz.
 
 | Caminho | O que é |
 |---|---|
-| `index.html` | Conteúdo e marcação da página |
-| `style.css` | Estilos (tema "Infra Premium": claro/escuro, azul como acento) |
-| `script.js` | Surgimento ao rolar, scrollspy do menu e cabeçalho fixo |
-| `assets/` | Imagens (hero, capas dos projetos) |
-| `fonts/` | Fontes servidas localmente |
+| `index.html` | Home: projetos, como eu construo, sobre e contato |
+| `bastidores/index.html` | `/bastidores/`: CI/CD, monitoramento e servidor |
+| `privacidade/index.html` | `/privacidade/`: privacidade, LGPD, termos e licenças |
+| `404.html` | Página de erro (precisa de `error_page 404 /404.html;` no nginx) |
+| `style.css` | Estilos de todas as páginas (redesign v1: grafite, Mona Sans, laranja-sinal só em detalhe) |
+| `script.js` | Lista "no ar agora" da home, lida do `/status.json` |
+| `assets/` | Foto do Sobre e a logo (`assets/logo/`) |
+| `fonts/` | Mona Sans (variável, `wght` + `wdth`) e Geist Mono, servidas localmente |
+| raiz | `favicon.svg`/`.ico`, `apple-touch-icon.png`, `icone-*.png`, `site.webmanifest`, `og-image.png` |
+
+Todos os caminhos são absolutos (`/style.css`), porque as páginas internas
+ficam em subpastas e a 404 é servida em qualquer URL.
 
 ## Editar os projetos do portfólio
 
-Os cards ficam em `index.html`, na seção `<section id="projects">`. Cada card é
-um `<a class="card ...">` apontando para o sistema em produção. Para adicionar
-um, copie um card existente e ajuste:
+As linhas ficam em `index.html`, na seção `<section id="projetos">`, agrupadas
+por categoria. Cada linha é um `<a class="row">` apontando para o sistema em
+produção, com nome (`.nm`), descrição (`.d`) e domínio (`.u`). Sem imagem e
+sem numeração (regra do design).
 
-- o `href` (URL do sistema);
-- o número (`<span class="num">`), o título (`<h3>`) e a descrição (`<p>`);
-- a imagem de capa em `assets/` — sempre com `width` e `height` na tag `<img>`,
-  para não causar deslocamento de layout durante o carregamento.
+Para o domínio entrar na lista "no ar agora", inclua também um
+`<li data-host="...">` na `.live-list` e o host em `.scripts/check-status.sh`.
+Um host que aparece no `status.json` e não está no HTML é acrescentado no fim
+da lista pelo `script.js`.
 
 ## CI
 
@@ -75,4 +83,4 @@ sudo cp /var/www/site_stolben/deploy/nginx-seguranca.conf /etc/nginx/snippets/st
 sudo nginx -t && sudo systemctl reload nginx
 ```
 
-A CSP não aceita estilo nem script inline: o único script inline entra por hash (comando no próprio snippet). Conferência diária no rigst/ci (`headers.yml`).
+A CSP não aceita estilo nem script inline. Desde o redesign v1 as páginas não têm nenhum script inline (o hash que segue no snippet era do antigo efeito de surgimento e pode sair numa próxima revisão da CSP). Conferência diária no rigst/ci (`headers.yml`).

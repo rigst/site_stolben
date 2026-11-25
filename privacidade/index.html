@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacidade e termos · Rodrigo Stölben</title>
+<meta name="description" content="Como os dados são tratados no stolben.com e nos sistemas publicados: LGPD, inteligência artificial, monitoramento, termos de uso e licenças." />
+<link rel="canonical" href="https://stolben.com/privacidade/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://stolben.com/privacidade/" />
+<meta property="og:title" content="Privacidade e termos · Rodrigo Stölben" />
+<meta property="og:description" content="Privacidade e termos, em linguagem direta." />
+<meta property="og:locale" content="pt_BR" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#111110" />
+<meta property="og:image" content="https://stolben.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preload" as="font" href="/fonts/mona-sans-var-latin.woff2" type="font/woff2" crossorigin />
+<link rel="preload" as="font" href="/fonts/geist-mono-400-latin.woff2" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="frame">
+  <i class="c tl" aria-hidden="true"></i><i class="c br" aria-hidden="true"></i>
+
+  <header class="top">
+    <p class="who"><span>Rodrigo Stölben</span><span class="mono">graduando em ADS · PUCRS</span></p>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="/#projetos">Projetos</a></li>
+        <li><a href="/#sobre">Sobre</a></li>
+        <li><a href="/#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="crumb mono" aria-label="Você está em"><a href="/">Início</a><span aria-hidden="true">/</span><span aria-current="page">Privacidade e termos</span></nav>
+
+  <main id="conteudo">
+    <div class="ph-hero">
+      <div class="grid">
+        <h1>Privacidade e termos, <span>em linguagem direta.</span></h1>
+        <p>Este site não usa cookies, não tem rastreadores e não pede nenhum dado a quem visita. Aqui está como os dados são tratados nos sistemas, quem processa o quê e sob quais licenças.</p>
+        <dl class="updated">
+          <dt>última atualização</dt><dd>novembro de 2026</dd>
+          <dt>dúvidas</dt><dd>rodrigo@stolben.com</dd>
+        </dl>
+      </div>
+    </div>
+
+    <section class="sec" aria-labelledby="dados-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Dados</span>
+          <h2 id="dados-titulo">Privacidade e LGPD</h2>
+        </div>
+        <div class="body prose">
+          <p>Como todo servidor web, este site registra os acessos (endereço IP, data, hora e navegador), usados apenas para segurança e para o diagnóstico de operação descrito adiante. Nos sistemas com cadastro, os dados pessoais são tratados conforme a LGPD (Lei nº 13.709/2018): <strong>coleta mínima, uso restrito ao funcionamento do próprio sistema e exclusão da conta mediante solicitação.</strong></p>
+          <p>O prazo de guarda dos registros de acesso, exigido pelo art. 15 do Marco Civil da Internet, está descrito na política de privacidade de cada sistema.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="ia-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">IA</span>
+          <h2 id="ia-titulo">Inteligência artificial</h2>
+        </div>
+        <div class="body prose">
+          <p>Nos sistemas que oferecem recursos de inteligência artificial, o conteúdo enviado pelo usuário é transmitido à API do Claude, da Anthropic Inc. (EUA), para processamento e geração do resultado. Essa transmissão configura transferência internacional de dados pessoais nos termos do art. 33 da LGPD. A base legal é a necessidade de execução do serviço contratado pelo próprio usuário (art. 33, VI).</p>
+          <p>A Anthropic atua como operadora de dados e o processamento é regido pelo Data Processing Addendum, automaticamente incorporado aos <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank" rel="noreferrer">Commercial Terms of Service<span class="sr"> (abre em nova aba)</span></a> aceitos ao cadastrar a conta de API. <strong>Os dados enviados à Anthropic são retidos por até 30 dias para fins de segurança e monitoramento de uso indevido e não são utilizados para treinar modelos.</strong> O controlador dos dados perante os usuários finais é Rodrigo Stölben (<a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="op-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Operação</span>
+          <h2 id="op-titulo">Monitoramento e operação</h2>
+        </div>
+        <div class="body prose">
+          <p>A operação dos sistemas se apoia em dois serviços de terceiros, ambos atuando como operadores de dados.</p>
+          <p>O <strong>Sentry</strong> (Functional Software, Inc.) recebe os relatórios de erro das aplicações, com a linha de código e o contexto técnico da falha; está configurado para não enviar dados pessoais junto ao evento, sem identificação de usuário, sem cookies e sem o endereço IP de quem navegava, e a conta usada fica na região europeia do serviço, com armazenamento na Alemanha.</p>
+          <p>O <strong>Grafana Cloud</strong> (Grafana Labs, Inc.) recebe as métricas do servidor e uma cópia dos registros de acesso do Nginx, com o <strong>endereço IP mascarado antes do envio</strong>: o último octeto é zerado no próprio servidor, de modo que o endereço completo do visitante não sai daqui. O registro íntegro, exigido pelo art. 15 do Marco Civil, continua só em disco, sob a rotação local. A instância utilizada está hospedada em território brasileiro, na região de São Paulo.</p>
+          <p>O envio ao Sentry configura transferência internacional de dados pessoais nos termos do art. 33 da LGPD, com a mesma base legal de execução do serviço solicitado pelo usuário (art. 33, VI). Nenhum dos dois é usado para publicidade, perfilamento ou treinamento de modelos, e a retenção segue o prazo do plano contratado em cada serviço.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="uso-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Uso</span>
+          <h2 id="uso-titulo">Termos de uso dos sistemas</h2>
+        </div>
+        <div class="body prose">
+          <p>Cada sistema tem conta própria e pessoal, e alguns oferecem um acesso de visitante, temporário e apagado depois. Nos sistemas em que o aceite dos termos é solicitado, ele fica registrado com data, hora, endereço IP e a versão exata do texto aceito; quando um texto muda de forma relevante, pedimos um novo aceite, e as versões anteriores continuam disponíveis para consulta na própria página.</p>
+          <p>Os serviços são fornecidos como estão: a operação é monitorada continuamente, com alertas automáticos, mas sem garantia formal de disponibilidade. Para dúvidas, exportação ou exclusão de dados, escreva para <a href="mailto:rodrigo@stolben.com">rodrigo@stolben.com</a>. Respondemos em até 15 dias, na forma do art. 19 da LGPD.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-labelledby="lic-titulo">
+      <div class="grid">
+        <div class="lbl">
+          <span class="mono">Código</span>
+          <h2 id="lic-titulo">Licenças de software</h2>
+        </div>
+        <div class="body">
+          <div class="prose">
+            <p>Os sistemas listados na página inicial são publicados sob <strong>AGPL-3.0</strong>. As duas licenças usadas nos projetos significam o seguinte.</p>
+          </div>
+          <div class="defs">
+            <div><div><small>código aberto</small><h3>AGPL-3.0</h3></div><p>Qualquer pessoa pode usar, estudar, modificar e redistribuir o código, inclusive comercialmente, desde que o resultado, mesmo oferecido apenas como serviço na web, permaneça aberto sob a mesma licença; o fonte está em <a href="https://github.com/rigst" target="_blank" rel="noreferrer">github.com/rigst<span class="sr"> (abre em nova aba)</span></a>.</p></div>
+            <div><div><small>código fechado</small><h3>Proprietário</h3></div><p>O sistema pode ser usado normalmente como serviço, mas o código não é público e não pode ser copiado, modificado ou redistribuído.</p></div>
+            <div><div><small>monitoramento</small><h3>Sentry e Grafana</h3></div><p>As ferramentas de monitoramento não alteram nada disso. A biblioteca do Sentry usada nos projetos é distribuída sob licença MIT, compatível com a AGPL, e o Grafana recebe os dados por um agente que roda ao lado das aplicações, como serviço separado, sem virar parte delas. O que a AGPL alcança é o código dos sistemas, que continua aberto sob a mesma licença.</p></div>
+            <div><div><small>por baixo de tudo</small><h3>Software livre</h3></div><div><p>Todos rodam sobre software livre: Python, Django, PostgreSQL, Redis, Celery, Nginx e Linux, além da instrumentação de observabilidade (SDK do Sentry, Grafana Alloy e Prometheus), cada um sob sua licença aberta.</p><p>As fontes do site (Mona Sans e Geist Mono) usam a SIL Open Font License. O conteúdo deste site é © 2026 Rodrigo Stölben.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <div class="sig">
+      <a href="/" aria-label="stolben.com, voltar pro início"><img src="/assets/logo/stolben-marca-compacta.svg" alt="" width="24" height="24" /></a>
+      <p>© 2026 Rodrigo Stölben · escrito à mão em HTML e CSS</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="https://github.com/rigst" target="_blank" rel="noreferrer">GitHub<span class="sr"> (abre em nova aba)</span></a></li>
+        <li><a href="/privacidade/" aria-current="page">Privacidade e termos</a></li>
+      </ul>
+    </nav>
+  </footer>
+</div>
+</body>
+</html>

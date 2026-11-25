@@ -54,6 +54,9 @@ jobs:
       layout-fail-on: erro
       layout-paths: |
         /index.html
+        /bastidores/index.html
+        /privacidade/index.html
+        /404.html
 
       # As duas etapas entraram toleradas em 10/09/2026 e saíram no mesmo dia.
       soft-fail: ""
@@ -85,3 +88,14 @@ jobs:
             -Dsonar.projectKey=rigst_site_stolben
             -Dsonar.organization=rigst
             -Dsonar.exclusions=**/node_modules/**,**/*.jpg,**/*.jpeg,**/*.png,**/*.gif,**/*.ico,**/*.webp,**/*.pdf,**/*.woff,**/*.woff2,**/*.ttf,**/*.eot
+            -Dsonar.coverage.exclusions=**/*
+            -Dsonar.cpd.exclusions=**/*.html
+
+      # Site estático sem venv/build: nunca vai ter teste unitário real pra
+      # cobrir HTML/CSS/JS, e o portão padrão "Sonar way" exige 80% de
+      # cobertura em código novo — por isso `coverage.exclusions=**/*`, senão
+      # todo PR reprova sozinho por cobertura zero, sem relação com bug nenhum.
+      # `cpd.exclusions=**/*.html` por motivo parecido: as 4 páginas repetem o
+      # mesmo <head>/header/footer de propósito (sem templating), então o
+      # duplicador acusa ~8% só nesse boilerplate inevitável. As notas de
+      # confiabilidade, segurança e manutenibilidade continuam valendo.
